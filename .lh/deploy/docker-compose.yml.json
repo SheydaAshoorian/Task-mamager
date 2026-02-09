@@ -1,0 +1,22 @@
+{
+    "sourceFile": "deploy/docker-compose.yml",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1770656005261,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1770656988528,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,17 @@\n services:\n   db:\n-    image: postgres:16 # به جای latest از یک نسخه مشخص استفاده کن\n+    image: postgres:16\n     container_name: postgres_db\n     restart: always\n     environment:\n-      POSTGRES_PASSWORD: password123\n+      # این سه خط باید دقیقاً با .env بک‌اِند یکی باشند\n\\ No newline at end of file\n+      - POSTGRES_USER=postgres\n+      - POSTGRES_PASSWORD=password123\n+      - POSTGRES_DB=taskflow_db\n     ports:\n-      - \"5432:5432\"\n+      - \"5432:5432\"\n+    volumes:\n+      - postgres_data:/var/lib/postgresql/data\n+\n+volumes:\n+  postgres_data:\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1770656005261,
+            "name": "Commit-0",
+            "content": "services:\n  db:\n    image: postgres:16 # به جای latest از یک نسخه مشخص استفاده کن\n    container_name: postgres_db\n    restart: always\n    environment:\n      POSTGRES_PASSWORD: password123\n    ports:\n      - \"5432:5432\""
+        }
+    ]
+}

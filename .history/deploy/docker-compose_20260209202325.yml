@@ -1,0 +1,9 @@
+services:
+  db:
+    image: postgres:16 # به جای latest از یک نسخه مشخص استفاده کن
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password123
+    ports:
+      - "5432:5432"

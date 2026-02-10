@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 17,
+            "activePatchIndex": 47,
             "patches": [
                 {
                     "date": 1770728926515,
@@ -76,6 +76,126 @@
                 {
                     "date": 1770731722774,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n       port: 5432,\n       username: 'postgres',\n       password: 'password123',\n       database: 'taskflow_db',\n-      entities: [User], // موجودیت کاربر را اینجا معرفی کردیم\n+      entities: [User], \n       synchronize: true, // این یعنی جدول را خودکار بساز\n     }),\n   ],\n   controllers: [AppController],\n"
+                },
+                {
+                    "date": 1770735605115,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,12 +3,12 @@\n import { AppController } from './app.controller';\n import { AppService } from './app.service';\n import { UsersModule } from './users/users.module';\n import { User } from './users/entities/user.entity';\n-\n+import { ConfigModule, ConfigService } from '@nestjs/config';\n @Module({\n   imports: [\n-    UsersModule, // ماژول کاربران\n+    UsersModule,\n     TypeOrmModule.forRoot({\n       type: 'postgres',\n       host: 'localhost',\n       port: 5432,\n"
+                },
+                {
+                    "date": 1770735658552,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,15 @@\n import { AppService } from './app.service';\n import { UsersModule } from './users/users.module';\n import { User } from './users/entities/user.entity';\n import { ConfigModule, ConfigService } from '@nestjs/config';\n+\n @Module({\n   imports: [\n     UsersModule,\n+    ConfigModule.forRoot({\n+      isGlobal: true, // باعث می‌شود در همه جا به env دسترسی داشته باشی\n+    }),\n     TypeOrmModule.forRoot({\n       type: 'postgres',\n       host: 'localhost',\n       port: 5432,\n"
+                },
+                {
+                    "date": 1770735698750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,11 +11,12 @@\n     UsersModule,\n     ConfigModule.forRoot({\n       isGlobal: true, // باعث می‌شود در همه جا به env دسترسی داشته باشی\n     }),\n+\n     TypeOrmModule.forRoot({\n       type: 'postgres',\n-      host: 'localhost',\n+      host: '',\n       port: 5432,\n       username: 'postgres',\n       password: 'password123',\n       database: 'taskflow_db',\n"
+                },
+                {
+                    "date": 1770735704426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     }),\n \n     TypeOrmModule.forRoot({\n       type: 'postgres',\n-      host: '',\n+      host: Co,\n       port: 5432,\n       username: 'postgres',\n       password: 'password123',\n       database: 'taskflow_db',\n"
+                },
+                {
+                    "date": 1770735709561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     }),\n \n     TypeOrmModule.forRoot({\n       type: 'postgres',\n-      host: Co,\n+      host: Config,\n       port: 5432,\n       username: 'postgres',\n       password: 'password123',\n       database: 'taskflow_db',\n"
+                },
+                {
+                    "date": 1770735733163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,12 @@\n     }),\n \n     TypeOrmModule.forRoot({\n       type: 'postgres',\n-      host: Config,\n+      host: ConfigService.public get value() : string {\n+        return \n+      }\n+      ,\n       port: 5432,\n       username: 'postgres',\n       password: 'password123',\n       database: 'taskflow_db',\n"
+                },
+                {
+                    "date": 1770735738259,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     }),\n \n     TypeOrmModule.forRoot({\n       type: 'postgres',\n-      host: ConfigService.public get value() : string {\n+      host: ConfigService.get value() : string {\n         return \n       }\n       ,\n       port: 5432,\n"
+                },
+                {
+                    "date": 1770735743508,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     }),\n \n     TypeOrmModule.forRoot({\n       type: 'postgres',\n-      host: ConfigService.get value() : string {\n+      host: ConfigService.get string {\n         return \n       }\n       ,\n       port: 5432,\n"
+                },
+                {
+                    "date": 1770735757198,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     }),\n \n     TypeOrmModule.forRoot({\n       type: 'postgres',\n-      host: ConfigService.get string {\n+      host: ConfigService.get<string> {\n         return \n       }\n       ,\n       port: 5432,\n"
+                },
+                {
+                    "date": 1770735767380,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,11 +15,9 @@\n \n     TypeOrmModule.forRoot({\n       type: 'postgres',\n       host: ConfigService.get<string> {\n-        return \n-      }\n-      ,\n+  \n       port: 5432,\n       username: 'postgres',\n       password: 'password123',\n       database: 'taskflow_db',\n"
+                },
+                {
+                    "date": 1770735783400,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     }),\n \n     TypeOrmModule.forRoot({\n       type: 'postgres',\n-      host: ConfigService.get<string> {\n+      host: ConfigService.get<string>('DB_HOST')\n   \n       port: 5432,\n       username: 'postgres',\n       password: 'password123',\n"
+                },
+                {
+                    "date": 1770735798777,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     TypeOrmModule.forRoot({\n       type: 'postgres',\n       host: ConfigService.get<string>('DB_HOST')\n   \n-      port: 5432,\n+      port: C,\n       username: 'postgres',\n       password: 'password123',\n       database: 'taskflow_db',\n       entities: [User], \n"
+                },
+                {
+                    "date": 1770735803829,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     TypeOrmModule.forRoot({\n       type: 'postgres',\n       host: ConfigService.get<string>('DB_HOST')\n   \n-      port: C,\n+      port: ConfigService.,\n       username: 'postgres',\n       password: 'password123',\n       database: 'taskflow_db',\n       entities: [User], \n"
+                },
+                {
+                    "date": 1770735812103,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     TypeOrmModule.forRoot({\n       type: 'postgres',\n       host: ConfigService.get<string>('DB_HOST')\n   \n-      port: ConfigService.,\n+      port: ConfigService.get<number>,\n       username: 'postgres',\n       password: 'password123',\n       database: 'taskflow_db',\n       entities: [User], \n"
+                },
+                {
+                    "date": 1770735826870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     TypeOrmModule.forRoot({\n       type: 'postgres',\n       host: ConfigService.get<string>('DB_HOST')\n   \n-      port: ConfigService.get<number>,\n+      port: ConfigService.get<number>(\"DB_PORT\"),\n       username: 'postgres',\n       password: 'password123',\n       database: 'taskflow_db',\n       entities: [User], \n"
+                },
+                {
+                    "date": 1770735832598,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     TypeOrmModule.forRoot({\n       type: 'postgres',\n       host: ConfigService.get<string>('DB_HOST')\n   \n-      port: ConfigService.get<number>(\"DB_PORT\"),\n+      port: ConfigService.get<number>('DB_PORT'),\n       username: 'postgres',\n       password: 'password123',\n       database: 'taskflow_db',\n       entities: [User], \n"
+                },
+                {
+                    "date": 1770735847162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,9 @@\n     }),\n \n     TypeOrmModule.forRoot({\n       type: 'postgres',\n-      host: ConfigService.get<string>('DB_HOST')\n-  \n+      host: ConfigService.get<string>('DB_HOST'),\n       port: ConfigService.get<number>('DB_PORT'),\n       username: 'postgres',\n       password: 'password123',\n       database: 'taskflow_db',\n"
+                },
+                {
+                    "date": 1770735855986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,10 +16,10 @@\n     TypeOrmModule.forRoot({\n       type: 'postgres',\n       host: ConfigService.get<string>('DB_HOST'),\n       port: ConfigService.get<number>('DB_PORT'),\n-      username: 'postgres',\n-      password: 'password123',\n+      username: ConfigService.get<string>('DB_HOST'),\n+      password: ConfigService.get<string>('DB_HOST'),\n       database: 'taskflow_db',\n       entities: [User], \n       synchronize: true, // این یعنی جدول را خودکار بساز\n     }),\n"
+                },
+                {
+                    "date": 1770735873698,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n       host: ConfigService.get<string>('DB_HOST'),\n       port: ConfigService.get<number>('DB_PORT'),\n       username: ConfigService.get<string>('DB_HOST'),\n       password: ConfigService.get<string>('DB_HOST'),\n-      database: 'taskflow_db',\n+      database: ConfigService.get<string>('DB_NAME'),\n       entities: [User], \n       synchronize: true, // این یعنی جدول را خودکار بساز\n     }),\n   ],\n"
+                },
+                {
+                    "date": 1770735883129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n       type: 'postgres',\n       host: ConfigService.get<string>('DB_HOST'),\n       port: ConfigService.get<number>('DB_PORT'),\n       username: ConfigService.get<string>('DB_HOST'),\n-      password: ConfigService.get<string>('DB_HOST'),\n+      password: ConfigService.get<string>('DB_PASSWORD'),\n       database: ConfigService.get<string>('DB_NAME'),\n       entities: [User], \n       synchronize: true, // این یعنی جدول را خودکار بساز\n     }),\n"
+                },
+                {
+                    "date": 1770735893178,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     TypeOrmModule.forRoot({\n       type: 'postgres',\n       host: ConfigService.get<string>('DB_HOST'),\n       port: ConfigService.get<number>('DB_PORT'),\n-      username: ConfigService.get<string>('DB_HOST'),\n+      username: ConfigService.get<string>('postgres'),\n       password: ConfigService.get<string>('DB_PASSWORD'),\n       database: ConfigService.get<string>('DB_NAME'),\n       entities: [User], \n       synchronize: true, // این یعنی جدول را خودکار بساز\n"
+                },
+                {
+                    "date": 1770736159444,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,10 @@\n       isGlobal: true, // باعث می‌شود در همه جا به env دسترسی داشته باشی\n     }),\n \n     TypeOrmModule.forRoot({\n+      imports: [ConfigModule],\n+      inject: [ConfigService],\n       type: 'postgres',\n       host: ConfigService.get<string>('DB_HOST'),\n       port: ConfigService.get<number>('DB_PORT'),\n       username: ConfigService.get<string>('postgres'),\n"
+                },
+                {
+                    "date": 1770736195051,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n \n     TypeOrmModule.forRoot({\n       imports: [ConfigModule],\n       inject: [ConfigService],\n+      useFactory: (configService: ConfigService) => ({\n       type: 'postgres',\n       host: ConfigService.get<string>('DB_HOST'),\n       port: ConfigService.get<number>('DB_PORT'),\n       username: ConfigService.get<string>('postgres'),\n"
+                },
+                {
+                    "date": 1770736205109,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,9 @@\n       password: ConfigService.get<string>('DB_PASSWORD'),\n       database: ConfigService.get<string>('DB_NAME'),\n       entities: [User], \n       synchronize: true, // این یعنی جدول را خودکار بساز\n+      \n     }),\n   ],\n   controllers: [AppController],\n   providers: [AppService],\n"
+                },
+                {
+                    "date": 1770736245876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n import { User } from './users/entities/user.entity';\n import { ConfigModule, ConfigService } from '@nestjs/config';\n \n @Module({\n+  \n   imports: [\n     UsersModule,\n     ConfigModule.forRoot({\n       isGlobal: true, // باعث می‌شود در همه جا به env دسترسی داشته باشی\n@@ -24,9 +25,9 @@\n       password: ConfigService.get<string>('DB_PASSWORD'),\n       database: ConfigService.get<string>('DB_NAME'),\n       entities: [User], \n       synchronize: true, // این یعنی جدول را خودکار بساز\n-      \n+      }),\n     }),\n   ],\n   controllers: [AppController],\n   providers: [AppService],\n"
+                },
+                {
+                    "date": 1770736264176,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,34 +1,36 @@\n import { Module } from '@nestjs/common';\n import { TypeOrmModule } from '@nestjs/typeorm';\n+import { ConfigModule, ConfigService } from '@nestjs/config';\n import { AppController } from './app.controller';\n import { AppService } from './app.service';\n import { UsersModule } from './users/users.module';\n import { User } from './users/entities/user.entity';\n-import { ConfigModule, ConfigService } from '@nestjs/config';\n \n @Module({\n-  \n   imports: [\n-    UsersModule,\n+    // 1. تنظیم ماژول کانفیگ برای خواندن فایل .env\n     ConfigModule.forRoot({\n-      isGlobal: true, // باعث می‌شود در همه جا به env دسترسی داشته باشی\n+      isGlobal: true,\n     }),\n \n-    TypeOrmModule.forRoot({\n+    // 2. تنظیم دیتابیس به صورت Async برای دسترسی به ConfigService\n+    TypeOrmModule.forRootAsync({\n       imports: [ConfigModule],\n       inject: [ConfigService],\n       useFactory: (configService: ConfigService) => ({\n-      type: 'postgres',\n-      host: ConfigService.get<string>('DB_HOST'),\n-      port: ConfigService.get<number>('DB_PORT'),\n-      username: ConfigService.get<string>('postgres'),\n-      password: ConfigService.get<string>('DB_PASSWORD'),\n-      database: ConfigService.get<string>('DB_NAME'),\n-      entities: [User], \n-      synchronize: true, // این یعنی جدول را خودکار بساز\n+        type: 'postgres',\n+        host: configService.get<string>('DB_HOST'),\n+        port: configService.get<number>('DB_PORT'),\n+        username: configService.get<string>('DB_USERNAME'),\n+        password: configService.get<string>('DB_PASSWORD'),\n+        database: configService.get<string>('DB_NAME'),\n+        entities: [User],\n+        synchronize: true, // فقط در محیط توسعه\n       }),\n     }),\n+\n+    UsersModule,\n   ],\n   controllers: [AppController],\n   providers: [AppService],\n })\n"
+                },
+                {
+                    "date": 1770736288710,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,8 @@\n     ConfigModule.forRoot({\n       isGlobal: true,\n     }),\n \n-    // 2. تنظیم دیتابیس به صورت Async برای دسترسی به ConfigService\n     TypeOrmModule.forRootAsync({\n       imports: [ConfigModule],\n       inject: [ConfigService],\n       useFactory: (configService: ConfigService) => ({\n"
+                },
+                {
+                    "date": 1770736295059,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n import { User } from './users/entities/user.entity';\n \n @Module({\n   imports: [\n-    // 1. تنظیم ماژول کانفیگ برای خواندن فایل .env\n+\n     ConfigModule.forRoot({\n       isGlobal: true,\n     }),\n \n"
+                },
+                {
+                    "date": 1770737365742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n import { UsersModule } from './users/users.module';\n import { User } from './users/entities/user.entity';\n \n @Module({\n+  \n   imports: [\n \n     ConfigModule.forRoot({\n       isGlobal: true,\n"
+                },
+                {
+                    "date": 1770740025736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n import { UsersModule } from './users/users.module';\n import { User } from './users/entities/user.entity';\n \n @Module({\n-  \n+\n   imports: [\n \n     ConfigModule.forRoot({\n       isGlobal: true,\n@@ -30,8 +30,9 @@\n     }),\n \n     UsersModule,\n   ],\n+  \n   controllers: [AppController],\n   providers: [AppService],\n })\n export class AppModule {}\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1770728926515,

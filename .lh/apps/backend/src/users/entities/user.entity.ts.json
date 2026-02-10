@@ -1,0 +1,110 @@
+{
+    "sourceFile": "apps/backend/src/users/entities/user.entity.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 23,
+            "patches": [
+                {
+                    "date": 1770664720278,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1770664726317,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-im\n\\ No newline at end of file\n+import {  } from \"module\";\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1770664733871,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import {  } from \"module\";\n\\ No newline at end of file\n+import {  } from \"typ\";\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1770664744435,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import {  } from \"typ\";\n\\ No newline at end of file\n+import { Ent } from \"typeorm\";\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1770664887074,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n-import { Ent } from \"typeorm\";\n\\ No newline at end of file\n+import { Entity } from \"typeorm\";\n+\n"
+                },
+                {
+                    "date": 1770664892698,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,3 @@\n import { Entity } from \"typeorm\";\n \n+@\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1770664901990,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n import { Entity } from \"typeorm\";\n \n-@\n\\ No newline at end of file\n+@Entity(users)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1770664912764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n import { Entity } from \"typeorm\";\n \n-@Entity(users)\n\\ No newline at end of file\n+@Entity(users)\n"
+                },
+                {
+                    "date": 1770664918053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,4 @@\n import { Entity } from \"typeorm\";\n \n @Entity(users)\n+export \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1770664925392,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n import { Entity } from \"typeorm\";\n \n @Entity(users)\n-export \n\\ No newline at end of file\n+export class User\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1770664932188,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n import { Entity } from \"typeorm\";\n \n @Entity(users)\n-export class User\n\\ No newline at end of file\n+export class users{\n+    \n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1770664938422,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import { Entity } from \"typeorm\";\n \n @Entity(users)\n export class users{\n-    \n+\n+    id\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1770664945547,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,7 @@\n \n @Entity(users)\n export class users{\n \n-    id\n+    id:;\n+    \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1770664952751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n @Entity(users)\n export class users{\n \n     id:;\n-    \n+    name\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1770664959251,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n @Entity(users)\n export class users{\n \n     id:;\n-    name\n+    name: @str\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1770665142694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,7 @@\n @Entity(users)\n export class users{\n \n     id:;\n-    name: @str\n+    name: string;\n+\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1770665149299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,8 @@\n \n @Entity(users)\n export class users{\n \n-    id:;\n+    id: number;\n     name: string;\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1770665158130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,6 +4,7 @@\n export class users{\n \n     id: number;\n     name: string;\n+    family: string\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1770665164747,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n export class users{\n \n     id: number;\n     name: string;\n-    family: string\n+    family: stringe\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1770665170112,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,8 @@\n export class users{\n \n     id: number;\n     name: string;\n-    family: stringe\n+    family: string;\n+    email:\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1770665283752,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,8 @@\n \n     id: number;\n     name: string;\n     family: string;\n-    email:\n+    email:;\n+    is\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1770665289761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n     id: number;\n     name: string;\n     family: string;\n     email:;\n-    is\n+    isactive:\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1770665297034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n     id: number;\n     name: string;\n     family: string;\n     email:;\n-    isactive: boo\n+    isactive: boolean\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1770665366005,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,16 @@\n+import { Entity } from \"typeorm\";\n+\n+@Entity(users)\n+export class users{\n+\n+    id: number;\n+    name: string;\n+    family: string;\n+    email: string;\n+    role: enum ;\n+    isActive: boolean;\n+    createdAt: ;\n+\n+\n+\n+}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1770664720278,
+            "name": "Commit-0",
+            "content": "im"
+        }
+    ]
+}

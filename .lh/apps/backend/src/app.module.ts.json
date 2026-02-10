@@ -1,0 +1,86 @@
+{
+    "sourceFile": "apps/backend/src/app.module.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 17,
+            "patches": [
+                {
+                    "date": 1770728926515,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1770728953440,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n   type: 'postgres',\n   host: 'localhost',\n   port: 5432,\n   username: 'postgres', // یا هر یوزری که ساختی\n-  password: 'your_password',\n+  password: 'password123',\n   database: 'taskflow_db',\n   entities: [User], // حتماً کلاس User رو اینجا معرفی کن\n   synchronize: true, // این همون جادویی هست که بدون دستور، جدول رو می‌سازه\n })\n"
+                },
+                {
+                    "date": 1770730268200,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,15 +8,6 @@\n   controllers: [AppController],\n   providers: [AppService],\n })\n \n-TypeOrmModule.forRoot({\n-  type: 'postgres',\n-  host: 'localhost',\n-  port: 5432,\n-  username: 'postgres', // یا هر یوزری که ساختی\n-  password: 'password123',\n-  database: 'taskflow_db',\n-  entities: [User], // حتماً کلاس User رو اینجا معرفی کن\n-  synchronize: true, // این همون جادویی هست که بدون دستور، جدول رو می‌سازه\n-})\n+\n export class AppModule {}\n"
+                },
+                {
+                    "date": 1770730273795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,20 @@\n @Module({\n   imports: [UsersModule],\n   controllers: [AppController],\n   providers: [AppService],\n+\n+  TypeOrmModule.forRoot({\n+  type: 'postgres',\n+  host: 'localhost',\n+  port: 5432,\n+  username: 'postgres', // یا هر یوزری که ساختی\n+  password: 'password123',\n+  database: 'taskflow_db',\n+  entities: [User], // حتماً کلاس User رو اینجا معرفی کن\n+  synchronize: true, // این همون جادویی هست که بدون دستور، جدول رو می‌سازه\n })\n \n+})\n \n+\n export class AppModule {}\n"
+                },
+                {
+                    "date": 1770730289832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,8 @@\n   database: 'taskflow_db',\n   entities: [User], // حتماً کلاس User رو اینجا معرفی کن\n   synchronize: true, // این همون جادویی هست که بدون دستور، جدول رو می‌سازه\n })\n-\n })\n \n \n export class AppModule {}\n"
+                },
+                {
+                    "date": 1770731212263,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,16 @@\n+import { Module } from '@nestjs/common';\n+import { AppController } from './app.controller';\n+import { AppService } from './app.service';\n+import { UsersModule } from './users/users.module';\n+\n+@Module({\n+  imports: [UsersModule],\n+  controllers: [AppController],\n+  providers: [AppService],\n+\n+\n+\n+})\n+\n+\n+export class AppModule {}\n"
+                },
+                {
+                    "date": 1770731219499,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,35 +6,10 @@\n @Module({\n   imports: [UsersModule],\n   controllers: [AppController],\n   providers: [AppService],\n+}\n \n+)\n \n \n-})\n-\n-\n export class AppModule {}\n-import { Module } from '@nestjs/common';\n-import { AppController } from './app.controller';\n-import { AppService } from './app.service';\n-import { UsersModule } from './users/users.module';\n-\n-@Module({\n-  imports: [UsersModule],\n-  controllers: [AppController],\n-  providers: [AppService],\n-\n-  TypeOrmModule.forRoot({\n-  type: 'postgres',\n-  host: 'localhost',\n-  port: 5432,\n-  username: 'postgres', // یا هر یوزری که ساختی\n-  password: 'password123',\n-  database: 'taskflow_db',\n-  entities: [User], // حتماً کلاس User رو اینجا معرفی کن\n-  synchronize: true, // این همون جادویی هست که بدون دستور، جدول رو می‌سازه\n-})\n-})\n-\n-\n-export class AppModule {}\n"
+                },
+                {
+                    "date": 1770731430806,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,13 +3,25 @@\n import { AppService } from './app.service';\n import { UsersModule } from './users/users.module';\n \n @Module({\n-  imports: [UsersModule],\n+  imports: [UsersModule\n+    \n+  ],\n   controllers: [AppController],\n   providers: [AppService],\n }\n \n+  TypeOrmModule.forRoot({\n+  type: 'postgres',\n+  host: 'localhost',\n+  port: 5432,\n+  username: 'postgres', // یا هر یوزری که ساختی\n+  password: 'password123',\n+  database: 'taskflow_db',\n+  entities: [User], // حتماً کلاس User رو اینجا معرفی کن\n+  synchronize: true, // این همون جادویی هست که بدون دستور، جدول رو می‌سازه\n+})\n )\n \n \n export class AppModule {}\n"
+                },
+                {
+                    "date": 1770731437292,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n import { AppService } from './app.service';\n import { UsersModule } from './users/users.module';\n \n @Module({\n-  imports: [UsersModule\n-    \n+  imports: [UsersModule,\n+\n   ],\n   controllers: [AppController],\n   providers: [AppService],\n }\n"
+                },
+                {
+                    "date": 1770731443728,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,18 +10,9 @@\n   controllers: [AppController],\n   providers: [AppService],\n }\n \n-  TypeOrmModule.forRoot({\n-  type: 'postgres',\n-  host: 'localhost',\n-  port: 5432,\n-  username: 'postgres', // یا هر یوزری که ساختی\n-  password: 'password123',\n-  database: 'taskflow_db',\n-  entities: [User], // حتماً کلاس User رو اینجا معرفی کن\n-  synchronize: true, // این همون جادویی هست که بدون دستور، جدول رو می‌سازه\n-})\n+ \n )\n \n \n export class AppModule {}\n"
+                },
+                {
+                    "date": 1770731456686,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,18 @@\n import { UsersModule } from './users/users.module';\n \n @Module({\n   imports: [UsersModule,\n-\n+  TypeOrmModule.forRoot({\n+    type: 'postgres',\n+    host: 'localhost',\n+    port: 5432,\n+    username: 'postgres', // یا هر یوزری که ساختی\n+    password: 'password123',\n+    database: 'taskflow_db',\n+    entities: [User], // حتماً کلاس User رو اینجا معرفی کن\n+    synchronize: true, // این همون جادویی هست که بدون دستور، جدول رو می‌سازه\n+})\n   ],\n   controllers: [AppController],\n   providers: [AppService],\n }\n"
+                },
+                {
+                    "date": 1770731468404,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,11 @@\n import { AppService } from './app.service';\n import { UsersModule } from './users/users.module';\n \n @Module({\n-  imports: [UsersModule,\n-  TypeOrmModule.forRoot({\n+  imports: [\n+    UsersModule,\n+    TypeOrmModule.forRoot({\n     type: 'postgres',\n     host: 'localhost',\n     port: 5432,\n     username: 'postgres', // یا هر یوزری که ساختی\n"
+                },
+                {
+                    "date": 1770731506365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,11 +18,8 @@\n })\n   ],\n   controllers: [AppController],\n   providers: [AppService],\n-}\n+})\n \n- \n-)\n \n-\n export class AppModule {}\n"
+                },
+                {
+                    "date": 1770731550679,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     port: 5432,\n     username: 'postgres', // یا هر یوزری که ساختی\n     password: 'password123',\n     database: 'taskflow_db',\n-    entities: [User], // حتماً کلاس User رو اینجا معرفی کن\n+    entities: [user], // حتماً کلاس User رو اینجا معرفی کن\n     synchronize: true, // این همون جادویی هست که بدون دستور، جدول رو می‌سازه\n })\n   ],\n   controllers: [AppController],\n"
+                },
+                {
+                    "date": 1770731589832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,25 +1,25 @@\n import { Module } from '@nestjs/common';\n+import { TypeOrmModule } from '@nestjs/typeorm';\n import { AppController } from './app.controller';\n import { AppService } from './app.service';\n import { UsersModule } from './users/users.module';\n+import { User } from './users/entities/user.entity';\n \n @Module({\n   imports: [\n-    UsersModule,\n+    UsersModule, // ماژول کاربران\n     TypeOrmModule.forRoot({\n-    type: 'postgres',\n-    host: 'localhost',\n-    port: 5432,\n-    username: 'postgres', // یا هر یوزری که ساختی\n-    password: 'password123',\n-    database: 'taskflow_db',\n-    entities: [user], // حتماً کلاس User رو اینجا معرفی کن\n-    synchronize: true, // این همون جادویی هست که بدون دستور، جدول رو می‌سازه\n-})\n+      type: 'postgres',\n+      host: 'localhost',\n+      port: 5432,\n+      username: 'postgres',\n+      password: 'password123',\n+      database: 'taskflow_db',\n+      entities: [User], // موجودیت کاربر را اینجا معرفی کردیم\n+      synchronize: true, // این یعنی جدول را خودکار بساز\n+    }),\n   ],\n   controllers: [AppController],\n   providers: [AppService],\n })\n-\n-\n-export class AppModule {}\n+export class AppModule {}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1770731610002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,25 +1,25 @@\n import { Module } from '@nestjs/common';\n-import { TypeOrmModule } from '@nestjs/typeorm';\n import { AppController } from './app.controller';\n import { AppService } from './app.service';\n import { UsersModule } from './users/users.module';\n-import { User } from './users/entities/user.entity';\n \n @Module({\n   imports: [\n-    UsersModule, // ماژول کاربران\n+    UsersModule,\n     TypeOrmModule.forRoot({\n-      type: 'postgres',\n-      host: 'localhost',\n-      port: 5432,\n-      username: 'postgres',\n-      password: 'password123',\n-      database: 'taskflow_db',\n-      entities: [User], // موجودیت کاربر را اینجا معرفی کردیم\n-      synchronize: true, // این یعنی جدول را خودکار بساز\n-    }),\n+    type: 'postgres',\n+    host: 'localhost',\n+    port: 5432,\n+    username: 'postgres', // یا هر یوزری که ساختی\n\\ No newline at end of file\n+    password: 'password123',\n+    database: 'taskflow_db',\n+    entities: [user], // حتماً کلاس User رو اینجا معرفی کن\n+    synchronize: true, // این همون جادویی هست که بدون دستور، جدول رو می‌سازه\n+})\n   ],\n   controllers: [AppController],\n   providers: [AppService],\n })\n-export class AppModule {}\n+\n+\n+export class AppModule {}\n"
+                },
+                {
+                    "date": 1770731617551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,25 +1,25 @@\n import { Module } from '@nestjs/common';\n+import { TypeOrmModule } from '@nestjs/typeorm';\n import { AppController } from './app.controller';\n import { AppService } from './app.service';\n import { UsersModule } from './users/users.module';\n+import { User } from './users/entities/user.entity';\n \n @Module({\n   imports: [\n-    UsersModule,\n+    UsersModule, // ماژول کاربران\n     TypeOrmModule.forRoot({\n-    type: 'postgres',\n-    host: 'localhost',\n-    port: 5432,\n-    username: 'postgres', // یا هر یوزری که ساختی\n-    password: 'password123',\n-    database: 'taskflow_db',\n-    entities: [user], // حتماً کلاس User رو اینجا معرفی کن\n-    synchronize: true, // این همون جادویی هست که بدون دستور، جدول رو می‌سازه\n-})\n+      type: 'postgres',\n+      host: 'localhost',\n+      port: 5432,\n+      username: 'postgres',\n+      password: 'password123',\n+      database: 'taskflow_db',\n+      entities: [User], // موجودیت کاربر را اینجا معرفی کردیم\n+      synchronize: true, // این یعنی جدول را خودکار بساز\n+    }),\n   ],\n   controllers: [AppController],\n   providers: [AppService],\n })\n-\n-\n export class AppModule {}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1770731722774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n       port: 5432,\n       username: 'postgres',\n       password: 'password123',\n       database: 'taskflow_db',\n-      entities: [User], // موجودیت کاربر را اینجا معرفی کردیم\n+      entities: [User], \n       synchronize: true, // این یعنی جدول را خودکار بساز\n     }),\n   ],\n   controllers: [AppController],\n"
+                }
+            ],
+            "date": 1770728926515,
+            "name": "Commit-0",
+            "content": "import { Module } from '@nestjs/common';\nimport { AppController } from './app.controller';\nimport { AppService } from './app.service';\nimport { UsersModule } from './users/users.module';\n\n@Module({\n  imports: [UsersModule],\n  controllers: [AppController],\n  providers: [AppService],\n})\n\nTypeOrmModule.forRoot({\n  type: 'postgres',\n  host: 'localhost',\n  port: 5432,\n  username: 'postgres', // یا هر یوزری که ساختی\n  password: 'your_password',\n  database: 'taskflow_db',\n  entities: [User], // حتماً کلاس User رو اینجا معرفی کن\n  synchronize: true, // این همون جادویی هست که بدون دستور، جدول رو می‌سازه\n})\nexport class AppModule {}\n"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "apps/backend/src/users/dto/update-user.dto.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1770911579096,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1770911579096,
+            "name": "Commit-0",
+            "content": "import { PartialType } from '@nestjs/mapped-types';\nimport { CreateUserDto } from './create-user.dto';\nimport { UpdateUserDto } from './dto/update-user.dto';\nexport class UpdateUserDto extends PartialType(CreateUserDto) {}\n"
+        }
+    ]
+}

@@ -1,0 +1,90 @@
+{
+    "sourceFile": "apps/backend/src/users/users.module.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 18,
+            "patches": [
+                {
+                    "date": 1770972186824,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1770972199871,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n import { UsersController } from './users.controller';\n \n @Module({\n \n+  \n   TypeOrmModule.forFeature([User]),\n   controllers: [UsersController],\n   providers: [UsersService],\n })\n"
+                },
+                {
+                    "date": 1770972208273,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { UsersController } from './users.controller';\n \n @Module({\n \n-  \n+  imports\n   TypeOrmModule.forFeature([User]),\n   controllers: [UsersController],\n   providers: [UsersService],\n })\n"
+                },
+                {
+                    "date": 1770972213891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { UsersController } from './users.controller';\n \n @Module({\n \n-  imports\n+  imports: \n   TypeOrmModule.forFeature([User]),\n   controllers: [UsersController],\n   providers: [UsersService],\n })\n"
+                },
+                {
+                    "date": 1770972224756,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,11 @@\n import { UsersController } from './users.controller';\n \n @Module({\n \n-  imports: \n+  imports: [\n+    Ty\n+  ]\n   TypeOrmModule.forFeature([User]),\n   controllers: [UsersController],\n   providers: [UsersService],\n })\n"
+                },
+                {
+                    "date": 1770972235777,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n @Module({\n \n   imports: [\n-    Ty\n+    TypeOrmModule.\n   ]\n   TypeOrmModule.forFeature([User]),\n   controllers: [UsersController],\n   providers: [UsersService],\n"
+                },
+                {
+                    "date": 1770972241482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n @Module({\n \n   imports: [\n-    TypeOrmModule.\n+    TypeOrmModule.forF\n   ]\n   TypeOrmModule.forFeature([User]),\n   controllers: [UsersController],\n   providers: [UsersService],\n"
+                },
+                {
+                    "date": 1770972248143,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n @Module({\n \n   imports: [\n-    TypeOrmModule.forF\n+    TypeOrmModule.forFeature()\n   ]\n   TypeOrmModule.forFeature([User]),\n   controllers: [UsersController],\n   providers: [UsersService],\n"
+                },
+                {
+                    "date": 1770972255030,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,10 @@\n \n @Module({\n \n   imports: [\n-    TypeOrmModule.forFeature()\n+    TypeOrmModule.forFeature([User])\n   ]\n-  TypeOrmModule.forFeature([User]),\n   controllers: [UsersController],\n   providers: [UsersService],\n })\n export class UsersModule {}\n"
+                },
+                {
+                    "date": 1770972277229,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n @Module({\n \n   imports: [\n     TypeOrmModule.forFeature([User])\n-  ]\n+  ],\n   controllers: [UsersController],\n   providers: [UsersService],\n })\n export class UsersModule {}\n"
+                },
+                {
+                    "date": 1770972312781,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,14 @@\n import { Module } from '@nestjs/common';\n import { UsersService } from './users.service';\n import { UsersController } from './users.controller';\n-\n+import \n @Module({\n \n   imports: [\n     TypeOrmModule.forFeature([User])\n   ],\n+\n   controllers: [UsersController],\n   providers: [UsersService],\n })\n export class UsersModule {}\n"
+                },
+                {
+                    "date": 1770972318482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Module } from '@nestjs/common';\n import { UsersService } from './users.service';\n import { UsersController } from './users.controller';\n-import \n+import { TypeOrmModule}\n @Module({\n \n   imports: [\n     TypeOrmModule.forFeature([User])\n"
+                },
+                {
+                    "date": 1770972324666,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Module } from '@nestjs/common';\n import { UsersService } from './users.service';\n import { UsersController } from './users.controller';\n-import { TypeOrmModule}\n+import { TypeOrmModule } from \n @Module({\n \n   imports: [\n     TypeOrmModule.forFeature([User])\n"
+                },
+                {
+                    "date": 1770972330111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Module } from '@nestjs/common';\n import { UsersService } from './users.service';\n import { UsersController } from './users.controller';\n-import { TypeOrmModule } from \n+import { TypeOrmModule } from  \n @Module({\n \n   imports: [\n     TypeOrmModule.forFeature([User])\n"
+                },
+                {
+                    "date": 1770972624874,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Module } from '@nestjs/common';\n import { UsersService } from './users.service';\n import { UsersController } from './users.controller';\n-import { TypeOrmModule } from  \n+import { TypeOrmModule } from  ''\n @Module({\n \n   imports: [\n     TypeOrmModule.forFeature([User])\n"
+                },
+                {
+                    "date": 1770972631483,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Module } from '@nestjs/common';\n import { UsersService } from './users.service';\n import { UsersController } from './users.controller';\n-import { TypeOrmModule } from  ''\n+import { TypeOrmModule } from  '@nestls'\n @Module({\n \n   imports: [\n     TypeOrmModule.forFeature([User])\n"
+                },
+                {
+                    "date": 1770972637082,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,14 @@\n+import { Module } from '@nestjs/common';\n+import { UsersService } from './users.service';\n+import { UsersController } from './users.controller';\n+import { TypeOrmModule } from  '@nestjs/'\n+@Module({\n+\n+  imports: [\n+    TypeOrmModule.forFeature([User])\n+  ],\n+\n+  controllers: [UsersController],\n+  providers: [UsersService],\n+})\n+export class UsersModule {}\n"
+                },
+                {
+                    "date": 1770972747306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Module } from '@nestjs/common';\n import { UsersService } from './users.service';\n import { UsersController } from './users.controller';\n-import { TypeOrmModule } from  '@nestjs/'\n+import { TypeOrmModule } from  '@nestjs/typeorm';\n @Module({\n \n   imports: [\n     TypeOrmModule.forFeature([User])\n@@ -11,18 +11,4 @@\n   controllers: [UsersController],\n   providers: [UsersService],\n })\n export class UsersModule {}\n-import { Module } from '@nestjs/common';\n-import { UsersService } from './users.service';\n-import { UsersController } from './users.controller';\n-import { TypeOrmModule } from  '@nestls'\n-@Module({\n-\n-  imports: [\n-    TypeOrmModule.forFeature([User])\n-  ],\n-\n-  controllers: [UsersController],\n-  providers: [UsersService],\n-})\n-export class UsersModule {}\n"
+                },
+                {
+                    "date": 1770972754108,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Module } from '@nestjs/common';\n import { UsersService } from './users.service';\n import { UsersController } from './users.controller';\n import { TypeOrmModule } from  '@nestjs/typeorm';\n-import { }\n+import { U}\n @Module({\n \n   imports: [\n     TypeOrmModule.forFeature([User])\n"
+                }
+            ],
+            "date": 1770972186824,
+            "name": "Commit-0",
+            "content": "import { Module } from '@nestjs/common';\nimport { UsersService } from './users.service';\nimport { UsersController } from './users.controller';\n\n@Module({\n\n  TypeOrmModule.forFeature([User]),\n  controllers: [UsersController],\n  providers: [UsersService],\n})\nexport class UsersModule {}\n"
+        }
+    ]
+}

@@ -1,0 +1,150 @@
+{
+    "sourceFile": "apps/backend/src/main.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 33,
+            "patches": [
+                {
+                    "date": 1770826140613,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1770826171403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { NestFactory } from '@nestjs/core';\n import { AppModule } from './app.module';\n-import\n+import { Swagger}\n \n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n   await app.listen(process.env.PORT ?? 3000);\n"
+                },
+                {
+                    "date": 1770826178088,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { NestFactory } from '@nestjs/core';\n import { AppModule } from './app.module';\n-import { Swagger}\n+import { SwaggerModul}\n \n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n   await app.listen(process.env.PORT ?? 3000);\n"
+                },
+                {
+                    "date": 1770826186072,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { NestFactory } from '@nestjs/core';\n import { AppModule } from './app.module';\n-import { SwaggerModul}\n+import { SwaggerModul, D}\n \n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n   await app.listen(process.env.PORT ?? 3000);\n"
+                },
+                {
+                    "date": 1770826193527,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { NestFactory } from '@nestjs/core';\n import { AppModule } from './app.module';\n-import { SwaggerModul, D}\n+import { SwaggerModul, DocumentBi}\n \n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n   await app.listen(process.env.PORT ?? 3000);\n"
+                },
+                {
+                    "date": 1770826202725,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { NestFactory } from '@nestjs/core';\n import { AppModule } from './app.module';\n-import { SwaggerModul, DocumentBi}\n+import { SwaggerModul, DocumentBuilder}\n \n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n   await app.listen(process.env.PORT ?? 3000);\n"
+                },
+                {
+                    "date": 1770826213163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { NestFactory } from '@nestjs/core';\n import { AppModule } from './app.module';\n-import { SwaggerModul, DocumentBuilder}\n+import { SwaggerModule, DocumentBuilder}\n \n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n   await app.listen(process.env.PORT ?? 3000);\n"
+                },
+                {
+                    "date": 1770826218498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { NestFactory } from '@nestjs/core';\n import { AppModule } from './app.module';\n-import { SwaggerModule, DocumentBuilder}\n+import { SwaggerModule, DocumentBuilder} from \n \n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n   await app.listen(process.env.PORT ?? 3000);\n"
+                },
+                {
+                    "date": 1770826225641,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { NestFactory } from '@nestjs/core';\n import { AppModule } from './app.module';\n-import { SwaggerModule, DocumentBuilder} from \n+import { SwaggerModule, DocumentBuilder} from '@nest'\n \n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n   await app.listen(process.env.PORT ?? 3000);\n"
+                },
+                {
+                    "date": 1770826234966,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { NestFactory } from '@nestjs/core';\n import { AppModule } from './app.module';\n-import { SwaggerModule, DocumentBuilder} from '@nest'\n+import { SwaggerModule, DocumentBuilder} from '@nestjs/swagger'\n \n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n   await app.listen(process.env.PORT ?? 3000);\n"
+                },
+                {
+                    "date": 1770826279713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,11 @@\n import { NestFactory } from '@nestjs/core';\n import { AppModule } from './app.module';\n-import { SwaggerModule, DocumentBuilder} from '@nestjs/swagger'\n+import { SwaggerModule, DocumentBuilder} from '@nestjs/swagger';\n \n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n+\n+  \n   await app.listen(process.env.PORT ?? 3000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1770826355233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,8 @@\n \n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n \n-  \n+  const \n   await app.listen(process.env.PORT ?? 3000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1770826361058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,8 @@\n \n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n \n-  const \n+  const confi\n   await app.listen(process.env.PORT ?? 3000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1770826369049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,8 @@\n \n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n \n-  const confi\n+  const config= new\n   await app.listen(process.env.PORT ?? 3000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1770826374646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,8 @@\n \n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n \n-  const config= new\n+  const config= new S\n   await app.listen(process.env.PORT ?? 3000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1770826384836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,8 @@\n \n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n \n-  const config= new S\n+  const config= new D()\n   await app.listen(process.env.PORT ?? 3000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1770826390048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,8 @@\n \n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n \n-  const config= new D()\n+  const config= new DocumentBuilder()\n   await app.listen(process.env.PORT ?? 3000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1770826404784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,8 @@\n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n \n   const config= new DocumentBuilder()\n+  .\n   await app.listen(process.env.PORT ?? 3000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1770826414728,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,8 @@\n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n \n   const config= new DocumentBuilder()\n-  .\n+  .setTitle\n   await app.listen(process.env.PORT ?? 3000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1770826420236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,8 @@\n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n \n   const config= new DocumentBuilder()\n-  .setTitle\n+  .setTitle()\n   await app.listen(process.env.PORT ?? 3000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1770826436816,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,8 @@\n async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n \n   const config= new DocumentBuilder()\n-  .setTitle()\n+  .setTitle('ERP TaskFlow API')\n   await app.listen(process.env.PORT ?? 3000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1770826445376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,9 @@\n   const app = await NestFactory.create(AppModule);\n \n   const config= new DocumentBuilder()\n   .setTitle('ERP TaskFlow API')\n+  \n+\n   await app.listen(process.env.PORT ?? 3000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1770826456021,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   const app = await NestFactory.create(AppModule);\n \n   const config= new DocumentBuilder()\n   .setTitle('ERP TaskFlow API')\n-  \n+  .setDescription\n \n   await app.listen(process.env.PORT ?? 3000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1770826469840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   const app = await NestFactory.create(AppModule);\n \n   const config= new DocumentBuilder()\n   .setTitle('ERP TaskFlow API')\n-  .setDescription\n+  .setDescription('مستندات API سیستم مدیریت منابع سازمانی')\n \n   await app.listen(process.env.PORT ?? 3000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1770826481961,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n \n   const config= new DocumentBuilder()\n   .setTitle('ERP TaskFlow API')\n   .setDescription('مستندات API سیستم مدیریت منابع سازمانی')\n+  .set\n \n   await app.listen(process.env.PORT ?? 3000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1770826487868,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n   const config= new DocumentBuilder()\n   .setTitle('ERP TaskFlow API')\n   .setDescription('مستندات API سیستم مدیریت منابع سازمانی')\n-  .set\n+  .setVersion()\n \n   await app.listen(process.env.PORT ?? 3000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1770826493240,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n   const config= new DocumentBuilder()\n   .setTitle('ERP TaskFlow API')\n   .setDescription('مستندات API سیستم مدیریت منابع سازمانی')\n-  .setVersion()\n+  .setVersion('')\n \n   await app.listen(process.env.PORT ?? 3000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1770826499541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,10 @@\n \n   const config= new DocumentBuilder()\n   .setTitle('ERP TaskFlow API')\n   .setDescription('مستندات API سیستم مدیریت منابع سازمانی')\n-  .setVersion('')\n+  .setVersion('1.0')\n+  .\n \n   await app.listen(process.env.PORT ?? 3000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1770826507308,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n   const config= new DocumentBuilder()\n   .setTitle('ERP TaskFlow API')\n   .setDescription('مستندات API سیستم مدیریت منابع سازمانی')\n   .setVersion('1.0')\n-  .\n+  .addTagg\n \n   await app.listen(process.env.PORT ?? 3000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1770826520537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n   const config= new DocumentBuilder()\n   .setTitle('ERP TaskFlow API')\n   .setDescription('مستندات API سیستم مدیریت منابع سازمانی')\n   .setVersion('1.0')\n-  .addTagg\n+  .addTag('users')\n \n   await app.listen(process.env.PORT ?? 3000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1770826527947,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n   .setTitle('ERP TaskFlow API')\n   .setDescription('مستندات API سیستم مدیریت منابع سازمانی')\n   .setVersion('1.0')\n   .addTag('users')\n+  .bu\n \n   await app.listen(process.env.PORT ?? 3000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1770826535951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   .setTitle('ERP TaskFlow API')\n   .setDescription('مستندات API سیستم مدیریت منابع سازمانی')\n   .setVersion('1.0')\n   .addTag('users')\n-  .bu\n+  .build()\n \n   await app.listen(process.env.PORT ?? 3000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1770826541877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   .setTitle('ERP TaskFlow API')\n   .setDescription('مستندات API سیستم مدیریت منابع سازمانی')\n   .setVersion('1.0')\n   .addTag('users')\n-  .build()\n+  .build();\n \n   await app.listen(process.env.PORT ?? 3000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1770974612191,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,9 @@\n   .setVersion('1.0')\n   .addTag('users')\n   .build();\n \n+  const document = SwaggerModule.createDocument(app, config);\n+  SwaggerModule.setup('api', app, document); // 'api' همان آدرسی است که در مرورگر میزنی\n   await app.listen(process.env.PORT ?? 3000);\n }\n bootstrap();\n"
+                }
+            ],
+            "date": 1770826140613,
+            "name": "Commit-0",
+            "content": "import { NestFactory } from '@nestjs/core';\nimport { AppModule } from './app.module';\nimport\n\nasync function bootstrap() {\n  const app = await NestFactory.create(AppModule);\n  await app.listen(process.env.PORT ?? 3000);\n}\nbootstrap();\n"
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "sourceFile": "apps/backend/src/auth/auth.service.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1770977950256,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1770980011681,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n import * as bcrypt from 'bcrypt';\n \n @Injectable()\n export class AuthService {\n+    \n   constructor(\n     private usersService: UsersService,\n     private jwtService: JwtService, // تزریق سرویس JWT\n   ) {}\n"
+                },
+                {
+                    "date": 1770980061314,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,12 +8,12 @@\n import * as bcrypt from 'bcrypt';\n \n @Injectable()\n export class AuthService {\n-    \n+\n   constructor(\n     private usersService: UsersService,\n-    private jwtService: JwtService, // تزریق سرویس JWT\n+    private jwtService: JwtService, \n   ) {}\n \n   async login(email: string, pass: string) {\n     // ۱. چک کردن یوزر و پسورد\n"
+                },
+                {
+                    "date": 1770980068815,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     private jwtService: JwtService, \n   ) {}\n \n   async login(email: string, pass: string) {\n-    // ۱. چک کردن یوزر و پسورد\n+\n     const user = await this.usersService.findOneByEmail(email);\n     \n     if (!user) {\n        throw new UnauthorizedException('کاربر پیدا نشد');\n"
+                },
+                {
+                    "date": 1770982353457,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,9 @@\n        throw new UnauthorizedException('کاربر پیدا نشد');\n     }\n \n     const isMatch = await bcrypt.compare(pass, user.password);\n+    \n     if (!isMatch) {\n       throw new UnauthorizedException('رمز عبور اشتباه است');\n     }\n \n"
+                },
+                {
+                    "date": 1770982407035,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,44 @@\n+import { Injectable } from '@nestjs/common';\n+\n+@Injectable()\n+export class AuthService {}\n+import { Injectable, UnauthorizedException } from '@nestjs/common';\n+import { UsersService } from '../users/users.service';\n+import { JwtService } from '@nestjs/jwt'; // اضافه کردن این\n+import * as bcrypt from 'bcrypt';\n+\n+@Injectable()\n+export class AuthService {\n+\n+  constructor(\n+    private usersService: UsersService,\n+    private jwtService: JwtService, \n+  ) {}\n+\n+  async login(email: string, pass: string) {\n+\n+    const user = await this.usersService.findOneByEmail(email);\n+    \n+    if (!user) {\n+       throw new UnauthorizedException('کاربر پیدا نشد');\n+    }\n+\n+    const isMatch = await bcrypt.compare(pass, user.password);\n+\n+    if (!isMatch) {\n+      throw new UnauthorizedException('رمز عبور اشتباه است');\n+    }\n+\n+    // ساختن توکن (کارت ورود)\n+    const payload = { sub: user.id, email: user.email }; // اطلاعاتی که توی توکن مخفی میشه\n+    \n+    return {\n+      access_token: await this.jwtService.signAsync(payload),\n+      user: {\n+        name: user.name,\n+        family: user.family,\n+        email: user.email\n+      }\n+    };\n+  }\n+}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1770977950256,
+            "name": "Commit-0",
+            "content": "import { Injectable } from '@nestjs/common';\n\n@Injectable()\nexport class AuthService {}\nimport { Injectable, UnauthorizedException } from '@nestjs/common';\nimport { UsersService } from '../users/users.service';\nimport { JwtService } from '@nestjs/jwt'; // اضافه کردن این\nimport * as bcrypt from 'bcrypt';\n\n@Injectable()\nexport class AuthService {\n  constructor(\n    private usersService: UsersService,\n    private jwtService: JwtService, // تزریق سرویس JWT\n  ) {}\n\n  async login(email: string, pass: string) {\n    // ۱. چک کردن یوزر و پسورد\n    const user = await this.usersService.findOneByEmail(email);\n    \n    if (!user) {\n       throw new UnauthorizedException('کاربر پیدا نشد');\n    }\n\n    const isMatch = await bcrypt.compare(pass, user.password);\n    if (!isMatch) {\n      throw new UnauthorizedException('رمز عبور اشتباه است');\n    }\n\n    // ۲. ساختن توکن (کارت ورود)\n    const payload = { sub: user.id, email: user.email }; // اطلاعاتی که توی توکن مخفی میشه\n    \n    return {\n      access_token: await this.jwtService.signAsync(payload),\n      user: {\n        name: user.name,\n        family: user.family,\n        email: user.email\n      }\n    };\n  }\n}"
+        }
+    ]
+}

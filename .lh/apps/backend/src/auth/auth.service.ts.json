@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 36,
+            "activePatchIndex": 38,
             "patches": [
                 {
                     "date": 1770977950256,
@@ -152,6 +152,14 @@
                 {
                     "date": 1771087059711,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n     family: dto.family,\n     email: dto.email,\n     password: hashedPassword,\n   });\n-\n+// حذف پسورد از دیتای ارسالی به فرانت (امنیت!)\n  const { password, ...result } = user;\n \n   return {\n     success: true,\n"
+                },
+                {
+                    "date": 1771095455593,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,16 +27,14 @@\n     family: dto.family,\n     email: dto.email,\n     password: hashedPassword,\n   });\n+\n // حذف پسورد از دیتای ارسالی به فرانت (امنیت!)\n  const { password, ...result } = user;\n \n   return {\n-    success: true,\n-    statusCode: 201,\n-    message: 'ثبت‌نام با موفقیت انجام شد',\n-    data: result,\n-    timestamp: new Date().toISOString(),\n+message: 'ثبت‌نام با موفقیت انجام شد',\n+      data: result,\n   };\n   }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771095461561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n // حذف پسورد از دیتای ارسالی به فرانت (امنیت!)\n  const { password, ...result } = user;\n \n   return {\n-message: 'ثبت‌نام با موفقیت انجام شد',\n+    message: 'ثبت‌نام با موفقیت انجام شد',\n       data: result,\n   };\n   }\n }\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1770977950256,

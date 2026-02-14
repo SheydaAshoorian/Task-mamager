@@ -1,0 +1,18 @@
+{
+    "sourceFile": "apps/backend/src/common/interceptors/transform.interceptor.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1771095148589,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1771095148589,
+            "name": "Commit-0",
+            "content": "import {\n  Injectable,\n  NestInterceptor,\n  ExecutionContext,\n  CallHandler,\n} from '@nestjs/common';\nimport { Observable } from 'rxjs';\nimport { map } from 'rxjs/operators';\n\nexport interface Response<T> {\n  success: boolean;\n  statusCode: number;\n  message: string;\n  data: T;\n  timestamp: string;\n}\n\n@Injectable()\nexport class TransformInterceptor<T> implements NestInterceptor<T, Response<T>> {\n  intercept(context: ExecutionContext, next: CallHandler): Observable<Response<T>> {\n    const response = context.switchToHttp().getResponse();\n    \n    return next.handle().pipe(\n      map((data) => ({\n        success: true,\n        statusCode: response.statusCode,\n        message: data.message || 'عملیات با موفقیت انجام شد', // اگر پیام اختصاصی داشتی استفاده می‌کند\n        data: data.data || data, // اگر دیتا قبلاً فرمت شده بود، از بخش data استفاده می‌کند، وگرنه کل دیتا را می‌گیرد\n        timestamp: new Date().toISOString(),\n      })),\n    );\n  }\n}"
+        }
+    ]
+}

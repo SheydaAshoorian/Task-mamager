@@ -1,0 +1,190 @@
+{
+    "sourceFile": "apps/backend/src/auth/auth.module.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 43,
+            "patches": [
+                {
+                    "date": 1771053421473,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1771053428732,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,11 @@\n import { AuthService } from './auth.service';\n import { AuthController } from './auth.controller';\n \n @Module({\n-  \n+  imports : [\n+    \n+  ]\n   providers: [AuthService],\n   controllers: [AuthController]\n })\n export class AuthModule {}\n"
+                },
+                {
+                    "date": 1771053436148,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { AuthController } from './auth.controller';\n \n @Module({\n   imports : [\n-    \n+    User\n   ]\n   providers: [AuthService],\n   controllers: [AuthController]\n })\n"
+                },
+                {
+                    "date": 1771053445140,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { AuthController } from './auth.controller';\n \n @Module({\n   imports : [\n-    User\n+    UserModule\n   ]\n   providers: [AuthService],\n   controllers: [AuthController]\n })\n"
+                },
+                {
+                    "date": 1771053450325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { AuthController } from './auth.controller';\n \n @Module({\n   imports : [\n-    UserModule\n+    UserModule,\n   ]\n   providers: [AuthService],\n   controllers: [AuthController]\n })\n"
+                },
+                {
+                    "date": 1771053457214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n \n @Module({\n   imports : [\n     UserModule,\n+    Jwt\n   ]\n   providers: [AuthService],\n   controllers: [AuthController]\n })\n"
+                },
+                {
+                    "date": 1771053476629,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n @Module({\n   imports : [\n     UserModule,\n-    Jwt\n+    JwtModule.register\n   ]\n   providers: [AuthService],\n   controllers: [AuthController]\n })\n"
+                },
+                {
+                    "date": 1771053486327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,11 @@\n \n @Module({\n   imports : [\n     UserModule,\n-    JwtModule.register\n+    JwtModule.register({\n+      \n+    })\n   ]\n   providers: [AuthService],\n   controllers: [AuthController]\n })\n"
+                },
+                {
+                    "date": 1771053609891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n @Module({\n   imports : [\n     UserModule,\n     JwtModule.register({\n-      \n+      sec\n     })\n   ]\n   providers: [AuthService],\n   controllers: [AuthController]\n"
+                },
+                {
+                    "date": 1771053616658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,15 @@\n+import { Module } from '@nestjs/common';\n+import { AuthService } from './auth.service';\n+import { AuthController } from './auth.controller';\n+\n+@Module({\n+  imports : [\n+    UserModule,\n+    JwtModule.register({\n+      secret: ''\n+    })\n+  ]\n+  providers: [AuthService],\n+  controllers: [AuthController]\n+})\n+export class AuthModule {}\n"
+                },
+                {
+                    "date": 1771053626577,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,26 +5,12 @@\n @Module({\n   imports : [\n     UserModule,\n     JwtModule.register({\n-      secret: ''\n+      secret: '',\n+      s\n     })\n   ]\n   providers: [AuthService],\n   controllers: [AuthController]\n })\n export class AuthModule {}\n-import { Module } from '@nestjs/common';\n-import { AuthService } from './auth.service';\n-import { AuthController } from './auth.controller';\n-\n-@Module({\n-  imports : [\n-    UserModule,\n-    JwtModule.register({\n-      sec\n-    })\n-  ]\n-  providers: [AuthService],\n-  controllers: [AuthController]\n-})\n-export class AuthModule {}\n"
+                },
+                {
+                    "date": 1771053632572,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   imports : [\n     UserModule,\n     JwtModule.register({\n       secret: '',\n-      s\n+      signOption\n     })\n   ]\n   providers: [AuthService],\n   controllers: [AuthController]\n"
+                },
+                {
+                    "date": 1771053637724,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   imports : [\n     UserModule,\n     JwtModule.register({\n       secret: '',\n-      signOption\n+      signOption: ','\n     })\n   ]\n   providers: [AuthService],\n   controllers: [AuthController]\n"
+                },
+                {
+                    "date": 1771053653111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   imports : [\n     UserModule,\n     JwtModule.register({\n       secret: '',\n-      signOption: ','\n+      signOption: 'expiresIn: '1h'',\n     })\n   ]\n   providers: [AuthService],\n   controllers: [AuthController]\n"
+                },
+                {
+                    "date": 1771053661734,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n @Module({\n   imports : [\n     UserModule,\n     JwtModule.register({\n-      secret: '',\n+      secret: 'SECRET_KEY',\n       signOption: 'expiresIn: '1h'',\n     })\n   ]\n   providers: [AuthService],\n"
+                },
+                {
+                    "date": 1771053668716,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   imports : [\n     UserModule,\n     JwtModule.register({\n       secret: 'SECRET_KEY',\n-      signOption: 'expiresIn: '1h'',\n+      signOption: 'expiresIn: '1h',\n     })\n   ]\n   providers: [AuthService],\n   controllers: [AuthController]\n"
+                },
+                {
+                    "date": 1771053683823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   imports : [\n     UserModule,\n     JwtModule.register({\n       secret: 'SECRET_KEY',\n-      signOption: 'expiresIn: '1h',\n+      signOption: expiresIn: '1h',\n     })\n   ]\n   providers: [AuthService],\n   controllers: [AuthController]\n"
+                },
+                {
+                    "date": 1771053695837,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,11 +6,11 @@\n   imports : [\n     UserModule,\n     JwtModule.register({\n       secret: 'SECRET_KEY',\n-      signOption: expiresIn: '1h',\n+      signOption:{ expiresIn: '1h'},\n     })\n-  ]\n+  ],\n   providers: [AuthService],\n   controllers: [AuthController]\n })\n export class AuthModule {}\n"
+                },
+                {
+                    "date": 1771053704589,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,10 @@\n     UserModule,\n     JwtModule.register({\n       secret: 'SECRET_KEY',\n       signOption:{ expiresIn: '1h'},\n-    })\n-  ],\n+    }),\n+  ]\n   providers: [AuthService],\n   controllers: [AuthController]\n })\n export class AuthModule {}\n"
+                },
+                {
+                    "date": 1771053721017,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,18 @@\n import { Module } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { AuthController } from './auth.controller';\n+import \n \n @Module({\n   imports : [\n     UserModule,\n     JwtModule.register({\n       secret: 'SECRET_KEY',\n       signOption:{ expiresIn: '1h'},\n     }),\n-  ]\n+  ],\n+\n   providers: [AuthService],\n   controllers: [AuthController]\n })\n export class AuthModule {}\n"
+                },
+                {
+                    "date": 1771053726657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Module } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { AuthController } from './auth.controller';\n-import \n+import { User}\n \n @Module({\n   imports : [\n     UserModule,\n"
+                },
+                {
+                    "date": 1771053733445,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Module } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { AuthController } from './auth.controller';\n-import { User}\n+import { UserModule } from \n \n @Module({\n   imports : [\n     UserModule,\n"
+                },
+                {
+                    "date": 1771053746159,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Module } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { AuthController } from './auth.controller';\n-import { UserModule } from \n+import { UserModule } from ''\n \n @Module({\n   imports : [\n     UserModule,\n"
+                },
+                {
+                    "date": 1771053758653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Module } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { AuthController } from './auth.controller';\n-import { UserModule } from ''\n+import { UserModule } from './user'\n \n @Module({\n   imports : [\n     UserModule,\n"
+                },
+                {
+                    "date": 1771053774143,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Module } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { AuthController } from './auth.controller';\n-import { UserModule } from './user'\n+import { UserModule } from './user/user'\n \n @Module({\n   imports : [\n     UserModule,\n"
+                },
+                {
+                    "date": 1771053779480,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Module } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { AuthController } from './auth.controller';\n-import { UserModule } from './user/user'\n+import { UserModule } from './user/UserModule';\n \n @Module({\n   imports : [\n     UserModule,\n"
+                },
+                {
+                    "date": 1771053890666,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Module } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { AuthController } from './auth.controller';\n-import { UserModule } from './user/UserModule';\n+import { UserModule } from '../users/UserModule';\n \n @Module({\n   imports : [\n     UserModule,\n"
+                },
+                {
+                    "date": 1771053896793,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Module } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { AuthController } from './auth.controller';\n-import { UserModule } from '../users/UserModule';\n+import { UserModule } from '../users/user';\n \n @Module({\n   imports : [\n     UserModule,\n"
+                },
+                {
+                    "date": 1771053903211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Module } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { AuthController } from './auth.controller';\n-import { UserModule } from '../users/user';\n+import { UserModule } from '../users/user.module';\n \n @Module({\n   imports : [\n     UserModule,\n"
+                },
+                {
+                    "date": 1771053969319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Module } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { AuthController } from './auth.controller';\n-import { UserModule } from '../users/user.module';\n+import { UserModule } from '../users/user.module.ts]';\n \n @Module({\n   imports : [\n     UserModule,\n"
+                },
+                {
+                    "date": 1771053991245,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import { Module } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { AuthController } from './auth.controller';\n-import { UserModule } from '../users/user.module.ts]';\n+import { UserModule } from '../users/user.module';\n+import { UsersModule } from '../users/users.module';\n \n @Module({\n   imports : [\n     UserModule,\n"
+                },
+                {
+                    "date": 1771053996690,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n import { Module } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { AuthController } from './auth.controller';\n-import { UserModule } from '../users/user.module';\n import { UsersModule } from '../users/users.module';\n \n @Module({\n   imports : [\n"
+                },
+                {
+                    "date": 1771054006609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import { UsersModule } from '../users/users.module';\n \n @Module({\n   imports : [\n-    UserModule,\n+    UsersModule,\n     JwtModule.register({\n       secret: 'SECRET_KEY',\n       signOption:{ expiresIn: '1h'},\n     }),\n"
+                },
+                {
+                    "date": 1771054022440,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import { Module } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { AuthController } from './auth.controller';\n import { UsersModule } from '../users/users.module';\n+import \n \n @Module({\n   imports : [\n     UsersModule,\n"
+                },
+                {
+                    "date": 1771054029420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Module } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { AuthController } from './auth.controller';\n import { UsersModule } from '../users/users.module';\n-import \n+import { Lwt}\n \n @Module({\n   imports : [\n     UsersModule,\n"
+                },
+                {
+                    "date": 1771054035984,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Module } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { AuthController } from './auth.controller';\n import { UsersModule } from '../users/users.module';\n-import { Lwt}\n+import { Jw}\n \n @Module({\n   imports : [\n     UsersModule,\n"
+                },
+                {
+                    "date": 1771054042228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,19 @@\n+import { Module } from '@nestjs/common';\n+import { AuthService } from './auth.service';\n+import { AuthController } from './auth.controller';\n+import { UsersModule } from '../users/users.module';\n+import { JwtService }\n+\n+@Module({\n+  imports : [\n+    UsersModule,\n+    JwtModule.register({\n+      secret: 'SECRET_KEY',\n+      signOption:{ expiresIn: '1h'},\n+    }),\n+  ],\n+\n+  providers: [AuthService],\n+  controllers: [AuthController]\n+})\n+export class AuthModule {}\n"
+                },
+                {
+                    "date": 1771054047939,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Module } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { AuthController } from './auth.controller';\n import { UsersModule } from '../users/users.module';\n-import { JwtService }\n+import { JwtService } from \n \n @Module({\n   imports : [\n     UsersModule,\n@@ -16,23 +16,4 @@\n   providers: [AuthService],\n   controllers: [AuthController]\n })\n export class AuthModule {}\n-import { Module } from '@nestjs/common';\n-import { AuthService } from './auth.service';\n-import { AuthController } from './auth.controller';\n-import { UsersModule } from '../users/users.module';\n-import { Jw}\n-\n-@Module({\n-  imports : [\n-    UsersModule,\n-    JwtModule.register({\n-      secret: 'SECRET_KEY',\n-      signOption:{ expiresIn: '1h'},\n-    }),\n-  ],\n-\n-  providers: [AuthService],\n-  controllers: [AuthController]\n-})\n-export class AuthModule {}\n"
+                },
+                {
+                    "date": 1771054053510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Module } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { AuthController } from './auth.controller';\n import { UsersModule } from '../users/users.module';\n-import { JwtService } from \n+import { JwtService } from '@nest'\n \n @Module({\n   imports : [\n     UsersModule,\n"
+                },
+                {
+                    "date": 1771054058763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Module } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { AuthController } from './auth.controller';\n import { UsersModule } from '../users/users.module';\n-import { JwtService } from '@nest'\n+import { JwtService } from '@nestjs/J'\n \n @Module({\n   imports : [\n     UsersModule,\n"
+                },
+                {
+                    "date": 1771054063852,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Module } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { AuthController } from './auth.controller';\n import { UsersModule } from '../users/users.module';\n-import { JwtService } from '@nestjs/J'\n+import { JwtService } from '@nestjs/JwtModule';\n \n @Module({\n   imports : [\n     UsersModule,\n"
+                },
+                {
+                    "date": 1771054072914,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Module } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { AuthController } from './auth.controller';\n import { UsersModule } from '../users/users.module';\n-import { JwtService } from '@nestjs/JwtModule';\n+import { JwtService } from '@nestjs/Jwt';\n \n @Module({\n   imports : [\n     UsersModule,\n"
+                },
+                {
+                    "date": 1771054088502,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,9 @@\n import { Module } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { AuthController } from './auth.controller';\n import { UsersModule } from '../users/users.module';\n-import { JwtService } from '@nestjs/Jwt';\n-\n+import { JwtModule } from '@nestjs/jwt';\n @Module({\n   imports : [\n     UsersModule,\n     JwtModule.register({\n"
+                },
+                {
+                    "date": 1771054114696,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,20 @@\n+import { Module } from '@nestjs/common';\n+import { AuthService } from './auth.service';\n+import { AuthController } from './auth.controller';\n+import { UsersModule } from '../users/users.module';\n+import { JwtModule } from '@nestjs/jwt';\n+\n+@Module({\n+  imports : [\n+    UsersModule,\n+    JwtModule.register({\n+     global: true,\n+      secret: 'SECRET_KEY',\n+      signOptions: { expiresIn: '1h' },\n+    }),\n+  ],\n+\n+  providers: [AuthService],\n+  controllers: [AuthController]\n+})\n+export class AuthModule {}\n"
+                }
+            ],
+            "date": 1771053421473,
+            "name": "Commit-0",
+            "content": "import { Module } from '@nestjs/common';\nimport { AuthService } from './auth.service';\nimport { AuthController } from './auth.controller';\n\n@Module({\n  \n  providers: [AuthService],\n  controllers: [AuthController]\n})\nexport class AuthModule {}\n"
+        }
+    ]
+}

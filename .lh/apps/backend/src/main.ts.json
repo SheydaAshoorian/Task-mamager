@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 33,
+            "activePatchIndex": 46,
             "patches": [
                 {
                     "date": 1770826140613,
@@ -140,6 +140,58 @@
                 {
                     "date": 1770974612191,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,9 @@\n   .setVersion('1.0')\n   .addTag('users')\n   .build();\n \n+  const document = SwaggerModule.createDocument(app, config);\n+  SwaggerModule.setup('api', app, document); // 'api' همان آدرسی است که در مرورگر میزنی\n   await app.listen(process.env.PORT ?? 3000);\n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1771050700903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,20 @@\n+import { NestFactory } from '@nestjs/core';\n+import { AppModule } from './app.module';\n+import { SwaggerModule, DocumentBuilder} from '@nestjs/swagger';\n+\n+async function bootstrap() {\n+  \n+  const app = await NestFactory.create(AppModule);\n+\n+  const config= new DocumentBuilder()\n+  .setTitle('ERP TaskFlow API')\n+  .setDescription('مستندات API سیستم مدیریت منابع سازمانی')\n+  .setVersion('1.0')\n+  .addTag('users')\n+  .build();\n+\n+  const document = SwaggerModule.createDocument(app, config);\n+  SwaggerModule.setup('api', app, document); // 'api' همان آدرسی است که در مرورگر میزنی\n+  await app.listen(process.env.PORT ?? 3000);\n+}\n+bootstrap();\n"
+                },
+                {
+                    "date": 1771050725196,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,30 +2,11 @@\n import { AppModule } from './app.module';\n import { SwaggerModule, DocumentBuilder} from '@nestjs/swagger';\n \n async function bootstrap() {\n-  \n-  const app = await NestFactory.create(AppModule);\n \n-  const config= new DocumentBuilder()\n-  .setTitle('ERP TaskFlow API')\n-  .setDescription('مستندات API سیستم مدیریت منابع سازمانی')\n-  .setVersion('1.0')\n-  .addTag('users')\n-  .build();\n-\n-  const document = SwaggerModule.createDocument(app, config);\n-  SwaggerModule.setup('api', app, document); // 'api' همان آدرسی است که در مرورگر میزنی\n-  await app.listen(process.env.PORT ?? 3000);\n-}\n-bootstrap();\n-import { NestFactory } from '@nestjs/core';\n-import { AppModule } from './app.module';\n-import { SwaggerModule, DocumentBuilder} from '@nestjs/swagger';\n-\n-async function bootstrap() {\n   const app = await NestFactory.create(AppModule);\n-\n+  \n   const config= new DocumentBuilder()\n   .setTitle('ERP TaskFlow API')\n   .setDescription('مستندات API سیستم مدیریت منابع سازمانی')\n   .setVersion('1.0')\n"
+                },
+                {
+                    "date": 1771050741326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,6 +15,7 @@\n \n   const document = SwaggerModule.createDocument(app, config);\n   SwaggerModule.setup('api', app, document); // 'api' همان آدرسی است که در مرورگر میزنی\n   await app.listen(process.env.PORT ?? 3000);\n+  \n }\n bootstrap();\n"
+                },
+                {
+                    "date": 1771052410873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n async function bootstrap() {\n \n   const app = await NestFactory.create(AppModule);\n-  \n+  app.enableCors()\n   const config= new DocumentBuilder()\n   .setTitle('ERP TaskFlow API')\n   .setDescription('مستندات API سیستم مدیریت منابع سازمانی')\n   .setVersion('1.0')\n@@ -15,7 +15,8 @@\n \n   const document = SwaggerModule.createDocument(app, config);\n   SwaggerModule.setup('api', app, document); // 'api' همان آدرسی است که در مرورگر میزنی\n   await app.listen(process.env.PORT ?? 3000);\n-  \n+\n }\n+\n bootstrap();\n"
+                },
+                {
+                    "date": 1771052430452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n async function bootstrap() {\n \n   const app = await NestFactory.create(AppModule);\n-  app.enableCors()\n+  app.enableCors()app.enableCors(); // 👈 این خط جادویی اجازه می‌دهد فرانت‌اِند به بک‌اِند وصل شود\n   const config= new DocumentBuilder()\n   .setTitle('ERP TaskFlow API')\n   .setDescription('مستندات API سیستم مدیریت منابع سازمانی')\n   .setVersion('1.0')\n"
+                },
+                {
+                    "date": 1771052443295,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n async function bootstrap() {\n \n   const app = await NestFactory.create(AppModule);\n-  app.enableCors()app.enableCors(); // 👈 این خط جادویی اجازه می‌دهد فرانت‌اِند به بک‌اِند وصل شود\n+  app.enableCors()app.enableCors(); // 👈 ااجازه می‌دهد فرانت‌اِند به بک‌اِند وصل شود\n   const config= new DocumentBuilder()\n   .setTitle('ERP TaskFlow API')\n   .setDescription('مستندات API سیستم مدیریت منابع سازمانی')\n   .setVersion('1.0')\n"
+                },
+                {
+                    "date": 1771052448587,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,10 @@\n \n async function bootstrap() {\n \n   const app = await NestFactory.create(AppModule);\n-  app.enableCors()app.enableCors(); // 👈 ااجازه می‌دهد فرانت‌اِند به بک‌اِند وصل شود\n+  \n+  app.enableCors()app.enableCors(); // 👈 اجازه می‌دهد فرانت‌اِند به بک‌اِند وصل شود\n   const config= new DocumentBuilder()\n   .setTitle('ERP TaskFlow API')\n   .setDescription('مستندات API سیستم مدیریت منابع سازمانی')\n   .setVersion('1.0')\n"
+                },
+                {
+                    "date": 1771052455001,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,11 @@\n \n async function bootstrap() {\n \n   const app = await NestFactory.create(AppModule);\n+\n+  app.enableCors()app.enableCors(); // 👈 اجازه می‌دهد فرانت‌اِند به بک‌اِند وصل شود\n   \n-  app.enableCors()app.enableCors(); // 👈 اجازه می‌دهد فرانت‌اِند به بک‌اِند وصل شود\n   const config= new DocumentBuilder()\n   .setTitle('ERP TaskFlow API')\n   .setDescription('مستندات API سیستم مدیریت منابع سازمانی')\n   .setVersion('1.0')\n"
+                },
+                {
+                    "date": 1771052465980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   const app = await NestFactory.create(AppModule);\n \n   app.enableCors()app.enableCors(); // 👈 اجازه می‌دهد فرانت‌اِند به بک‌اِند وصل شود\n   \n-  const config= new DocumentBuilder()\n+  const config= new DocumentBuilder() // \n   .setTitle('ERP TaskFlow API')\n   .setDescription('مستندات API سیستم مدیریت منابع سازمانی')\n   .setVersion('1.0')\n   .addTag('users')\n"
+                },
+                {
+                    "date": 1771052472145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   const app = await NestFactory.create(AppModule);\n \n   app.enableCors()app.enableCors(); // 👈 اجازه می‌دهد فرانت‌اِند به بک‌اِند وصل شود\n   \n-  const config= new DocumentBuilder() // \n+  const config= new DocumentBuilder() // تنظیمات\n   .setTitle('ERP TaskFlow API')\n   .setDescription('مستندات API سیستم مدیریت منابع سازمانی')\n   .setVersion('1.0')\n   .addTag('users')\n"
+                },
+                {
+                    "date": 1771052479799,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   const app = await NestFactory.create(AppModule);\n \n   app.enableCors()app.enableCors(); // 👈 اجازه می‌دهد فرانت‌اِند به بک‌اِند وصل شود\n   \n-  const config= new DocumentBuilder() // تنظیمات\n+  const config= new DocumentBuilder() // تنظیمات \n   .setTitle('ERP TaskFlow API')\n   .setDescription('مستندات API سیستم مدیریت منابع سازمانی')\n   .setVersion('1.0')\n   .addTag('users')\n"
+                },
+                {
+                    "date": 1771052486439,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   const app = await NestFactory.create(AppModule);\n \n   app.enableCors()app.enableCors(); // 👈 اجازه می‌دهد فرانت‌اِند به بک‌اِند وصل شود\n   \n-  const config= new DocumentBuilder() // تنظیمات \n+  const config= new DocumentBuilder() // تنظیمات swagger\n   .setTitle('ERP TaskFlow API')\n   .setDescription('مستندات API سیستم مدیریت منابع سازمانی')\n   .setVersion('1.0')\n   .addTag('users')\n"
+                },
+                {
+                    "date": 1771052796432,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n async function bootstrap() {\n \n   const app = await NestFactory.create(AppModule);\n \n-  app.enableCors()app.enableCors(); // 👈 اجازه می‌دهد فرانت‌اِند به بک‌اِند وصل شود\n+  app.enableCors() // 👈 اجازه می‌دهد فرانت‌اِند به بک‌اِند وصل شود\n   \n   const config= new DocumentBuilder() // تنظیمات swagger\n   .setTitle('ERP TaskFlow API')\n   .setDescription('مستندات API سیستم مدیریت منابع سازمانی')\n"
                 }
             ],
             "date": 1770826140613,

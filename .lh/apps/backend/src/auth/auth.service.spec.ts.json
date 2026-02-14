@@ -1,0 +1,18 @@
+{
+    "sourceFile": "apps/backend/src/auth/auth.service.spec.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1771052902055,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1771052902055,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}

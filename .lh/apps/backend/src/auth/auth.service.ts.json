@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 5,
+            "activePatchIndex": 8,
             "patches": [
                 {
                     "date": 1770977950256,
@@ -28,6 +28,18 @@
                 {
                     "date": 1770982407035,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,44 @@\n+import { Injectable } from '@nestjs/common';\n+\n+@Injectable()\n+export class AuthService {}\n+import { Injectable, UnauthorizedException } from '@nestjs/common';\n+import { UsersService } from '../users/users.service';\n+import { JwtService } from '@nestjs/jwt'; // اضافه کردن این\n+import * as bcrypt from 'bcrypt';\n+\n+@Injectable()\n+export class AuthService {\n+\n+  constructor(\n+    private usersService: UsersService,\n+    private jwtService: JwtService, \n+  ) {}\n+\n+  async login(email: string, pass: string) {\n+\n+    const user = await this.usersService.findOneByEmail(email);\n+    \n+    if (!user) {\n+       throw new UnauthorizedException('کاربر پیدا نشد');\n+    }\n+\n+    const isMatch = await bcrypt.compare(pass, user.password);\n+\n+    if (!isMatch) {\n+      throw new UnauthorizedException('رمز عبور اشتباه است');\n+    }\n+\n+    // ساختن توکن (کارت ورود)\n+    const payload = { sub: user.id, email: user.email }; // اطلاعاتی که توی توکن مخفی میشه\n+    \n+    return {\n+      access_token: await this.jwtService.signAsync(payload),\n+      user: {\n+        name: user.name,\n+        family: user.family,\n+        email: user.email\n+      }\n+    };\n+  }\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771052923962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { Injectable } from '@nestjs/common';\n \n-@Injectable()\n+\n export class AuthService {}\n import { Injectable, UnauthorizedException } from '@nestjs/common';\n import { UsersService } from '../users/users.service';\n import { JwtService } from '@nestjs/jwt'; // اضافه کردن این\n@@ -40,49 +40,5 @@\n         email: user.email\n       }\n     };\n   }\n-}\n-import { Injectable } from '@nestjs/common';\n-\n-@Injectable()\n-export class AuthService {}\n-import { Injectable, UnauthorizedException } from '@nestjs/common';\n-import { UsersService } from '../users/users.service';\n-import { JwtService } from '@nestjs/jwt'; // اضافه کردن این\n-import * as bcrypt from 'bcrypt';\n-\n-@Injectable()\n-export class AuthService {\n-\n-  constructor(\n-    private usersService: UsersService,\n-    private jwtService: JwtService, \n-  ) {}\n-\n-  async login(email: string, pass: string) {\n-\n-    const user = await this.usersService.findOneByEmail(email);\n-    \n-    if (!user) {\n-       throw new UnauthorizedException('کاربر پیدا نشد');\n-    }\n-\n-    const isMatch = await bcrypt.compare(pass, user.password);\n-    \n-    if (!isMatch) {\n-      throw new UnauthorizedException('رمز عبور اشتباه است');\n-    }\n-\n-    // ۲. ساختن توکن (کارت ورود)\n-    const payload = { sub: user.id, email: user.email }; // اطلاعاتی که توی توکن مخفی میشه\n-    \n-    return {\n-      access_token: await this.jwtService.signAsync(payload),\n-      user: {\n-        name: user.name,\n-        family: user.family,\n-        email: user.email\n-      }\n-    };\n-  }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771052935066,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,6 @@\n import { Injectable } from '@nestjs/common';\n \n-\n-export class AuthService {}\n import { Injectable, UnauthorizedException } from '@nestjs/common';\n import { UsersService } from '../users/users.service';\n import { JwtService } from '@nestjs/jwt'; // اضافه کردن این\n import * as bcrypt from 'bcrypt';\n"
+                },
+                {
+                    "date": 1771052954439,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,35 +1,29 @@\n-import { Injectable } from '@nestjs/common';\n-\n import { Injectable, UnauthorizedException } from '@nestjs/common';\n import { UsersService } from '../users/users.service';\n-import { JwtService } from '@nestjs/jwt'; // اضافه کردن این\n+import { JwtService } from '@nestjs/jwt';\n import * as bcrypt from 'bcrypt';\n \n @Injectable()\n export class AuthService {\n-\n   constructor(\n     private usersService: UsersService,\n-    private jwtService: JwtService, \n+    private jwtService: JwtService,\n   ) {}\n \n   async login(email: string, pass: string) {\n-\n     const user = await this.usersService.findOneByEmail(email);\n     \n     if (!user) {\n        throw new UnauthorizedException('کاربر پیدا نشد');\n     }\n \n     const isMatch = await bcrypt.compare(pass, user.password);\n-\n     if (!isMatch) {\n       throw new UnauthorizedException('رمز عبور اشتباه است');\n     }\n \n-    // ساختن توکن (کارت ورود)\n-    const payload = { sub: user.id, email: user.email }; // اطلاعاتی که توی توکن مخفی میشه\n+    const payload = { sub: user.id, email: user.email };\n     \n     return {\n       access_token: await this.jwtService.signAsync(payload),\n       user: {\n"
                 }
             ],
             "date": 1770977950256,

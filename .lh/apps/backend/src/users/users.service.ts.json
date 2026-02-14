@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 114,
+            "activePatchIndex": 121,
             "patches": [
                 {
                     "date": 1770910711296,
@@ -464,6 +464,34 @@
                 {
                     "date": 1771049757503,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n import { User } from './entities/user.entity';\n import * as bcrypt from 'bcrypt';\n \n @Injectable()\n+\n export class UsersService {\n   constructor(\n     @InjectRepository(User)\n     private userRepository: Repository<User>,\n@@ -28,9 +29,8 @@\n       email,\n       password: hashedPassword,\n     });\n \n-    // ۴. ذخیره در دیتابیس\n     return await this.userRepository.save(newUser);\n   }\n \n   async findAll() {\n"
+                },
+                {
+                    "date": 1771053064645,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,13 +7,19 @@\n \n @Injectable()\n \n export class UsersService {\n+\n   constructor(\n+    \n     @InjectRepository(User)\n     private userRepository: Repository<User>,\n   ) {}\n \n+\n+  async findOneByEmail(email: string): Promise<User | undefined> {\n+    return await this.userRepository.findOne({ where: { email } });\n+  }\n   async create(createUserDto: CreateUserDto) {\n     const { email, password, ...rest } = createUserDto;\n \n     const existingUser = await this.userRepository.findOne({ where: { email } });\n"
+                },
+                {
+                    "date": 1771053078352,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,11 +15,10 @@\n     private userRepository: Repository<User>,\n   ) {}\n \n \n-  async findOneByEmail(email: string): Promise<User | undefined> {\n-    return await this.userRepository.findOne({ where: { email } });\n-  }\n+\n+\n   async create(createUserDto: CreateUserDto) {\n     const { email, password, ...rest } = createUserDto;\n \n     const existingUser = await this.userRepository.findOne({ where: { email } });\n"
+                },
+                {
+                    "date": 1771053085836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,8 @@\n   ) {}\n \n \n \n-\n   async create(createUserDto: CreateUserDto) {\n     const { email, password, ...rest } = createUserDto;\n \n     const existingUser = await this.userRepository.findOne({ where: { email } });\n@@ -44,5 +43,6 @@\n \n   async findOne(id: number) {\n     return await this.userRepository.findOne({ where: { id } });\n   }\n+  \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771053112456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,9 @@\n import { Injectable, ConflictException } from '@nestjs/common';\n import { InjectRepository } from '@nestjs/typeorm';\n import { Repository } from 'typeorm';\n import { CreateUserDto } from './dto/create-user.dto';\n-import { User } from './entities/user.entity';\n-import * as bcrypt from 'bcrypt';\n+import { User } from './entities/user.entity';import * as bcrypt from 'bcrypt';\n \n @Injectable()\n \n export class UsersService {\n@@ -43,6 +42,9 @@\n \n   async findOne(id: number) {\n     return await this.userRepository.findOne({ where: { id } });\n   }\n-  \n+\n+    async findOneByEmail(email: string): Promise<User | undefined> {\n+    return await this.userRepository.findOne({ where: { email } });\n+  }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771053183601,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n import { Injectable, ConflictException } from '@nestjs/common';\n import { InjectRepository } from '@nestjs/typeorm';\n import { Repository } from 'typeorm';\n import { CreateUserDto } from './dto/create-user.dto';\n-import { User } from './entities/user.entity';import * as bcrypt from 'bcrypt';\n+import { User } from './entities/user.entity';\n+import * as bcrypt from 'bcrypt';\n \n @Injectable()\n \n export class UsersService {\n@@ -44,7 +45,7 @@\n     return await this.userRepository.findOne({ where: { id } });\n   }\n \n     async findOneByEmail(email: string): Promise<User | undefined> {\n-    return await this.userRepository.findOne({ where: { email } });\n+     return await this.userRepository.findOne({ where: { email } });\n   }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771053192491,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,8 +44,8 @@\n   async findOne(id: number) {\n     return await this.userRepository.findOne({ where: { id } });\n   }\n \n-    async findOneByEmail(email: string): Promise<User | undefined> {\n+  async findOneByEmail(email: string): Promise<User | undefined> {\n      return await this.userRepository.findOne({ where: { email } });\n   }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771053268710,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,8 +44,8 @@\n   async findOne(id: number) {\n     return await this.userRepository.findOne({ where: { id } });\n   }\n \n-  async findOneByEmail(email: string): Promise<User | undefined> {\n+  async findOneByEmail(email: string): Promise<User | null> {\n      return await this.userRepository.findOne({ where: { email } });\n   }\n }\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1770910711296,

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 111,
+            "activePatchIndex": 114,
             "patches": [
                 {
                     "date": 1770910711296,
@@ -452,6 +452,18 @@
                 {
                     "date": 1770970413529,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,10 @@\n import { Injectable, ConflictException } from '@nestjs/common';\n import { InjectRepository } from '@nestjs/typeorm';\n import { Repository } from 'typeorm';\n import { CreateUserDto } from './dto/create-user.dto';\n-import { UpdateUserDto } from './dto/update-user.dto';\n import { User } from './entities/user.entity';\n import * as bcrypt from 'bcrypt';\n-import { Injectable, ConflictException } from '@nestjs/common';\n-import { InjectRepository } from '@nestjs/typeorm';\n-import { Repository } from 'typeorm';\n-import { CreateUserDto } from './dto/create-user.dto';\n-import { User } from './entities/user.entity';\n-import * as bcrypt from 'bcrypt';\n \n @Injectable()\n export class UsersService {\n   constructor(\n@@ -49,5 +42,5 @@\n \n   async findOne(id: number) {\n     return await this.userRepository.findOne({ where: { id } });\n   }\n-}\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771049736475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,8 @@\n \n   async create(createUserDto: CreateUserDto) {\n     const { email, password, ...rest } = createUserDto;\n \n-    // ۱. چک کردن تکراری نبودن ایمیل (مثل پایتون که ارور Integrity می‌داد)\n     const existingUser = await this.userRepository.findOne({ where: { email } });\n     if (existingUser) {\n       throw new ConflictException('این ایمیل قبلاً ثبت شده است');\n     }\n"
+                },
+                {
+                    "date": 1771049742856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,13 +19,11 @@\n     if (existingUser) {\n       throw new ConflictException('این ایمیل قبلاً ثبت شده است');\n     }\n \n-    // ۲. هش کردن پسورد\n     const salt = await bcrypt.genSalt();\n     const hashedPassword = await bcrypt.hash(password, salt);\n \n-    // ۳. ساخت نمونه یوزر (کد پرسنلی خودکار ساخته می‌شود)\n     const newUser = this.userRepository.create({\n       ...rest,\n       email,\n       password: hashedPassword,\n"
+                },
+                {
+                    "date": 1771049757503,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n import { User } from './entities/user.entity';\n import * as bcrypt from 'bcrypt';\n \n @Injectable()\n+\n export class UsersService {\n   constructor(\n     @InjectRepository(User)\n     private userRepository: Repository<User>,\n@@ -28,9 +29,8 @@\n       email,\n       password: hashedPassword,\n     });\n \n-    // ۴. ذخیره در دیتابیس\n     return await this.userRepository.save(newUser);\n   }\n \n   async findAll() {\n"
                 }
             ],
             "date": 1770910711296,

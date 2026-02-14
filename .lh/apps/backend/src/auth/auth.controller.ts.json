@@ -1,0 +1,58 @@
+{
+    "sourceFile": "apps/backend/src/auth/auth.controller.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1771069248529,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1771069266497,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n   async register(\n     @Body('email') email: string,\n     @Body('password') pass: string,\n     @Body('name') name: string,\n+    \n   ) {\n     return this.authService.register(email, pass, name);\n   }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771069272715,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   async register(\n     @Body('email') email: string,\n     @Body('password') pass: string,\n     @Body('name') name: string,\n-    \n+    @body\n   ) {\n     return this.authService.register(email, pass, name);\n   }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771069278620,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   async register(\n     @Body('email') email: string,\n     @Body('password') pass: string,\n     @Body('name') name: string,\n-    @body\n+    @body('family')\n   ) {\n     return this.authService.register(email, pass, name);\n   }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771069284695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   async register(\n     @Body('email') email: string,\n     @Body('password') pass: string,\n     @Body('name') name: string,\n-    @body('family')\n+    @body('family' family)\n   ) {\n     return this.authService.register(email, pass, name);\n   }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771069291663,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   async register(\n     @Body('email') email: string,\n     @Body('password') pass: string,\n     @Body('name') name: string,\n-    @body('family' family)\n+    @body('family' family: string\n   ) {\n     return this.authService.register(email, pass, name);\n   }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771069297151,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   async register(\n     @Body('email') email: string,\n     @Body('password') pass: string,\n     @Body('name') name: string,\n-    @body('family' family: string\n+    @body('family') family: string,\n   ) {\n     return this.authService.register(email, pass, name);\n   }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771069316031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,7 @@\n     @Body('password') pass: string,\n     @Body('name') name: string,\n     @body('family') family: string,\n   ) {\n-    return this.authService.register(email, pass, name);\n+    return this.authService.register(email, pass, name,);\n   }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771069335270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,17 @@\n+import { Controller, Post, Body } from '@nestjs/common';\n+import { AuthService } from './auth.service';\n+\n+@Controller('auth')\n+export class AuthController {\n+  constructor(private readonly authService: AuthService) {}\n+\n+  @Post('register') // این همان مسیری است که ۴۰۴ می‌داد\n+  async register(\n+    @Body('email') email: string,\n+    @Body('password') pass: string,\n+    @Body('name') name: string,\n+    @Body('family') family: string,\n+  ) {\n+    return this.authService.register(email, pass, name,family);\n+  }\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070268235,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,34 +0,0 @@\n-import { Controller, Post, Body } from '@nestjs/common';\n-import { AuthService } from './auth.service';\n-\n-@Controller('auth')\n-export class AuthController {\n-  constructor(private readonly authService: AuthService) {}\n-\n-  @Post('register') // این همان مسیری است که ۴۰۴ می‌داد\n-  async register(\n-    @Body('email') email: string,\n-    @Body('password') pass: string,\n-    @Body('name') name: string,\n-    @Body('family') family: string,\n-  ) {\n-    return this.authService.register(email, pass, name,family);\n-  }\n-}\n-import { Controller, Post, Body } from '@nestjs/common';\n-import { AuthService } from './auth.service';\n-\n-@Controller('auth')\n-export class AuthController {\n-  constructor(private readonly authService: AuthService) {}\n-\n-  @Post('register') // این همان مسیری است که ۴۰۴ می‌داد\n-  async register(\n-    @Body('email') email: string,\n-    @Body('password') pass: string,\n-    @Body('name') name: string,\n-    @body('family') family: string,\n-  ) {\n-    return this.authService.register(email, pass, name,);\n-  }\n-}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771075703827,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,14 @@\n+import { Controller, Post, Body, UsePipes, ValidationPipe } from '@nestjs/common';\n+import { AuthService } from './auth.service';\n+import { RegisterDto } from './dto/register.dto';\n+\n+@Controller('auth')\n+export class AuthController {\n+  constructor(private readonly authService: AuthService) {}\n+\n+  @Post('register')\n+  @UsePipes(new ValidationPipe({ whitelist: true })) // پاکسازی دیتای اضافی ورودی\n+  async register(@Body() registerDto: RegisterDto) {\n+    return this.authService.register(registerDto);\n+  }\n+}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1771069248529,
+            "name": "Commit-0",
+            "content": "import { Controller, Post, Body } from '@nestjs/common';\nimport { AuthService } from './auth.service';\n\n@Controller('auth')\nexport class AuthController {\n  constructor(private readonly authService: AuthService) {}\n\n  @Post('register') // این همان مسیری است که ۴۰۴ می‌داد\n  async register(\n    @Body('email') email: string,\n    @Body('password') pass: string,\n    @Body('name') name: string,\n  ) {\n    return this.authService.register(email, pass, name);\n  }\n}"
+        }
+    ]
+}

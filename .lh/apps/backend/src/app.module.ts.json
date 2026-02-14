@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 47,
+            "activePatchIndex": 57,
             "patches": [
                 {
                     "date": 1770728926515,
@@ -196,6 +196,46 @@
                 {
                     "date": 1770740025736,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n import { UsersModule } from './users/users.module';\n import { User } from './users/entities/user.entity';\n \n @Module({\n-  \n+\n   imports: [\n \n     ConfigModule.forRoot({\n       isGlobal: true,\n@@ -30,8 +30,9 @@\n     }),\n \n     UsersModule,\n   ],\n+  \n   controllers: [AppController],\n   providers: [AppService],\n })\n export class AppModule {}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070486506,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n import { AppController } from './app.controller';\n import { AppService } from './app.service';\n import { UsersModule } from './users/users.module';\n import { User } from './users/entities/user.entity';\n+//import { AuthModule } from './auth/auth.module';\n \n @Module({\n \n   imports: [\n@@ -29,8 +30,10 @@\n       }),\n     }),\n \n     UsersModule,\n+\n+    AuthModule,\n   ],\n   \n   controllers: [AppController],\n   providers: [AppService],\n"
+                },
+                {
+                    "date": 1771070497909,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n     }),\n \n     UsersModule,\n \n-    AuthModule,\n+   // AuthModule,\n   ],\n   \n   controllers: [AppController],\n   providers: [AppService],\n"
+                },
+                {
+                    "date": 1771089334267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n       isGlobal: true,\n     }),\n \n     TypeOrmModule.forRootAsync({\n-      imports: [ConfigModule],\n+      imports: [ConfigModuleو ],\n       inject: [ConfigService],\n       useFactory: (configService: ConfigService) => ({\n         type: 'postgres',\n         host: configService.get<string>('DB_HOST'),\n"
+                },
+                {
+                    "date": 1771089341760,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n       isGlobal: true,\n     }),\n \n     TypeOrmModule.forRootAsync({\n-      imports: [ConfigModuleو ],\n+      imports: [ConfigModule,Auth],\n       inject: [ConfigService],\n       useFactory: (configService: ConfigService) => ({\n         type: 'postgres',\n         host: configService.get<string>('DB_HOST'),\n"
+                },
+                {
+                    "date": 1771089350900,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import { AppController } from './app.controller';\n import { AppService } from './app.service';\n import { UsersModule } from './users/users.module';\n import { User } from './users/entities/user.entity';\n-//import { AuthModule } from './auth/auth.module';\n+import { AuthModule } from './auth/auth.module';\n \n @Module({\n \n   imports: [\n@@ -15,9 +15,9 @@\n       isGlobal: true,\n     }),\n \n     TypeOrmModule.forRootAsync({\n-      imports: [ConfigModule,Auth],\n+      imports: [ConfigModule,AuthModule],\n       inject: [ConfigService],\n       useFactory: (configService: ConfigService) => ({\n         type: 'postgres',\n         host: configService.get<string>('DB_HOST'),\n"
+                },
+                {
+                    "date": 1771089386004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n     }),\n \n     TypeOrmModule.forRootAsync({\n       imports: [ConfigModule,AuthModule],\n+      \n       inject: [ConfigService],\n       useFactory: (configService: ConfigService) => ({\n         type: 'postgres',\n         host: configService.get<string>('DB_HOST'),\n"
+                },
+                {
+                    "date": 1771089394547,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,10 +15,10 @@\n       isGlobal: true,\n     }),\n \n     TypeOrmModule.forRootAsync({\n-      imports: [ConfigModule,AuthModule],\n-      \n+      imports: [ConfigModul],\n+\n       inject: [ConfigService],\n       useFactory: (configService: ConfigService) => ({\n         type: 'postgres',\n         host: configService.get<string>('DB_HOST'),\n"
+                },
+                {
+                    "date": 1771089402715,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,11 +14,11 @@\n     ConfigModule.forRoot({\n       isGlobal: true,\n     }),\n \n-    TypeOrmModule.forRootAsync({\n-      imports: [ConfigModul],\n-\n+    TypeOrmModule.forRootAsync({\\\n+      imports: [ConfigModule],\n+      \n       inject: [ConfigService],\n       useFactory: (configService: ConfigService) => ({\n         type: 'postgres',\n         host: configService.get<string>('DB_HOST'),\n"
+                },
+                {
+                    "date": 1771089419740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,10 @@\n     ConfigModule.forRoot({\n       isGlobal: true,\n     }),\n \n-    TypeOrmModule.forRootAsync({\\\n+    TypeOrmModule.forRootAsync({\n+\n       imports: [ConfigModule],\n       \n       inject: [ConfigService],\n       useFactory: (configService: ConfigService) => ({\n@@ -32,9 +33,9 @@\n     }),\n \n     UsersModule,\n \n-   // AuthModule,\n+   // \\AuthModule,\n   ],\n   \n   controllers: [AppController],\n   providers: [AppService],\n"
+                },
+                {
+                    "date": 1771089424979,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,10 +32,9 @@\n       }),\n     }),\n \n     UsersModule,\n-\n-   // \\AuthModule,\n+    AuthModule,\n   ],\n   \n   controllers: [AppController],\n   providers: [AppService],\n"
                 }
             ],
             "date": 1770728926515,

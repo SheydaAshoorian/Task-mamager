@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 43,
+            "activePatchIndex": 118,
             "patches": [
                 {
                     "date": 1771053421473,
@@ -180,6 +180,306 @@
                 {
                     "date": 1771054114696,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,20 @@\n+import { Module } from '@nestjs/common';\n+import { AuthService } from './auth.service';\n+import { AuthController } from './auth.controller';\n+import { UsersModule } from '../users/users.module';\n+import { JwtModule } from '@nestjs/jwt';\n+\n+@Module({\n+  imports : [\n+    UsersModule,\n+    JwtModule.register({\n+     global: true,\n+      secret: 'SECRET_KEY',\n+      signOptions: { expiresIn: '1h' },\n+    }),\n+  ],\n+\n+  providers: [AuthService],\n+  controllers: [AuthController]\n+})\n+export class AuthModule {}\n"
+                },
+                {
+                    "date": 1771070281634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,38 +0,0 @@\n-import { Module } from '@nestjs/common';\n-import { AuthService } from './auth.service';\n-import { AuthController } from './auth.controller';\n-import { UsersModule } from '../users/users.module';\n-import { JwtModule } from '@nestjs/jwt';\n-\n-@Module({\n-  imports : [\n-    UsersModule,\n-    JwtModule.register({\n-     global: true,\n-      secret: 'SECRET_KEY',\n-      signOptions: { expiresIn: '1h' },\n-    }),\n-  ],\n-\n-  providers: [AuthService],\n-  controllers: [AuthController]\n-})\n-export class AuthModule {}\n-import { Module } from '@nestjs/common';\n-import { AuthService } from './auth.service';\n-import { AuthController } from './auth.controller';\n-import { UsersModule } from '../users/users.module';\n-import { JwtModule } from '@nestjs/jwt';\n-@Module({\n-  imports : [\n-    UsersModule,\n-    JwtModule.register({\n-      secret: 'SECRET_KEY',\n-      signOption:{ expiresIn: '1h'},\n-    }),\n-  ],\n-\n-  providers: [AuthService],\n-  controllers: [AuthController]\n-})\n-export class AuthModule {}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771077907694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-\n+import { }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771077913906,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import { }\n\\ No newline at end of file\n+import { Auth } from \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771077936525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +0,0 @@\n-import { Auth } from \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771078288225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,1 @@\n+import { }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771078296925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import { }\n\\ No newline at end of file\n+import { Module } from \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771078303437,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import { Module } from \n\\ No newline at end of file\n+import { Module } from '@nest'\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771078315057,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import { Module } from '@nest'\n\\ No newline at end of file\n+import { Module } from '@nestjs/common';\n"
+                },
+                {
+                    "date": 1771078322611,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n import { Module } from '@nestjs/common';\n+import { Auth}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771078329574,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n import { Module } from '@nestjs/common';\n-import { Auth}\n\\ No newline at end of file\n+import { AuthCont}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771078335973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n import { Module } from '@nestjs/common';\n-import { AuthCont}\n\\ No newline at end of file\n+import { AuthController } from \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771078344696,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n import { Module } from '@nestjs/common';\n-import { AuthController } from \n\\ No newline at end of file\n+import { AuthController } from './A'\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771078350825,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n import { Module } from '@nestjs/common';\n-import { AuthController } from './A'\n\\ No newline at end of file\n+import { AuthController } from './auth/suth'\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771078358502,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n import { Module } from '@nestjs/common';\n-import { AuthController } from './auth/suth'\n\\ No newline at end of file\n+import { AuthController } from './auth/AuthController'\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771079172062,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n import { Module } from '@nestjs/common';\n-import { AuthController } from './auth/AuthController'\n\\ No newline at end of file\n+import { AuthController } from './auth.controller';\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771079180131,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,3 @@\n import { Module } from '@nestjs/common';\n+import { AuthController } from './auth/AuthController';\n import { AuthController } from './auth.controller';\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771079191108,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,2 @@\n import { Module } from '@nestjs/common';\n-import { AuthController } from './auth/AuthController';\n import { AuthController } from './auth.controller';\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771079287641,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,3 @@\n import { Module } from '@nestjs/common';\n-import { AuthController } from './auth.controller';\n\\ No newline at end of file\n+import { AuthController } from './auth.controller';\n+import \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771079451185,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n import { Module } from '@nestjs/common';\n import { AuthController } from './auth.controller';\n-import \n\\ No newline at end of file\n+import { Auth}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771079457263,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n import { Module } from '@nestjs/common';\n import { AuthController } from './auth.controller';\n-import { Auth}\n\\ No newline at end of file\n+import { AuthService}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771079463011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n import { Module } from '@nestjs/common';\n import { AuthController } from './auth.controller';\n-import { AuthService}\n\\ No newline at end of file\n+import { AuthService } from \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771079469769,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n import { Module } from '@nestjs/common';\n import { AuthController } from './auth.controller';\n-import { AuthService } from \n\\ No newline at end of file\n+import { AuthService } from './'\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771079475439,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n import { Module } from '@nestjs/common';\n import { AuthController } from './auth.controller';\n-import { AuthService } from './'\n\\ No newline at end of file\n+import { AuthService } from './auth.service'\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771079586950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,4 @@\n import { Module } from '@nestjs/common';\n import { AuthController } from './auth.controller';\n-import { AuthService } from './auth.service'\n\\ No newline at end of file\n+import { AuthService } from './auth.service';\n+\n"
+                },
+                {
+                    "date": 1771079593543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n import { Module } from '@nestjs/common';\n import { AuthController } from './auth.controller';\n import { AuthService } from './auth.service';\n-\n+import { }\n"
+                },
+                {
+                    "date": 1771079599122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n import { Module } from '@nestjs/common';\n import { AuthController } from './auth.controller';\n import { AuthService } from './auth.service';\n-import { }\n+import { TypeOrmModule } \n"
+                },
+                {
+                    "date": 1771079605801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n import { Module } from '@nestjs/common';\n import { AuthController } from './auth.controller';\n import { AuthService } from './auth.service';\n-import { TypeOrmModule } \n+import { TypeOrmModule } from '@'\n"
+                },
+                {
+                    "date": 1771079612871,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n import { Module } from '@nestjs/common';\n import { AuthController } from './auth.controller';\n import { AuthService } from './auth.service';\n-import { TypeOrmModule } from '@'\n+import { TypeOrmModule } from '@nestjs/'\n"
+                },
+                {
+                    "date": 1771079642895,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n import { Module } from '@nestjs/common';\n import { AuthController } from './auth.controller';\n import { AuthService } from './auth.service';\n-import { TypeOrmModule } from '@nestjs/'\n+import { TypeOrmModule } from '@nestjs/typeorm';\n+\n+\n"
+                },
+                {
+                    "date": 1771079654105,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,5 @@\n import { AuthController } from './auth.controller';\n import { AuthService } from './auth.service';\n import { TypeOrmModule } from '@nestjs/typeorm';\n \n-\n+@Module()\n"
+                },
+                {
+                    "date": 1771079660136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,4 +3,5 @@\n import { AuthService } from './auth.service';\n import { TypeOrmModule } from '@nestjs/typeorm';\n \n @Module()\n+export class \n"
+                },
+                {
+                    "date": 1771079675907,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,5 @@\n import { AuthService } from './auth.service';\n import { TypeOrmModule } from '@nestjs/typeorm';\n \n @Module()\n-export class \n+\n"
+                },
+                {
+                    "date": 1771079683518,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,6 +2,9 @@\n import { AuthController } from './auth.controller';\n import { AuthService } from './auth.service';\n import { TypeOrmModule } from '@nestjs/typeorm';\n \n-@Module()\n+@Module({\n \n+    'imports'\n+})\n+\n"
+                },
+                {
+                    "date": 1771079691608,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,7 @@\n import { AuthService } from './auth.service';\n import { TypeOrmModule } from '@nestjs/typeorm';\n \n @Module({\n-\n-    'imports'\n+    \n })\n \n"
+                },
+                {
+                    "date": 1771079698669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,7 @@\n import { AuthService } from './auth.service';\n import { TypeOrmModule } from '@nestjs/typeorm';\n \n @Module({\n-    \n+    import\n })\n \n"
+                },
+                {
+                    "date": 1771079779402,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,7 @@\n import { AuthService } from './auth.service';\n import { TypeOrmModule } from '@nestjs/typeorm';\n \n @Module({\n-    import\n+    imports = \n })\n \n"
+                },
+                {
+                    "date": 1771079787465,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,9 @@\n import { AuthService } from './auth.service';\n import { TypeOrmModule } from '@nestjs/typeorm';\n \n @Module({\n-    imports = \n+    imports = [\n+        \n+    ]\n })\n \n"
+                },
+                {
+                    "date": 1771079798001,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,8 @@\n import { TypeOrmModule } from '@nestjs/typeorm';\n \n @Module({\n     imports = [\n-        \n+        u\n     ]\n })\n \n"
+                },
+                {
+                    "date": 1771079804322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,8 @@\n import { TypeOrmModule } from '@nestjs/typeorm';\n \n @Module({\n     imports = [\n-        u\n+        UsersController\n     ]\n })\n \n"
+                },
+                {
+                    "date": 1771079809639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,8 @@\n import { TypeOrmModule } from '@nestjs/typeorm';\n \n @Module({\n     imports = [\n-        UsersController\n+        UsersController,\n     ]\n })\n \n"
+                },
+                {
+                    "date": 1771079822035,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,7 @@\n \n @Module({\n     imports = [\n         UsersController,\n-    ]\n+    ],\n })\n \n"
+                },
+                {
+                    "date": 1771079865708,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,4 +8,6 @@\n         UsersController,\n     ],\n })\n \n+export \n+\n"
+                },
+                {
+                    "date": 1771079916537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,6 @@\n         UsersController,\n     ],\n })\n \n-export \n+export class Auth\n \n"
+                },
+                {
+                    "date": 1771079924527,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,6 @@\n         UsersController,\n     ],\n })\n \n-export class Auth\n+export class AuthModel\n \n"
+                },
+                {
+                    "date": 1771079930085,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,6 @@\n         UsersController,\n     ],\n })\n \n-export class AuthModel\n+export class AuthModel {}\n \n"
+                },
+                {
+                    "date": 1771079949589,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import { TypeOrmModule } from '@nestjs/typeorm';\n \n @Module({\n     imports = [\n-        UsersController,\n+        ,\n     ],\n })\n \n export class AuthModel {}\n"
+                },
+                {
+                    "date": 1771079955725,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import { TypeOrmModule } from '@nestjs/typeorm';\n \n @Module({\n     imports = [\n-        ,\n+        Users,\n     ],\n })\n \n export class AuthModel {}\n"
+                },
+                {
+                    "date": 1771079967873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n import { AuthService } from './auth.service';\n import { TypeOrmModule } from '@nestjs/typeorm';\n \n @Module({\n-    imports = [\n-        Users,\n+    imports:  [\n+        UsersModule,\n     ],\n })\n \n export class AuthModel {}\n"
+                },
+                {
+                    "date": 1771079986326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,13 @@\n import { Module } from '@nestjs/common';\n import { AuthController } from './auth.controller';\n import { AuthService } from './auth.service';\n import { TypeOrmModule } from '@nestjs/typeorm';\n+import \n \n @Module({\n     imports:  [\n+\n         UsersModule,\n     ],\n })\n \n"
+                },
+                {
+                    "date": 1771079995415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n import { Module } from '@nestjs/common';\n import { AuthController } from './auth.controller';\n import { AuthService } from './auth.service';\n import { TypeOrmModule } from '@nestjs/typeorm';\n-import \n-\n+import { UsersModule }\n+ \n @Module({\n     imports:  [\n \n         UsersModule,\n"
+                },
+                {
+                    "date": 1771080002602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,9 @@\n import { Module } from '@nestjs/common';\n import { AuthController } from './auth.controller';\n import { AuthService } from './auth.service';\n import { TypeOrmModule } from '@nestjs/typeorm';\n-import { UsersModule }\n- \n+import { UsersModule } from \n @Module({\n     imports:  [\n \n         UsersModule,\n"
+                },
+                {
+                    "date": 1771080010567,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Module } from '@nestjs/common';\n import { AuthController } from './auth.controller';\n import { AuthService } from './auth.service';\n import { TypeOrmModule } from '@nestjs/typeorm';\n-import { UsersModule } from \n+import { UsersModule } from '../user'\n @Module({\n     imports:  [\n \n         UsersModule,\n"
+                },
+                {
+                    "date": 1771080017542,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Module } from '@nestjs/common';\n import { AuthController } from './auth.controller';\n import { AuthService } from './auth.service';\n import { TypeOrmModule } from '@nestjs/typeorm';\n-import { UsersModule } from '../user'\n+import { UsersModule } from '../user/user'\n @Module({\n     imports:  [\n \n         UsersModule,\n"
+                },
+                {
+                    "date": 1771080023107,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Module } from '@nestjs/common';\n import { AuthController } from './auth.controller';\n import { AuthService } from './auth.service';\n import { TypeOrmModule } from '@nestjs/typeorm';\n-import { UsersModule } from '../user/user'\n+import { UsersModule } from '../user/user.model'\n @Module({\n     imports:  [\n \n         UsersModule,\n"
+                },
+                {
+                    "date": 1771080039012,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Module } from '@nestjs/common';\n import { AuthController } from './auth.controller';\n import { AuthService } from './auth.service';\n import { TypeOrmModule } from '@nestjs/typeorm';\n-import { UsersModule } from '../user/user.model'\n+import { UsersModule } from '../user/user.module'\n @Module({\n     imports:  [\n \n         UsersModule,\n"
+                },
+                {
+                    "date": 1771080045512,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,14 @@\n+import { Module } from '@nestjs/common';\n+import { AuthController } from './auth.controller';\n+import { AuthService } from './auth.service';\n+import { TypeOrmModule } from '@nestjs/typeorm';\n+import { UsersModule } from '../user/users.module'\n+@Module({\n+    imports:  [\n+\n+        UsersModule,\n+    ],\n+})\n+\n+export class AuthModel {}\n+\n"
+                },
+                {
+                    "date": 1771080054938,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Module } from '@nestjs/common';\n import { AuthController } from './auth.controller';\n import { AuthService } from './auth.service';\n import { TypeOrmModule } from '@nestjs/typeorm';\n-import { UsersModule } from '../user/users.module'\n+import { UsersModule } from '../users/users.module'\n @Module({\n     imports:  [\n \n         UsersModule,\n@@ -11,18 +11,4 @@\n })\n \n export class AuthModel {}\n \n-import { Module } from '@nestjs/common';\n-import { AuthController } from './auth.controller';\n-import { AuthService } from './auth.service';\n-import { TypeOrmModule } from '@nestjs/typeorm';\n-import { UsersModule } from '../user/user.module'\n-@Module({\n-    imports:  [\n-\n-        UsersModule,\n-    ],\n-})\n-\n-export class AuthModel {}\n-\n"
+                },
+                {
+                    "date": 1771080061744,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n import { Module } from '@nestjs/common';\n import { AuthController } from './auth.controller';\n import { AuthService } from './auth.service';\n import { TypeOrmModule } from '@nestjs/typeorm';\n-import { UsersModule } from '../users/users.module'\n+import { UsersModule } from '../users/users.module';\n+\n @Module({\n     imports:  [\n \n         UsersModule,\n"
+                },
+                {
+                    "date": 1771080066937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,10 @@\n     imports:  [\n \n         UsersModule,\n     ],\n+\n+    \n })\n \n export class AuthModel {}\n \n"
+                },
+                {
+                    "date": 1771080078077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n         UsersModule,\n     ],\n \n-    \n+    controller\n })\n \n export class AuthModel {}\n \n"
+                },
+                {
+                    "date": 1771080085809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n         UsersModule,\n     ],\n \n-    controller\n+    controllers\n })\n \n export class AuthModel {}\n \n"
+                },
+                {
+                    "date": 1771080091730,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n         UsersModule,\n     ],\n \n-    controllers\n+    controllers: [AuthController]\n })\n \n export class AuthModel {}\n \n"
+                },
+                {
+                    "date": 1771080097315,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,10 @@\n \n         UsersModule,\n     ],\n \n-    controllers: [AuthController]\n+    controllers: [AuthController],\n+    pr\n })\n \n export class AuthModel {}\n \n"
+                },
+                {
+                    "date": 1771080103865,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n         UsersModule,\n     ],\n \n     controllers: [AuthController],\n-    pr\n+    providers: [ ]\n })\n \n export class AuthModel {}\n \n"
+                },
+                {
+                    "date": 1771080110609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n         UsersModule,\n     ],\n \n     controllers: [AuthController],\n-    providers: [ ]\n+    providers: [ AuthService]\n })\n \n export class AuthModel {}\n \n"
+                },
+                {
+                    "date": 1771080116471,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,10 +9,10 @@\n \n         UsersModule,\n     ],\n \n-    controllers: [AuthController],\n-    providers: [ AuthService]\n+    controllers: [ AuthController ],\n+    providers: [ AuthService ]\n })\n \n export class AuthModel {}\n \n"
+                },
+                {
+                    "date": 1771080139841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,11 @@\n         UsersModule,\n     ],\n \n     controllers: [ AuthController ],\n-    providers: [ AuthService ]\n+    providers: [ AuthService ],\n+\n+    \n })\n \n export class AuthModel {}\n \n"
+                },
+                {
+                    "date": 1771080149424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \n     controllers: [ AuthController ],\n     providers: [ AuthService ],\n \n-    \n+    export:\n })\n \n export class AuthModel {}\n \n"
+                },
+                {
+                    "date": 1771080160423,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \n     controllers: [ AuthController ],\n     providers: [ AuthService ],\n \n-    export:\n+    export: []\n })\n \n export class AuthModel {}\n \n"
+                },
+                {
+                    "date": 1771080167084,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \n     controllers: [ AuthController ],\n     providers: [ AuthService ],\n \n-    export: []\n+    exports: []\n })\n \n export class AuthModel {}\n \n"
+                },
+                {
+                    "date": 1771080174649,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,10 +11,9 @@\n     ],\n \n     controllers: [ AuthController ],\n     providers: [ AuthService ],\n-\n-    exports: []\n+    exports: [ ]\n })\n \n export class AuthModel {}\n \n"
+                },
+                {
+                    "date": 1771080257483,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     ],\n \n     controllers: [ AuthController ],\n     providers: [ AuthService ],\n-    exports: [ ]\n+    exports: [ Auth]\n })\n \n export class AuthModel {}\n \n"
+                },
+                {
+                    "date": 1771080263148,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     ],\n \n     controllers: [ AuthController ],\n     providers: [ AuthService ],\n-    exports: [ Auth]\n+    exports: [ AuthModel],\n })\n \n export class AuthModel {}\n \n"
+                },
+                {
+                    "date": 1771089899802,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,6 +14,6 @@\n     providers: [ AuthService ],\n     exports: [ AuthModel],\n })\n \n-export class AuthModel {}\n+export class AppModule {}\n \n"
+                },
+                {
+                    "date": 1771089942664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     ],\n \n     controllers: [ AuthController ],\n     providers: [ AuthService ],\n-    exports: [ AuthModel],\n+    exports: [ AppModule],\n })\n \n-export class AppModule {}\n+export class AuthModule {}\n \n"
                 }
             ],
             "date": 1771053421473,

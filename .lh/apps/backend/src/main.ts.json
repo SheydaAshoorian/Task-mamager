@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 46,
+            "activePatchIndex": 56,
             "patches": [
                 {
                     "date": 1770826140613,
@@ -192,6 +192,46 @@
                 {
                     "date": 1771052796432,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n async function bootstrap() {\n \n   const app = await NestFactory.create(AppModule);\n \n-  app.enableCors()app.enableCors(); // 👈 اجازه می‌دهد فرانت‌اِند به بک‌اِند وصل شود\n+  app.enableCors() // 👈 اجازه می‌دهد فرانت‌اِند به بک‌اِند وصل شود\n   \n   const config= new DocumentBuilder() // تنظیمات swagger\n   .setTitle('ERP TaskFlow API')\n   .setDescription('مستندات API سیستم مدیریت منابع سازمانی')\n"
+                },
+                {
+                    "date": 1771065106555,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,8 @@\n async function bootstrap() {\n \n   const app = await NestFactory.create(AppModule);\n \n-  app.enableCors() // 👈 اجازه می‌دهد فرانت‌اِند به بک‌اِند وصل شود\n   \n   const config= new DocumentBuilder() // تنظیمات swagger\n   .setTitle('ERP TaskFlow API')\n   .setDescription('مستندات API سیستم مدیریت منابع سازمانی')\n"
+                },
+                {
+                    "date": 1771065119825,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,10 @@\n   .build();\n \n   const document = SwaggerModule.createDocument(app, config);\n   SwaggerModule.setup('api', app, document); // 'api' همان آدرسی است که در مرورگر میزنی\n+ \n+ \n   await app.listen(process.env.PORT ?? 3000);\n \n }\n \n"
+                },
+                {
+                    "date": 1771065126678,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,10 @@\n \n   const document = SwaggerModule.createDocument(app, config);\n   SwaggerModule.setup('api', app, document); // 'api' همان آدرسی است که در مرورگر میزنی\n  \n- \n+  app.enableCors() // 👈 اجازه می‌دهد فرانت‌اِند به بک‌اِند وصل شود\n+\n   await app.listen(process.env.PORT ?? 3000);\n \n }\n \n"
+                },
+                {
+                    "date": 1771065345744,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,10 +16,13 @@\n \n   const document = SwaggerModule.createDocument(app, config);\n   SwaggerModule.setup('api', app, document); // 'api' همان آدرسی است که در مرورگر میزنی\n  \n-  app.enableCors() // 👈 اجازه می‌دهد فرانت‌اِند به بک‌اِند وصل شود\n-\n+app.enableCors({\n+    origin: 'http://localhost:3001', // آدرس فرانت‌اِند شما\n+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',\n+    credentials: true,\n+  });\n   await app.listen(process.env.PORT ?? 3000);\n \n }\n \n"
+                },
+                {
+                    "date": 1771087811268,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,15 @@\n \n   const app = await NestFactory.create(AppModule);\n \n   \n+  app.useGlobalPipes(new ValidationPipe({\n+  whitelist: true, // حذف فیلدهای اضافی که در DTO نیستند\n+  forbidNonWhitelisted: true, // ارور در صورت فرستادن فیلد اضافی\n+  transform: true, // تبدیل خودکار انواع داده‌ها\n+}));\n+\n+\n   const config= new DocumentBuilder() // تنظیمات swagger\n   .setTitle('ERP TaskFlow API')\n   .setDescription('مستندات API سیستم مدیریت منابع سازمانی')\n   .setVersion('1.0')\n"
+                },
+                {
+                    "date": 1771087876651,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,11 +7,11 @@\n   const app = await NestFactory.create(AppModule);\n \n   \n   app.useGlobalPipes(new ValidationPipe({\n-  whitelist: true, // حذف فیلدهای اضافی که در DTO نیستند\n-  forbidNonWhitelisted: true, // ارور در صورت فرستادن فیلد اضافی\n-  transform: true, // تبدیل خودکار انواع داده‌ها\n+    whitelist: true, // حذف فیلدهای اضافی که در DTO نیستند\n+    forbidNonWhitelisted: true, // ارور در صورت فرستادن فیلد اضافی\n+    transform: true, // تبدیل خودکار انواع داده‌ها\n }));\n \n \n   const config= new DocumentBuilder() // تنظیمات swagger\n"
+                },
+                {
+                    "date": 1771087888696,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n   app.useGlobalPipes(new ValidationPipe({\n     whitelist: true, // حذف فیلدهای اضافی که در DTO نیستند\n     forbidNonWhitelisted: true, // ارور در صورت فرستادن فیلد اضافی\n     transform: true, // تبدیل خودکار انواع داده‌ها\n-}));\n+  }));  \n \n \n   const config= new DocumentBuilder() // تنظیمات swagger\n   .setTitle('ERP TaskFlow API')\n"
+                },
+                {
+                    "date": 1771087928887,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,14 +23,14 @@\n \n   const document = SwaggerModule.createDocument(app, config);\n   SwaggerModule.setup('api', app, document); // 'api' همان آدرسی است که در مرورگر میزنی\n  \n-app.enableCors({\n-    origin: 'http://localhost:3001', // آدرس فرانت‌اِند شما\n-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',\n-    credentials: true,\n-  });\n-  await app.listen(process.env.PORT ?? 3000);\n+  app.enableCors({\n+      origin: 'http://localhost:3001', // آدرس فرانت‌اِند شما\n+      methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',\n+      credentials: true,\n+    });\n+    await app.listen(process.env.PORT ?? 3000);\n \n-}\n+  }\n \n bootstrap();\n"
+                },
+                {
+                    "date": 1771087987401,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,10 @@\n async function bootstrap() {\n \n   const app = await NestFactory.create(AppModule);\n \n-  //\n+  //فعال‌سازی ValidationPipe در main.ts\n+برای اینکه کدهای وضعیت (Status Codes) و خطاهای DTO هم استاندارد برگردند،\n   app.useGlobalPipes(new ValidationPipe({\n     whitelist: true, // حذف فیلدهای اضافی که در DTO نیستند\n     forbidNonWhitelisted: true, // ارور در صورت فرستادن فیلد اضافی\n     transform: true, // تبدیل خودکار انواع داده‌ها\n"
+                },
+                {
+                    "date": 1771088142252,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,38 @@\n+import { NestFactory } from '@nestjs/core';\n+import { AppModule } from './app.module';\n+import { SwaggerModule, DocumentBuilder} from '@nestjs/swagger';\n+impor\n+\n+async function bootstrap() {\n+\n+  const app = await NestFactory.create(AppModule);\n+\n+  // فعال‌سازی ValidationPipe  برای اینکه کدهای وضعیت (Status Codes) و خطاهای DTO هم استاندارد برگردند،\n+  app.useGlobalPipes(new ValidationPipe({\n+    whitelist: true, // حذف فیلدهای اضافی که در DTO نیستند\n+    forbidNonWhitelisted: true, // ارور در صورت فرستادن فیلد اضافی\n+    transform: true, // تبدیل خودکار انواع داده‌ها\n+  }));  \n+\n+\n+  // تنظیمات swagger\n+  const config= new DocumentBuilder() \n+  .setTitle('ERP TaskFlow API')\n+  .setDescription('مستندات API سیستم مدیریت منابع سازمانی')\n+  .setVersion('1.0')\n+  .addTag('users')\n+  .build();\n+\n+  const document = SwaggerModule.createDocument(app, config);\n+  SwaggerModule.setup('api', app, document); // 'api' همان آدرسی است که در مرورگر میزنی\n+ \n+  app.enableCors({\n+      origin: 'http://localhost:3001', // آدرس فرانت‌اِند شما\n+      methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',\n+      credentials: true,\n+    });\n+    await app.listen(process.env.PORT ?? 3000);\n+\n+  }\n+\n+bootstrap();\n"
                 }
             ],
             "date": 1770826140613,

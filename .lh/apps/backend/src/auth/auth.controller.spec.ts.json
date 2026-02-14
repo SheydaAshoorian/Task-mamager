@@ -1,0 +1,30 @@
+{
+    "sourceFile": "apps/backend/src/auth/auth.controller.spec.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1771065521066,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1771065534970,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,6 +15,19 @@\n   it('should be defined', () => {\n     expect(controller).toBeDefined();\n   });\n \n-  \n+@Controller('auth') // این یعنی شروع همه آدرس‌ها با /auth است\n+export class AuthController {\n+  constructor(private authService: AuthService) {}\n+\n+  @Post('register') // 👈 حتماً باید @Post باشد، نه @Get\n+  async register(@Body() createUserDto: any) {\n+    return this.authService.register(createUserDto);\n+  }\n+\n+  @Post('login') // 👈 این هم برای ورود\n+  async login(@Body() loginDto: any) {\n+    return this.authService.login(loginDto);\n+  }\n+}\n });\n"
+                },
+                {
+                    "date": 1771065592438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,22 +1,7 @@\n import { Test, TestingModule } from '@nestjs/testing';\n import { AuthController } from './auth.controller';\n \n-describe('AuthController', () => {\n-  let controller: AuthController;\n-\n-  beforeEach(async () => {\n-    const module: TestingModule = await Test.createTestingModule({\n-      controllers: [AuthController],\n-    }).compile();\n-\n-    controller = module.get<AuthController>(AuthController);\n-  });\n-\n-  it('should be defined', () => {\n-    expect(controller).toBeDefined();\n-  });\n-\n @Controller('auth') // این یعنی شروع همه آدرس‌ها با /auth است\n export class AuthController {\n   constructor(private authService: AuthService) {}\n \n"
+                },
+                {
+                    "date": 1771065599217,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,18 @@\n+import { Test, TestingModule } from '@nestjs/testing';\n+import { AuthController } from './auth.controller';\n+\n+@Controller('auth') // این یعنی شروع همه آدرس‌ها با /auth است\n+export class AuthController {\n+  constructor(private authService: AuthService) {}\n+\n+  @Post('register') // 👈 حتماً باید @Post باشد، نه @Get\n+  async register(@Body() createUserDto: any) {\n+    return this.authService.register(createUserDto);\n+  }\n+\n+  @Post('login') // 👈 این هم برای ورود\n+  async login(@Body() loginDto: any) {\n+    return this.authService.login(loginDto);\n+  }\n+}\n+\n"
+                }
+            ],
+            "date": 1771065521066,
+            "name": "Commit-0",
+            "content": "import { Test, TestingModule } from '@nestjs/testing';\nimport { AuthController } from './auth.controller';\n\ndescribe('AuthController', () => {\n  let controller: AuthController;\n\n  beforeEach(async () => {\n    const module: TestingModule = await Test.createTestingModule({\n      controllers: [AuthController],\n    }).compile();\n\n    controller = module.get<AuthController>(AuthController);\n  });\n\n  it('should be defined', () => {\n    expect(controller).toBeDefined();\n  });\n\n  \n});\n"
+        }
+    ]
+}

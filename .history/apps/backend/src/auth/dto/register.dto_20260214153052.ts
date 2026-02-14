@@ -1,0 +1,1 @@
+import { IsNotEmpty, IsEmail, IsString, } from 'class-validation'

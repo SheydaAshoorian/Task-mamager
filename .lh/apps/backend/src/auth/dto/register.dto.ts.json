@@ -1,0 +1,378 @@
+{
+    "sourceFile": "apps/backend/src/auth/dto/register.dto.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 90,
+            "patches": [
+                {
+                    "date": 1771070378695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1771070387069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import \n\\ No newline at end of file\n+import { IsEmpty}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070396194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import { IsEmpty}\n\\ No newline at end of file\n+import { IsNotEmpty}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070402974,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import { IsNotEmpty}\n\\ No newline at end of file\n+import { IsNotEmpty} from ''\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070414675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import { IsNotEmpty} from ''\n\\ No newline at end of file\n+import { IsNotEmpty} from 'class-validation'\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070436764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import { IsNotEmpty} from 'class-validation'\n\\ No newline at end of file\n+import { IsNotEmpty, Is} from 'class-validation'\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070447118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import { IsNotEmpty, Is} from 'class-validation'\n\\ No newline at end of file\n+import { IsNotEmpty, IsEmail, } from 'class-validation'\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070452174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import { IsNotEmpty, IsEmail, } from 'class-validation'\n\\ No newline at end of file\n+import { IsNotEmpty, IsEmail, IsString, } from 'class-validation'\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070458416,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import { IsNotEmpty, IsEmail, IsString, } from 'class-validation'\n\\ No newline at end of file\n+import { IsNotEmpty, IsEmail, IsString, Min} from 'class-validation'\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070463874,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import { IsNotEmpty, IsEmail, IsString, Min} from 'class-validation'\n\\ No newline at end of file\n+import { IsNotEmpty, IsEmail, IsString, MinLengh} from 'class-validation'\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070470110,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import { IsNotEmpty, IsEmail, IsString, MinLengh} from 'class-validation'\n\\ No newline at end of file\n+import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validation'\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070518002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validation'\n\\ No newline at end of file\n+import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validation';\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070528488,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validation';\n\\ No newline at end of file\n+import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validatior';\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070544714,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validatior';\n\\ No newline at end of file\n+import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070550613,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n\\ No newline at end of file\n+import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validatior';\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070563230,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validatior';\n\\ No newline at end of file\n+import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';'class-validator'\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070572896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';'class-validator'\n\\ No newline at end of file\n+import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070706151,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n-import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n\\ No newline at end of file\n+import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n+\n"
+                },
+                {
+                    "date": 1771070729597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,3 @@\n import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n \n+export \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070738518,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n \n-export \n\\ No newline at end of file\n+export class Register\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070754212,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,7 @@\n import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n \n-export class Register\n\\ No newline at end of file\n+export class RegisterDto{\n+\n+    \n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070763073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n \n export class RegisterDto{\n \n-    \n+    name: \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070769750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n \n export class RegisterDto{\n \n-    name: \n+    name: string,\n \n+    fs\n+\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070776205,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,7 @@\n export class RegisterDto{\n \n     name: string,\n \n-    fs\n+    family: string\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070783446,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,9 @@\n export class RegisterDto{\n \n     name: string,\n \n-    family: string\n+    family: string,\n \n+    email: string \n+\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070788769,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,9 @@\n     name: string,\n \n     family: string,\n \n-    email: string \n+    email: string ,\n \n+    password\n+\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070794830,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,7 @@\n     family: string,\n \n     email: string ,\n \n-    password\n+    password: string,\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070806031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n \n export class RegisterDto{\n \n+    \n     name: string,\n \n     family: string,\n \n"
+                },
+                {
+                    "date": 1771070812327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n \n export class RegisterDto{\n \n-    \n+    @IsNotEmpty\n     name: string,\n \n     family: string,\n \n"
+                },
+                {
+                    "date": 1771070818413,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n \n     @IsNotEmpty\n     name: string,\n \n+    @\n     family: string,\n \n     email: string ,\n \n"
+                },
+                {
+                    "date": 1771070823638,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n     @IsNotEmpty\n     name: string,\n \n-    @\n+    @IsNotEmpty\n     family: string,\n \n     email: string ,\n \n"
+                },
+                {
+                    "date": 1771070828764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n \n     @IsNotEmpty\n     family: string,\n \n+    @\n     email: string ,\n \n     password: string,\n \n"
+                },
+                {
+                    "date": 1771070839381,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n     @IsNotEmpty\n     family: string,\n \n-    @\n+    @IsNotEmpty()\n     email: string ,\n \n     password: string,\n \n"
+                },
+                {
+                    "date": 1771070848222,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,17 @@\n import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n \n export class RegisterDto{\n \n-    @IsNotEmpty\n+    @IsNotEmpty()\n     name: string,\n \n-    @IsNotEmpty\n+    @IsNotEmpty()\n     family: string,\n \n     @IsNotEmpty()\n     email: string ,\n \n+    \n     password: string,\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070853272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,8 @@\n \n     @IsNotEmpty()\n     email: string ,\n \n-    \n+    IsNotEmpty()\n     password: string,\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070869211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     @IsNotEmpty()\n     family: string,\n \n     @IsNotEmpty()\n-    email: string ,\n+    email: string,\n \n     IsNotEmpty()\n     password: string,\n \n"
+                },
+                {
+                    "date": 1771070889985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n \n export class RegisterDto{\n \n-    @IsNotEmpty()\n+    @IsNotEmpty({ })\n     name: string,\n \n     @IsNotEmpty()\n     family: string,\n"
+                },
+                {
+                    "date": 1771070895019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n \n export class RegisterDto{\n \n-    @IsNotEmpty({ })\n+    @IsNotEmpty({ message: })\n     name: string,\n \n     @IsNotEmpty()\n     family: string,\n"
+                },
+                {
+                    "date": 1771070905889,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n \n export class RegisterDto{\n \n-    @IsNotEmpty({ message: })\n+    @IsNotEmpty({ message: 'نام'})\n     name: string,\n \n     @IsNotEmpty()\n     family: string,\n"
+                },
+                {
+                    "date": 1771070913214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n \n export class RegisterDto{\n \n-    @IsNotEmpty({ message: 'نام'})\n+    @IsNotEmpty({ message: 'نام الزامی است'})\n     name: string,\n \n     @IsNotEmpty()\n     family: string,\n"
+                },
+                {
+                    "date": 1771070924377,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n     @IsNotEmpty({ message: 'نام الزامی است'})\n     name: string,\n \n-    @IsNotEmpty()\n+    @IsNotEmpty(} )\n     family: string,\n \n     @IsNotEmpty()\n     email: string,\n"
+                },
+                {
+                    "date": 1771070932250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n     @IsNotEmpty({ message: 'نام الزامی است'})\n     name: string,\n \n-    @IsNotEmpty(} )\n+    @IsNotEmpty()\n     family: string,\n \n     @IsNotEmpty()\n     email: string,\n"
+                },
+                {
+                    "date": 1771070943612,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n     @IsNotEmpty({ message: 'نام الزامی است'})\n     name: string,\n \n-    @IsNotEmpty()\n+    @IsNotEmpty({})\n     family: string,\n \n     @IsNotEmpty()\n     email: string,\n"
+                },
+                {
+                    "date": 1771070949570,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n     @IsNotEmpty({ message: 'نام الزامی است'})\n     name: string,\n \n-    @IsNotEmpty({})\n+    @IsNotEmpty({ message: ''})\n     family: string,\n \n     @IsNotEmpty()\n     email: string,\n"
+                },
+                {
+                    "date": 1771070958515,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n     @IsNotEmpty({ message: 'نام الزامی است'})\n     name: string,\n \n-    @IsNotEmpty({ message: ''})\n+    @IsNotEmpty({ message: 'نام خانوادگی'})\n     family: string,\n \n     @IsNotEmpty()\n     email: string,\n"
+                },
+                {
+                    "date": 1771070964154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n     @IsNotEmpty({ message: 'نام الزامی است'})\n     name: string,\n \n-    @IsNotEmpty({ message: 'نام خانوادگی'})\n+    @IsNotEmpty({ message: 'نام خانوادگی الزامی است'})\n     family: string,\n \n     @IsNotEmpty()\n     email: string,\n"
+                },
+                {
+                    "date": 1771070971985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n     @IsNotEmpty({ message: 'نام خانوادگی الزامی است'})\n     family: string,\n \n-    @IsNotEmpty()\n+    @IsNotEmpty({ })\n     email: string,\n \n     IsNotEmpty()\n     password: string,\n"
+                },
+                {
+                    "date": 1771070977972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,17 @@\n+import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n+\n+export class RegisterDto{\n+\n+    @IsNotEmpty({ message: 'نام الزامی است'})\n+    name: string,\n+\n+    @IsNotEmpty({ message: 'نام خانوادگی الزامی است'})\n+    family: string,\n+\n+    @IsNotEmpty({ message})\n+    email: string,\n+\n+    IsNotEmpty()\n+    password: string,\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070985725,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,28 +7,11 @@\n \n     @IsNotEmpty({ message: 'نام خانوادگی الزامی است'})\n     family: string,\n \n-    @IsNotEmpty({ message})\n+    @IsNotEmpty({ message: 'اینیل'})\n     email: string,\n \n     IsNotEmpty()\n     password: string,\n \n-}\n-import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n-\n-export class RegisterDto{\n-\n-    @IsNotEmpty({ message: 'نام الزامی است'})\n-    name: string,\n-\n-    @IsNotEmpty({ message: 'نام خانوادگی الزامی است'})\n-    family: string,\n-\n-    @IsNotEmpty({ })\n-    email: string,\n-\n-    IsNotEmpty()\n-    password: string,\n-\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771070993202,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n     @IsNotEmpty({ message: 'نام خانوادگی الزامی است'})\n     family: string,\n \n-    @IsNotEmpty({ message: 'اینیل'})\n+    @IsNotEmpty({ message: 'ایمیل الزامی است'})\n     email: string,\n \n     IsNotEmpty()\n     password: string,\n"
+                },
+                {
+                    "date": 1771071006774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,8 @@\n \n     @IsNotEmpty({ message: 'ایمیل الزامی است'})\n     email: string,\n \n-    IsNotEmpty()\n+    IsNotEmpty({ message: ''})\n     password: string,\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771071012160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,8 @@\n \n     @IsNotEmpty({ message: 'ایمیل الزامی است'})\n     email: string,\n \n-    IsNotEmpty({ message: ''})\n+    IsNotEmpty({ message: 'پشوورد'})\n     password: string,\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771071022873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,8 @@\n \n     @IsNotEmpty({ message: 'ایمیل الزامی است'})\n     email: string,\n \n-    IsNotEmpty({ message: 'پشوورد'})\n+    IsNotEmpty({ message: 'پسوورد الزامی است'})\n     password: string,\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771071032873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n \n export class RegisterDto{\n \n+    \n     @IsNotEmpty({ message: 'نام الزامی است'})\n     name: string,\n \n     @IsNotEmpty({ message: 'نام خانوادگی الزامی است'})\n"
+                },
+                {
+                    "date": 1771071045457,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n \n export class RegisterDto{\n \n-    \n+    ٬\n     @IsNotEmpty({ message: 'نام الزامی است'})\n     name: string,\n \n     @IsNotEmpty({ message: 'نام خانوادگی الزامی است'})\n"
+                },
+                {
+                    "date": 1771071052284,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n \n export class RegisterDto{\n \n-    ٬\n+    @Is\n     @IsNotEmpty({ message: 'نام الزامی است'})\n     name: string,\n \n     @IsNotEmpty({ message: 'نام خانوادگی الزامی است'})\n"
+                },
+                {
+                    "date": 1771071058796,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,13 @@\n import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n \n export class RegisterDto{\n \n-    @Is\n+    @IsNotEmpty()\n     @IsNotEmpty({ message: 'نام الزامی است'})\n     name: string,\n \n+    \n     @IsNotEmpty({ message: 'نام خانوادگی الزامی است'})\n     family: string,\n \n     @IsNotEmpty({ message: 'ایمیل الزامی است'})\n"
+                },
+                {
+                    "date": 1771071064452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     @IsNotEmpty()\n     @IsNotEmpty({ message: 'نام الزامی است'})\n     name: string,\n \n-    \n+    @IsString\n     @IsNotEmpty({ message: 'نام خانوادگی الزامی است'})\n     family: string,\n \n     @IsNotEmpty({ message: 'ایمیل الزامی است'})\n"
+                },
+                {
+                    "date": 1771071069533,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,12 +5,13 @@\n     @IsNotEmpty()\n     @IsNotEmpty({ message: 'نام الزامی است'})\n     name: string,\n \n-    @IsString\n+    @IsString()\n     @IsNotEmpty({ message: 'نام خانوادگی الزامی است'})\n     family: string,\n \n+    @\n     @IsNotEmpty({ message: 'ایمیل الزامی است'})\n     email: string,\n \n     IsNotEmpty({ message: 'پسوورد الزامی است'})\n"
+                },
+                {
+                    "date": 1771071076819,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,21 @@\n+import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n+\n+export class RegisterDto{\n+\n+    @IsNotEmpty()\n+    @IsNotEmpty({ message: 'نام الزامی است'})\n+    name: string,\n+\n+    @IsString()\n+    @IsNotEmpty({ message: 'نام خانوادگی الزامی است'})\n+    family: string,\n+\n+    @IsString()\n+    @IsNotEmpty({ message: 'ایمیل الزامی است'})\n+    email: string,\n+\n+    \n+    IsNotEmpty({ message: 'پسوورد الزامی است'})\n+    password: string,\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771071084022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,28 +14,8 @@\n     @IsNotEmpty({ message: 'ایمیل الزامی است'})\n     email: string,\n \n     \n-    IsNotEmpty({ message: 'پسوورد الزامی است'})\n+    @IsNotEmpty({ message: 'پسوورد الزامی است'})\n     password: string,\n \n-}\n-import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n-\n-export class RegisterDto{\n-\n-    @IsNotEmpty()\n-    @IsNotEmpty({ message: 'نام الزامی است'})\n-    name: string,\n-\n-    @IsString()\n-    @IsNotEmpty({ message: 'نام خانوادگی الزامی است'})\n-    family: string,\n-\n-    @\n-    @IsNotEmpty({ message: 'ایمیل الزامی است'})\n-    email: string,\n-\n-    IsNotEmpty({ message: 'پسوورد الزامی است'})\n-    password: string,\n-\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771071090918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     @IsString()\n     @IsNotEmpty({ message: 'ایمیل الزامی است'})\n     email: string,\n \n-    \n+    @IsString\n     @IsNotEmpty({ message: 'پسوورد الزامی است'})\n     password: string,\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771071119159,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,10 @@\n     @IsString()\n     @IsNotEmpty({ message: 'ایمیل الزامی است'})\n     email: string,\n \n-    @IsString\n+    @IsString()\n     @IsNotEmpty({ message: 'پسوورد الزامی است'})\n+    \n     password: string,\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771071124633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,8 @@\n     email: string,\n \n     @IsString()\n     @IsNotEmpty({ message: 'پسوورد الزامی است'})\n-    \n+    @MinLength\n     password: string,\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771071131332,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,8 @@\n     email: string,\n \n     @IsString()\n     @IsNotEmpty({ message: 'پسوورد الزامی است'})\n-    @MinLength\n+    @MinLength({ }})\n     password: string,\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771071137721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,8 @@\n     email: string,\n \n     @IsString()\n     @IsNotEmpty({ message: 'پسوورد الزامی است'})\n-    @MinLength({ }})\n+    @MinLength({ , 'm'}})\n     password: string,\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771071158705,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,7 @@\n     email: string,\n \n     @IsString()\n     @IsNotEmpty({ message: 'پسوورد الزامی است'})\n-    @MinLength({ , 'm'}})\n-    password: string,\n+@MinLength(8, { message: 'رمز عبور باید حداقل ۸ کاراکتر باشد' })    password: string,\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771071163807,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,7 +15,8 @@\n     email: string,\n \n     @IsString()\n     @IsNotEmpty({ message: 'پسوورد الزامی است'})\n-@MinLength(8, { message: 'رمز عبور باید حداقل ۸ کاراکتر باشد' })    password: string,\n+    @MinLength(8, { message: 'رمز عبور باید حداقل ۸ کاراکتر باشد' })\n+    password: string,\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771071206495,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n-\n+import {[]}\n export class RegisterDto{\n \n     @IsNotEmpty()\n     @IsNotEmpty({ message: 'نام الزامی است'})\n"
+                },
+                {
+                    "date": 1771071212578,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n-import {[]}\n+import { Ap}\n export class RegisterDto{\n \n     @IsNotEmpty()\n     @IsNotEmpty({ message: 'نام الزامی است'})\n"
+                },
+                {
+                    "date": 1771071219854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n-import { Ap}\n+import { ApiProperty } from \n export class RegisterDto{\n \n     @IsNotEmpty()\n     @IsNotEmpty({ message: 'نام الزامی است'})\n"
+                },
+                {
+                    "date": 1771071229291,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n-import { ApiProperty } from \n+import { ApiProperty } from '@nestjs/'\n export class RegisterDto{\n \n     @IsNotEmpty()\n     @IsNotEmpty({ message: 'نام الزامی است'})\n"
+                },
+                {
+                    "date": 1771071235871,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,22 @@\n+import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n+import { ApiProperty } from '@nestjs/swagger';\n+export class RegisterDto{\n+\n+    @IsNotEmpty()\n+    @IsNotEmpty({ message: 'نام الزامی است'})\n+    name: string,\n+\n+    @IsString()\n+    @IsNotEmpty({ message: 'نام خانوادگی الزامی است'})\n+    family: string,\n+\n+    @IsString()\n+    @IsNotEmpty({ message: 'ایمیل الزامی است'})\n+    email: string,\n+\n+    @IsString()\n+    @IsNotEmpty({ message: 'پسوورد الزامی است'})\n+    @MinLength(8, { message: 'رمز عبور باید حداقل ۸ کاراکتر باشد' })\n+    password: string,\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771071242380,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,25 @@\n+import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n+import { ApiProperty } from '@nestjs/swagger';\n+\n+\n+export class RegisterDto{\n+\n+    \n+    @IsNotEmpty()\n+    @IsNotEmpty({ message: 'نام الزامی است'})\n+    name: string,\n+\n+    @IsString()\n+    @IsNotEmpty({ message: 'نام خانوادگی الزامی است'})\n+    family: string,\n+\n+    @IsString()\n+    @IsNotEmpty({ message: 'ایمیل الزامی است'})\n+    email: string,\n+\n+    @IsString()\n+    @IsNotEmpty({ message: 'پسوورد الزامی است'})\n+    @MinLength(8, { message: 'رمز عبور باید حداقل ۸ کاراکتر باشد' })\n+    password: string,\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771071247650,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n \n export class RegisterDto{\n \n-    \n+    @ApiProperty()\n     @IsNotEmpty()\n     @IsNotEmpty({ message: 'نام الزامی است'})\n     name: string,\n \n@@ -21,49 +21,5 @@\n     @IsNotEmpty({ message: 'پسوورد الزامی است'})\n     @MinLength(8, { message: 'رمز عبور باید حداقل ۸ کاراکتر باشد' })\n     password: string,\n \n-}\n-import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n-import { ApiProperty } from '@nestjs/swagger';\n-export class RegisterDto{\n-\n-    @IsNotEmpty()\n-    @IsNotEmpty({ message: 'نام الزامی است'})\n-    name: string,\n-\n-    @IsString()\n-    @IsNotEmpty({ message: 'نام خانوادگی الزامی است'})\n-    family: string,\n-\n-    @IsString()\n-    @IsNotEmpty({ message: 'ایمیل الزامی است'})\n-    email: string,\n-\n-    @IsString()\n-    @IsNotEmpty({ message: 'پسوورد الزامی است'})\n-    @MinLength(8, { message: 'رمز عبور باید حداقل ۸ کاراکتر باشد' })\n-    password: string,\n-\n-}\n-import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n-import { ApiProperty } from '@nestjs/'\n-export class RegisterDto{\n-\n-    @IsNotEmpty()\n-    @IsNotEmpty({ message: 'نام الزامی است'})\n-    name: string,\n-\n-    @IsString()\n-    @IsNotEmpty({ message: 'نام خانوادگی الزامی است'})\n-    family: string,\n-\n-    @IsString()\n-    @IsNotEmpty({ message: 'ایمیل الزامی است'})\n-    email: string,\n-\n-    @IsString()\n-    @IsNotEmpty({ message: 'پسوورد الزامی است'})\n-    @MinLength(8, { message: 'رمز عبور باید حداقل ۸ کاراکتر باشد' })\n-    password: string,\n-\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771071310456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n \n export class RegisterDto{\n \n-    @ApiProperty()\n+    @ApiProperty({})\n     @IsNotEmpty()\n     @IsNotEmpty({ message: 'نام الزامی است'})\n     name: string,\n \n"
+                },
+                {
+                    "date": 1771071316815,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n \n export class RegisterDto{\n \n-    @ApiProperty({})\n+    @ApiProperty({ example:})\n     @IsNotEmpty()\n     @IsNotEmpty({ message: 'نام الزامی است'})\n     name: string,\n \n"
+                },
+                {
+                    "date": 1771071322727,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n \n export class RegisterDto{\n \n-    @ApiProperty({ example:})\n+    @ApiProperty({ example:xxx})\n     @IsNotEmpty()\n     @IsNotEmpty({ message: 'نام الزامی است'})\n     name: string,\n \n"
+                },
+                {
+                    "date": 1771071333769,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n \n export class RegisterDto{\n \n-    @ApiProperty({ example:xxx})\n+    @ApiProperty({ example:example})\n     @IsNotEmpty()\n     @IsNotEmpty({ message: 'نام الزامی است'})\n     name: string,\n \n"
+                },
+                {
+                    "date": 1771071340243,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n \n export class RegisterDto{\n \n-    @ApiProperty({ example:example})\n+    @ApiProperty({ example:example@gmail.com , })\n     @IsNotEmpty()\n     @IsNotEmpty({ message: 'نام الزامی است'})\n     name: string,\n \n"
+                },
+                {
+                    "date": 1771071347305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n \n export class RegisterDto{\n \n-    @ApiProperty({ example:example@gmail.com , })\n+    @ApiProperty({ example:example@gmail.com , description: ''})\n     @IsNotEmpty()\n     @IsNotEmpty({ message: 'نام الزامی است'})\n     name: string,\n \n"
+                },
+                {
+                    "date": 1771071355253,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n \n export class RegisterDto{\n \n-    @ApiProperty({ example:example@gmail.com , description: ''})\n+    @ApiProperty({ example:example@gmail.com , description: 'ایمیل منخصز به فرد'})\n     @IsNotEmpty()\n     @IsNotEmpty({ message: 'نام الزامی است'})\n     name: string,\n \n"
+                },
+                {
+                    "date": 1771071361117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n \n export class RegisterDto{\n \n-    @ApiProperty({ example:example@gmail.com , description: 'ایمیل منخصز به فرد'})\n+    @ApiProperty({ example:example@gmail.com , description: 'ایمیل منح به فرد'})\n     @IsNotEmpty()\n     @IsNotEmpty({ message: 'نام الزامی است'})\n     name: string,\n \n"
+                },
+                {
+                    "date": 1771071372132,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n \n export class RegisterDto{\n \n-    @ApiProperty({ example:example@gmail.com , description: 'ایمیل منح به فرد'})\n+    @ApiProperty({ example:گ , description: 'ایمیل منحصر به فرد'})\n     @IsNotEmpty()\n     @IsNotEmpty({ message: 'نام الزامی است'})\n     name: string,\n \n"
+                },
+                {
+                    "date": 1771071390923,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n \n export class RegisterDto{\n \n-    @ApiProperty({ example:گ , description: 'ایمیل منحصر به فرد'})\n+    @ApiProperty({ example: 'example@gmail.com' , description: 'ایمیل منحصر به فرد'})\n     @IsNotEmpty()\n     @IsNotEmpty({ message: 'نام الزامی است'})\n     name: string,\n \n"
+                },
+                {
+                    "date": 1771071405588,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,8 @@\n \n export class RegisterDto{\n \n     @ApiProperty({ example: 'example@gmail.com' , description: 'ایمیل منحصر به فرد'})\n-    @IsNotEmpty()\n     @IsNotEmpty({ message: 'نام الزامی است'})\n     name: string,\n \n     @IsString()\n"
+                },
+                {
+                    "date": 1771071411443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n \n export class RegisterDto{\n \n     @ApiProperty({ example: 'example@gmail.com' , description: 'ایمیل منحصر به فرد'})\n+    @\n     @IsNotEmpty({ message: 'نام الزامی است'})\n     name: string,\n \n     @IsString()\n"
+                },
+                {
+                    "date": 1771071416908,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n export class RegisterDto{\n \n     @ApiProperty({ example: 'example@gmail.com' , description: 'ایمیل منحصر به فرد'})\n-    @\n+    @IsString()\n     @IsNotEmpty({ message: 'نام الزامی است'})\n     name: string,\n \n     @IsString()\n"
+                },
+                {
+                    "date": 1771071437004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,10 @@\n     @IsString()\n     @IsNotEmpty({ message: 'نام الزامی است'})\n     name: string,\n \n+        @ApiProperty({ example: 'example@gmail.com' , description: 'ایمیل منحصر به فرد'})\n+\n     @IsString()\n     @IsNotEmpty({ message: 'نام خانوادگی الزامی است'})\n     family: string,\n \n"
+                },
+                {
+                    "date": 1771071452669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     @IsString()\n     @IsNotEmpty({ message: 'نام الزامی است'})\n     name: string,\n \n-    @ApiProperty({ example: 'familt' , description: 'ایمیل منحصر به فرد'})\n+    @ApiProperty({ example: 'famil' , description: 'ایمیل منحصر به فرد'})\n     @IsString()\n     @IsNotEmpty({ message: 'نام خانوادگی الزامی است'})\n     family: string,\n \n"
+                },
+                {
+                    "date": 1771071558492,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,27 @@\n+import { IsNotEmpty, IsEmail, IsString, MinLength} from 'class-validator';\n+import { ApiProperty } from '@nestjs/swagger';\n+\n+\n+export class RegisterDto{\n+\n+    @ApiProperty({ example: 'example@gmail.com' , description: 'ایمیل منحصر به فرد'})\n+    @IsString()\n+    @IsNotEmpty({ message: 'نام الزامی است'})\n+    name: string;\n+\n+    @ApiProperty({ example: 'family' , description: 'ایمیل منحصر به فرد'})\n+    @IsString()\n+    @IsNotEmpty({ message: 'نام خانوادگی الزامی است'})\n+    family: string;\n+\n+    @IsString()\n+    @IsNotEmpty({ message: 'ایمیل الزامی است'})\n+    email: string;\n+\n+    @ApiProperty({ example: 'password123', description: 'رمز عبور حداقل ۸ کاراکتر' })\n+    @IsString()\n+    @IsNotEmpty({ message: 'پسوورد الزامی است'})\n+    @MinLength(8, { message: 'رمز عبور باید حداقل ۸ کاراکتر باشد' })\n+    password: string,\n+\n+}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1771070378695,
+            "name": "Commit-0",
+            "content": "import "
+        }
+    ]
+}

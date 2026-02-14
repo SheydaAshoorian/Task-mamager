@@ -3,11 +3,19 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1771052902055,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1771075532445,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,29 @@\n+import { Injectable, BadRequestException } from '@nestjs/common';\n+import { UsersService } from '../users/users.service';\n+import { RegisterDto } from './dto/register.dto';\n+import * as bcrypt from 'bcrypt';\n+\n+@Injectable()\n+export class AuthService {\n+  constructor(private readonly usersService: UsersService) {}\n+\n+  async register(dto: RegisterDto) {\n+    // ۱. بررسی تکراری نبودن ایمیل (Security Check)\n+    const userExists = await this.usersService.findByEmail(dto.email);\n+    if (userExists) {\n+      throw new BadRequestException('این ایمیل قبلاً در سیستم ثبت شده است');\n+    }\n+\n+    // ۲. هش کردن پسورد (Password Security)\n+    const salt = await bcrypt.genSalt(10);\n+    const hashedPassword = await bcrypt.hash(dto.password, salt);\n+\n+    // ۳. ذخیره کاربر در دیتابیس با فیلدهای صحیح تو\n+    return this.usersService.create({\n+      name: dto.name,\n+      family: dto.family,\n+      email: dto.email,\n+      password: hashedPassword,\n+    });\n+  }\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771075783400,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,29 +0,0 @@\n-import { Injectable, BadRequestException } from '@nestjs/common';\n-import { UsersService } from '../users/users.service';\n-import { RegisterDto } from './dto/register.dto';\n-import * as bcrypt from 'bcrypt';\n-\n-@Injectable()\n-export class AuthService {\n-  constructor(private readonly usersService: UsersService) {}\n-\n-  async register(dto: RegisterDto) {\n-    // ۱. بررسی تکراری نبودن ایمیل (Security Check)\n-    const userExists = await this.usersService.findByEmail(dto.email);\n-    if (userExists) {\n-      throw new BadRequestException('این ایمیل قبلاً در سیستم ثبت شده است');\n-    }\n-\n-    // ۲. هش کردن پسورد (Password Security)\n-    const salt = await bcrypt.genSalt(10);\n-    const hashedPassword = await bcrypt.hash(dto.password, salt);\n-\n-    // ۳. ذخیره کاربر در دیتابیس با فیلدهای صحیح تو\n-    return this.usersService.create({\n-      name: dto.name,\n-      family: dto.family,\n-      email: dto.email,\n-      password: hashedPassword,\n-    });\n-  }\n-}\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1771052902055,

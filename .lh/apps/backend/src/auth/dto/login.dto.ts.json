@@ -1,0 +1,238 @@
+{
+    "sourceFile": "apps/backend/src/auth/dto/login.dto.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 55,
+            "patches": [
+                {
+                    "date": 1771165183489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1771165190023,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import \n\\ No newline at end of file\n+import { IsEmail }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165199410,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import { IsEmail }\n\\ No newline at end of file\n+import { IsEmail } from '@nes'\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165205218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import { IsEmail } from '@nes'\n\\ No newline at end of file\n+import { IsEmail } from '@nestjs/co'\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165214843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,3 @@\n-import { IsEmail } from '@nestjs/co'\n\\ No newline at end of file\n+import { IsEmail } from '@nestjs/common';\n+\n+export class\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165239720,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n import { IsEmail } from '@nestjs/common';\n \n-export class\n\\ No newline at end of file\n+export class Login\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165260063,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,5 @@\n import { IsEmail } from '@nestjs/common';\n \n-export class Login\n\\ No newline at end of file\n+export class LoginDto {\n+    \n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165271950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import { IsEmail } from '@nestjs/common';\n \n export class LoginDto {\n-    \n+\n+    email:\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165282459,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n import { IsEmail } from '@nestjs/common';\n \n export class LoginDto {\n \n-    email:\n+    email: string ;\n+    \n+    pa\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165289525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n export class LoginDto {\n \n     email: string ;\n     \n-    pa\n+    password: string\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165295481,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { IsEmail } from '@nestjs/common';\n \n export class LoginDto {\n-\n+    \n     email: string ;\n     \n-    password: string\n+    password: string ;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165301015,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import { IsEmail } from '@nestjs/common';\n \n export class LoginDto {\n-    \n+\n+    @Is\n     email: string ;\n     \n     password: string ;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165313557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n import { IsEmail } from '@nestjs/common';\n+import { }\n \n export class LoginDto {\n \n-    @Is\n+    @IsEmail()\n     email: string ;\n     \n     password: string ;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165320115,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { IsEmail } from '@nestjs/common';\n-import { }\n+import { ApiProperty } from \n \n export class LoginDto {\n \n     @IsEmail()\n"
+                },
+                {
+                    "date": 1771165325165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { IsEmail } from '@nestjs/common';\n-import { ApiProperty } from \n+import { ApiProperty } from '@nes'\n \n export class LoginDto {\n \n     @IsEmail()\n"
+                },
+                {
+                    "date": 1771165336947,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { IsEmail } from '@nestjs/common';\n-import { ApiProperty } from '@nes'\n+import { ApiProperty } from '@nestjs/sw'\n \n export class LoginDto {\n \n     @IsEmail()\n"
+                },
+                {
+                    "date": 1771165344311,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,11 @@\n import { IsEmail } from '@nestjs/common';\n-import { ApiProperty } from '@nestjs/sw'\n+import { ApiProperty } from '@nestjs/swagger' ;\n \n+\n export class LoginDto {\n \n+    \n     @IsEmail()\n     email: string ;\n     \n     password: string ;\n"
+                },
+                {
+                    "date": 1771165349974,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n \n export class LoginDto {\n \n-    \n+    @ApiProperty\n     @IsEmail()\n     email: string ;\n     \n     password: string ;\n"
+                },
+                {
+                    "date": 1771165361702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n \n export class LoginDto {\n \n-    @ApiProperty\n+    @ApiProperty(exa)\n     @IsEmail()\n     email: string ;\n     \n     password: string ;\n"
+                },
+                {
+                    "date": 1771165369350,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n \n export class LoginDto {\n \n-    @ApiProperty(exa)\n+    @ApiProperty(example: 'example')\n     @IsEmail()\n     email: string ;\n     \n     password: string ;\n"
+                },
+                {
+                    "date": 1771165375602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n \n export class LoginDto {\n \n-    @ApiProperty(example: 'example')\n+    @ApiProperty(example: 'example@gmail.com', )\n     @IsEmail()\n     email: string ;\n     \n     password: string ;\n"
+                },
+                {
+                    "date": 1771165381250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n \n export class LoginDto {\n \n-    @ApiProperty(example: 'example@gmail.com', )\n+    @ApiProperty(example: 'example@gmail.com', description: '')\n     @IsEmail()\n     email: string ;\n     \n     password: string ;\n"
+                },
+                {
+                    "date": 1771165387909,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n \n export class LoginDto {\n \n-    @ApiProperty(example: 'example@gmail.com', description: '')\n+    @ApiProperty(example: 'example@gmail.com', description: ' ایمیل')\n     @IsEmail()\n     email: string ;\n     \n     password: string ;\n"
+                },
+                {
+                    "date": 1771165399058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n \n export class LoginDto {\n \n-    @ApiProperty(example: 'example@gmail.com', description: ' ایمیل')\n+    @ApiProperty(example: 'example@gmail.com', description: ' ایمیل  الزامی ا')\n     @IsEmail()\n     email: string ;\n     \n     password: string ;\n"
+                },
+                {
+                    "date": 1771165407318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,13 @@\n+import { IsEmail } from '@nestjs/common';\n+import { ApiProperty } from '@nestjs/swagger' ;\n+\n+\n+export class LoginDto {\n+\n+    @ApiProperty(example: 'example@gmail.com', description: ' ایمیل  الزامی است ')\n+    @IsEmail()\n+    email: string ;\n+    \n+    \n+    password: string ;\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165416198,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { IsEmail } from '@nestjs/common';\n+import { IsEmail, Is } from '@nestjs/common';\n import { ApiProperty } from '@nestjs/swagger' ;\n \n \n export class LoginDto {\n@@ -9,17 +9,5 @@\n     email: string ;\n     \n     \n     password: string ;\n-}\n-import { IsEmail } from '@nestjs/common';\n-import { ApiProperty } from '@nestjs/swagger' ;\n-\n-\n-export class LoginDto {\n-\n-    @ApiProperty(example: 'example@gmail.com', description: ' ایمیل  الزامی ا')\n-    @IsEmail()\n-    email: string ;\n-    \n-    password: string ;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165422238,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { IsEmail, Is } from '@nestjs/common';\n+import { IsEmail, IsString } from '@nestjs/common';\n import { ApiProperty } from '@nestjs/swagger' ;\n \n \n export class LoginDto {\n@@ -7,7 +7,7 @@\n     @ApiProperty(example: 'example@gmail.com', description: ' ایمیل  الزامی است ')\n     @IsEmail()\n     email: string ;\n     \n-    \n+    @\n     password: string ;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165427840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,7 @@\n     @ApiProperty(example: 'example@gmail.com', description: ' ایمیل  الزامی است ')\n     @IsEmail()\n     email: string ;\n     \n-    @\n+    @IsString()\n     password: string ;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165436755,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,8 @@\n     @ApiProperty(example: 'example@gmail.com', description: ' ایمیل  الزامی است ')\n     @IsEmail()\n     email: string ;\n     \n+    @ApiProperty\n     @IsString()\n     password: string ;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165446452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,14 @@\n+import { IsEmail, IsString } from '@nestjs/common';\n+import { ApiProperty } from '@nestjs/swagger' ;\n+\n+\n+export class LoginDto {\n+\n+    @ApiProperty(example: 'example@gmail.com', description: ' ایمیل  الزامی است ')\n+    @IsEmail()\n+    email: string ;\n+    \n+    @ApiProperty( example)\n+    @IsString()\n+    password: string ;\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165452233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,22 +7,8 @@\n     @ApiProperty(example: 'example@gmail.com', description: ' ایمیل  الزامی است ')\n     @IsEmail()\n     email: string ;\n     \n-    @ApiProperty( example)\n+    @ApiProperty( example: password123)\n     @IsString()\n     password: string ;\n-}\n-import { IsEmail, IsString } from '@nestjs/common';\n-import { ApiProperty } from '@nestjs/swagger' ;\n-\n-\n-export class LoginDto {\n-\n-    @ApiProperty(example: 'example@gmail.com', description: ' ایمیل  الزامی است ')\n-    @IsEmail()\n-    email: string ;\n-    \n-    @ApiProperty\n-    @IsString()\n-    password: string ;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165459866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,8 @@\n     @ApiProperty(example: 'example@gmail.com', description: ' ایمیل  الزامی است ')\n     @IsEmail()\n     email: string ;\n     \n-    @ApiProperty( example: password123)\n+    @ApiProperty( example: password123, description: ' ')\n     @IsString()\n     password: string ;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165476132,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,8 @@\n     @ApiProperty(example: 'example@gmail.com', description: ' ایمیل  الزامی است ')\n     @IsEmail()\n     email: string ;\n     \n-    @ApiProperty( example: password123, description: ' ')\n+    @ApiProperty( example: password123, description: ' رمز عب')\n     @IsString()\n     password: string ;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165482120,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,8 @@\n     @ApiProperty(example: 'example@gmail.com', description: ' ایمیل  الزامی است ')\n     @IsEmail()\n     email: string ;\n     \n-    @ApiProperty( example: password123, description: ' رمز عب')\n+    @ApiProperty( example: password123, description: ' رمز عبور ح')\n     @IsString()\n     password: string ;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165487897,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,8 @@\n     @ApiProperty(example: 'example@gmail.com', description: ' ایمیل  الزامی است ')\n     @IsEmail()\n     email: string ;\n     \n-    @ApiProperty( example: password123, description: ' رمز عبور ح')\n+    @ApiProperty( example: password123, description: ' رمز عبور حداقل ۸ کاراکتر')\n     @IsString()\n     password: string ;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165528895,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { IsEmail, IsString } from '@nestjs/common';\n+import { IsEmail, Is } from '@nestjs/common';\n import { ApiProperty } from '@nestjs/swagger' ;\n \n \n export class LoginDto {\n@@ -7,8 +7,8 @@\n     @ApiProperty(example: 'example@gmail.com', description: ' ایمیل  الزامی است ')\n     @IsEmail()\n     email: string ;\n     \n-    @ApiProperty( example: password123, description: ' رمز عبور حداقل ۸ کاراکتر')\n+    @ApiProperty( example: password123, description: ' رمز عبور حداقل ۸ کاراکتر باشد ')\n     @IsString()\n     password: string ;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165534617,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { IsEmail, Is } from '@nestjs/common';\n+import { IsEmail, Is= } from '@nestjs/common';\n import { ApiProperty } from '@nestjs/swagger' ;\n \n \n export class LoginDto {\n"
+                },
+                {
+                    "date": 1771165543603,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { IsEmail, Is= } from '@nestjs/common';\n+import { IsEmail, IsNotEmpty } from '@nestjs/common';\n import { ApiProperty } from '@nestjs/swagger' ;\n \n \n export class LoginDto {\n@@ -8,7 +8,7 @@\n     @IsEmail()\n     email: string ;\n     \n     @ApiProperty( example: password123, description: ' رمز عبور حداقل ۸ کاراکتر باشد ')\n-    @IsString()\n+    @Is()\n     password: string ;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165549062,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,7 @@\n     @IsEmail()\n     email: string ;\n     \n     @ApiProperty( example: password123, description: ' رمز عبور حداقل ۸ کاراکتر باشد ')\n-    @Is()\n+    @IsNotEmpty({ })\n     password: string ;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165554486,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,7 @@\n     @IsEmail()\n     email: string ;\n     \n     @ApiProperty( example: password123, description: ' رمز عبور حداقل ۸ کاراکتر باشد ')\n-    @IsNotEmpty({ })\n+    @IsNotEmpty({ message: ''})\n     password: string ;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165559927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,7 @@\n     @IsEmail()\n     email: string ;\n     \n     @ApiProperty( example: password123, description: ' رمز عبور حداقل ۸ کاراکتر باشد ')\n-    @IsNotEmpty({ message: ''})\n+    @IsNotEmpty({ message: ' '})\n     password: string ;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165566639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,7 @@\n     @IsEmail()\n     email: string ;\n     \n     @ApiProperty( example: password123, description: ' رمز عبور حداقل ۸ کاراکتر باشد ')\n-    @IsNotEmpty({ message: ' '})\n+    @IsNotEmpty({ message: ' پسوور'})\n     password: string ;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165576001,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,7 @@\n     @IsEmail()\n     email: string ;\n     \n     @ApiProperty( example: password123, description: ' رمز عبور حداقل ۸ کاراکتر باشد ')\n-    @IsNotEmpty({ message: ' پسوور'})\n+    @IsNotEmpty({ message: ' پسوورد نمیتواند هالی باشد'})\n     password: string ;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165587518,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,8 @@\n     @ApiProperty(example: 'example@gmail.com', description: ' ایمیل  الزامی است ')\n     @IsEmail()\n     email: string ;\n     \n-    @ApiProperty( example: password123, description: ' رمز عبور حداقل ۸ کاراکتر باشد ')\n-    @IsNotEmpty({ message: ' پسوورد نمیتواند هالی باشد'})\n+    @ApiProperty( example: password123)\n+    @IsNotEmpty({ message: ' پسوورد نمیتواند خالی باشد'})\n     password: string ;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165599963,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n \n export class LoginDto {\n \n-    @ApiProperty(example: 'example@gmail.com', description: ' ایمیل  الزامی است ')\n+    @ApiProperty(example: 'example@gmail.com')\n     @IsEmail()\n     email: string ;\n     \n     @ApiProperty( example: password123)\n"
+                },
+                {
+                    "date": 1771165606830,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n export class LoginDto {\n \n     @ApiProperty(example: 'example@gmail.com')\n-    @IsEmail()\n+    @IsEmail({ message: })\n     email: string ;\n     \n     @ApiProperty( example: password123)\n     @IsNotEmpty({ message: ' پسوورد نمیتواند خالی باشد'})\n"
+                },
+                {
+                    "date": 1771165622869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n export class LoginDto {\n \n     @ApiProperty(example: 'example@gmail.com')\n-    @IsEmail({ message: })\n+    @IsEmail({ message: 'ایمیل وارد شده معتبر نیست'})\n     email: string ;\n     \n     @ApiProperty( example: password123)\n     @IsNotEmpty({ message: ' پسوورد نمیتواند خالی باشد'})\n"
+                },
+                {
+                    "date": 1771165633520,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n \n export class LoginDto {\n \n-    @ApiProperty(example: 'example@gmail.com')\n+    @ApiProperty({example: 'example@gmail.com'})\n     @IsEmail({ message: 'ایمیل وارد شده معتبر نیست'})\n     email: string ;\n     \n     @ApiProperty( example: password123)\n"
+                },
+                {
+                    "date": 1771165639533,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,8 @@\n     @ApiProperty({example: 'example@gmail.com'})\n     @IsEmail({ message: 'ایمیل وارد شده معتبر نیست'})\n     email: string ;\n     \n-    @ApiProperty( example: password123)\n+    @ApiProperty( {example: password123} )\n     @IsNotEmpty({ message: ' پسوورد نمیتواند خالی باشد'})\n     password: string ;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165645329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,12 +3,12 @@\n \n \n export class LoginDto {\n \n-    @ApiProperty({example: 'example@gmail.com'})\n-    @IsEmail({ message: 'ایمیل وارد شده معتبر نیست'})\n+    @ApiProperty({example: 'example@gmail.com'} )\n+    @IsEmail({ message: 'ایمیل وارد شده معتبر نیست'} )\n     email: string ;\n     \n     @ApiProperty( {example: password123} )\n-    @IsNotEmpty({ message: ' پسوورد نمیتواند خالی باشد'})\n+    @IsNotEmpty({ message: ' پسوورد نمیتواند خالی باشد'} )\n     password: string ;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165651011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n \n \n export class LoginDto {\n \n-    @ApiProperty({example: 'example@gmail.com'} )\n-    @IsEmail({ message: 'ایمیل وارد شده معتبر نیست'} )\n+    @ApiProperty( {example: 'example@gmail.com'} )\n+    @IsEmail( { message: 'ایمیل وارد شده معتبر نیست'} )\n     email: string ;\n     \n     @ApiProperty( {example: password123} )\n     @IsNotEmpty({ message: ' پسوورد نمیتواند خالی باشد'} )\n"
+                },
+                {
+                    "date": 1771165674877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { IsEmail, IsNotEmpty } from '@nestjs/common';\n+import { IsEmail, IsNotEmpty } from 'class';\n import { ApiProperty } from '@nestjs/swagger' ;\n \n \n export class LoginDto {\n@@ -8,7 +8,7 @@\n     @IsEmail( { message: 'ایمیل وارد شده معتبر نیست'} )\n     email: string ;\n     \n     @ApiProperty( {example: password123} )\n-    @IsNotEmpty({ message: ' پسوورد نمیتواند خالی باشد'} )\n+    @IsNotEmpty( { message: ' پسوورد نمیتواند خالی باشد'} )\n     password: string ;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165680116,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { IsEmail, IsNotEmpty } from 'class';\n+import { IsEmail, IsNotEmpty } from 'class-validator';\n import { ApiProperty } from '@nestjs/swagger' ;\n \n \n export class LoginDto {\n"
+                },
+                {
+                    "date": 1771165697015,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,8 @@\n     @ApiProperty( {example: 'example@gmail.com'} )\n     @IsEmail( { message: 'ایمیل وارد شده معتبر نیست'} )\n     email: string ;\n     \n-    @ApiProperty( {example: password123} )\n+    @ApiProperty( {example: \"\"} )\n     @IsNotEmpty( { message: ' پسوورد نمیتواند خالی باشد'} )\n     password: string ;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165721810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,11 @@\n \n export class LoginDto {\n \n     @ApiProperty( {example: 'example@gmail.com'} )\n-    @IsEmail( { message: 'ایمیل وارد شده معتبر نیست'} )\n+    @IsEmail({{ , }} { message: 'ایمیل وارد شده معتبر نیست'} )\n     email: string ;\n     \n-    @ApiProperty( {example: \"\"} )\n+    @ApiProperty( {example: 'password123'} )\n     @IsNotEmpty( { message: ' پسوورد نمیتواند خالی باشد'} )\n     password: string ;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771165729985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n export class LoginDto {\n \n     @ApiProperty( {example: 'example@gmail.com'} )\n-    @IsEmail({{ , }} { message: 'ایمیل وارد شده معتبر نیست'} )\n+    @IsEmail({{} , { message: 'ایمیل وارد شده معتبر نیست'} )\n     email: string ;\n     \n     @ApiProperty( {example: 'password123'} )\n     @IsNotEmpty( { message: ' پسوورد نمیتواند خالی باشد'} )\n"
+                }
+            ],
+            "date": 1771165183489,
+            "name": "Commit-0",
+            "content": "import "
+        }
+    ]
+}

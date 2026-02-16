@@ -1,0 +1,1 @@
+import { Entity, Column, Pr} from '@nestjs/typeorm';

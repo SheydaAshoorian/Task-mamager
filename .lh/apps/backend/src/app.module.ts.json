@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 57,
+            "activePatchIndex": 65,
             "patches": [
                 {
                     "date": 1770728926515,
@@ -236,6 +236,38 @@
                 {
                     "date": 1771089424979,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,10 +32,9 @@\n       }),\n     }),\n \n     UsersModule,\n-\n-   // \\AuthModule,\n+    AuthModule,\n   ],\n   \n   controllers: [AppController],\n   providers: [AppService],\n"
+                },
+                {
+                    "date": 1771255661121,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n import { AppService } from './app.service';\n import { UsersModule } from './users/users.module';\n import { User } from './users/entities/user.entity';\n import { AuthModule } from './auth/auth.module';\n+import { TasksModule } from './tasks/tasks.module';\n \n @Module({\n \n   imports: [\n@@ -26,15 +27,16 @@\n         port: configService.get<number>('DB_PORT'),\n         username: configService.get<string>('DB_USERNAME'),\n         password: configService.get<string>('DB_PASSWORD'),\n         database: configService.get<string>('DB_NAME'),\n-        entities: [User],\n+        entities: [User,],\n         synchronize: true, // فقط در محیط توسعه\n       }),\n     }),\n \n     UsersModule,\n     AuthModule,\n+    TasksModule,\n   ],\n   \n   controllers: [AppController],\n   providers: [AppService],\n"
+                },
+                {
+                    "date": 1771255674601,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n import { AppController } from './app.controller';\n import { AppService } from './app.service';\n import { UsersModule } from './users/users.module';\n import { User } from './users/entities/user.entity';\n+import\n import { AuthModule } from './auth/auth.module';\n import { TasksModule } from './tasks/tasks.module';\n \n @Module({\n@@ -27,9 +28,9 @@\n         port: configService.get<number>('DB_PORT'),\n         username: configService.get<string>('DB_USERNAME'),\n         password: configService.get<string>('DB_PASSWORD'),\n         database: configService.get<string>('DB_NAME'),\n-        entities: [User,],\n+        entities: [User,Task],\n         synchronize: true, // فقط در محیط توسعه\n       }),\n     }),\n \n"
+                },
+                {
+                    "date": 1771255680201,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import { AppController } from './app.controller';\n import { AppService } from './app.service';\n import { UsersModule } from './users/users.module';\n import { User } from './users/entities/user.entity';\n-import\n+import { Task }\n import { AuthModule } from './auth/auth.module';\n import { TasksModule } from './tasks/tasks.module';\n \n @Module({\n"
+                },
+                {
+                    "date": 1771255686200,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import { AppController } from './app.controller';\n import { AppService } from './app.service';\n import { UsersModule } from './users/users.module';\n import { User } from './users/entities/user.entity';\n-import { Task }\n+import { Task } from ''\n import { AuthModule } from './auth/auth.module';\n import { TasksModule } from './tasks/tasks.module';\n \n @Module({\n"
+                },
+                {
+                    "date": 1771255692721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import { AppController } from './app.controller';\n import { AppService } from './app.service';\n import { UsersModule } from './users/users.module';\n import { User } from './users/entities/user.entity';\n-import { Task } from ''\n+import { Task } from './task'\n import { AuthModule } from './auth/auth.module';\n import { TasksModule } from './tasks/tasks.module';\n \n @Module({\n"
+                },
+                {
+                    "date": 1771255699163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import { AppController } from './app.controller';\n import { AppService } from './app.service';\n import { UsersModule } from './users/users.module';\n import { User } from './users/entities/user.entity';\n-import { Task } from './task'\n+import { Task } from './task/entities/t'\n import { AuthModule } from './auth/auth.module';\n import { TasksModule } from './tasks/tasks.module';\n \n @Module({\n"
+                },
+                {
+                    "date": 1771255705614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,45 @@\n+import { Module } from '@nestjs/common';\n+import { TypeOrmModule } from '@nestjs/typeorm';\n+import { ConfigModule, ConfigService } from '@nestjs/config';\n+import { AppController } from './app.controller';\n+import { AppService } from './app.service';\n+import { UsersModule } from './users/users.module';\n+import { User } from './users/entities/user.entity';\n+import { Task } from './task/entities/task.entity'\n+import { AuthModule } from './auth/auth.module';\n+import { TasksModule } from './tasks/tasks.module';\n+\n+@Module({\n+\n+  imports: [\n+\n+    ConfigModule.forRoot({\n+      isGlobal: true,\n+    }),\n+\n+    TypeOrmModule.forRootAsync({\n+\n+      imports: [ConfigModule],\n+      \n+      inject: [ConfigService],\n+      useFactory: (configService: ConfigService) => ({\n+        type: 'postgres',\n+        host: configService.get<string>('DB_HOST'),\n+        port: configService.get<number>('DB_PORT'),\n+        username: configService.get<string>('DB_USERNAME'),\n+        password: configService.get<string>('DB_PASSWORD'),\n+        database: configService.get<string>('DB_NAME'),\n+        entities: [User,Task],\n+        synchronize: true, // فقط در محیط توسعه\n+      }),\n+    }),\n+\n+    UsersModule,\n+    AuthModule,\n+    TasksModule,\n+  ],\n+  \n+  controllers: [AppController],\n+  providers: [AppService],\n+})\n+export class AppModule {}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771255727765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import { AppController } from './app.controller';\n import { AppService } from './app.service';\n import { UsersModule } from './users/users.module';\n import { User } from './users/entities/user.entity';\n-import { Task } from './task/entities/task.entity'\n+import { Task } from './tasks/entities/task.entity';\n import { AuthModule } from './auth/auth.module';\n import { TasksModule } from './tasks/tasks.module';\n \n @Module({\n@@ -41,50 +41,5 @@\n   \n   controllers: [AppController],\n   providers: [AppService],\n })\n-export class AppModule {}\n-import { Module } from '@nestjs/common';\n-import { TypeOrmModule } from '@nestjs/typeorm';\n-import { ConfigModule, ConfigService } from '@nestjs/config';\n-import { AppController } from './app.controller';\n-import { AppService } from './app.service';\n-import { UsersModule } from './users/users.module';\n-import { User } from './users/entities/user.entity';\n-import { Task } from './task/entities/t'\n-import { AuthModule } from './auth/auth.module';\n-import { TasksModule } from './tasks/tasks.module';\n-\n-@Module({\n-\n-  imports: [\n-\n-    ConfigModule.forRoot({\n-      isGlobal: true,\n-    }),\n-\n-    TypeOrmModule.forRootAsync({\n-\n-      imports: [ConfigModule],\n-      \n-      inject: [ConfigService],\n-      useFactory: (configService: ConfigService) => ({\n-        type: 'postgres',\n-        host: configService.get<string>('DB_HOST'),\n-        port: configService.get<number>('DB_PORT'),\n-        username: configService.get<string>('DB_USERNAME'),\n-        password: configService.get<string>('DB_PASSWORD'),\n-        database: configService.get<string>('DB_NAME'),\n-        entities: [User,Task],\n-        synchronize: true, // فقط در محیط توسعه\n-      }),\n-    }),\n-\n-    UsersModule,\n-    AuthModule,\n-    TasksModule,\n-  ],\n-  \n-  controllers: [AppController],\n-  providers: [AppService],\n-})\n export class AppModule {}\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1770728926515,

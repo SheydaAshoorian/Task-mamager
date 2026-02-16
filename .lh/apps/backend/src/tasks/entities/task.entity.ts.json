@@ -1,0 +1,734 @@
+{
+    "sourceFile": "apps/backend/src/tasks/entities/task.entity.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 179,
+            "patches": [
+                {
+                    "date": 1771237024705,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1771237030106,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,1 @@\n+import \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771237042702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import \n\\ No newline at end of file\n+import { Is}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771237065405,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import { Is}\n\\ No newline at end of file\n+import { } from ''\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771237071853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import { } from ''\n\\ No newline at end of file\n+import { } from '@nestjs/ty'\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771237100910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import { } from '@nestjs/ty'\n\\ No newline at end of file\n+import { Ent} from '@nestjs/typeorm';\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771237107575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import { Ent} from '@nestjs/typeorm';\n\\ No newline at end of file\n+import { Entity, Column,} from '@nestjs/typeorm';\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771237113601,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import { Entity, Column,} from '@nestjs/typeorm';\n\\ No newline at end of file\n+import { Entity, Column, PrimaryGeneratedColumn} from '@nestjs/typeorm';\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771237125011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-import { Entity, Column, PrimaryGeneratedColumn} from '@nestjs/typeorm';\n\\ No newline at end of file\n+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771237138214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n\\ No newline at end of file\n+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n+\n"
+                },
+                {
+                    "date": 1771237172439,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,3 @@\n import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n \n+export class \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771237178760,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,5 @@\n import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n \n-export class \n\\ No newline at end of file\n+export class tasks{\n+    \n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771237183920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n \n+@E\n export class tasks{\n-    \n+\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771237196088,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n \n-@E\n+@Entity(Task)\n export class tasks{\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771237201313,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n \n-@Entity(Task)\n-export class tasks{\n+@Entity(tasks)\n+export class Tasks{\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771237208056,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,7 @@\n \n @Entity(tasks)\n export class Tasks{\n \n+    id\n+\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771237213742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,7 +2,7 @@\n \n @Entity(tasks)\n export class Tasks{\n \n-    id\n+    id: string\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771237222680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,7 +2,8 @@\n \n @Entity(tasks)\n export class Tasks{\n \n-    id: string\n+    id: string;\n+    title\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771237228195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,8 @@\n @Entity(tasks)\n export class Tasks{\n \n     id: string;\n-    title\n+    title: string;\n+    \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771237241493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,8 @@\n export class Tasks{\n \n     id: string;\n     title: string;\n+    description: string;\n     \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771237252290,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,7 @@\n \n     id: string;\n     title: string;\n     description: string;\n-    \n+    priority\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771237263691,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,8 @@\n \n     id: string;\n     title: string;\n     description: string;\n-    priority\n+    priority: string;\n+    \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771237275128,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n     id: string;\n     title: string;\n     description: string;\n     priority: string;\n-    \n+    cre\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771237280806,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,8 @@\n     id: string;\n     title: string;\n     description: string;\n     priority: string;\n-    cre\n+    createdAt:;\n+    \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771237286142,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,7 @@\n     title: string;\n     description: string;\n     priority: string;\n     createdAt:;\n-    \n+    updatedAt\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771237293853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n     id: string;\n     title: string;\n     description: string;\n     priority: string;\n+    \n     createdAt:;\n-    updatedAt\n+    updatedAt:;\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771237301288,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     id: string;\n     title: string;\n     description: string;\n     priority: string;\n-    \n+    status;\n     createdAt:;\n     updatedAt:;\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771237310863,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,10 @@\n     id: string;\n     title: string;\n     description: string;\n     priority: string;\n-    status;\n+    status:;\n+    assign\n     createdAt:;\n     updatedAt:;\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771237375846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     title: string;\n     description: string;\n     priority: string;\n     status:;\n-    assign\n+    assignTo:;\n     createdAt:;\n     updatedAt:;\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771237403611,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n     description: string;\n     priority: string;\n     status:;\n     assignTo:;\n+    createdBy\n     createdAt:;\n     updatedAt:;\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771237417086,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,10 @@\n     title: string;\n     description: string;\n     priority: string;\n     status:;\n-    assignTo:;\n-    createdBy\n+    assignedTo:;\n+    createdBy:;\n     createdAt:;\n     updatedAt:;\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771237425049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n     title: string;\n     description: string;\n     priority: string;\n     status:;\n+    \n     assignedTo:;\n     createdBy:;\n     createdAt:;\n     updatedAt:;\n"
+                },
+                {
+                    "date": 1771237430325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     title: string;\n     description: string;\n     priority: string;\n     status:;\n-    \n+    deadline:;\n     assignedTo:;\n     createdBy:;\n     createdAt:;\n     updatedAt:;\n"
+                },
+                {
+                    "date": 1771237837169,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n \n @Entity(tasks)\n export class Tasks{\n-\n+    \n     id: string;\n     title: string;\n     description: string;\n     priority: string;\n"
+                },
+                {
+                    "date": 1771237844938,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n \n @Entity(tasks)\n export class Tasks{\n-    \n+\n+    @PrimaryGeneratedColumn\n     id: string;\n     title: string;\n     description: string;\n     priority: string;\n"
+                },
+                {
+                    "date": 1771237855711,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,10 @@\n \n @Entity(tasks)\n export class Tasks{\n \n-    @PrimaryGeneratedColumn\n-    id: string;\n+    @PrimaryGeneratedColumn()\n+    id: number;\n     title: string;\n     description: string;\n     priority: string;\n     status:;\n"
+                },
+                {
+                    "date": 1771237861924,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,10 @@\n export class Tasks{\n \n     @PrimaryGeneratedColumn()\n     id: number;\n+\n+    @\n     title: string;\n     description: string;\n     priority: string;\n     status:;\n"
+                },
+                {
+                    "date": 1771237872479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,11 @@\n \n     @PrimaryGeneratedColumn()\n     id: number;\n \n-    @\n+    @Column()\n     title: string;\n+    \n     description: string;\n     priority: string;\n     status:;\n     deadline:;\n"
+                },
+                {
+                    "date": 1771237878368,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,10 @@\n     id: number;\n \n     @Column()\n     title: string;\n-    \n+\n+    @Column()\n     description: string;\n     priority: string;\n     status:;\n     deadline:;\n"
+                },
+                {
+                    "date": 1771237899284,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n     @Column()\n     title: string;\n \n-    @Column()\n+    @Column( ty)\n     description: string;\n     priority: string;\n     status:;\n     deadline:;\n"
+                },
+                {
+                    "date": 1771237906994,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n     @Column()\n     title: string;\n \n-    @Column( ty)\n+    @Column( type:'text')\n     description: string;\n     priority: string;\n     status:;\n     deadline:;\n"
+                },
+                {
+                    "date": 1771237916752,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n     @Column()\n     title: string;\n \n-    @Column( type:'text')\n+    @Column( type:'text', nullable:tru)\n     description: string;\n     priority: string;\n     status:;\n     deadline:;\n"
+                },
+                {
+                    "date": 1771238006891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,10 +8,12 @@\n \n     @Column()\n     title: string;\n \n-    @Column( type:'text', nullable:tru)\n+    @Column( type:'text', nullable:true)\n     description: string;\n+\n+    \n     priority: string;\n     status:;\n     deadline:;\n     assignedTo:;\n"
+                },
+                {
+                    "date": 1771238013566,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,10 +11,12 @@\n \n     @Column( type:'text', nullable:true)\n     description: string;\n \n+    @Column()\n+    priority: string;\n+\n     \n-    priority: string;\n     status:;\n     deadline:;\n     assignedTo:;\n     createdBy:;\n"
+                },
+                {
+                    "date": 1771238023753,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,12 @@\n \n     @Column()\n     priority: string;\n \n-    \n+    @Column()\n     status:;\n+\n+    @Column\n     deadline:;\n     assignedTo:;\n     createdBy:;\n     createdAt:;\n"
+                },
+                {
+                    "date": 1771238028798,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,10 +17,12 @@\n \n     @Column()\n     status:;\n \n-    @Column\n+    @Column()\n     deadline:;\n+\n+    @\n     assignedTo:;\n     createdBy:;\n     createdAt:;\n     updatedAt:;\n"
+                },
+                {
+                    "date": 1771238039472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,10 +20,12 @@\n \n     @Column()\n     deadline:;\n \n-    @\n+    @Column()\n     assignedTo:;\n+\n+    @Column()\n     createdBy:;\n     createdAt:;\n     updatedAt:;\n \n"
+                },
+                {
+                    "date": 1771238045451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,10 @@\n     assignedTo:;\n \n     @Column()\n     createdBy:;\n+\n+    @Column()\n     createdAt:;\n     updatedAt:;\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771238051024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,7 +28,9 @@\n     createdBy:;\n \n     @Column()\n     createdAt:;\n+\n+    @Column()\n     updatedAt:;\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771238080833,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n \n+\n+export \n @Entity(tasks)\n export class Tasks{\n \n     @PrimaryGeneratedColumn()\n"
+                },
+                {
+                    "date": 1771238088097,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n \n \n-export \n+export enum Pri\n @Entity(tasks)\n export class Tasks{\n \n     @PrimaryGeneratedColumn()\n"
+                },
+                {
+                    "date": 1771238095240,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n \n \n-export enum Pri\n+export enum Priority{\n+    \n+}\n @Entity(tasks)\n export class Tasks{\n \n     @PrimaryGeneratedColumn()\n"
+                },
+                {
+                    "date": 1771238101189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,12 @@\n import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n \n \n export enum Priority{\n-    \n+        \n }\n+\n+\n @Entity(tasks)\n export class Tasks{\n \n     @PrimaryGeneratedColumn()\n"
+                },
+                {
+                    "date": 1771238140730,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n \n \n export enum Priority{\n-        \n+    // LOW, MEDIUM, HIGH\n }\n \n \n @Entity(tasks)\n"
+                },
+                {
+                    "date": 1771238145768,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n \n \n export enum Priority{\n     // LOW, MEDIUM, HIGH\n+    Low\n }\n \n \n @Entity(tasks)\n"
+                },
+                {
+                    "date": 1771238153408,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n \n export enum Priority{\n     // LOW, MEDIUM, HIGH\n-    Low\n+    Low = 'low'\n }\n \n \n @Entity(tasks)\n"
+                },
+                {
+                    "date": 1771238160613,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,10 @@\n \n \n export enum Priority{\n     // LOW, MEDIUM, HIGH\n-    Low = 'low'\n+    L = 'low';\n+\n }\n \n \n @Entity(tasks)\n"
+                },
+                {
+                    "date": 1771238181017,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,10 @@\n \n \n export enum Priority{\n     // LOW, MEDIUM, HIGH\n-    L = 'low';\n+    LOW = 'low';\n+    \n \n }\n \n \n"
+                },
+                {
+                    "date": 1771238188072,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,12 @@\n \n export enum Priority{\n     // LOW, MEDIUM, HIGH\n     LOW = 'low';\n-    \n+    LOW = 'low';\n+    LOW = 'low';\n \n+\n }\n \n \n @Entity(tasks)\n"
+                },
+                {
+                    "date": 1771238196748,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n \n export enum Priority{\n     // LOW, MEDIUM, HIGH\n     LOW = 'low';\n-    LOW = 'low';\n-    LOW = 'low';\n+    MEDIUM = 'low';\n+    HIGH = 'low';\n \n \n }\n \n"
+                },
+                {
+                    "date": 1771238202130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,47 @@\n+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n+\n+\n+export enum Priority{\n+    // LOW, MEDIUM, HIGH\n+    LOW = 'low';\n+    MEDIUM = 'mediun';\n+    HIGH = 'low';\n+\n+\n+}\n+\n+\n+@Entity(tasks)\n+export class Tasks{\n+\n+    @PrimaryGeneratedColumn()\n+    id: number;\n+\n+    @Column()\n+    title: string;\n+\n+    @Column( type:'text', nullable:true)\n+    description: string;\n+\n+    @Column()\n+    priority: string;\n+\n+    @Column()\n+    status:;\n+\n+    @Column()\n+    deadline:;\n+\n+    @Column()\n+    assignedTo:;\n+\n+    @Column()\n+    createdBy:;\n+\n+    @Column()\n+    createdAt:;\n+\n+    @Column()\n+    updatedAt:;\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771238209770,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,45 @@\n+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n+\n+\n+export enum Priority{\n+    // LOW, MEDIUM, HIGH\n+    LOW = 'low';\n+    MEDIUM = 'mediun';\n+    HIGH = 'high';\n+}\n+\n+\n+@Entity(tasks)\n+export class Tasks{\n+\n+    @PrimaryGeneratedColumn()\n+    id: number;\n+\n+    @Column()\n+    title: string;\n+\n+    @Column( type:'text', nullable:true)\n+    description: string;\n+\n+    @Column()\n+    priority: string;\n+\n+    @Column()\n+    status:;\n+\n+    @Column()\n+    deadline:;\n+\n+    @Column()\n+    assignedTo:;\n+\n+    @Column()\n+    createdBy:;\n+\n+    @Column()\n+    createdAt:;\n+\n+    @Column()\n+    updatedAt:;\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771238219990,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n \n \n export enum Priority{\n-    // LOW, MEDIUM, HIGH\n     LOW = 'low';\n     MEDIUM = 'mediun';\n     HIGH = 'high';\n }\n@@ -20,9 +19,9 @@\n \n     @Column( type:'text', nullable:true)\n     description: string;\n \n-    @Column()\n+    @Column(e)\n     priority: string;\n \n     @Column()\n     status:;\n@@ -41,99 +40,5 @@\n \n     @Column()\n     updatedAt:;\n \n-}\n-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n-\n-\n-export enum Priority{\n-    // LOW, MEDIUM, HIGH\n-    LOW = 'low';\n-    MEDIUM = 'mediun';\n-    HIGH = 'low';\n-\n-\n-}\n-\n-\n-@Entity(tasks)\n-export class Tasks{\n-\n-    @PrimaryGeneratedColumn()\n-    id: number;\n-\n-    @Column()\n-    title: string;\n-\n-    @Column( type:'text', nullable:true)\n-    description: string;\n-\n-    @Column()\n-    priority: string;\n-\n-    @Column()\n-    status:;\n-\n-    @Column()\n-    deadline:;\n-\n-    @Column()\n-    assignedTo:;\n-\n-    @Column()\n-    createdBy:;\n-\n-    @Column()\n-    createdAt:;\n-\n-    @Column()\n-    updatedAt:;\n-\n-}\n-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n-\n-\n-export enum Priority{\n-    // LOW, MEDIUM, HIGH\n-    LOW = 'low';\n-    MEDIUM = 'low';\n-    HIGH = 'low';\n-\n-\n-}\n-\n-\n-@Entity(tasks)\n-export class Tasks{\n-\n-    @PrimaryGeneratedColumn()\n-    id: number;\n-\n-    @Column()\n-    title: string;\n-\n-    @Column( type:'text', nullable:true)\n-    description: string;\n-\n-    @Column()\n-    priority: string;\n-\n-    @Column()\n-    status:;\n-\n-    @Column()\n-    deadline:;\n-\n-    @Column()\n-    assignedTo:;\n-\n-    @Column()\n-    createdBy:;\n-\n-    @Column()\n-    createdAt:;\n-\n-    @Column()\n-    updatedAt:;\n-\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771238225325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n \n     @Column( type:'text', nullable:true)\n     description: string;\n \n-    @Column(e)\n+    @Column(enum,default)\n     priority: string;\n \n     @Column()\n     status:;\n"
+                },
+                {
+                    "date": 1771238235101,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n \n     @Column( type:'text', nullable:true)\n     description: string;\n \n-    @Column(enum,default)\n+    @Column(enum,default: low )\n     priority: string;\n \n     @Column()\n     status:;\n"
+                },
+                {
+                    "date": 1771238242249,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,10 +19,10 @@\n \n     @Column( type:'text', nullable:true)\n     description: string;\n \n-    @Column(enum,default: low )\n-    priority: string;\n+    @Column( enum,default: low )\n+    priority: enum;\n \n     @Column()\n     status:;\n \n"
+                },
+                {
+                    "date": 1771238266282,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n \n \n-export enum Priority{\n+export enum TaskPriority{\n     LOW = 'low';\n     MEDIUM = 'mediun';\n     HIGH = 'high';\n }\n"
+                },
+                {
+                    "date": 1771238276495,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n \n     @Column( type:'text', nullable:true)\n     description: string;\n \n-    @Column( enum,default: low )\n+    @Column( type:enum,default: low )\n     priority: enum;\n \n     @Column()\n     status:;\n"
+                },
+                {
+                    "date": 1771238289514,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,44 @@\n+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n+\n+\n+export enum TaskPriority{\n+    LOW = 'low';\n+    MEDIUM = 'mediun';\n+    HIGH = 'high';\n+}\n+\n+\n+@Entity(tasks)\n+export class Tasks{\n+\n+    @PrimaryGeneratedColumn()\n+    id: number;\n+\n+    @Column()\n+    title: string;\n+\n+    @Column( type:'text', nullable:true)\n+    description: string;\n+\n+    @Column( type:'enum', default: low )\n+    priority: enum;\n+\n+    @Column()\n+    status:;\n+\n+    @Column()\n+    deadline:;\n+\n+    @Column()\n+    assignedTo:;\n+\n+    @Column()\n+    createdBy:;\n+\n+    @Column()\n+    createdAt:;\n+\n+    @Column()\n+    updatedAt:;\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771238297637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,45 @@\n+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n+\n+\n+export enum TaskPriority{\n+    LOW = 'low';\n+    MEDIUM = 'mediun';\n+    HIGH = 'high';\n+}\n+\n+\n+@Entity(tasks)\n+export class Tasks{\n+\n+    @PrimaryGeneratedColumn()\n+    id: number;\n+\n+    @Column()\n+    title: string;\n+\n+    @Column( type:'text', nullable:true)\n+    description: string;\n+\n+    @Column( type:'enum',\n+         default: low )\n+    priority: enum;\n+\n+    @Column()\n+    status:;\n+\n+    @Column()\n+    deadline:;\n+\n+    @Column()\n+    assignedTo:;\n+\n+    @Column()\n+    createdBy:;\n+\n+    @Column()\n+    createdAt:;\n+\n+    @Column()\n+    updatedAt:;\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771238304986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,10 +19,11 @@\n \n     @Column( type:'text', nullable:true)\n     description: string;\n \n-    @Column( type:'enum',\n-         default: low )\n+    @Column(\n+         type:'enum',\n+         enum: low )\n     priority: enum;\n \n     @Column()\n     status:;\n@@ -41,93 +42,5 @@\n \n     @Column()\n     updatedAt:;\n \n-}\n-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n-\n-\n-export enum TaskPriority{\n-    LOW = 'low';\n-    MEDIUM = 'mediun';\n-    HIGH = 'high';\n-}\n-\n-\n-@Entity(tasks)\n-export class Tasks{\n-\n-    @PrimaryGeneratedColumn()\n-    id: number;\n-\n-    @Column()\n-    title: string;\n-\n-    @Column( type:'text', nullable:true)\n-    description: string;\n-\n-    @Column( type:'enum', default: low )\n-    priority: enum;\n-\n-    @Column()\n-    status:;\n-\n-    @Column()\n-    deadline:;\n-\n-    @Column()\n-    assignedTo:;\n-\n-    @Column()\n-    createdBy:;\n-\n-    @Column()\n-    createdAt:;\n-\n-    @Column()\n-    updatedAt:;\n-\n-}\n-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n-\n-\n-export enum TaskPriority{\n-    LOW = 'low';\n-    MEDIUM = 'mediun';\n-    HIGH = 'high';\n-}\n-\n-\n-@Entity(tasks)\n-export class Tasks{\n-\n-    @PrimaryGeneratedColumn()\n-    id: number;\n-\n-    @Column()\n-    title: string;\n-\n-    @Column( type:'text', nullable:true)\n-    description: string;\n-\n-    @Column( type:enum,default: low )\n-    priority: enum;\n-\n-    @Column()\n-    status:;\n-\n-    @Column()\n-    deadline:;\n-\n-    @Column()\n-    assignedTo:;\n-\n-    @Column()\n-    createdBy:;\n-\n-    @Column()\n-    createdAt:;\n-\n-    @Column()\n-    updatedAt:;\n-\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771238312493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,10 @@\n     description: string;\n \n     @Column(\n          type:'enum',\n-         enum: low )\n+         enum: TaskPriority,\n+         )\n     priority: enum;\n \n     @Column()\n     status:;\n"
+                },
+                {
+                    "date": 1771238323678,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,11 @@\n \n     @Column(\n          type:'enum',\n          enum: TaskPriority,\n-         )\n+         default\n+        \n+        )\n     priority: enum;\n \n     @Column()\n     status:;\n"
+                },
+                {
+                    "date": 1771238331134,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n \n     @Column(\n          type:'enum',\n          enum: TaskPriority,\n-         default\n+         default: TaskPriority.low\n         \n         )\n     priority: enum;\n \n"
+                },
+                {
+                    "date": 1771238354916,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n \n export enum TaskPriority{\n     LOW = 'low';\n-    MEDIUM = 'mediun';\n+    mediun = 'mediun';\n     HIGH = 'high';\n }\n \n \n@@ -22,9 +22,9 @@\n \n     @Column(\n          type:'enum',\n          enum: TaskPriority,\n-         default: TaskPriority.low\n+         default: TaskPriority.LOW,\n         \n         )\n     priority: enum;\n \n"
+                },
+                {
+                    "date": 1771238361947,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n \n export enum TaskPriority{\n     LOW = 'low';\n-    mediun = 'mediun';\n+    Mediun = 'mediun';\n     HIGH = 'high';\n }\n \n \n"
+                },
+                {
+                    "date": 1771238370883,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n export enum TaskPriority{\n     LOW = 'low';\n     Mediun = 'mediun';\n-    HIGH = 'high';\n+    High = 'high';\n }\n \n \n @Entity(tasks)\n"
+                },
+                {
+                    "date": 1771238389750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n \n \n export enum TaskPriority{\n-    LOW = 'low';\n+    Low = 'low';\n     Mediun = 'mediun';\n     High = 'high';\n }\n \n@@ -25,9 +25,9 @@\n          enum: TaskPriority,\n          default: TaskPriority.LOW,\n         \n         )\n-    priority: enum;\n+    priority: TaskPriority;\n \n     @Column()\n     status:;\n \n"
+                },
+                {
+                    "date": 1771239191266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,10 @@\n     High = 'high';\n }\n \n \n+\n+\n @Entity(tasks)\n export class Tasks{\n \n     @PrimaryGeneratedColumn()\n"
+                },
+                {
+                    "date": 1771239196430,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,11 +6,11 @@\n     Mediun = 'mediun';\n     High = 'high';\n }\n \n+export enu\n \n \n-\n @Entity(tasks)\n export class Tasks{\n \n     @PrimaryGeneratedColumn()\n"
+                },
+                {
+                    "date": 1771240475969,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     Mediun = 'mediun';\n     High = 'high';\n }\n \n-export enu\n+export enum Tas\n \n \n @Entity(tasks)\n export class Tasks{\n"
+                },
+                {
+                    "date": 1771240481767,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,11 @@\n     Mediun = 'mediun';\n     High = 'high';\n }\n \n-export enum Tas\n+export enum TaskStatus {\n+    \n+}\n \n \n @Entity(tasks)\n export class Tasks{\n"
+                },
+                {
+                    "date": 1771240492113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,10 @@\n     High = 'high';\n }\n \n export enum TaskStatus {\n-    \n+\n+    waiting\n }\n \n \n @Entity(tasks)\n"
+                },
+                {
+                    "date": 1771240503128,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n }\n \n export enum TaskStatus {\n \n-    waiting\n+   Waiting = waiting\n }\n \n \n @Entity(tasks)\n"
+                },
+                {
+                    "date": 1771240517249,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n }\n \n export enum TaskStatus {\n \n-   Waiting = waiting\n+   Waiting = waiting'\n }\n \n \n @Entity(tasks)\n"
+                },
+                {
+                    "date": 1771240524595,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,10 @@\n }\n \n export enum TaskStatus {\n \n-   Waiting = waiting'\n+   Waiting = 'waiting';\n+   \n }\n \n \n @Entity(tasks)\n"
+                },
+                {
+                    "date": 1771240535119,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n export enum TaskStatus {\n \n    Waiting = 'waiting';\n-   \n+   Inprogress\n }\n \n \n @Entity(tasks)\n"
+                },
+                {
+                    "date": 1771240540153,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n export enum TaskStatus {\n \n    Waiting = 'waiting';\n-   Inprogress\n+   InProgress\n }\n \n \n @Entity(tasks)\n"
+                },
+                {
+                    "date": 1771240549107,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n export enum TaskStatus {\n \n    Waiting = 'waiting';\n-   InProgress\n+   InProgress = 'inprogress'\n }\n \n \n @Entity(tasks)\n"
+                },
+                {
+                    "date": 1771240556024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,10 @@\n \n export enum TaskStatus {\n \n    Waiting = 'waiting';\n-   InProgress = 'inprogress'\n+   InProgress = 'inprogress';\n+   Don\n }\n \n \n @Entity(tasks)\n"
+                },
+                {
+                    "date": 1771240562468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n export enum TaskStatus {\n \n    Waiting = 'waiting';\n    InProgress = 'inprogress';\n-   Don\n+   Done = ''\n }\n \n \n @Entity(tasks)\n"
+                },
+                {
+                    "date": 1771240593864,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,56 @@\n+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n+\n+\n+export enum TaskPriority{\n+    Low = 'low';\n+    Mediun = 'mediun';\n+    High = 'high';\n+}\n+\n+export enum TaskStatus {\n+\n+   Waiting = 'waiting';\n+   InProgress = 'inprogress';\n+   Done = 'done'\n+}\n+\n+\n+@Entity(tasks)\n+export class Tasks{\n+\n+    @PrimaryGeneratedColumn()\n+    id: number;\n+\n+    @Column()\n+    title: string;\n+\n+    @Column( type:'text', nullable:true)\n+    description: string;\n+\n+    @Column(\n+         type:'enum',\n+         enum: TaskPriority,\n+         default: TaskPriority.LOW,\n+        \n+        )\n+    priority: TaskPriority;\n+\n+    @Column()\n+    status:;\n+\n+    @Column()\n+    deadline:;\n+\n+    @Column()\n+    assignedTo:;\n+\n+    @Column()\n+    createdBy:;\n+\n+    @Column()\n+    createdAt:;\n+\n+    @Column()\n+    updatedAt:;\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771240600073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,10 @@\n export enum TaskStatus {\n \n    Waiting = 'waiting';\n    InProgress = 'inprogress';\n-   Done = 'done'\n+   Done = 'done';\n+   On\n }\n \n \n @Entity(tasks)\n@@ -52,61 +53,5 @@\n \n     @Column()\n     updatedAt:;\n \n-}\n-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n-\n-\n-export enum TaskPriority{\n-    Low = 'low';\n-    Mediun = 'mediun';\n-    High = 'high';\n-}\n-\n-export enum TaskStatus {\n-\n-   Waiting = 'waiting';\n-   InProgress = 'inprogress';\n-   Done = ''\n-}\n-\n-\n-@Entity(tasks)\n-export class Tasks{\n-\n-    @PrimaryGeneratedColumn()\n-    id: number;\n-\n-    @Column()\n-    title: string;\n-\n-    @Column( type:'text', nullable:true)\n-    description: string;\n-\n-    @Column(\n-         type:'enum',\n-         enum: TaskPriority,\n-         default: TaskPriority.LOW,\n-        \n-        )\n-    priority: TaskPriority;\n-\n-    @Column()\n-    status:;\n-\n-    @Column()\n-    deadline:;\n-\n-    @Column()\n-    assignedTo:;\n-\n-    @Column()\n-    createdBy:;\n-\n-    @Column()\n-    createdAt:;\n-\n-    @Column()\n-    updatedAt:;\n-\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771240609960,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \n    Waiting = 'waiting';\n    InProgress = 'inprogress';\n    Done = 'done';\n-   On\n+   OnGit = 'ongit'\n }\n \n \n @Entity(tasks)\n"
+                },
+                {
+                    "date": 1771240619315,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \n    Waiting = 'waiting';\n    InProgress = 'inprogress';\n    Done = 'done';\n-   OnGit = 'ongit'\n+   OnGit = 'ongit';\n }\n \n \n @Entity(tasks)\n"
+                },
+                {
+                    "date": 1771240627429,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,11 @@\n         \n         )\n     priority: TaskPriority;\n \n-    @Column()\n+    @Column(\n+        type\n+    )\n     status:;\n \n     @Column()\n     deadline:;\n"
+                },
+                {
+                    "date": 1771240634370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n         )\n     priority: TaskPriority;\n \n     @Column(\n-        type\n+        type:'enum'\n     )\n     status:;\n \n     @Column()\n"
+                },
+                {
+                    "date": 1771240642304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,10 @@\n         )\n     priority: TaskPriority;\n \n     @Column(\n-        type:'enum'\n+        type:'enum',\n+        enum\n     )\n     status:;\n \n     @Column()\n"
+                },
+                {
+                    "date": 1771240656229,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n     priority: TaskPriority;\n \n     @Column(\n         type:'enum',\n-        enum\n+        enum: TaskS\n     )\n     status:;\n \n     @Column()\n"
+                },
+                {
+                    "date": 1771240662621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,10 @@\n     priority: TaskPriority;\n \n     @Column(\n         type:'enum',\n-        enum: TaskS\n+        enum: TaskStatus,\n+        de\n     )\n     status:;\n \n     @Column()\n"
+                },
+                {
+                    "date": 1771240673551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n \n     @Column(\n         type:'enum',\n         enum: TaskStatus,\n-        de\n+        default: Tas\n     )\n     status:;\n \n     @Column()\n"
+                },
+                {
+                    "date": 1771240682261,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n \n     @Column(\n         type:'enum',\n         enum: TaskStatus,\n-        default: Tas\n+        default: TaskStatus.W\n     )\n     status:;\n \n     @Column()\n"
+                },
+                {
+                    "date": 1771240687607,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,61 @@\n+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n+\n+\n+export enum TaskPriority{\n+    Low = 'low';\n+    Mediun = 'mediun';\n+    High = 'high';\n+}\n+\n+export enum TaskStatus {\n+\n+   Waiting = 'waiting';\n+   InProgress = 'inprogress';\n+   Done = 'done';\n+   OnGit = 'ongit';\n+}\n+\n+\n+@Entity(tasks)\n+export class Tasks{\n+\n+    @PrimaryGeneratedColumn()\n+    id: number;\n+\n+    @Column()\n+    title: string;\n+\n+    @Column( type:'text', nullable:true)\n+    description: string;\n+\n+    @Column(\n+         type:'enum',\n+         enum: TaskPriority,\n+         default: TaskPriority.LOW,\n+        \n+        )\n+    priority: TaskPriority;\n+\n+    @Column(\n+        type:'enum',\n+        enum: TaskStatus,\n+        default: TaskStatus.Waiting,\n+    )\n+    status:;\n+\n+    @Column()\n+    deadline:;\n+\n+    @Column()\n+    assignedTo:;\n+\n+    @Column()\n+    createdBy:;\n+\n+    @Column()\n+    createdAt:;\n+\n+    @Column()\n+    updatedAt:;\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771240695666,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n         type:'enum',\n         enum: TaskStatus,\n         default: TaskStatus.Waiting,\n     )\n-    status:;\n+    status:Ts;\n \n     @Column()\n     deadline:;\n \n@@ -57,66 +57,5 @@\n \n     @Column()\n     updatedAt:;\n \n-}\n-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n-\n-\n-export enum TaskPriority{\n-    Low = 'low';\n-    Mediun = 'mediun';\n-    High = 'high';\n-}\n-\n-export enum TaskStatus {\n-\n-   Waiting = 'waiting';\n-   InProgress = 'inprogress';\n-   Done = 'done';\n-   OnGit = 'ongit';\n-}\n-\n-\n-@Entity(tasks)\n-export class Tasks{\n-\n-    @PrimaryGeneratedColumn()\n-    id: number;\n-\n-    @Column()\n-    title: string;\n-\n-    @Column( type:'text', nullable:true)\n-    description: string;\n-\n-    @Column(\n-         type:'enum',\n-         enum: TaskPriority,\n-         default: TaskPriority.LOW,\n-        \n-        )\n-    priority: TaskPriority;\n-\n-    @Column(\n-        type:'enum',\n-        enum: TaskStatus,\n-        default: TaskStatus.W\n-    )\n-    status:;\n-\n-    @Column()\n-    deadline:;\n-\n-    @Column()\n-    assignedTo:;\n-\n-    @Column()\n-    createdBy:;\n-\n-    @Column()\n-    createdAt:;\n-\n-    @Column()\n-    updatedAt:;\n-\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771240706481,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n         type:'enum',\n         enum: TaskStatus,\n         default: TaskStatus.Waiting,\n     )\n-    status:Ts;\n+    status:Ta;\n \n     @Column()\n     deadline:;\n \n"
+                },
+                {
+                    "date": 1771240720317,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,14 +35,15 @@\n         \n         )\n     priority: TaskPriority;\n \n+    \n     @Column(\n         type:'enum',\n         enum: TaskStatus,\n         default: TaskStatus.Waiting,\n     )\n-    status:Ta;\n+    status:TaskStatus;\n \n     @Column()\n     deadline:;\n \n"
+                },
+                {
+                    "date": 1771240751929,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n }\n \n export enum TaskStatus {\n \n-   Waiting = 'waiting';\n+   To = 'waiting';\n    InProgress = 'inprogress';\n    Done = 'done';\n    OnGit = 'ongit';\n }\n@@ -35,9 +35,9 @@\n         \n         )\n     priority: TaskPriority;\n \n-    \n+\n     @Column(\n         type:'enum',\n         enum: TaskStatus,\n         default: TaskStatus.Waiting,\n"
+                },
+                {
+                    "date": 1771240758509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n }\n \n export enum TaskStatus {\n \n-   To = 'waiting';\n+   Todo = 'todo';\n    InProgress = 'inprogress';\n    Done = 'done';\n    OnGit = 'ongit';\n }\n"
+                },
+                {
+                    "date": 1771240772651,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n export enum TaskStatus {\n \n    Todo = 'todo';\n-   InProgress = 'inprogress';\n+   In_Progress = 'inprogress';\n    Done = 'done';\n    OnGit = 'ongit';\n }\n \n"
+                },
+                {
+                    "date": 1771240783322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n export enum TaskStatus {\n \n    Todo = 'todo';\n-   In_Progress = 'inprogress';\n+   In_Progress = 'in_progress';\n    Done = 'done';\n    OnGit = 'ongit';\n }\n \n@@ -39,9 +39,9 @@\n \n     @Column(\n         type:'enum',\n         enum: TaskStatus,\n-        default: TaskStatus.Waiting,\n+        default: TaskStatus.T,\n     )\n     status:TaskStatus;\n \n     @Column()\n"
+                },
+                {
+                    "date": 1771240791885,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,14 +39,14 @@\n \n     @Column(\n         type:'enum',\n         enum: TaskStatus,\n-        default: TaskStatus.T,\n+        default: TaskStatus.Todo,\n     )\n     status:TaskStatus;\n \n     @Column()\n-    deadline:;\n+    deadline: ;\n \n     @Column()\n     assignedTo:;\n \n"
+                },
+                {
+                    "date": 1771240797501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n     )\n     status:TaskStatus;\n \n     @Column()\n-    deadline: ;\n+    deadline: Date;\n \n     @Column()\n     assignedTo:;\n \n"
+                },
+                {
+                    "date": 1771240886434,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n         default: TaskStatus.Todo,\n     )\n     status:TaskStatus;\n \n-    @Column()\n+    @Column({})\n     deadline: Date;\n \n     @Column()\n     assignedTo:;\n"
+                },
+                {
+                    "date": 1771240892393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n         default: TaskStatus.Todo,\n     )\n     status:TaskStatus;\n \n-    @Column({})\n+    @Column({ type:})\n     deadline: Date;\n \n     @Column()\n     assignedTo:;\n"
+                },
+                {
+                    "date": 1771241200048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n         default: TaskStatus.Todo,\n     )\n     status:TaskStatus;\n \n-    @Column({ type:})\n+    @Column({ type:'ti'})\n     deadline: Date;\n \n     @Column()\n     assignedTo:;\n"
+                },
+                {
+                    "date": 1771241205681,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,62 @@\n+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n+\n+\n+export enum TaskPriority{\n+    Low = 'low';\n+    Mediun = 'mediun';\n+    High = 'high';\n+}\n+\n+export enum TaskStatus {\n+\n+   Todo = 'todo';\n+   In_Progress = 'in_progress';\n+   Done = 'done';\n+   OnGit = 'ongit';\n+}\n+\n+\n+@Entity(tasks)\n+export class Tasks{\n+\n+    @PrimaryGeneratedColumn()\n+    id: number;\n+\n+    @Column()\n+    title: string;\n+\n+    @Column( type:'text', nullable:true)\n+    description: string;\n+\n+    @Column(\n+         type:'enum',\n+         enum: TaskPriority,\n+         default: TaskPriority.LOW,\n+        \n+        )\n+    priority: TaskPriority;\n+\n+\n+    @Column(\n+        type:'enum',\n+        enum: TaskStatus,\n+        default: TaskStatus.Todo,\n+    )\n+    status:TaskStatus;\n+\n+    @Column({ type:'timestamp'})\n+    deadline: Date;\n+\n+    @Column()\n+    assignedTo:;\n+\n+    @Column()\n+    createdBy:;\n+\n+    @Column()\n+    createdAt:;\n+\n+    @Column()\n+    updatedAt:;\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771241212156,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n         default: TaskStatus.Todo,\n     )\n     status:TaskStatus;\n \n-    @Column({ type:'timestamp'})\n+    @Column({ type:'timestamp', nullable:tru})\n     deadline: Date;\n \n     @Column()\n     assignedTo:;\n@@ -58,67 +58,5 @@\n \n     @Column()\n     updatedAt:;\n \n-}\n-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n-\n-\n-export enum TaskPriority{\n-    Low = 'low';\n-    Mediun = 'mediun';\n-    High = 'high';\n-}\n-\n-export enum TaskStatus {\n-\n-   Todo = 'todo';\n-   In_Progress = 'in_progress';\n-   Done = 'done';\n-   OnGit = 'ongit';\n-}\n-\n-\n-@Entity(tasks)\n-export class Tasks{\n-\n-    @PrimaryGeneratedColumn()\n-    id: number;\n-\n-    @Column()\n-    title: string;\n-\n-    @Column( type:'text', nullable:true)\n-    description: string;\n-\n-    @Column(\n-         type:'enum',\n-         enum: TaskPriority,\n-         default: TaskPriority.LOW,\n-        \n-        )\n-    priority: TaskPriority;\n-\n-\n-    @Column(\n-        type:'enum',\n-        enum: TaskStatus,\n-        default: TaskStatus.Todo,\n-    )\n-    status:TaskStatus;\n-\n-    @Column({ type:'ti'})\n-    deadline: Date;\n-\n-    @Column()\n-    assignedTo:;\n-\n-    @Column()\n-    createdBy:;\n-\n-    @Column()\n-    createdAt:;\n-\n-    @Column()\n-    updatedAt:;\n-\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771241269078,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,13 +39,13 @@\n \n     @Column(\n         type:'enum',\n         enum: TaskStatus,\n-        default: TaskStatus.Todo,\n+        default: TaskStatus.Todo\n     )\n     status:TaskStatus;\n \n-    @Column({ type:'timestamp', nullable:tru})\n+    @Column({ type:'timestamp', nullable:true })\n     deadline: Date;\n \n     @Column()\n     assignedTo:;\n"
+                },
+                {
+                    "date": 1771241279493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n }\n \n export enum TaskStatus {\n \n-   Todo = 'todo';\n+   Todo = 'todo',\n    In_Progress = 'in_progress';\n    Done = 'done';\n    OnGit = 'ongit';\n }\n"
+                },
+                {
+                    "date": 1771241285605,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,11 +9,11 @@\n \n export enum TaskStatus {\n \n    Todo = 'todo',\n-   In_Progress = 'in_progress';\n-   Done = 'done';\n-   OnGit = 'ongit';\n+   In_Progress = 'in_progress',\n+   Done = 'done',\n+   OnGit = 'ongit'\n }\n \n \n @Entity(tasks)\n"
+                },
+                {
+                    "date": 1771241295039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n \n \n export enum TaskPriority{\n-    Low = 'low';\n+    Low = 'low',\n     Mediun = 'mediun';\n     High = 'high';\n }\n \n@@ -11,9 +11,9 @@\n \n    Todo = 'todo',\n    In_Progress = 'in_progress',\n    Done = 'done',\n-   OnGit = 'ongit'\n+   OnGit = 'ongit',\n }\n \n \n @Entity(tasks)\n"
+                },
+                {
+                    "date": 1771241342095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,10 @@\n \n \n export enum TaskPriority{\n     Low = 'low',\n-    Mediun = 'mediun';\n-    High = 'high';\n+    Mediun = 'mediun',\n+    High = 'high',\n }\n \n export enum TaskStatus {\n \n@@ -24,9 +24,9 @@\n \n     @Column()\n     title: string;\n \n-    @Column( type:'text', nullable:true)\n+    @Column( {type:'text', nullable:true})\n     description: string;\n \n     @Column(\n          type:'enum',\n"
+                },
+                {
+                    "date": 1771241351053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n \n     @Column(\n          type:'enum',\n          enum: TaskPriority,\n-         default: TaskPriority.LOW,\n+         default: TaskPriority.LOW\n         \n         )\n     priority: TaskPriority;\n \n"
+                },
+                {
+                    "date": 1771241426185,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,11 +37,11 @@\n     priority: TaskPriority;\n \n \n     @Column(\n-        type:'enum',\n+       { type:'enum',\n         enum: TaskStatus,\n-        default: TaskStatus.Todo\n+        default: TaskStatus.Todo}\n     )\n     status:TaskStatus;\n \n     @Column({ type:'timestamp', nullable:true })\n"
+                },
+                {
+                    "date": 1771241441345,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,10 @@\n \n     @Column(\n        { type:'enum',\n         enum: TaskStatus,\n-        default: TaskStatus.Todo}\n+        default: TaskStatus.Todo\n+        }\n     )\n     status:TaskStatus;\n \n     @Column({ type:'timestamp', nullable:true })\n"
+                },
+                {
+                    "date": 1771241446620,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,63 @@\n+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n+\n+\n+export enum TaskPriority{\n+    Low = 'low',\n+    Mediun = 'mediun',\n+    High = 'high',\n+}\n+\n+export enum TaskStatus {\n+\n+   Todo = 'todo',\n+   In_Progress = 'in_progress',\n+   Done = 'done',\n+   OnGit = 'ongit',\n+}\n+\n+\n+@Entity(tasks)\n+export class Tasks{\n+\n+    @PrimaryGeneratedColumn()\n+    id: number;\n+\n+    @Column()\n+    title: string;\n+\n+    @Column( {type:'text', nullable:true})\n+    description: string;\n+\n+    @Column(\n+         type:'enum',\n+         enum: TaskPriority,\n+         default: TaskPriority.LOW\n+        \n+        )\n+    priority: TaskPriority;\n+\n+\n+    @Column(\n+       { type:'enum',\n+            enum: TaskStatus,\n+            default: TaskStatus.Todo\n+        }\n+    )\n+    status:TaskStatus;\n+\n+    @Column({ type:'timestamp', nullable:true })\n+    deadline: Date;\n+\n+    @Column()\n+    assignedTo:;\n+\n+    @Column()\n+    createdBy:;\n+\n+    @Column()\n+    createdAt:;\n+\n+    @Column()\n+    updatedAt:;\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771241458313,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,11 +37,11 @@\n     priority: TaskPriority;\n \n \n     @Column(\n-       { type:'enum',\n-            enum: TaskStatus,\n-            default: TaskStatus.Todo\n+{    type:'enum',\n+    enum: TaskStatus,\n+    default: TaskStatus.Todo\n         }\n     )\n     status:TaskStatus;\n \n@@ -59,68 +59,5 @@\n \n     @Column()\n     updatedAt:;\n \n-}\n-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n-\n-\n-export enum TaskPriority{\n-    Low = 'low',\n-    Mediun = 'mediun',\n-    High = 'high',\n-}\n-\n-export enum TaskStatus {\n-\n-   Todo = 'todo',\n-   In_Progress = 'in_progress',\n-   Done = 'done',\n-   OnGit = 'ongit',\n-}\n-\n-\n-@Entity(tasks)\n-export class Tasks{\n-\n-    @PrimaryGeneratedColumn()\n-    id: number;\n-\n-    @Column()\n-    title: string;\n-\n-    @Column( {type:'text', nullable:true})\n-    description: string;\n-\n-    @Column(\n-         type:'enum',\n-         enum: TaskPriority,\n-         default: TaskPriority.LOW\n-        \n-        )\n-    priority: TaskPriority;\n-\n-\n-    @Column(\n-       { type:'enum',\n-        enum: TaskStatus,\n-        default: TaskStatus.Todo\n-        }\n-    )\n-    status:TaskStatus;\n-\n-    @Column({ type:'timestamp', nullable:true })\n-    deadline: Date;\n-\n-    @Column()\n-    assignedTo:;\n-\n-    @Column()\n-    createdBy:;\n-\n-    @Column()\n-    createdAt:;\n-\n-    @Column()\n-    updatedAt:;\n-\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771241463844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,63 @@\n+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n+\n+\n+export enum TaskPriority{\n+    Low = 'low',\n+    Mediun = 'mediun',\n+    High = 'high',\n+}\n+\n+export enum TaskStatus {\n+\n+   Todo = 'todo',\n+   In_Progress = 'in_progress',\n+   Done = 'done',\n+   OnGit = 'ongit',\n+}\n+\n+\n+@Entity(tasks)\n+export class Tasks{\n+\n+    @PrimaryGeneratedColumn()\n+    id: number;\n+\n+    @Column()\n+    title: string;\n+\n+    @Column( {type:'text', nullable:true})\n+    description: string;\n+\n+    @Column(\n+         type:'enum',\n+         enum: TaskPriority,\n+         default: TaskPriority.LOW\n+        \n+        )\n+    priority: TaskPriority;\n+\n+\n+    @Column(\n+    {    type:'enum',\n+    enum: TaskStatus,\n+    default: TaskStatus.Todo\n+        }\n+    )\n+    status:TaskStatus;\n+\n+    @Column({ type:'timestamp', nullable:true })\n+    deadline: Date;\n+\n+    @Column()\n+    assignedTo:;\n+\n+    @Column()\n+    createdBy:;\n+\n+    @Column()\n+    createdAt:;\n+\n+    @Column()\n+    updatedAt:;\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771241470843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,11 +37,11 @@\n     priority: TaskPriority;\n \n \n     @Column(\n-    {    type:'enum',\n-    enum: TaskStatus,\n-    default: TaskStatus.Todo\n+        { type:'enum',\n+        enum: TaskStatus,\n+        default: TaskStatus.Todo\n         }\n     )\n     status:TaskStatus;\n \n@@ -59,68 +59,5 @@\n \n     @Column()\n     updatedAt:;\n \n-}\n-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n-\n-\n-export enum TaskPriority{\n-    Low = 'low',\n-    Mediun = 'mediun',\n-    High = 'high',\n-}\n-\n-export enum TaskStatus {\n-\n-   Todo = 'todo',\n-   In_Progress = 'in_progress',\n-   Done = 'done',\n-   OnGit = 'ongit',\n-}\n-\n-\n-@Entity(tasks)\n-export class Tasks{\n-\n-    @PrimaryGeneratedColumn()\n-    id: number;\n-\n-    @Column()\n-    title: string;\n-\n-    @Column( {type:'text', nullable:true})\n-    description: string;\n-\n-    @Column(\n-         type:'enum',\n-         enum: TaskPriority,\n-         default: TaskPriority.LOW\n-        \n-        )\n-    priority: TaskPriority;\n-\n-\n-    @Column(\n-{    type:'enum',\n-    enum: TaskStatus,\n-    default: TaskStatus.Todo\n-        }\n-    )\n-    status:TaskStatus;\n-\n-    @Column({ type:'timestamp', nullable:true })\n-    deadline: Date;\n-\n-    @Column()\n-    assignedTo:;\n-\n-    @Column()\n-    createdBy:;\n-\n-    @Column()\n-    createdAt:;\n-\n-    @Column()\n-    updatedAt:;\n-\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771241477152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,12 +28,12 @@\n     @Column( {type:'text', nullable:true})\n     description: string;\n \n     @Column(\n-         type:'enum',\n+         {type:'enum',\n          enum: TaskPriority,\n          default: TaskPriority.LOW\n-        \n+        }\n         )\n     priority: TaskPriority;\n \n \n"
+                },
+                {
+                    "date": 1771241482507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,10 @@\n     @Column( {type:'text', nullable:true})\n     description: string;\n \n     @Column(\n-         {type:'enum',\n+         {\n+        type:'enum',\n          enum: TaskPriority,\n          default: TaskPriority.LOW\n         }\n         )\n"
+                },
+                {
+                    "date": 1771241487846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,11 +29,11 @@\n     description: string;\n \n     @Column(\n          {\n-        type:'enum',\n-         enum: TaskPriority,\n-         default: TaskPriority.LOW\n+type:'enum',\n+enum: TaskPriority,\n+default: TaskPriority.LOW\n         }\n         )\n     priority: TaskPriority;\n \n"
+                },
+                {
+                    "date": 1771241492921,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,65 @@\n+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n+\n+\n+export enum TaskPriority{\n+    Low = 'low',\n+    Mediun = 'mediun',\n+    High = 'high',\n+}\n+\n+export enum TaskStatus {\n+\n+   Todo = 'todo',\n+   In_Progress = 'in_progress',\n+   Done = 'done',\n+   OnGit = 'ongit',\n+}\n+\n+\n+@Entity(tasks)\n+export class Tasks{\n+\n+    @PrimaryGeneratedColumn()\n+    id: number;\n+\n+    @Column()\n+    title: string;\n+\n+    @Column( {type:'text', nullable:true})\n+    description: string;\n+\n+    @Column(\n+         {\n+            type:'enum',\n+            enum: TaskPriority,\n+            default: TaskPriority.LOW\n+        }\n+        )\n+    priority: TaskPriority;\n+\n+\n+    @Column(\n+        { \n+            type:'enum',\n+        enum: TaskStatus,\n+        default: TaskStatus.Todo\n+        }\n+    )\n+    status:TaskStatus;\n+\n+    @Column({ type:'timestamp', nullable:true })\n+    deadline: Date;\n+\n+    @Column()\n+    assignedTo:;\n+\n+    @Column()\n+    createdBy:;\n+\n+    @Column()\n+    createdAt:;\n+\n+    @Column()\n+    updatedAt:;\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771241499362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,10 +40,10 @@\n \n     @Column(\n         { \n             type:'enum',\n-        enum: TaskStatus,\n-        default: TaskStatus.Todo\n+            enum: TaskStatus,\n+            default: TaskStatus.Todo\n         }\n     )\n     status:TaskStatus;\n \n@@ -61,69 +61,5 @@\n \n     @Column()\n     updatedAt:;\n \n-}\n-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n-\n-\n-export enum TaskPriority{\n-    Low = 'low',\n-    Mediun = 'mediun',\n-    High = 'high',\n-}\n-\n-export enum TaskStatus {\n-\n-   Todo = 'todo',\n-   In_Progress = 'in_progress',\n-   Done = 'done',\n-   OnGit = 'ongit',\n-}\n-\n-\n-@Entity(tasks)\n-export class Tasks{\n-\n-    @PrimaryGeneratedColumn()\n-    id: number;\n-\n-    @Column()\n-    title: string;\n-\n-    @Column( {type:'text', nullable:true})\n-    description: string;\n-\n-    @Column(\n-         {\n-type:'enum',\n-enum: TaskPriority,\n-default: TaskPriority.LOW\n-        }\n-        )\n-    priority: TaskPriority;\n-\n-\n-    @Column(\n-        { type:'enum',\n-        enum: TaskStatus,\n-        default: TaskStatus.Todo\n-        }\n-    )\n-    status:TaskStatus;\n-\n-    @Column({ type:'timestamp', nullable:true })\n-    deadline: Date;\n-\n-    @Column()\n-    assignedTo:;\n-\n-    @Column()\n-    createdBy:;\n-\n-    @Column()\n-    createdAt:;\n-\n-    @Column()\n-    updatedAt:;\n-\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771245833795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n     @Column({ type:'timestamp', nullable:true })\n     deadline: Date;\n \n     @Column()\n-    assignedTo:;\n+    assignedTo: ;\n \n     @Column()\n     createdBy:;\n \n"
+                },
+                {
+                    "date": 1771245840385,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,65 @@\n+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n+\n+\n+export enum TaskPriority{\n+    Low = 'low',\n+    Mediun = 'mediun',\n+    High = 'high',\n+}\n+\n+export enum TaskStatus {\n+\n+   Todo = 'todo',\n+   In_Progress = 'in_progress',\n+   Done = 'done',\n+   OnGit = 'ongit',\n+}\n+\n+\n+@Entity(tasks)\n+export class Tasks{\n+\n+    @PrimaryGeneratedColumn()\n+    id: number;\n+\n+    @Column()\n+    title: string;\n+\n+    @Column( {type:'text', nullable:true})\n+    description: string;\n+\n+    @Column(\n+         {\n+            type:'enum',\n+            enum: TaskPriority,\n+            default: TaskPriority.LOW\n+        }\n+        )\n+    priority: TaskPriority;\n+\n+\n+    @Column(\n+        { \n+            type:'enum',\n+            enum: TaskStatus,\n+            default: TaskStatus.Todo\n+        }\n+    )\n+    status:TaskStatus;\n+\n+    @Column({ type:'timestamp', nullable:true })\n+    deadline: Date;\n+\n+    @Column({})\n+    assignedTo: user;\n+\n+    @Column()\n+    createdBy:;\n+\n+    @Column()\n+    createdAt:;\n+\n+    @Column()\n+    updatedAt:;\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771246124838,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n \n     @Column({ type:'timestamp', nullable:true })\n     deadline: Date;\n \n-    @Column({})\n+    @Column()\n     assignedTo: user;\n \n     @Column()\n     createdBy:;\n@@ -61,70 +61,5 @@\n \n     @Column()\n     updatedAt:;\n \n-}\n-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n-\n-\n-export enum TaskPriority{\n-    Low = 'low',\n-    Mediun = 'mediun',\n-    High = 'high',\n-}\n-\n-export enum TaskStatus {\n-\n-   Todo = 'todo',\n-   In_Progress = 'in_progress',\n-   Done = 'done',\n-   OnGit = 'ongit',\n-}\n-\n-\n-@Entity(tasks)\n-export class Tasks{\n-\n-    @PrimaryGeneratedColumn()\n-    id: number;\n-\n-    @Column()\n-    title: string;\n-\n-    @Column( {type:'text', nullable:true})\n-    description: string;\n-\n-    @Column(\n-         {\n-            type:'enum',\n-            enum: TaskPriority,\n-            default: TaskPriority.LOW\n-        }\n-        )\n-    priority: TaskPriority;\n-\n-\n-    @Column(\n-        { \n-            type:'enum',\n-            enum: TaskStatus,\n-            default: TaskStatus.Todo\n-        }\n-    )\n-    status:TaskStatus;\n-\n-    @Column({ type:'timestamp', nullable:true })\n-    deadline: Date;\n-\n-    @Column()\n-    assignedTo: ;\n-\n-    @Column()\n-    createdBy:;\n-\n-    @Column()\n-    createdAt:;\n-\n-    @Column()\n-    updatedAt:;\n-\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771246131446,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n \n     @Column({ type:'timestamp', nullable:true })\n     deadline: Date;\n \n-    @Column()\n+    @Column(User , ())\n     assignedTo: user;\n \n     @Column()\n     createdBy:;\n"
+                },
+                {
+                    "date": 1771246137432,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,65 @@\n+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n+\n+\n+export enum TaskPriority{\n+    Low = 'low',\n+    Mediun = 'mediun',\n+    High = 'high',\n+}\n+\n+export enum TaskStatus {\n+\n+   Todo = 'todo',\n+   In_Progress = 'in_progress',\n+   Done = 'done',\n+   OnGit = 'ongit',\n+}\n+\n+\n+@Entity(tasks)\n+export class Tasks{\n+\n+    @PrimaryGeneratedColumn()\n+    id: number;\n+\n+    @Column()\n+    title: string;\n+\n+    @Column( {type:'text', nullable:true})\n+    description: string;\n+\n+    @Column(\n+         {\n+            type:'enum',\n+            enum: TaskPriority,\n+            default: TaskPriority.LOW\n+        }\n+        )\n+    priority: TaskPriority;\n+\n+\n+    @Column(\n+        { \n+            type:'enum',\n+            enum: TaskStatus,\n+            default: TaskStatus.Todo\n+        }\n+    )\n+    status:TaskStatus;\n+\n+    @Column({ type:'timestamp', nullable:true })\n+    deadline: Date;\n+\n+    @Column(User , (user)=> )\n+    assignedTo: user;\n+\n+    @Column()\n+    createdBy:;\n+\n+    @Column()\n+    createdAt:;\n+\n+    @Column()\n+    updatedAt:;\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771246142715,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n \n     @Column({ type:'timestamp', nullable:true })\n     deadline: Date;\n \n-    @Column(User , (user)=> )\n+    @Column(User , (user)=> UserAssig)\n     assignedTo: user;\n \n     @Column()\n     createdBy:;\n@@ -61,70 +61,5 @@\n \n     @Column()\n     updatedAt:;\n \n-}\n-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n-\n-\n-export enum TaskPriority{\n-    Low = 'low',\n-    Mediun = 'mediun',\n-    High = 'high',\n-}\n-\n-export enum TaskStatus {\n-\n-   Todo = 'todo',\n-   In_Progress = 'in_progress',\n-   Done = 'done',\n-   OnGit = 'ongit',\n-}\n-\n-\n-@Entity(tasks)\n-export class Tasks{\n-\n-    @PrimaryGeneratedColumn()\n-    id: number;\n-\n-    @Column()\n-    title: string;\n-\n-    @Column( {type:'text', nullable:true})\n-    description: string;\n-\n-    @Column(\n-         {\n-            type:'enum',\n-            enum: TaskPriority,\n-            default: TaskPriority.LOW\n-        }\n-        )\n-    priority: TaskPriority;\n-\n-\n-    @Column(\n-        { \n-            type:'enum',\n-            enum: TaskStatus,\n-            default: TaskStatus.Todo\n-        }\n-    )\n-    status:TaskStatus;\n-\n-    @Column({ type:'timestamp', nullable:true })\n-    deadline: Date;\n-\n-    @Column(User , ())\n-    assignedTo: user;\n-\n-    @Column()\n-    createdBy:;\n-\n-    @Column()\n-    createdAt:;\n-\n-    @Column()\n-    updatedAt:;\n-\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771246149789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n \n     @Column({ type:'timestamp', nullable:true })\n     deadline: Date;\n \n-    @Column(User , (user)=> UserAssig)\n+    @Column(User , (user)=> UserAssigned)\n     assignedTo: user;\n \n     @Column()\n     createdBy:;\n"
+                },
+                {
+                    "date": 1771246166657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n \n     @Column({ type:'timestamp', nullable:true })\n     deadline: Date;\n \n-    @Column(User , (user)=> UserAssigned)\n+    @Column(User , (user)=> UserAssignedTasks)\n     assignedTo: user;\n \n     @Column()\n     createdBy:;\n"
+                },
+                {
+                    "date": 1771246174079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n \n     @Column({ type:'timestamp', nullable:true })\n     deadline: Date;\n \n-    @Column(User , (user)=> UserAssignedTasks)\n+    @Column(()=> User , (user)=> UserAssignedTasks)\n     assignedTo: user;\n \n     @Column()\n     createdBy:;\n"
+                },
+                {
+                    "date": 1771246188561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n     @Column({ type:'timestamp', nullable:true })\n     deadline: Date;\n \n     @Column(()=> User , (user)=> UserAssignedTasks)\n-    assignedTo: user;\n+    assignedTo: ser;\n \n     @Column()\n     createdBy:;\n \n"
+                },
+                {
+                    "date": 1771246207142,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';\n+import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn } from 'typeorm';\n \n \n export enum TaskPriority{\n     Low = 'low',\n@@ -50,9 +50,9 @@\n     @Column({ type:'timestamp', nullable:true })\n     deadline: Date;\n \n     @Column(()=> User , (user)=> UserAssignedTasks)\n-    assignedTo: ser;\n+    assignedTo: User;\n \n     @Column()\n     createdBy:;\n \n"
+                },
+                {
+                    "date": 1771246219508,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,10 @@\n     assignedTo: User;\n \n     @Column()\n     createdBy:;\n-\n+    \n+    \n     @Column()\n     createdAt:;\n \n     @Column()\n"
+                },
+                {
+                    "date": 1771246231871,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn } from 'typeorm';\n+import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,up } from 'typeorm';\n \n \n export enum TaskPriority{\n     Low = 'low',\n@@ -55,9 +55,9 @@\n \n     @Column()\n     createdBy:;\n     \n-    \n+    @CreateDateColumn()\n     @Column()\n     createdAt:;\n \n     @Column()\n"
+                },
+                {
+                    "date": 1771246241738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,up } from 'typeorm';\n+import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,UpdateDateColumn } from 'typeorm';\n \n \n export enum TaskPriority{\n     Low = 'low',\n@@ -58,9 +58,9 @@\n     \n     @CreateDateColumn()\n     @Column()\n     createdAt:;\n-\n+    \n     @Column()\n     updatedAt:;\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771246247951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,9 +58,9 @@\n     \n     @CreateDateColumn()\n     @Column()\n     createdAt:;\n-    \n+    @UpdateDateColumn()\n     @Column()\n     updatedAt:;\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771246255815,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,68 @@\n+import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,UpdateDateColumn } from 'typeorm';\n+\n+\n+export enum TaskPriority{\n+    Low = 'low',\n+    Mediun = 'mediun',\n+    High = 'high',\n+}\n+\n+export enum TaskStatus {\n+\n+   Todo = 'todo',\n+   In_Progress = 'in_progress',\n+   Done = 'done',\n+   OnGit = 'ongit',\n+}\n+\n+\n+@Entity(tasks)\n+export class Tasks{\n+\n+    @PrimaryGeneratedColumn()\n+    id: number;\n+\n+    @Column()\n+    title: string;\n+\n+    @Column( {type:'text', nullable:true})\n+    description: string;\n+\n+    @Column(\n+         {\n+            type:'enum',\n+            enum: TaskPriority,\n+            default: TaskPriority.LOW\n+        }\n+        )\n+    priority: TaskPriority;\n+\n+\n+    @Column(\n+        { \n+            type:'enum',\n+            enum: TaskStatus,\n+            default: TaskStatus.Todo\n+        }\n+    )\n+    status:TaskStatus;\n+\n+    @Column({ type:'timestamp', nullable:true })\n+    deadline: Date;\n+\n+    @Column(()=> User , (user)=> UserAssignedTasks)\n+    assignedTo: User;\n+\n+    @Column()\n+    createdBy:;\n+    \n+    @CreateDateColumn()\n+    @Column()\n+    createdAt:Date;\n+\n+\n+    @UpdateDateColumn()\n+    @Column()\n+    updatedAt:;\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771246268673,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,74 +61,7 @@\n     createdAt:Date;\n \n \n     @UpdateDateColumn()\n-    @Column()\n-    updatedAt:;\n+    updatedAt:Date;\n \n-}\n-import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,UpdateDateColumn } from 'typeorm';\n-\n-\n-export enum TaskPriority{\n-    Low = 'low',\n-    Mediun = 'mediun',\n-    High = 'high',\n-}\n-\n-export enum TaskStatus {\n-\n-   Todo = 'todo',\n-   In_Progress = 'in_progress',\n-   Done = 'done',\n-   OnGit = 'ongit',\n-}\n-\n-\n-@Entity(tasks)\n-export class Tasks{\n-\n-    @PrimaryGeneratedColumn()\n-    id: number;\n-\n-    @Column()\n-    title: string;\n-\n-    @Column( {type:'text', nullable:true})\n-    description: string;\n-\n-    @Column(\n-         {\n-            type:'enum',\n-            enum: TaskPriority,\n-            default: TaskPriority.LOW\n-        }\n-        )\n-    priority: TaskPriority;\n-\n-\n-    @Column(\n-        { \n-            type:'enum',\n-            enum: TaskStatus,\n-            default: TaskStatus.Todo\n-        }\n-    )\n-    status:TaskStatus;\n-\n-    @Column({ type:'timestamp', nullable:true })\n-    deadline: Date;\n-\n-    @Column(()=> User , (user)=> UserAssignedTasks)\n-    assignedTo: User;\n-\n-    @Column()\n-    createdBy:;\n-    \n-    @CreateDateColumn()\n-    @Column()\n-    createdAt:;\n-    @UpdateDateColumn()\n-    @Column()\n-    updatedAt:;\n-\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771246284429,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,13 +52,12 @@\n \n     @Column(()=> User , (user)=> UserAssignedTasks)\n     assignedTo: User;\n \n-    @Column()\n+    @Column(())\n     createdBy:;\n     \n     @CreateDateColumn()\n-    @Column()\n     createdAt:Date;\n \n \n     @UpdateDateColumn()\n"
+                },
+                {
+                    "date": 1771246293540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,10 +52,10 @@\n \n     @Column(()=> User , (user)=> UserAssignedTasks)\n     assignedTo: User;\n \n-    @Column(())\n-    createdBy:;\n+    @Column(()=>User)\n+    createdBy: User;\n     \n     @CreateDateColumn()\n     createdAt:Date;\n \n"
+                },
+                {
+                    "date": 1771246314231,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n     @Column(\n          {\n             type:'enum',\n             enum: TaskPriority,\n-            default: TaskPriority.LOW\n+            default: TaskPriority.Low\n         }\n         )\n     priority: TaskPriority;\n \n"
+                },
+                {
+                    "date": 1771246327105,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,UpdateDateColumn } from 'typeorm';\n+imort\n \n-\n export enum TaskPriority{\n     Low = 'low',\n     Mediun = 'mediun',\n     High = 'high',\n"
+                },
+                {
+                    "date": 1771246449909,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,UpdateDateColumn } from 'typeorm';\n-imort\n+imort { User}\n \n export enum TaskPriority{\n     Low = 'low',\n     Mediun = 'mediun',\n"
+                },
+                {
+                    "date": 1771246456905,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,UpdateDateColumn } from 'typeorm';\n-imort { User}\n+imort { User} from '../'\n \n export enum TaskPriority{\n     Low = 'low',\n     Mediun = 'mediun',\n"
+                },
+                {
+                    "date": 1771246465513,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,UpdateDateColumn } from 'typeorm';\n-imort { User} from '../'\n+imort { User} from '../user/user.entity'\n \n export enum TaskPriority{\n     Low = 'low',\n     Mediun = 'mediun',\n"
+                },
+                {
+                    "date": 1771246473103,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,UpdateDateColumn } from 'typeorm';\n-imort { User} from '../user/user.entity'\n+import { User} from '../user/user.entity';\n \n export enum TaskPriority{\n     Low = 'low',\n     Mediun = 'mediun',\n"
+                },
+                {
+                    "date": 1771246490699,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,UpdateDateColumn } from 'typeorm';\n-import { User} from '../user/user.entity';\n+import { User} from './user/user.entity';\n \n export enum TaskPriority{\n     Low = 'low',\n     Mediun = 'mediun',\n"
+                },
+                {
+                    "date": 1771246537094,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,66 @@\n+import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,UpdateDateColumn } from 'typeorm';\n+import { User} from './user/user.entity';\n+\n+export enum TaskPriority{\n+    Low = 'low',\n+    Mediun = 'mediun',\n+    High = 'high',\n+}\n+\n+export enum TaskStatus {\n+\n+   Todo = 'todo',\n+   In_Progress = 'in_progress',\n+   Done = 'done',\n+   OnGit = 'ongit',\n+}\n+\n+\n+@Entity(asks)\n+export class Tasks{\n+\n+    @PrimaryGeneratedColumn()\n+    id: number;\n+\n+    @Column()\n+    title: string;\n+\n+    @Column( {type:'text', nullable:true})\n+    description: string;\n+\n+    @Column(\n+         {\n+            type:'enum',\n+            enum: TaskPriority,\n+            default: TaskPriority.Low\n+        }\n+        )\n+    priority: TaskPriority;\n+\n+\n+    @Column(\n+        { \n+            type:'enum',\n+            enum: TaskStatus,\n+            default: TaskStatus.Todo\n+        }\n+    )\n+    status:TaskStatus;\n+\n+    @Column({ type:'timestamp', nullable:true })\n+    deadline: Date;\n+\n+    @Column(()=> User , (user)=> UserAssignedTasks)\n+    assignedTo: User;\n+\n+    @Column(()=>User)\n+    createdBy: User;\n+    \n+    @CreateDateColumn()\n+    createdAt:Date;\n+\n+\n+    @UpdateDateColumn()\n+    updatedAt:Date;\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771246592594,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n    OnGit = 'ongit',\n }\n \n \n-@Entity(asks)\n+@Entity('Tasks')\n export class Tasks{\n \n     @PrimaryGeneratedColumn()\n     id: number;\n@@ -62,71 +62,5 @@\n \n     @UpdateDateColumn()\n     updatedAt:Date;\n \n-}\n-import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,UpdateDateColumn } from 'typeorm';\n-import { User} from './user/user.entity';\n-\n-export enum TaskPriority{\n-    Low = 'low',\n-    Mediun = 'mediun',\n-    High = 'high',\n-}\n-\n-export enum TaskStatus {\n-\n-   Todo = 'todo',\n-   In_Progress = 'in_progress',\n-   Done = 'done',\n-   OnGit = 'ongit',\n-}\n-\n-\n-@Entity(tasks)\n-export class Tasks{\n-\n-    @PrimaryGeneratedColumn()\n-    id: number;\n-\n-    @Column()\n-    title: string;\n-\n-    @Column( {type:'text', nullable:true})\n-    description: string;\n-\n-    @Column(\n-         {\n-            type:'enum',\n-            enum: TaskPriority,\n-            default: TaskPriority.Low\n-        }\n-        )\n-    priority: TaskPriority;\n-\n-\n-    @Column(\n-        { \n-            type:'enum',\n-            enum: TaskStatus,\n-            default: TaskStatus.Todo\n-        }\n-    )\n-    status:TaskStatus;\n-\n-    @Column({ type:'timestamp', nullable:true })\n-    deadline: Date;\n-\n-    @Column(()=> User , (user)=> UserAssignedTasks)\n-    assignedTo: User;\n-\n-    @Column(()=>User)\n-    createdBy: User;\n-    \n-    @CreateDateColumn()\n-    createdAt:Date;\n-\n-\n-    @UpdateDateColumn()\n-    updatedAt:Date;\n-\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771246692578,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,UpdateDateColumn } from 'typeorm';\n-import { User} from './user/user.entity';\n+import { User} from './user/ent/user.entity';\n \n export enum TaskPriority{\n     Low = 'low',\n     Mediun = 'mediun',\n"
+                },
+                {
+                    "date": 1771246699623,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,UpdateDateColumn } from 'typeorm';\n-import { User} from './user/ent/user.entity';\n+import { User} from '../user/entities/user.entity';\n \n export enum TaskPriority{\n     Low = 'low',\n     Mediun = 'mediun',\n"
+                },
+                {
+                    "date": 1771246717967,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,UpdateDateColumn } from 'typeorm';\n-import { User} from '../user/entities/user.entity';\n+import { User} from '../users/entities/user.entity';\n \n export enum TaskPriority{\n     Low = 'low',\n     Mediun = 'mediun',\n"
+                },
+                {
+                    "date": 1771246770365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,UpdateDateColumn } from 'typeorm';\n-import { User} from '../users/entities/user.entity';\n+import { User} from '..//users/entities/user.entity';\n \n export enum TaskPriority{\n     Low = 'low',\n     Mediun = 'mediun',\n"
+                },
+                {
+                    "date": 1771248908130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,67 @@\n+import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,UpdateDateColumn } from 'typeorm';\n+import { User} from '../../users/entities/user.entity';\n+\n+export enum TaskPriority{\n+    Low = 'low',\n+    Mediun = 'mediun',\n+    High = 'high',\n+}\n+\n+export enum TaskStatus {\n+\n+   Todo = 'todo',\n+   In_Progress = 'in_progress',\n+   Done = 'done',\n+   OnGit = 'ongit',\n+}\n+\n+\n+@Entity('Tasks')\n+export class Tasks{\n+\n+    @PrimaryGeneratedColumn()\n+    id: number;\n+\n+    @Column()\n+    title: string;\n+\n+    @Column( {type:'text', nullable:true})\n+    description: string;\n+\n+    @Column(\n+         {\n+            type:'enum',\n+            enum: TaskPriority,\n+            default: TaskPriority.Low\n+        }\n+        )\n+    priority: TaskPriority;\n+\n+\n+    @Column(\n+        { \n+            type:'enum',\n+            enum: TaskStatus,\n+            default: TaskStatus.Todo\n+        }\n+    )\n+    status:TaskStatus;\n+\n+    @Column({ type:'timestamp', nullable:true })\n+    deadline: Date;\n+\n+    @Column(()=> User , (user)=> UserAssignedTasks)\n+    \n+    assignedTo: User;\n+\n+    @Column(()=>User)\n+    createdBy: User;\n+    \n+    @CreateDateColumn()\n+    createdAt:Date;\n+\n+\n+    @UpdateDateColumn()\n+    updatedAt:Date;\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771249104976,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,10 +49,10 @@\n \n     @Column({ type:'timestamp', nullable:true })\n     deadline: Date;\n \n-    @Column(()=> User , (user)=> UserAssignedTasks)\n-    \n+    @m(()=> User , (user)=> UserAssignedTasks)\n+    @JoinColumn({ name: 'assignedToId' })\n     assignedTo: User;\n \n     @Column(()=>User)\n     createdBy: User;\n@@ -63,71 +63,5 @@\n \n     @UpdateDateColumn()\n     updatedAt:Date;\n \n-}\n-import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,UpdateDateColumn } from 'typeorm';\n-import { User} from '..//users/entities/user.entity';\n-\n-export enum TaskPriority{\n-    Low = 'low',\n-    Mediun = 'mediun',\n-    High = 'high',\n-}\n-\n-export enum TaskStatus {\n-\n-   Todo = 'todo',\n-   In_Progress = 'in_progress',\n-   Done = 'done',\n-   OnGit = 'ongit',\n-}\n-\n-\n-@Entity('Tasks')\n-export class Tasks{\n-\n-    @PrimaryGeneratedColumn()\n-    id: number;\n-\n-    @Column()\n-    title: string;\n-\n-    @Column( {type:'text', nullable:true})\n-    description: string;\n-\n-    @Column(\n-         {\n-            type:'enum',\n-            enum: TaskPriority,\n-            default: TaskPriority.Low\n-        }\n-        )\n-    priority: TaskPriority;\n-\n-\n-    @Column(\n-        { \n-            type:'enum',\n-            enum: TaskStatus,\n-            default: TaskStatus.Todo\n-        }\n-    )\n-    status:TaskStatus;\n-\n-    @Column({ type:'timestamp', nullable:true })\n-    deadline: Date;\n-\n-    @Column(()=> User , (user)=> UserAssignedTasks)\n-    assignedTo: User;\n-\n-    @Column(()=>User)\n-    createdBy: User;\n-    \n-    @CreateDateColumn()\n-    createdAt:Date;\n-\n-\n-    @UpdateDateColumn()\n-    updatedAt:Date;\n-\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771249113283,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n \n     @Column({ type:'timestamp', nullable:true })\n     deadline: Date;\n \n-    @m(()=> User , (user)=> UserAssignedTasks)\n+    @(()=> User , (user)=> UserAssignedTasks)\n     @JoinColumn({ name: 'assignedToId' })\n     assignedTo: User;\n \n     @Column(()=>User)\n"
+                },
+                {
+                    "date": 1771249129999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,67 @@\n+import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,UpdateDateColumn } from 'typeorm';\n+import { User} from '../../users/entities/user.entity';\n+\n+export enum TaskPriority{\n+    Low = 'low',\n+    Mediun = 'mediun',\n+    High = 'high',\n+}\n+\n+export enum TaskStatus {\n+\n+   Todo = 'todo',\n+   In_Progress = 'in_progress',\n+   Done = 'done',\n+   OnGit = 'ongit',\n+}\n+\n+\n+@Entity('Tasks')\n+export class Tasks{\n+\n+    @PrimaryGeneratedColumn()\n+    id: number;\n+\n+    @Column()\n+    title: string;\n+\n+    @Column( {type:'text', nullable:true})\n+    description: string;\n+\n+    @Column(\n+         {\n+            type:'enum',\n+            enum: TaskPriority,\n+            default: TaskPriority.Low\n+        }\n+        )\n+    priority: TaskPriority;\n+\n+\n+    @Column(\n+        { \n+            type:'enum',\n+            enum: TaskStatus,\n+            default: TaskStatus.Todo\n+        }\n+    )\n+    status:TaskStatus;\n+\n+    @Column({ type:'timestamp', nullable:true })\n+    deadline: Date;\n+\n+    @ManyToOne(()=> User , (user)=> UserAssignedTasks)\n+    @JoinColumn({ name: 'assignedToId' })\n+    assignedTo: User;\n+\n+    @Column(()=>User)\n+    createdBy: User;\n+    \n+    @CreateDateColumn()\n+    createdAt:Date;\n+\n+\n+    @UpdateDateColumn()\n+    updatedAt:Date;\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771249140205,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,UpdateDateColumn } from 'typeorm';\n+import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,UpdateDateColumn ,ManyToOne} from 'typeorm';\n import { User} from '../../users/entities/user.entity';\n \n export enum TaskPriority{\n     Low = 'low',\n@@ -63,72 +63,5 @@\n \n     @UpdateDateColumn()\n     updatedAt:Date;\n \n-}\n-import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,UpdateDateColumn } from 'typeorm';\n-import { User} from '../../users/entities/user.entity';\n-\n-export enum TaskPriority{\n-    Low = 'low',\n-    Mediun = 'mediun',\n-    High = 'high',\n-}\n-\n-export enum TaskStatus {\n-\n-   Todo = 'todo',\n-   In_Progress = 'in_progress',\n-   Done = 'done',\n-   OnGit = 'ongit',\n-}\n-\n-\n-@Entity('Tasks')\n-export class Tasks{\n-\n-    @PrimaryGeneratedColumn()\n-    id: number;\n-\n-    @Column()\n-    title: string;\n-\n-    @Column( {type:'text', nullable:true})\n-    description: string;\n-\n-    @Column(\n-         {\n-            type:'enum',\n-            enum: TaskPriority,\n-            default: TaskPriority.Low\n-        }\n-        )\n-    priority: TaskPriority;\n-\n-\n-    @Column(\n-        { \n-            type:'enum',\n-            enum: TaskStatus,\n-            default: TaskStatus.Todo\n-        }\n-    )\n-    status:TaskStatus;\n-\n-    @Column({ type:'timestamp', nullable:true })\n-    deadline: Date;\n-\n-    @(()=> User , (user)=> UserAssignedTasks)\n-    @JoinColumn({ name: 'assignedToId' })\n-    assignedTo: User;\n-\n-    @Column(()=>User)\n-    createdBy: User;\n-    \n-    @CreateDateColumn()\n-    createdAt:Date;\n-\n-\n-    @UpdateDateColumn()\n-    updatedAt:Date;\n-\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771249154372,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,UpdateDateColumn ,ManyToOne} from 'typeorm';\n+import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,UpdateDateColumn ,ManyToOne,JoinColumn} from 'typeorm';\n import { User} from '../../users/entities/user.entity';\n \n export enum TaskPriority{\n     Low = 'low',\n"
+                },
+                {
+                    "date": 1771249159873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n-import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,UpdateDateColumn ,ManyToOne,JoinColumn} from 'typeorm';\n+import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,\n+    UpdateDateColumn ,ManyToOne,JoinColumn} from 'typeorm';\n import { User} from '../../users/entities/user.entity';\n \n export enum TaskPriority{\n     Low = 'low',\n"
+                },
+                {
+                    "date": 1771249173292,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,\n-    UpdateDateColumn ,ManyToOne,JoinColumn} from 'typeorm';\n+         UpdateDateColumn ,ManyToOne,JoinColumn\n+} from 'typeorm';\n import { User} from '../../users/entities/user.entity';\n \n export enum TaskPriority{\n     Low = 'low',\n"
+                },
+                {
+                    "date": 1771249547676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,\n          UpdateDateColumn ,ManyToOne,JoinColumn\n } from 'typeorm';\n+\n import { User} from '../../users/entities/user.entity';\n \n export enum TaskPriority{\n     Low = 'low',\n@@ -56,8 +57,9 @@\n     @JoinColumn({ name: 'assignedToId' })\n     assignedTo: User;\n \n     @Column(()=>User)\n+    \n     createdBy: User;\n     \n     @CreateDateColumn()\n     createdAt:Date;\n"
+                },
+                {
+                    "date": 1771253871376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,71 @@\n+import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,\n+         UpdateDateColumn ,ManyToOne,JoinColumn\n+} from 'typeorm';\n+\n+import { User} from '../../users/entities/user.entity';\n+\n+export enum TaskPriority{\n+    Low = 'low',\n+    Mediun = 'mediun',\n+    High = 'high',\n+}\n+\n+export enum TaskStatus {\n+\n+   Todo = 'todo',\n+   In_Progress = 'in_progress',\n+   Done = 'done',\n+   OnGit = 'ongit',\n+}\n+\n+\n+@Entity('Tasks')\n+export class Tasks{\n+\n+    @PrimaryGeneratedColumn()\n+    id: number;\n+\n+    @Column()\n+    title: string;\n+\n+    @Column( {type:'text', nullable:true})\n+    description: string;\n+\n+    @Column(\n+         {\n+            type:'enum',\n+            enum: TaskPriority,\n+            default: TaskPriority.Low\n+        }\n+        )\n+    priority: TaskPriority;\n+        \n+\n+    @Column(\n+        { \n+            type:'enum',\n+            enum: TaskStatus,\n+            default: TaskStatus.Todo\n+        }\n+    )\n+    status:TaskStatus;\n+\n+    @Column({ type:'timestamp', nullable:true })\n+    deadline: Date;\n+\n+    @ManyToOne(()=> User , (user)=> UserAssignedTasks)\n+    @JoinColumn({ name: 'assignedToId' })\n+    assignedTo: User;\n+\n+    @Column(()=>User)\n+    @JoinColumn({ name: 'createdById' })\n+    createdBy: User;\n+    \n+    @CreateDateColumn()\n+    createdAt:Date;\n+\n+\n+    @UpdateDateColumn()\n+    updatedAt:Date;\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771253897145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,10 +38,10 @@\n             default: TaskPriority.Low\n         }\n         )\n     priority: TaskPriority;\n-        \n \n+\n     @Column(\n         { \n             type:'enum',\n             enum: TaskStatus,\n@@ -52,10 +52,9 @@\n \n     @Column({ type:'timestamp', nullable:true })\n     deadline: Date;\n \n-    @ManyToOne(()=> User , (user)=> UserAssignedTasks)\n-    @JoinColumn({ name: 'assignedToId' })\n+@ManyToOne(() => User, (user) => user.tasks)    @JoinColumn({ name: 'assignedToId' })\n     assignedTo: User;\n \n     @Column(()=>User)\n     @JoinColumn({ name: 'createdById' })\n@@ -67,76 +66,5 @@\n \n     @UpdateDateColumn()\n     updatedAt:Date;\n \n-}\n-import { Entity, Column, PrimaryGeneratedColumn,CreateDateColumn,\n-         UpdateDateColumn ,ManyToOne,JoinColumn\n-} from 'typeorm';\n-\n-import { User} from '../../users/entities/user.entity';\n-\n-export enum TaskPriority{\n-    Low = 'low',\n-    Mediun = 'mediun',\n-    High = 'high',\n-}\n-\n-export enum TaskStatus {\n-\n-   Todo = 'todo',\n-   In_Progress = 'in_progress',\n-   Done = 'done',\n-   OnGit = 'ongit',\n-}\n-\n-\n-@Entity('Tasks')\n-export class Tasks{\n-\n-    @PrimaryGeneratedColumn()\n-    id: number;\n-\n-    @Column()\n-    title: string;\n-\n-    @Column( {type:'text', nullable:true})\n-    description: string;\n-\n-    @Column(\n-         {\n-            type:'enum',\n-            enum: TaskPriority,\n-            default: TaskPriority.Low\n-        }\n-        )\n-    priority: TaskPriority;\n-\n-\n-    @Column(\n-        { \n-            type:'enum',\n-            enum: TaskStatus,\n-            default: TaskStatus.Todo\n-        }\n-    )\n-    status:TaskStatus;\n-\n-    @Column({ type:'timestamp', nullable:true })\n-    deadline: Date;\n-\n-    @ManyToOne(()=> User , (user)=> UserAssignedTasks)\n-    @JoinColumn({ name: 'assignedToId' })\n-    assignedTo: User;\n-\n-    @Column(()=>User)\n-    \n-    createdBy: User;\n-    \n-    @CreateDateColumn()\n-    createdAt:Date;\n-\n-\n-    @UpdateDateColumn()\n-    updatedAt:Date;\n-\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771253904159,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,10 @@\n \n     @Column({ type:'timestamp', nullable:true })\n     deadline: Date;\n \n-@ManyToOne(() => User, (user) => user.tasks)    @JoinColumn({ name: 'assignedToId' })\n+    @ManyToOne(() => User, (user) => user.tasks)\n+    @JoinColumn({ name: 'assignedToId' })\n     assignedTo: User;\n \n     @Column(()=>User)\n     @JoinColumn({ name: 'createdById' })\n"
+                },
+                {
+                    "date": 1771254714214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n }\n \n \n @Entity('Tasks')\n-export class Tasks{\n+export class Task{\n \n     @PrimaryGeneratedColumn()\n     id: number;\n \n"
+                },
+                {
+                    "date": 1771254980389,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n    OnGit = 'ongit',\n }\n \n \n-@Entity('Tasks')\n+@Entity('Task')\n export class Task{\n \n     @PrimaryGeneratedColumn()\n     id: number;\n@@ -52,11 +52,11 @@\n \n     @Column({ type:'timestamp', nullable:true })\n     deadline: Date;\n \n-    @ManyToOne(() => User, (user) => user.tasks)\n-    @JoinColumn({ name: 'assignedToId' })\n-    assignedTo: User;\n+@ManyToOne(() => User) \n+  @JoinColumn({ name: 'assignedToId' })\n+  assignedTo: User;\n \n     @Column(()=>User)\n     @JoinColumn({ name: 'createdById' })\n     createdBy: User;\n"
+                }
+            ],
+            "date": 1771237024705,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}

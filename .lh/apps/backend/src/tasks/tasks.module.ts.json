@@ -1,0 +1,78 @@
+{
+    "sourceFile": "apps/backend/src/tasks/tasks.module.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 15,
+            "patches": [
+                {
+                    "date": 1771255261322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1771255267791,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import { TasksService } from './tasks.service';\n import { TasksController } from './tasks.controller';\n \n @Module({\n-  TypeOrmModule.forFeature([Task])\n+  TypeOrmModule.forFeature([Task]),\n   controllers: [TasksController],\n   providers: [TasksService],\n })\n export class TasksModule {}\n"
+                },
+                {
+                    "date": 1771255287470,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import { TasksService } from './tasks.service';\n import { TasksController } from './tasks.controller';\n \n @Module({\n-  TypeOrmModule.forFeature([Task]),\n+  {TypeOrmModule.forFeature([Task]),}\n   controllers: [TasksController],\n   providers: [TasksService],\n })\n export class TasksModule {}\n"
+                },
+                {
+                    "date": 1771255292537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import { TasksService } from './tasks.service';\n import { TasksController } from './tasks.controller';\n \n @Module({\n-  {TypeOrmModule.forFeature([Task]),}\n+  [TypeOrmModule.forFeature([Task]),]\n   controllers: [TasksController],\n   providers: [TasksService],\n })\n export class TasksModule {}\n"
+                },
+                {
+                    "date": 1771255299332,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import { TasksService } from './tasks.service';\n import { TasksController } from './tasks.controller';\n \n @Module({\n-  [TypeOrmModule.forFeature([Task]),]\n+  imports: [TypeOrmModule.forFeature([Task]),]\n   controllers: [TasksController],\n   providers: [TasksService],\n })\n export class TasksModule {}\n"
+                },
+                {
+                    "date": 1771255305966,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import { TasksService } from './tasks.service';\n import { TasksController } from './tasks.controller';\n \n @Module({\n-  imports: [TypeOrmModule.forFeature([Task]),]\n+  imports: [TypeOrmModule.forFeature([Task])],\n   controllers: [TasksController],\n   providers: [TasksService],\n })\n export class TasksModule {}\n"
+                },
+                {
+                    "date": 1771255328955,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n import { Module } from '@nestjs/common';\n import { TasksService } from './tasks.service';\n import { TasksController } from './tasks.controller';\n+import { TypeOrmModule } from  '@nestjs/typeorm';\n \n+\n @Module({\n   imports: [TypeOrmModule.forFeature([Task])],\n   controllers: [TasksController],\n   providers: [TasksService],\n"
+                },
+                {
+                    "date": 1771255340438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import { Module } from '@nestjs/common';\n import { TasksService } from './tasks.service';\n import { TasksController } from './tasks.controller';\n import { TypeOrmModule } from  '@nestjs/typeorm';\n+import \n \n \n @Module({\n   imports: [TypeOrmModule.forFeature([Task])],\n"
+                },
+                {
+                    "date": 1771255349166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Module } from '@nestjs/common';\n import { TasksService } from './tasks.service';\n import { TasksController } from './tasks.controller';\n import { TypeOrmModule } from  '@nestjs/typeorm';\n-import \n+import { Task } import \n \n \n @Module({\n   imports: [TypeOrmModule.forFeature([Task])],\n"
+                },
+                {
+                    "date": 1771255354571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Module } from '@nestjs/common';\n import { TasksService } from './tasks.service';\n import { TasksController } from './tasks.controller';\n import { TypeOrmModule } from  '@nestjs/typeorm';\n-import { Task } import \n+import { Task } from ''\n \n \n @Module({\n   imports: [TypeOrmModule.forFeature([Task])],\n"
+                },
+                {
+                    "date": 1771255360131,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Module } from '@nestjs/common';\n import { TasksService } from './tasks.service';\n import { TasksController } from './tasks.controller';\n import { TypeOrmModule } from  '@nestjs/typeorm';\n-import { Task } from ''\n+import { Task } from './en'\n \n \n @Module({\n   imports: [TypeOrmModule.forFeature([Task])],\n"
+                },
+                {
+                    "date": 1771255368555,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Module } from '@nestjs/common';\n import { TasksService } from './tasks.service';\n import { TasksController } from './tasks.controller';\n import { TypeOrmModule } from  '@nestjs/typeorm';\n-import { Task } from './en'\n+import { Task } from './entities/tasks.entities'\n \n \n @Module({\n   imports: [TypeOrmModule.forFeature([Task])],\n"
+                },
+                {
+                    "date": 1771255382629,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Module } from '@nestjs/common';\n import { TasksService } from './tasks.service';\n import { TasksController } from './tasks.controller';\n import { TypeOrmModule } from  '@nestjs/typeorm';\n-import { Task } from './entities/tasks.entities'\n+import { Task } from './entities/task.entities';\n \n \n @Module({\n   imports: [TypeOrmModule.forFeature([Task])],\n"
+                },
+                {
+                    "date": 1771255490545,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Module } from '@nestjs/common';\n import { TasksService } from './tasks.service';\n import { TasksController } from './tasks.controller';\n import { TypeOrmModule } from  '@nestjs/typeorm';\n-import { Task } from './entities/task.entities';\n+import { Task } from './task.entities';\n \n \n @Module({\n   imports: [TypeOrmModule.forFeature([Task])],\n"
+                },
+                {
+                    "date": 1771255501553,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Module } from '@nestjs/common';\n import { TasksService } from './tasks.service';\n import { TasksController } from './tasks.controller';\n import { TypeOrmModule } from  '@nestjs/typeorm';\n-import { Task } from './task.entities';\n+import { Task } from './entask.entities';\n \n \n @Module({\n   imports: [TypeOrmModule.forFeature([Task])],\n"
+                },
+                {
+                    "date": 1771255513868,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Module } from '@nestjs/common';\n import { TasksService } from './tasks.service';\n import { TasksController } from './tasks.controller';\n import { TypeOrmModule } from  '@nestjs/typeorm';\n-import { Task } from './entask.entities';\n+import { Task } from './entities/task.entiti';\n \n \n @Module({\n   imports: [TypeOrmModule.forFeature([Task])],\n"
+                }
+            ],
+            "date": 1771255261322,
+            "name": "Commit-0",
+            "content": "import { Module } from '@nestjs/common';\nimport { TasksService } from './tasks.service';\nimport { TasksController } from './tasks.controller';\n\n@Module({\n  TypeOrmModule.forFeature([Task])\n  controllers: [TasksController],\n  providers: [TasksService],\n})\nexport class TasksModule {}\n"
+        }
+    ]
+}

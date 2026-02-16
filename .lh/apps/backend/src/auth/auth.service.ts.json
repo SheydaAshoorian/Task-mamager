@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 38,
+            "activePatchIndex": 55,
             "patches": [
                 {
                     "date": 1770977950256,
@@ -160,6 +160,74 @@
                 {
                     "date": 1771095461561,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n // حذف پسورد از دیتای ارسالی به فرانت (امنیت!)\n  const { password, ...result } = user;\n \n   return {\n-message: 'ثبت‌نام با موفقیت انجام شد',\n+    message: 'ثبت‌نام با موفقیت انجام شد',\n       data: result,\n   };\n   }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771167477978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,13 +28,13 @@\n     email: dto.email,\n     password: hashedPassword,\n   });\n \n-// حذف پسورد از دیتای ارسالی به فرانت (امنیت!)\n- const { password, ...result } = user;\n+    // حذف پسورد از دیتای ارسالی به فرانت (امنیت!)\n+    const { password, ...result } = user;\n \n   return {\n     message: 'ثبت‌نام با موفقیت انجام شد',\n-      data: result,\n+    data: result,\n   };\n   }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771167497739,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,10 +31,10 @@\n \n     // حذف پسورد از دیتای ارسالی به فرانت (امنیت!)\n     const { password, ...result } = user;\n \n-  return {\n-    message: 'ثبت‌نام با موفقیت انجام شد',\n-    data: result,\n-  };\n+return {\n+message: 'ثبت‌نام با موفقیت انجام شد',\n+data: result,\n+};\n   }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771167503004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,7 +34,6 @@\n \n return {\n message: 'ثبت‌نام با موفقیت انجام شد',\n data: result,\n-};\n-  }\n+}; }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771167518597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,10 @@\n \n     // حذف پسورد از دیتای ارسالی به فرانت (امنیت!)\n     const { password, ...result } = user;\n \n-return {\n-message: 'ثبت‌نام با موفقیت انجام شد',\n-data: result,\n-}; }\n+    return {\n+    message: 'ثبت‌نام با موفقیت انجام شد',\n+    data: result,\n+    };\n+ }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771167529137,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,30 +8,30 @@\n   constructor(private readonly usersService: UsersService) {}\n \n   async register(dto: RegisterDto) {\n     // ۱. بررسی تکراری نبودن ایمیل (Security Check)\n-    const userExists = await this.usersService.findOneByEmail(dto.email);\n+        const userExists = await this.usersService.findOneByEmail(dto.email);\n \n-    if (userExists) {\n-        throw new BadRequestException({\n-        success: false,\n-        statusCode: 400,\n-        message: 'این ایمیل قبلاً ثبت شده است',\n-        });\n-    }\n-    // ۲. هش کردن پسورد (Password Security)\n-    const salt = await bcrypt.genSalt(10);\n-    const hashedPassword = await bcrypt.hash(dto.password, salt);\n+        if (userExists) {\n+            throw new BadRequestException({\n+            success: false,\n+            statusCode: 400,\n+            message: 'این ایمیل قبلاً ثبت شده است',\n+            });\n+        }\n+        // ۲. هش کردن پسورد (Password Security)\n+        const salt = await bcrypt.genSalt(10);\n+        const hashedPassword = await bcrypt.hash(dto.password, salt);\n \n-    const user = await this.usersService.create({\n-    name: dto.name,\n-    family: dto.family,\n-    email: dto.email,\n-    password: hashedPassword,\n-  });\n+        const user = await this.usersService.create({\n+        name: dto.name,\n+        family: dto.family,\n+        email: dto.email,\n+        password: hashedPassword,\n+    });\n \n-    // حذف پسورد از دیتای ارسالی به فرانت (امنیت!)\n-    const { password, ...result } = user;\n+        // حذف پسورد از دیتای ارسالی به فرانت (امنیت!)\n+        const { password, ...result } = user;\n \n     return {\n     message: 'ثبت‌نام با موفقیت انجام شد',\n     data: result,\n"
+                },
+                {
+                    "date": 1771167546238,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n export class AuthService {\n   constructor(private readonly usersService: UsersService) {}\n \n   async register(dto: RegisterDto) {\n-    // ۱. بررسی تکراری نبودن ایمیل (Security Check)\n+        // ۱. بررسی تکراری نبودن ایمیل (Security Check)\n         const userExists = await this.usersService.findOneByEmail(dto.email);\n \n         if (userExists) {\n             throw new BadRequestException({\n@@ -35,6 +35,5 @@\n     return {\n     message: 'ثبت‌نام با موفقیت انجام شد',\n     data: result,\n     };\n- }\n-}\n\\ No newline at end of file\n+ }}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771167564653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,11 +29,12 @@\n         password: hashedPassword,\n     });\n \n         // حذف پسورد از دیتای ارسالی به فرانت (امنیت!)\n-        const { password, ...result } = user;\n+    const { password, ...result } = user;\n \n     return {\n     message: 'ثبت‌نام با موفقیت انجام شد',\n     data: result,\n     };\n\\ No newline at end of file\n- }}\n+ }\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771167583139,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,5 +36,36 @@\n     message: 'ثبت‌نام با موفقیت انجام شد',\n     data: result,\n     };\n  }\n+\n+\n+ async login(dto: LoginDto) {\n+  const user = await this.usersService.findOneByEmail(dto.email);\n+  \n+  if (!user) {\n+    throw new UnauthorizedException('ایمیل یا رمز عبور اشتباه است');\n+  }\n+\n+  const isPasswordMatching = await bcrypt.compare(dto.password, user.password);\n+  \n+  if (!isPasswordMatching) {\n+    throw new UnauthorizedException('ایمیل یا رمز عبور اشتباه است');\n+  }\n+\n+  // ایجاد توکن JWT\n+  const payload = { email: user.email, sub: user.id, role: user.role };\n+  \n+  return {\n+    message: 'ورود با موفقیت انجام شد',\n+    data: {\n+      access_token: this.jwtService.sign(payload),\n+      user: {\n+        name: user.name,\n+        family: user.family,\n+        email: user.email,\n+        role: user.role\n+      }\n+    }\n+  };\n+}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771167595790,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,23 +39,23 @@\n  }\n \n \n  async login(dto: LoginDto) {\n-  const user = await this.usersService.findOneByEmail(dto.email);\n-  \n-  if (!user) {\n-    throw new UnauthorizedException('ایمیل یا رمز عبور اشتباه است');\n-  }\n+    const user = await this.usersService.findOneByEmail(dto.email);\n+    \n+    if (!user) {\n+        throw new UnauthorizedException('ایمیل یا رمز عبور اشتباه است');\n+    }\n \n-  const isPasswordMatching = await bcrypt.compare(dto.password, user.password);\n-  \n-  if (!isPasswordMatching) {\n-    throw new UnauthorizedException('ایمیل یا رمز عبور اشتباه است');\n-  }\n+    const isPasswordMatching = await bcrypt.compare(dto.password, user.password);\n+    \n+    if (!isPasswordMatching) {\n+        throw new UnauthorizedException('ایمیل یا رمز عبور اشتباه است');\n+    }\n \n-  // ایجاد توکن JWT\n-  const payload = { email: user.email, sub: user.id, role: user.role };\n-  \n+    // ایجاد توکن JWT\n+    const payload = { email: user.email, sub: user.id, role: user.role };\n+    \n   return {\n     message: 'ورود با موفقیت انجام شد',\n     data: {\n       access_token: this.jwtService.sign(payload),\n"
+                },
+                {
+                    "date": 1771167612951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,18 +54,18 @@\n \n     // ایجاد توکن JWT\n     const payload = { email: user.email, sub: user.id, role: user.role };\n     \n-  return {\n-    message: 'ورود با موفقیت انجام شد',\n-    data: {\n-      access_token: this.jwtService.sign(payload),\n-      user: {\n-        name: user.name,\n-        family: user.family,\n-        email: user.email,\n-        role: user.role\n-      }\n+    return {\n+        message: 'ورود با موفقیت انجام شد',\n+        data: {\n+        access_token: this.jwtService.sign(payload),\n+        user: {\n+            name: user.name,\n+            family: user.family,\n+            email: user.email,\n+            role: user.role\n+        }\n     }\n   };\n }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771169394570,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,8 +39,9 @@\n  }\n \n \n  async login(dto: LoginDto) {\n+    \n     const user = await this.usersService.findOneByEmail(dto.email);\n     \n     if (!user) {\n         throw new UnauthorizedException('ایمیل یا رمز عبور اشتباه است');\n"
+                },
+                {
+                    "date": 1771169416062,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import { Injectable, BadRequestException } from '@nestjs/common';\n import { UsersService } from '../users/users.service';\n import { RegisterDto } from './dto/register.dto';\n+\n import * as bcrypt from 'bcrypt';\n \n @Injectable()\n export class AuthService {\n@@ -39,9 +40,9 @@\n  }\n \n \n  async login(dto: LoginDto) {\n-    \n+\n     const user = await this.usersService.findOneByEmail(dto.email);\n     \n     if (!user) {\n         throw new UnauthorizedException('ایمیل یا رمز عبور اشتباه است');\n"
+                },
+                {
+                    "date": 1771169426871,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Injectable, BadRequestException } from '@nestjs/common';\n import { UsersService } from '../users/users.service';\n import { RegisterDto } from './dto/register.dto';\n-\n+impo\n import * as bcrypt from 'bcrypt';\n \n @Injectable()\n export class AuthService {\n"
+                },
+                {
+                    "date": 1771169432978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Injectable, BadRequestException } from '@nestjs/common';\n import { UsersService } from '../users/users.service';\n import { RegisterDto } from './dto/register.dto';\n-impo\n+import { Lo}\n import * as bcrypt from 'bcrypt';\n \n @Injectable()\n export class AuthService {\n"
+                },
+                {
+                    "date": 1771169440454,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Injectable, BadRequestException } from '@nestjs/common';\n import { UsersService } from '../users/users.service';\n import { RegisterDto } from './dto/register.dto';\n-import { Lo}\n+import { LoginDto } from \n import * as bcrypt from 'bcrypt';\n \n @Injectable()\n export class AuthService {\n"
+                },
+                {
+                    "date": 1771169446025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Injectable, BadRequestException } from '@nestjs/common';\n import { UsersService } from '../users/users.service';\n import { RegisterDto } from './dto/register.dto';\n-import { LoginDto } from './'\n+import { LoginDto } from './dto'\n import * as bcrypt from 'bcrypt';\n \n @Injectable()\n export class AuthService {\n"
+                },
+                {
+                    "date": 1771169528767,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,74 @@\n+import { Injectable, BadRequestException } from '@nestjs/common';\n+import { UsersService } from '../users/users.service';\n+import { UnauthorizedException } from '@'\n+import { RegisterDto } from './dto/register.dto';\n+import { LoginDto } from './dto/login.dto' ;\n+import * as bcrypt from 'bcrypt';\n+\n+@Injectable()\n+export class AuthService {\n+  constructor(private readonly usersService: UsersService) {}\n+\n+  async register(dto: RegisterDto) {\n+        // ۱. بررسی تکراری نبودن ایمیل (Security Check)\n+        const userExists = await this.usersService.findOneByEmail(dto.email);\n+\n+        if (userExists) {\n+            throw new BadRequestException({\n+            success: false,\n+            statusCode: 400,\n+            message: 'این ایمیل قبلاً ثبت شده است',\n+            });\n+        }\n+        // ۲. هش کردن پسورد (Password Security)\n+        const salt = await bcrypt.genSalt(10);\n+        const hashedPassword = await bcrypt.hash(dto.password, salt);\n+\n+        const user = await this.usersService.create({\n+        name: dto.name,\n+        family: dto.family,\n+        email: dto.email,\n+        password: hashedPassword,\n+    });\n+\n+        // حذف پسورد از دیتای ارسالی به فرانت (امنیت!)\n+    const { password, ...result } = user;\n+\n+    return {\n+    message: 'ثبت‌نام با موفقیت انجام شد',\n+    data: result,\n+    };\n+ }\n+\n+\n+ async login(dto: LoginDto) {\n+\n+    const user = await this.usersService.findOneByEmail(dto.email);\n+    \n+    if (!user) {\n+        throw new UnauthorizedException('ایمیل یا رمز عبور اشتباه است');\n+    }\n+\n+    const isPasswordMatching = await bcrypt.compare(dto.password, user.password);\n+    \n+    if (!isPasswordMatching) {\n+        throw new UnauthorizedException('ایمیل یا رمز عبور اشتباه است');\n+    }\n+\n+    // ایجاد توکن JWT\n+    const payload = { email: user.email, sub: user.id, role: user.role };\n+    \n+    return {\n+        message: 'ورود با موفقیت انجام شد',\n+        data: {\n+        access_token: this.jwtService.sign(payload),\n+        user: {\n+            name: user.name,\n+            family: user.family,\n+            email: user.email,\n+            role: user.role\n+        }\n+    }\n+  };\n+}\n+}\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1770977950256,

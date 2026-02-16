@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 10,
+            "activePatchIndex": 19,
             "patches": [
                 {
                     "date": 1771069248529,
@@ -48,6 +48,42 @@
                 {
                     "date": 1771075703827,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,14 @@\n+import { Controller, Post, Body, UsePipes, ValidationPipe } from '@nestjs/common';\n+import { AuthService } from './auth.service';\n+import { RegisterDto } from './dto/register.dto';\n+\n+@Controller('auth')\n+export class AuthController {\n+  constructor(private readonly authService: AuthService) {}\n+\n+  @Post('register')\n+  @UsePipes(new ValidationPipe({ whitelist: true })) // پاکسازی دیتای اضافی ورودی\n+  async register(@Body() registerDto: RegisterDto) {\n+    return this.authService.register(registerDto);\n+  }\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771171831439,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,5 +10,11 @@\n   @UsePipes(new ValidationPipe({ whitelist: true })) // پاکسازی دیتای اضافی ورودی\n   async register(@Body() registerDto: RegisterDto) {\n     return this.authService.register(registerDto);\n   }\n+\n+  @Post('login')\n+@HttpCode(200) // برای لاگین بهتره کد ۲۰۰ برگرده\n+async login(@Body() dto: LoginDto) {\n+  return this.authService.login(dto);\n+}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771171846206,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { Controller, Post, Body, UsePipes, ValidationPipe } from '@nestjs/common';\n+import { Controller, Post, Body, UsePipes, ValidationPipeو  } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { RegisterDto } from './dto/register.dto';\n \n @Controller('auth')\n@@ -11,9 +11,9 @@\n   async register(@Body() registerDto: RegisterDto) {\n     return this.authService.register(registerDto);\n   }\n \n-  @Post('login')\n+@Post('login')\n @HttpCode(200) // برای لاگین بهتره کد ۲۰۰ برگرده\n async login(@Body() dto: LoginDto) {\n   return this.authService.login(dto);\n }\n"
+                },
+                {
+                    "date": 1771171852588,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { Controller, Post, Body, UsePipes, ValidationPipeو  } from '@nestjs/common';\n+import { Controller, Post, Body, UsePipes, ValidationPipeو HttpCode } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { RegisterDto } from './dto/register.dto';\n \n @Controller('auth')\n"
+                },
+                {
+                    "date": 1771171861642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { Controller, Post, Body, UsePipes, ValidationPipeو HttpCode } from '@nestjs/common';\n+import { Controller, Post, Body, UsePipes, ValidationPipe, } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { RegisterDto } from './dto/register.dto';\n \n @Controller('auth')\n"
+                },
+                {
+                    "date": 1771171879061,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n-import { Controller, Post, Body, UsePipes, ValidationPipe, } from '@nestjs/common';\n+import { Controller, Post, Body, UsePipes, ValidationPipe,HttpCode } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { RegisterDto } from './dto/register.dto';\n+import\n \n @Controller('auth')\n export class AuthController {\n   constructor(private readonly authService: AuthService) {}\n"
+                },
+                {
+                    "date": 1771171891229,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Controller, Post, Body, UsePipes, ValidationPipe,HttpCode } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { RegisterDto } from './dto/register.dto';\n-import\n+import { Login}\n \n @Controller('auth')\n export class AuthController {\n   constructor(private readonly authService: AuthService) {}\n"
+                },
+                {
+                    "date": 1771171896600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Controller, Post, Body, UsePipes, ValidationPipe,HttpCode } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { RegisterDto } from './dto/register.dto';\n-import { Login}\n+import { LoginDto } from \n \n @Controller('auth')\n export class AuthController {\n   constructor(private readonly authService: AuthService) {}\n"
+                },
+                {
+                    "date": 1771171902532,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Controller, Post, Body, UsePipes, ValidationPipe,HttpCode } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { RegisterDto } from './dto/register.dto';\n-import { LoginDto } from \n+import { LoginDto } from './dto'\n \n @Controller('auth')\n export class AuthController {\n   constructor(private readonly authService: AuthService) {}\n"
+                },
+                {
+                    "date": 1771171910706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Controller, Post, Body, UsePipes, ValidationPipe,HttpCode } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { RegisterDto } from './dto/register.dto';\n-import { LoginDto } from './dto'\n+import { LoginDto } from './dto/login.dto'\n \n @Controller('auth')\n export class AuthController {\n   constructor(private readonly authService: AuthService) {}\n"
                 }
             ],
             "date": 1771069248529,

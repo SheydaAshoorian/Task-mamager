@@ -1,0 +1,98 @@
+{
+    "sourceFile": "apps/backend/src/tasks/tasks.service.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 20,
+            "patches": [
+                {
+                    "date": 1771256470582,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1771258492299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,5 +39,10 @@\n       relations: ['assignedTo'],\n       order: { createdAt: 'DESC' },\n     });\n   }\n+\n+  // در tasks.service.ts اضافه کن تا ارور کنترلر بره\n+findOne(id: number) { return `This action returns a #${id} task`; }\n+update(id: number, updateTaskDto: any) { return `updates #${id} task`; }\n+remove(id: number) { return `removes #${id} task`; }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771322804723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n     const { assignedToId, ...taskData } = createTaskDto;\n \n     // پیدا کردن کاربری که تسک بهش اساین شده\n     const user = await this.userRepository.findOne({ where: { id: assignedToId } });\n+    \n     if (!user) {\n       throw new NotFoundException('کاربری با این شناسه یافت نشد');\n     }\n \n@@ -44,5 +45,6 @@\n   // در tasks.service.ts اضافه کن تا ارور کنترلر بره\n findOne(id: number) { return `This action returns a #${id} task`; }\n update(id: number, updateTaskDto: any) { return `updates #${id} task`; }\n remove(id: number) { return `removes #${id} task`; }\n+\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771323378933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,12 +15,12 @@\n   ) {}\n \n   async create(createTaskDto: CreateTaskDto, adminId: number) {\n     const { assignedToId, ...taskData } = createTaskDto;\n-\n+    \n     // پیدا کردن کاربری که تسک بهش اساین شده\n     const user = await this.userRepository.findOne({ where: { id: assignedToId } });\n-    \n+\n     if (!user) {\n       throw new NotFoundException('کاربری با این شناسه یافت نشد');\n     }\n \n"
+                },
+                {
+                    "date": 1771323385924,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   ) {}\n \n   async create(createTaskDto: CreateTaskDto, adminId: number) {\n     const { assignedToId, ...taskData } = createTaskDto;\n-    \n+    consol\n     // پیدا کردن کاربری که تسک بهش اساین شده\n     const user = await this.userRepository.findOne({ where: { id: assignedToId } });\n \n     if (!user) {\n"
+                },
+                {
+                    "date": 1771323394036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   ) {}\n \n   async create(createTaskDto: CreateTaskDto, adminId: number) {\n     const { assignedToId, ...taskData } = createTaskDto;\n-    consol\n+    consol.log()\n     // پیدا کردن کاربری که تسک بهش اساین شده\n     const user = await this.userRepository.findOne({ where: { id: assignedToId } });\n \n     if (!user) {\n"
+                },
+                {
+                    "date": 1771323402194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,12 +15,12 @@\n   ) {}\n \n   async create(createTaskDto: CreateTaskDto, adminId: number) {\n     const { assignedToId, ...taskData } = createTaskDto;\n-    consol.log()\n+    consol.log('hiiiiiii')\n     // پیدا کردن کاربری که تسک بهش اساین شده\n     const user = await this.userRepository.findOne({ where: { id: assignedToId } });\n-\n+    \n     if (!user) {\n       throw new NotFoundException('کاربری با این شناسه یافت نشد');\n     }\n \n"
+                },
+                {
+                    "date": 1771323408616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     const { assignedToId, ...taskData } = createTaskDto;\n     consol.log('hiiiiiii')\n     // پیدا کردن کاربری که تسک بهش اساین شده\n     const user = await this.userRepository.findOne({ where: { id: assignedToId } });\n-    \n+    consol.log()\n     if (!user) {\n       throw new NotFoundException('کاربری با این شناسه یافت نشد');\n     }\n \n"
+                },
+                {
+                    "date": 1771323413910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     const { assignedToId, ...taskData } = createTaskDto;\n     consol.log('hiiiiiii')\n     // پیدا کردن کاربری که تسک بهش اساین شده\n     const user = await this.userRepository.findOne({ where: { id: assignedToId } });\n-    consol.log()\n+    consol.log('user:')\n     if (!user) {\n       throw new NotFoundException('کاربری با این شناسه یافت نشد');\n     }\n \n"
+                },
+                {
+                    "date": 1771323434846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,12 +15,12 @@\n   ) {}\n \n   async create(createTaskDto: CreateTaskDto, adminId: number) {\n     const { assignedToId, ...taskData } = createTaskDto;\n-    consol.log('hiiiiiii')\n+    console.log('hiiiiiii')\n     // پیدا کردن کاربری که تسک بهش اساین شده\n     const user = await this.userRepository.findOne({ where: { id: assignedToId } });\n-    consol.log('user:')\n+    consol.log('user:', user)\n     if (!user) {\n       throw new NotFoundException('کاربری با این شناسه یافت نشد');\n     }\n \n"
+                },
+                {
+                    "date": 1771324515541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,18 +18,18 @@\n     const { assignedToId, ...taskData } = createTaskDto;\n     console.log('hiiiiiii')\n     // پیدا کردن کاربری که تسک بهش اساین شده\n     const user = await this.userRepository.findOne({ where: { id: assignedToId } });\n-    consol.log('user:', user)\n+    console.log('user:', user)\n     if (!user) {\n       throw new NotFoundException('کاربری با این شناسه یافت نشد');\n     }\n \n     // ساخت تسک جدید\n     const newTask = this.taskRepository.create({\n       ...taskData,\n       assignedTo: user,\n-      createdBy: { id: adminId } as User, // ذخیره ادمین سازنده\n+      createdBy: { id: 1 } as User, // ذخیره ادمین سازنده\n     });\n \n     return await this.taskRepository.save(newTask);\n   }\n"
+                },
+                {
+                    "date": 1771324581750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n     // ساخت تسک جدید\n     const newTask = this.taskRepository.create({\n       ...taskData,\n       assignedTo: user,\n-      createdBy: { id: 1 } as User, // ذخیره ادمین سازنده\n+      createdBy: { id: adminId } as User, // ذخیره ادمین سازنده\n     });\n \n     return await this.taskRepository.save(newTask);\n   }\n"
+                },
+                {
+                    "date": 1771327141716,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n \n   // گرفتن همه تسک‌ها برای پنل ادمین\n   async findAll() {\n     return await this.taskRepository.find({\n-      relations: ['assignedTo'],\n+      relations: ['assignedToId'],\n       order: { createdAt: 'DESC' },\n     });\n   }\n \n"
+                },
+                {
+                    "date": 1771327154949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n     });\n \n     return await this.taskRepository.save(newTask);\n   }\n-\n+assignedTo\n   // گرفتن همه تسک‌ها برای پنل ادمین\n   async findAll() {\n     return await this.taskRepository.find({\n       relations: ['assignedToId'],\n"
+                },
+                {
+                    "date": 1771327159989,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n \n     // ساخت تسک جدید\n     const newTask = this.taskRepository.create({\n       ...taskData,\n-      assignedTo: user,\n+      assignedToId: user,\n       createdBy: { id: adminId } as User, // ذخیره ادمین سازنده\n     });\n \n     return await this.taskRepository.save(newTask);\n"
+                },
+                {
+                    "date": 1771327596863,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,28 +13,26 @@\n     @InjectRepository(User)\n     private readonly userRepository: Repository<User>,\n   ) {}\n \n-  async create(createTaskDto: CreateTaskDto, adminId: number) {\n-    const { assignedToId, ...taskData } = createTaskDto;\n-    console.log('hiiiiiii')\n-    // پیدا کردن کاربری که تسک بهش اساین شده\n-    const user = await this.userRepository.findOne({ where: { id: assignedToId } });\n-    console.log('user:', user)\n-    if (!user) {\n-      throw new NotFoundException('کاربری با این شناسه یافت نشد');\n-    }\n+async create(createTaskDto: CreateTaskDto, adminId: number) {\n+  const { assignedToId, ...taskData } = createTaskDto;\n \n-    // ساخت تسک جدید\n-    const newTask = this.taskRepository.create({\n-      ...taskData,\n-      assignedToId: user,\n-      createdBy: { id: adminId } as User, // ذخیره ادمین سازنده\n-    });\n+  // ۱. چک کردن وجود کاربر (اختیاری اما خوبه)\n+  const user = await this.userRepository.findOne({ where: { id: assignedToId } });\n+  if (!user) {\n+    throw new NotFoundException('کاربری با این شناسه یافت نشد');\n+  }\n \n-    return await this.taskRepository.save(newTask);\n-  }\n-assignedTo\n+  // ۲. ساخت تسک فقط با استفاده از IDها\n+  const newTask = this.taskRepository.create({\n+    ...taskData,\n+    assignedToId: assignedToId, // فقط عدد بده\n+    createdById: adminId,       // فقط عدد بده\n+  });\n+\n+  return await this.taskRepository.save(newTask);\n+}\n   // گرفتن همه تسک‌ها برای پنل ادمین\n   async findAll() {\n     return await this.taskRepository.find({\n       relations: ['assignedToId'],\n"
+                },
+                {
+                    "date": 1771330246956,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,8 @@\n \n async create(createTaskDto: CreateTaskDto, adminId: number) {\n   const { assignedToId, ...taskData } = createTaskDto;\n \n-  // ۱. چک کردن وجود کاربر (اختیاری اما خوبه)\n   const user = await this.userRepository.findOne({ where: { id: assignedToId } });\n   if (!user) {\n     throw new NotFoundException('کاربری با این شناسه یافت نشد');\n   }\n"
+                },
+                {
+                    "date": 1771330252475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,12 +21,11 @@\n   if (!user) {\n     throw new NotFoundException('کاربری با این شناسه یافت نشد');\n   }\n \n-  // ۲. ساخت تسک فقط با استفاده از IDها\n   const newTask = this.taskRepository.create({\n     ...taskData,\n-    assignedToId: assignedToId, // فقط عدد بده\n+    assignedToId: assignedToId, \n     createdById: adminId,       // فقط عدد بده\n   });\n \n   return await this.taskRepository.save(newTask);\n"
+                },
+                {
+                    "date": 1771330260573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n \n   const newTask = this.taskRepository.create({\n     ...taskData,\n     assignedToId: assignedToId, \n-    createdById: adminId,       // فقط عدد بده\n+    createdById: adminId,       \n   });\n \n   return await this.taskRepository.save(newTask);\n }\n"
+                },
+                {
+                    "date": 1771330266332,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,10 @@\n   });\n \n   return await this.taskRepository.save(newTask);\n }\n-  // گرفتن همه تسک‌ها برای پنل ادمین\n+  \n+\n   async findAll() {\n     return await this.taskRepository.find({\n       relations: ['assignedToId'],\n       order: { createdAt: 'DESC' },\n"
+                },
+                {
+                    "date": 1771330271582,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,10 @@\n       order: { createdAt: 'DESC' },\n     });\n   }\n \n-  // در tasks.service.ts اضافه کن تا ارور کنترلر بره\n+ \n+  \n findOne(id: number) { return `This action returns a #${id} task`; }\n update(id: number, updateTaskDto: any) { return `updates #${id} task`; }\n remove(id: number) { return `removes #${id} task`; }\n \n"
+                }
+            ],
+            "date": 1771256470581,
+            "name": "Commit-0",
+            "content": "import { Injectable, NotFoundException } from '@nestjs/common';\nimport { InjectRepository } from '@nestjs/typeorm';\nimport { Repository } from 'typeorm';\nimport { Task } from './entities/task.entity';\nimport { CreateTaskDto } from './dto/create-task.dto';\nimport { User } from '../users/entities/user.entity';\n\n@Injectable()\nexport class TasksService {\n  constructor(\n    @InjectRepository(Task)\n    private readonly taskRepository: Repository<Task>,\n    @InjectRepository(User)\n    private readonly userRepository: Repository<User>,\n  ) {}\n\n  async create(createTaskDto: CreateTaskDto, adminId: number) {\n    const { assignedToId, ...taskData } = createTaskDto;\n\n    // پیدا کردن کاربری که تسک بهش اساین شده\n    const user = await this.userRepository.findOne({ where: { id: assignedToId } });\n    if (!user) {\n      throw new NotFoundException('کاربری با این شناسه یافت نشد');\n    }\n\n    // ساخت تسک جدید\n    const newTask = this.taskRepository.create({\n      ...taskData,\n      assignedTo: user,\n      createdBy: { id: adminId } as User, // ذخیره ادمین سازنده\n    });\n\n    return await this.taskRepository.save(newTask);\n  }\n\n  // گرفتن همه تسک‌ها برای پنل ادمین\n  async findAll() {\n    return await this.taskRepository.find({\n      relations: ['assignedTo'],\n      order: { createdAt: 'DESC' },\n    });\n  }\n}"
+        }
+    ]
+}

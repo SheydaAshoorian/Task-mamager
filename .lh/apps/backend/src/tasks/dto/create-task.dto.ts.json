@@ -1,0 +1,82 @@
+{
+    "sourceFile": "apps/backend/src/tasks/dto/create-task.dto.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 16,
+            "patches": [
+                {
+                    "date": 1771257503950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1771258808845,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+\n+\n export class CreateTaskDto {\n   title: string;\n   description?: string;\n   priority?: string;\n"
+                },
+                {
+                    "date": 1771261309187,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n+هپحخق\n \n-\n export class CreateTaskDto {\n   title: string;\n   description?: string;\n   priority?: string;\n"
+                },
+                {
+                    "date": 1771261315817,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-هپحخق\n+import { }\n \n export class CreateTaskDto {\n   title: string;\n   description?: string;\n"
+                },
+                {
+                    "date": 1771261323136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { }\n+import { IsE}\n \n export class CreateTaskDto {\n   title: string;\n   description?: string;\n"
+                },
+                {
+                    "date": 1771261328613,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { IsE}\n+import { IsNot}\n \n export class CreateTaskDto {\n   title: string;\n   description?: string;\n"
+                },
+                {
+                    "date": 1771261336033,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { IsNot}\n+import { IsNotEmpty } from \n \n export class CreateTaskDto {\n   title: string;\n   description?: string;\n"
+                },
+                {
+                    "date": 1771261341538,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { IsNotEmpty } from \n+import { IsNotEmpty } from 'typeorm'\n \n export class CreateTaskDto {\n   title: string;\n   description?: string;\n"
+                },
+                {
+                    "date": 1771261351371,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n-import { IsNotEmpty } from 'typeorm'\n+import { IsNotEmpty } from 'typeorm';\n \n export class CreateTaskDto {\n+    \n   title: string;\n   description?: string;\n   priority?: string;\n   status?: string;\n"
+                },
+                {
+                    "date": 1771261359418,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n-import { IsNotEmpty } from 'typeorm';\n+import { IsNotEmpty,IsS } from 'typeorm';\n \n export class CreateTaskDto {\n-    \n+\n   title: string;\n   description?: string;\n   priority?: string;\n   status?: string;\n"
+                },
+                {
+                    "date": 1771261364466,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { IsNotEmpty,IsS } from 'typeorm';\n+import { IsNotEmpty,IsString } from 'typeorm';\n \n export class CreateTaskDto {\n \n   title: string;\n"
+                },
+                {
+                    "date": 1771261402558,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import { IsNotEmpty,IsString } from 'typeorm';\n+import \n \n export class CreateTaskDto {\n \n   title: string;\n"
+                },
+                {
+                    "date": 1771261410012,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { IsNotEmpty,IsString } from 'typeorm';\n-import \n+import {A}\n \n export class CreateTaskDto {\n \n   title: string;\n"
+                },
+                {
+                    "date": 1771261415824,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n-import { IsNotEmpty,IsString } from 'typeorm';\n-import {A}\n+import { IsNotEmpty,IsString } from 'typeorm'; \n+import { ApiProperty }\n \n export class CreateTaskDto {\n \n   title: string;\n"
+                },
+                {
+                    "date": 1771261422665,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { IsNotEmpty,IsString } from 'typeorm'; \n-import { ApiProperty }\n+import { ApiProperty } from '@nes'\n \n export class CreateTaskDto {\n \n   title: string;\n"
+                },
+                {
+                    "date": 1771261432820,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { IsNotEmpty,IsString } from 'typeorm'; \n-import { ApiProperty } from '@nestjs/sw'\n+import { ApiProperty } from '@nestjs/swagger'\n \n export class CreateTaskDto {\n \n   title: string;\n"
+                },
+                {
+                    "date": 1771261452297,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,12 @@\n+import { IsNotEmpty,IsString } from 'typeorm'; \n+import { ApiProperty } from '@nestjs/swagger';\n+\n+export class CreateTaskDto {\n+    \n+  title: string;\n+  description?: string;\n+  priority?: string;\n+  status?: string;\n+  deadline?: Date;\n+  assignedToId: number; // این خط رو حتماً اضافه کن\n+}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1771257503950,
+            "name": "Commit-0",
+            "content": "export class CreateTaskDto {\n  title: string;\n  description?: string;\n  priority?: string;\n  status?: string;\n  deadline?: Date;\n  assignedToId: number; // این خط رو حتماً اضافه کن\n}"
+        }
+    ]
+}

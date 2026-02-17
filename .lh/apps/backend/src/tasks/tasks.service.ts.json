@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 20,
+            "activePatchIndex": 22,
             "patches": [
                 {
                     "date": 1771256470582,
@@ -88,6 +88,14 @@
                 {
                     "date": 1771330271582,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,10 @@\n       order: { createdAt: 'DESC' },\n     });\n   }\n \n-  // در tasks.service.ts اضافه کن تا ارور کنترلر بره\n+ \n+  \n findOne(id: number) { return `This action returns a #${id} task`; }\n update(id: number, updateTaskDto: any) { return `updates #${id} task`; }\n remove(id: number) { return `removes #${id} task`; }\n \n"
+                },
+                {
+                    "date": 1771332663282,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,14 +31,14 @@\n   return await this.taskRepository.save(newTask);\n }\n   \n \n-  async findAll() {\n-    return await this.taskRepository.find({\n-      relations: ['assignedToId'],\n-      order: { createdAt: 'DESC' },\n-    });\n-  }\n+async findAll() {\n+  return await this.taskRepository.find({\n+    relations: ['assignedTo'], // این خط باعث می‌شود اطلاعات یوزر هم بیاید\n+    order: { createdAt: 'DESC' }, // جدیدترین‌ها اول باشند\n+  });\n+}\n \n  \n   \n findOne(id: number) { return `This action returns a #${id} task`; }\n"
+                },
+                {
+                    "date": 1771332668882,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n   \n \n async findAll() {\n   return await this.taskRepository.find({\n-    relations: ['assignedTo'], // این خط باعث می‌شود اطلاعات یوزر هم بیاید\n+    relations: ['assignedTo'], \n     order: { createdAt: 'DESC' }, // جدیدترین‌ها اول باشند\n   });\n }\n \n"
                 }
             ],
             "date": 1771256470581,

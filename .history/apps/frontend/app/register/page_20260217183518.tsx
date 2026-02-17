@@ -64,7 +64,7 @@ export default function RegisterPage() {
               />
             </div>
 
-
+            {/* فیلد نام خانوادگی - تمام عرض */}
             <div>
               <label className="text-xs font-semibold text-gray-500 mb-1 block mr-1">نام خانوادگی</label>
               <input
@@ -76,7 +76,7 @@ export default function RegisterPage() {
               />
             </div>
 
-
+            {/* فیلد ایمیل - تمام عرض */}
             <div>
               <label className="text-xs font-semibold text-gray-500 mb-1 block mr-1">پست الکترونیک</label>
               <input
@@ -88,7 +88,7 @@ export default function RegisterPage() {
               />
             </div>
 
-
+            {/* فیلد رمز عبور - تمام عرض */}
             <div>
               <label className="text-xs font-semibold text-gray-500 mb-1 block mr-1">رمز عبور</label>
               <input
@@ -109,7 +109,7 @@ export default function RegisterPage() {
             </button>
           </form>
 
-
+          {/* لینک بازگشت به لاگین */}
           <div className="mt-6 text-center text-sm text-gray-400">
             قبلاً عضو شده‌اید؟{' '}
             <button 

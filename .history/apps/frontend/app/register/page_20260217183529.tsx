@@ -109,7 +109,7 @@ export default function RegisterPage() {
             </button>
           </form>
 
-
+          {/* لینک بازگشت به لاگین */}
           <div className="mt-6 text-center text-sm text-gray-400">
             قبلاً عضو شده‌اید؟{' '}
             <button 

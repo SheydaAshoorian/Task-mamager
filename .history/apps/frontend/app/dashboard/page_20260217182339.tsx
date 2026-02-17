@@ -16,7 +16,7 @@ export default function DashboardPage() {
     const fetchDashboardData = async () => {
       try {
         const response = await axios.get('http://localhost:3000/tasks');
-
+        // مطابق اسکرین‌شات ۵:۲۴، دیتا در response.data.data است
         const allTasks = response.data.data || [];
 
         setStats({

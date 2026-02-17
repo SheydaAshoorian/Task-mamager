@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1771257431289,
@@ -12,6 +12,14 @@
                 {
                     "date": 1771257437165,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,14 +6,14 @@\n @Controller('tasks')\n export class TasksController {\n   constructor(private readonly tasksService: TasksService) {}\n \n-@Post()\n-create(@Body() createTaskDto: CreateTaskDto) {\n-  // فعلاً یک آی‌دی دستی (مثلاً ۱) می‌دیم تا بعداً از JWT بگیریم\n-  const adminId = 1; \n-  return this.tasksService.create(createTaskDto, adminId);\n-}\n+  @Post()\n+  create(@Body() createTaskDto: CreateTaskDto) {\n+    // فعلاً یک آی‌دی دستی (مثلاً ۱) می‌دیم تا بعداً از JWT بگیریم\n+    const adminId = 1; \n+    return this.tasksService.create(createTaskDto, adminId);\n+  }\n \n   @Get()\n   findAll() {\n     return this.tasksService.findAll();\n"
+                },
+                {
+                    "date": 1771332701980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,12 +13,12 @@\n     const adminId = 1; \n     return this.tasksService.create(createTaskDto, adminId);\n   }\n \n-  @Get()\n-  findAll() {\n-    return this.tasksService.findAll();\n-  }\n+@Get()\n+findAll() {\n+  return this.tasksService.findAll();\n+}\n \n   @Get(':id')\n   findOne(@Param('id') id: string) {\n     return this.tasksService.findOne(+id);\n"
+                },
+                {
+                    "date": 1771340613951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,17 +8,17 @@\n   constructor(private readonly tasksService: TasksService) {}\n \n   @Post()\n   create(@Body() createTaskDto: CreateTaskDto) {\n-    // فعلاً یک آی‌دی دستی (مثلاً ۱) می‌دیم تا بعداً از JWT بگیریم\n+\n     const adminId = 1; \n     return this.tasksService.create(createTaskDto, adminId);\n   }\n \n-@Get()\n-findAll() {\n-  return this.tasksService.findAll();\n-}\n+  @Get()\n+  findAll() {\n+    return this.tasksService.findAll();\n+  }\n \n   @Get(':id')\n   findOne(@Param('id') id: string) {\n     return this.tasksService.findOne(+id);\n"
                 }
             ],
             "date": 1771257431289,

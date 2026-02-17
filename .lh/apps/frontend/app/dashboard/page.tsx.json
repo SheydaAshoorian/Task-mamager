@@ -1,0 +1,18 @@
+{
+    "sourceFile": "apps/frontend/app/dashboard/page.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1771332116809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1771332116809,
+            "name": "Commit-0",
+            "content": "export default function DashboardPage() {\n  return (\n    <div>\n      <h1 className=\"text-2xl font-bold mb-6 text-right\">خلاصه وضعیت</h1>\n      \n      {/* کارت‌های آمار */}\n      <div className=\"grid grid-cols-1 md:grid-cols-3 gap-6\" dir=\"rtl\">\n        <div className=\"bg-white p-6 rounded-xl shadow-sm border border-gray-100\">\n          <p className=\"text-gray-500 text-sm\">تسک‌های فعال</p>\n          <h3 className=\"text-3xl font-bold text-blue-600\">۱۲</h3>\n        </div>\n        <div className=\"bg-white p-6 rounded-xl shadow-sm border border-gray-100\">\n          <p className=\"text-gray-500 text-sm\">انجام شده</p>\n          <h3 className=\"text-3xl font-bold text-green-600\">۴۵</h3>\n        </div>\n        <div className=\"bg-white p-6 rounded-xl shadow-sm border border-gray-100\">\n          <p className=\"text-gray-500 text-sm\">تیم من</p>\n          <h3 className=\"text-3xl font-bold text-purple-600\">۸ نفر</h3>\n        </div>\n      </div>\n    </div>\n  );\n}"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "apps/frontend/app/dashboard/layout.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1771331427643,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1771331427643,
+            "name": "Commit-0",
+            "content": "import Sidebar from '@/components/Sidebar'; // این کامپوننت را الان می‌سازیم\n\nexport default function DashboardLayout({\n  children,\n}: {\n  children: React.ReactNode;\n}) {\n  return (\n    <div className=\"flex h-screen bg-gray-100 dir-rtl\">\n      {/* سایدبار ثابت در سمت راست */}\n      <Sidebar />\n\n      {/* محتوای اصلی در سمت چپ */}\n      <main className=\"flex-1 overflow-y-auto p-8\">\n        {children}\n      </main>\n    </div>\n  );\n}"
+        }
+    ]
+}

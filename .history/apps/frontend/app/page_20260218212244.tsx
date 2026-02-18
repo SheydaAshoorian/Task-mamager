@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
-import api from '@/common/axios';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');

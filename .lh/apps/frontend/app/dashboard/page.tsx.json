@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 17,
+            "activePatchIndex": 18,
             "patches": [
                 {
                     "date": 1771332116809,
@@ -76,6 +76,10 @@
                 {
                     "date": 1771349441028,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n         <h2 className=\"text-lg font-bold mb-4 text-gray-700 border-b pb-4\">آخرین فعالیت‌های ثبت شده</h2>\n         <div className=\"space-y-4\">\n           {stats.recentTasks.map((task: any) => (\n             <div key={task.id} className=\"flex justify-between items-center p-3 hover:bg-gray-50 rounded-lg transition-colors\">\n-              <span className=\"font-medium text-gray-800\">{task.title}</span>\n+              <span className=\"font-medium text-gray-800\"> {task.title}</span>\n               <span className=\"text-sm text-gray-400\">کارشناس: {task.assignedTo?.name || '---'}</span>\n             </div>\n           ))}\n           {stats.recentTasks.length === 0 && <p className=\"text-center text-gray-400\">دیتایی یافت نشد.</p>}\n"
+                },
+                {
+                    "date": 1771437262265,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,16 @@\n     highPriority: 0,\n     todoTasks: 0,\n     recentTasks: []\n   });\n+\n+  const getProfile = async () => {\n+  // دقت کن: هیچ هدر یا توکنی دستی نمی‌فرستیم! \n+  // فایل axios.ts خودش توکن را از کوکی برمی‌دارد و می‌چسباند به این درخواست.\n+  const res = await api.get('/auth/profile'); \n+  return res.data;\n+}\n+\n   const [loading, setLoading] = useState(true);\n \n   useEffect(() => {\n     const fetchDashboardData = async () => {\n@@ -72,9 +80,9 @@\n         <h2 className=\"text-lg font-bold mb-4 text-gray-700 border-b pb-4\">آخرین فعالیت‌های ثبت شده</h2>\n         <div className=\"space-y-4\">\n           {stats.recentTasks.map((task: any) => (\n             <div key={task.id} className=\"flex justify-between items-center p-3 hover:bg-gray-50 rounded-lg transition-colors\">\n-              <span className=\"font-medium text-gray-800\"> {task.title}</span>\n+              <span className=\"font-medium text-gray-800\"> {task.title} </span>\n               <span className=\"text-sm text-gray-400\">کارشناس: {task.assignedTo?.name || '---'}</span>\n             </div>\n           ))}\n           {stats.recentTasks.length === 0 && <p className=\"text-center text-gray-400\">دیتایی یافت نشد.</p>}\n"
                 }
             ],
             "date": 1771332116809,

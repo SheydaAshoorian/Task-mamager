@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
-import api from '@/common/axios';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -29,7 +28,7 @@ const handleLogin = async (e: React.FormEvent) => {
   return (
     <div className="min-h-screen bg-[#0f172a] flex items-center justify-center p-4 font-[sans-serif]">
       <div className="flex w-full max-w-[850px] bg-white rounded-[25px] shadow-2xl overflow-hidden min-h-[500px]">
-
+        {/* بخش آبی برندینگ */}
         <div className="hidden md:flex md:w-2/5 bg-[#1d63ff] p-10 flex-col justify-center items-center text-center text-white">
           <h1 className="text-4xl font-extrabold mb-4 tracking-tight">ERP<br/>System</h1>
           <p className="text-blue-100 text-sm leading-relaxed mb-8">به سامانه مدیریت منابع سازمانی خوش آمدید</p>

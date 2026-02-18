@@ -13,22 +13,24 @@ export default function RegisterPage() {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  try {
-    await api.post('/auth/register', {
-      first_name,
-      last_name,
-      email,
-      password,
-    });
-    
-    alert("ثبت‌نام موفقیت‌آمیز بود ✅");
-    router.push("/login");
-  } catch (error: any) {
-    alert(error.response?.data?.message || "خطا در ثبت‌نام");
-  }
-};
+  const handleRegister = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      await axios.post("http://localhost:3000/auth/register", {
+        first_name,
+        last_name,
+        email,
+        password,
+      });
+      alert("ثبت‌نام با موفقیت انجام شد!");
+      router.push("/"); // هدایت به صفحه لاگین
+    } catch (error: any) {
+      alert("خطا در ثبت‌نام. دوباره تلاش کنید.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-[#0f172a] flex items-center justify-center p-4 font-[sans-serif]">

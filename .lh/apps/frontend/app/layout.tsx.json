@@ -1,0 +1,22 @@
+{
+    "sourceFile": "apps/frontend/app/layout.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1771352165130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1771352993460,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,15 @@\n-\"use client\";\n-import Sidebar from \"@/components/Sidebar\";\n+import \"./globals.css\";\n \n-export default function DashboardLayout({\n+export default function RootLayout({\n   children,\n }: {\n   children: React.ReactNode;\n }) {\n   return (\n-    <div className=\"flex h-screen bg-gray-50\" dir=\"rtl\">\n-      {/* ۱. سایدبار با عرض ثابت */}\n-      <Sidebar />\n-\n-      {/* ۲. محتوای اصلی که باید به اندازه عرض سایدبار حاشیه داشته باشه */}\n-      <main className=\"flex-1 pr-64 overflow-y-auto p-8\">\n+    <html lang=\"fa\" dir=\"rtl\">\n+      <body className=\"antialiased\">\n         {children}\n-      </main>\n-    </div>\n+      </body>\n+    </html>\n   );\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1771352165130,
+            "name": "Commit-0",
+            "content": "\"use client\";\nimport Sidebar from \"@/components/Sidebar\";\n\nexport default function DashboardLayout({\n  children,\n}: {\n  children: React.ReactNode;\n}) {\n  return (\n    <div className=\"flex h-screen bg-gray-50\" dir=\"rtl\">\n      {/* ۱. سایدبار با عرض ثابت */}\n      <Sidebar />\n\n      {/* ۲. محتوای اصلی که باید به اندازه عرض سایدبار حاشیه داشته باشه */}\n      <main className=\"flex-1 pr-64 overflow-y-auto p-8\">\n        {children}\n      </main>\n    </div>\n  );\n}"
+        }
+    ]
+}

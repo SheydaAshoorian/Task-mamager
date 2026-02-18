@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 15,
+            "activePatchIndex": 23,
             "patches": [
                 {
                     "date": 1770970526450,
@@ -68,6 +68,38 @@
                 {
                     "date": 1770974464266,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';\n import { UsersService } from './users.service';\n import { CreateUserDto } from './dto/create-user.dto';\n import { UpdateUserDto } from './dto/update-user.dto';\n-import { ApiOperation }  from '@nestjs/swagger'\n+import { ApiOperation }  from '@nestjs/swagger';\n+\n @Controller('users')\n export class UsersController {\n   constructor(private readonly usersService: UsersService) {}\n \n"
+                },
+                {
+                    "date": 1771350330456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';\n+\n import { UsersService } from './users.service';\n import { CreateUserDto } from './dto/create-user.dto';\n import { UpdateUserDto } from './dto/update-user.dto';\n import { ApiOperation }  from '@nestjs/swagger';\n"
+                },
+                {
+                    "date": 1771350348613,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';\n-\n+import { Patch, Param} from '@nestjs/common';\n import { UsersService } from './users.service';\n import { CreateUserDto } from './dto/create-user.dto';\n import { UpdateUserDto } from './dto/update-user.dto';\n import { ApiOperation }  from '@nestjs/swagger';\n"
+                },
+                {
+                    "date": 1771350364481,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,5 @@\n-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';\n-import { Patch, Param} from '@nestjs/common';\n+import { Controller, Get, Post, Body, Patch, Param, Delete, Body, ParseIntPipe  } from '@nestjs/common';\n import { UsersService } from './users.service';\n import { CreateUserDto } from './dto/create-user.dto';\n import { UpdateUserDto } from './dto/update-user.dto';\n import { ApiOperation }  from '@nestjs/swagger';\n@@ -26,5 +25,12 @@\n     return this.usersService.findOne(+id);\n   }\n \n  \n+  @Patch(':id') // آدرس می‌شود: /users/123\n+updateRole(\n+  @Param('id', ParseIntPipe) id: number, \n+  @Body('role') role: string\n+) {\n+  return this.usersService.updateRole(id, role);\n }\n+}\n"
+                },
+                {
+                    "date": 1771350372005,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,11 +26,11 @@\n   }\n \n  \n   @Patch(':id') // آدرس می‌شود: /users/123\n-updateRole(\n-  @Param('id', ParseIntPipe) id: number, \n-  @Body('role') role: string\n-) {\n-  return this.usersService.updateRole(id, role);\n+  updateRole(\n+    @Param('id', ParseIntPipe) id: number, \n+    @Body('role') role: string\n+  ) {\n+    return this.usersService.updateRole(id, role);\n+  }\n }\n-}\n"
+                },
+                {
+                    "date": 1771350378640,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n     return this.usersService.findOne(+id);\n   }\n \n  \n-  @Patch(':id') // آدرس می‌شود: /users/123\n+  @Patch(':id') \n   updateRole(\n     @Param('id', ParseIntPipe) id: number, \n     @Body('role') role: string\n   ) {\n"
+                },
+                {
+                    "date": 1771350505848,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { Controller, Get, Post, Body, Patch, Param, Delete, Body, ParseIntPipe  } from '@nestjs/common';\n+import { Controller, Get, Post, Body, Patch, Param, Delete,ParseIntPipe  } from '@nestjs/common';\n import { UsersService } from './users.service';\n import { CreateUserDto } from './dto/create-user.dto';\n import { UpdateUserDto } from './dto/update-user.dto';\n import { ApiOperation }  from '@nestjs/swagger';\n"
+                },
+                {
+                    "date": 1771350870561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n-import { Controller, Get, Post, Body, Patch, Param, Delete,ParseIntPipe  } from '@nestjs/common';\n+import { Controller, Get, Post, Body, Patch, Param, Delete, ParseIntPipe  } from '@nestjs/common';\n import { UsersService } from './users.service';\n import { CreateUserDto } from './dto/create-user.dto';\n import { UpdateUserDto } from './dto/update-user.dto';\n import { ApiOperation }  from '@nestjs/swagger';\n+import { UserRole } from './entities/user.entity';\n \n @Controller('users')\n export class UsersController {\n   constructor(private readonly usersService: UsersService) {}\n"
+                },
+                {
+                    "date": 1771350880543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,37 @@\n+import { Controller, Get, Post, Body, Patch, Param, Delete, ParseIntPipe  } from '@nestjs/common';\n+import { UsersService } from './users.service';\n+import { CreateUserDto } from './dto/create-user.dto';\n+import { UpdateUserDto } from './dto/update-user.dto';\n+import { ApiOperation }  from '@nestjs/swagger';\n+import { UserRole } from './entities/user.entity';\n+\n+@Controller('users')\n+export class UsersController {\n+  constructor(private readonly usersService: UsersService) {}\n+\n+\n+  @Post()\n+  @ApiOperation( { summary: 'ثبت نام کاربر'})\n+  create(@Body() createUserDto: CreateUserDto) {\n+    return this.usersService.create(createUserDto);\n+  }\n+\n+  @Get()\n+  findAll() {\n+    return this.usersService.findAll();\n+  }\n+\n+  @Get(':id')\n+  findOne(@Param('id') id: string) {\n+    return this.usersService.findOne(+id);\n+  }\n+\n+ \n+  @Patch(':id') \n+  updateRole(\n+    @Param('id', ParseIntPipe) id: number, \n+    @Body('role') role: U\n+  ) {\n+    return this.usersService.updateRole(id, role);\n+  }\n+}\n"
                 }
             ],
             "date": 1770970526450,

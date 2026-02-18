@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 19,
+            "activePatchIndex": 29,
             "patches": [
                 {
                     "date": 1771069248529,
@@ -84,6 +84,46 @@
                 {
                     "date": 1771171910706,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Controller, Post, Body, UsePipes, ValidationPipe,HttpCode } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { RegisterDto } from './dto/register.dto';\n-import { LoginDto } from './dto'\n+import { LoginDto } from './dto/login.dto'\n \n @Controller('auth')\n export class AuthController {\n   constructor(private readonly authService: AuthService) {}\n"
+                },
+                {
+                    "date": 1771417787782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,12 @@\n import { Controller, Post, Body, UsePipes, ValidationPipe,HttpCode } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { RegisterDto } from './dto/register.dto';\n-import { LoginDto } from './dto/login.dto'\n+import { LoginDto } from './dto/login.dto';\n \n @Controller('auth')\n export class AuthController {\n+  \n   constructor(private readonly authService: AuthService) {}\n \n   @Post('register')\n   @UsePipes(new ValidationPipe({ whitelist: true })) // پاکسازی دیتای اضافی ورودی\n"
+                },
+                {
+                    "date": 1771417868548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,10 @@\n import { LoginDto } from './dto/login.dto';\n \n @Controller('auth')\n export class AuthController {\n-  \n+\n+  private readonly logger = new Logger(AuthController.name);\n   constructor(private readonly authService: AuthService) {}\n \n   @Post('register')\n   @UsePipes(new ValidationPipe({ whitelist: true })) // پاکسازی دیتای اضافی ورودی\n"
+                },
+                {
+                    "date": 1771417874396,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { Controller, Post, Body, UsePipes, ValidationPipe,HttpCode } from '@nestjs/common';\n+import { Controller, Post, Body, UsePipes,« ValidationPipe,HttpCode } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { RegisterDto } from './dto/register.dto';\n import { LoginDto } from './dto/login.dto';\n \n"
+                },
+                {
+                    "date": 1771417880720,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { Controller, Post, Body, UsePipes,« ValidationPipe,HttpCode } from '@nestjs/common';\n+import { Controller, Post, Body, UsePipesو ValidationPipe,HttpCode } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { RegisterDto } from './dto/register.dto';\n import { LoginDto } from './dto/login.dto';\n \n"
+                },
+                {
+                    "date": 1771417886882,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { Controller, Post, Body, UsePipesو ValidationPipe,HttpCode } from '@nestjs/common';\n+import { Controller, Post, Body, UsePipes,Logger ValidationPipe,HttpCode } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { RegisterDto } from './dto/register.dto';\n import { LoginDto } from './dto/login.dto';\n \n"
+                },
+                {
+                    "date": 1771417892018,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { Controller, Post, Body, UsePipes,Logger ValidationPipe,HttpCode } from '@nestjs/common';\n+import { Controller, Post, Body, UsePipes,Logger, ValidationPipe,HttpCode } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { RegisterDto } from './dto/register.dto';\n import { LoginDto } from './dto/login.dto';\n \n"
+                },
+                {
+                    "date": 1771418096773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { Controller, Post, Body, UsePipes,Logger, ValidationPipe,HttpCode } from '@nestjs/common';\n+import { Controller, Post, Body, UsePipes, Logger, ValidationPipe,HttpCode } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { RegisterDto } from './dto/register.dto';\n import { LoginDto } from './dto/login.dto';\n \n@@ -11,8 +11,9 @@\n \n   @Post('register')\n   @UsePipes(new ValidationPipe({ whitelist: true })) // پاکسازی دیتای اضافی ورودی\n   async register(@Body() registerDto: RegisterDto) {\n+    \n     return this.authService.register(registerDto);\n   }\n \n @Post('login')\n"
+                },
+                {
+                    "date": 1771418118262,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n   @Post('register')\n   @UsePipes(new ValidationPipe({ whitelist: true })) // پاکسازی دیتای اضافی ورودی\n   async register(@Body() registerDto: RegisterDto) {\n     \n+    this.logger.log(`درخواست ثبت‌نام جدید برای: ${registerDto.email}`);\n     return this.authService.register(registerDto);\n   }\n \n @Post('login')\n"
+                },
+                {
+                    "date": 1771418226618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,12 +9,12 @@\n   private readonly logger = new Logger(AuthController.name);\n   constructor(private readonly authService: AuthService) {}\n \n   @Post('register')\n-  @UsePipes(new ValidationPipe({ whitelist: true })) // پاکسازی دیتای اضافی ورودی\n   async register(@Body() registerDto: RegisterDto) {\n-    \n+\n     this.logger.log(`درخواست ثبت‌نام جدید برای: ${registerDto.email}`);\n+\n     return this.authService.register(registerDto);\n   }\n \n @Post('login')\n"
+                },
+                {
+                    "date": 1771421703493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n     return this.authService.register(registerDto);\n   }\n \n @Post('login')\n-@HttpCode(200) // برای لاگین بهتره کد ۲۰۰ برگرده\n-async login(@Body() dto: LoginDto) {\n-  return this.authService.login(dto);\n+async login(@Body() loginDto: any) {\n+  return this.authService.login(loginDto);\n }\n+\n }\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1771069248529,

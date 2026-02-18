@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 64,
+            "activePatchIndex": 68,
             "patches": [
                 {
                     "date": 1770814770296,
@@ -264,6 +264,22 @@
                 {
                     "date": 1770970694836,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     @ApiProperty()\n     family: string;\n \n \n-@ApiProperty({ example: 'shiva@example.com', description: 'ایمیل منحصر به فرد' })\n+    @ApiProperty({ example: 'shiva@example.com', description: 'ایمیل منحصر به فرد' })\n   @IsEmail({}, { message: 'فرمت ایمیل صحیح نیست' })\n   email: string;\n \n     @ApiProperty({ example: 'password123', description: 'رمز عبور حداقل ۸ کاراکتر' })\n"
+                },
+                {
+                    "date": 1771414743610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,10 @@\n     family: string;\n \n \n     @ApiProperty({ example: 'shiva@example.com', description: 'ایمیل منحصر به فرد' })\n-  @IsEmail({}, { message: 'فرمت ایمیل صحیح نیست' })\n-  email: string;\n+    @IsEmail({}, { message: 'فرمت ایمیل صحیح نیست' })\n+    email: string;\n \n     @ApiProperty({ example: 'password123', description: 'رمز عبور حداقل ۸ کاراکتر' })\n     @IsString()\n     @MinLength(8, { message: 'رمز عبور باید حداقل ۸ کاراکتر باشد' })\n"
+                },
+                {
+                    "date": 1771414748778,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n export class CreateUserDto {\n \n     @IsNotEmpty()\n     @ApiProperty()\n-    name: string;\n+    first_name: string;\n \n     @IsNotEmpty()\n     @ApiProperty()\n     family: string;\n"
+                },
+                {
+                    "date": 1771414754865,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     first_name: string;\n \n     @IsNotEmpty()\n     @ApiProperty()\n-    family: string;\n+    last_name: string;\n \n \n     @ApiProperty({ example: 'shiva@example.com', description: 'ایمیل منحصر به فرد' })\n     @IsEmail({}, { message: 'فرمت ایمیل صحیح نیست' })\n"
+                },
+                {
+                    "date": 1771414769632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,26 @@\n+import { IsEmail, IsNotEmpty, IsString, MinLength} from 'class-validator'\n+import {ApiProperty} from '@nestjs/swagger'\n+\n+\n+export class CreateUserDto {\n+\n+    @IsNotEmpty()\n+    @ApiProperty()\n+    first_name: string;\n+\n+    @IsNotEmpty()\n+    @ApiProperty()\n+    last_name: string;\n+\n+\n+    @ApiProperty({ example: 'sheyda@example.com', description: 'ایمیل منحصر به فرد' })\n+    @IsEmail({}, { message: 'فرمت ایمیل صحیح نیست' })\n+    email: string;\n+\n+    @ApiProperty({ example: 'password123', description: 'رمز عبور حداقل ۸ کاراکتر' })\n+    @IsString()\n+    @MinLength(8, { message: 'رمز عبور باید حداقل ۸ کاراکتر باشد' })\n+    password: string;\n+ \n+\n+}\n"
                 }
             ],
             "date": 1770814770296,

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 12,
+            "activePatchIndex": 22,
             "patches": [
                 {
                     "date": 1771331543245,
@@ -56,6 +56,46 @@
                 {
                     "date": 1771352846126,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,40 @@\n \"use client\";\n-import Sidebar from \"@/components/Sidebar\";\n+import React from 'react';\n+import Link from 'next/link';\n+import { usePathname } from 'next/navigation';\n+import { LayoutDashboard, ClipboardList, PlusCircle, Users, Settings, LogOut } from 'lucide-react';\n \n-export default function DashboardLayout({\n-  children,\n-}: {\n-  children: React.ReactNode;\n-}) {\n+export default function Sidebar() {\n+  const pathname = usePathname();\n+\n+  const menuItems = [\n+    { name: 'پیشخوان', href: '/dashboard', icon: LayoutDashboard },\n+    { name: 'لیست تسک‌ها', href: '/dashboard/tasks', icon: ClipboardList },\n+    { name: 'ثبت تسک جدید', href: '/dashboard/tasks/create', icon: PlusCircle },\n+    { name: 'مدیریت کاربران', href: '/dashboard/users', icon: Users },\n+    { name: 'تنظیمات', href: '/dashboard/settings', icon: Settings },\n+  ];\n+\n   return (\n-    <div className=\"flex h-screen bg-gray-50\" dir=\"rtl\">\n-      {/* ۱. سایدبار با عرض ثابت */}\n-      <Sidebar />\n-\n-      {/* ۲. محتوای اصلی که باید به اندازه عرض سایدبار حاشیه داشته باشه */}\n-      <main className=\"flex-1 pr-64 overflow-y-auto p-8\">\n-        {children}\n-      </main>\n-    </div>\n+    <aside className=\"w-64 h-screen bg-gray-900 text-white flex flex-col fixed right-0 top-0 border-l border-gray-800 z-50\" dir=\"rtl\">\n+      <div className=\"p-6 border-b border-gray-800 text-xl font-bold text-blue-400\">پنل مدیریت</div>\n+      <nav className=\"flex-1 p-4 space-y-2\">\n+        {menuItems.map((item) => (\n+          <Link \n+            key={item.href} \n+            href={item.href}\n+            className={`flex items-center gap-3 p-3 rounded-xl transition-colors ${\n+              pathname === item.href ? 'bg-blue-600 text-white' : 'text-gray-400 hover:bg-gray-800'\n+            }`}\n+          >\n+            <item.icon size={22} />\n+            <span className=\"text-sm font-medium\">{item.name}</span>\n+          </Link>\n+        ))}\n+      </nav>\n+      <div className=\"p-4 border-t border-gray-800 text-red-400 flex items-center gap-2 cursor-pointer p-3\">\n+        <LogOut size={20} /> <span className=\"text-sm\">خروج</span>\n+      </div>\n+    </aside>\n   );\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771581319646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,26 @@\n     { name: 'مدیریت کاربران', href: '/dashboard/users', icon: Users },\n     { name: 'تنظیمات', href: '/dashboard/settings', icon: Settings },\n   ];\n \n+  import Cookies from 'js-cookie';\n+import { useRouter } from 'next/navigation';\n+\n+const handleLogout = () => {\n+  console.log(\"--- فرآیند خروج از حساب ---\");\n+\n+  // ۱. پاک کردن توکن از کوکی‌ها\n+  Cookies.remove('token');\n+  console.log(\"توکن از کوکی پاک شد ✅\");\n+\n+  // ۲. پاک کردن اطلاعات احتمالی از LocalStorage\n+  localStorage.removeItem('user'); \n+  \n+  // ۳. هدایت کاربر به صفحه لاگین\n+  toast.success('با موفقیت خارج شدید');\n+  window.location.href = '/login'; \n+};\n+\n   return (\n     <aside className=\"w-64 h-screen bg-gray-900 text-white flex flex-col fixed right-0 top-0 border-l border-gray-800 z-50\" dir=\"rtl\">\n       <div className=\"p-6 border-b border-gray-800 text-xl font-bold text-blue-400\">پنل مدیریت</div>\n       <nav className=\"flex-1 p-4 space-y-2\">\n"
+                },
+                {
+                    "date": 1771581326689,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n import React from 'react';\n import Link from 'next/link';\n import { usePathname } from 'next/navigation';\n import { LayoutDashboard, ClipboardList, PlusCircle, Users, Settings, LogOut } from 'lucide-react';\n+  import Cookies from 'js-cookie';\n \n export default function Sidebar() {\n   const pathname = usePathname();\n \n@@ -14,9 +15,8 @@\n     { name: 'مدیریت کاربران', href: '/dashboard/users', icon: Users },\n     { name: 'تنظیمات', href: '/dashboard/settings', icon: Settings },\n   ];\n \n-  import Cookies from 'js-cookie';\n import { useRouter } from 'next/navigation';\n \n const handleLogout = () => {\n   console.log(\"--- فرآیند خروج از حساب ---\");\n"
+                },
+                {
+                    "date": 1771581370822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import React from 'react';\n import Link from 'next/link';\n import { usePathname } from 'next/navigation';\n import { LayoutDashboard, ClipboardList, PlusCircle, Users, Settings, LogOut } from 'lucide-react';\n-  import Cookies from 'js-cookie';\n+import Cookies from 'js-cookie';\n \n export default function Sidebar() {\n   const pathname = usePathname();\n \n@@ -15,9 +15,8 @@\n     { name: 'مدیریت کاربران', href: '/dashboard/users', icon: Users },\n     { name: 'تنظیمات', href: '/dashboard/settings', icon: Settings },\n   ];\n \n-import { useRouter } from 'next/navigation';\n \n const handleLogout = () => {\n   console.log(\"--- فرآیند خروج از حساب ---\");\n \n"
+                },
+                {
+                    "date": 1771581486839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n import Link from 'next/link';\n import { usePathname } from 'next/navigation';\n import { LayoutDashboard, ClipboardList, PlusCircle, Users, Settings, LogOut } from 'lucide-react';\n import Cookies from 'js-cookie';\n+import { useRouter } from 'next/navigation';\n \n export default function Sidebar() {\n   const pathname = usePathname();\n \n@@ -49,9 +50,9 @@\n           </Link>\n         ))}\n       </nav>\n       <div className=\"p-4 border-t border-gray-800 text-red-400 flex items-center gap-2 cursor-pointer p-3\">\n-        <LogOut size={20} /> <span className=\"text-sm\">خروج</span>\n+        <LogOut  onClick={handleLogout} size={20} /> <span className=\"text-sm\">خروج</span>\n       </div>\n     </aside>\n   );\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771581589124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,11 @@\n import { usePathname } from 'next/navigation';\n import { LayoutDashboard, ClipboardList, PlusCircle, Users, Settings, LogOut } from 'lucide-react';\n import Cookies from 'js-cookie';\n import { useRouter } from 'next/navigation';\n+import { toast } from 'react-toastify';\n \n+\n export default function Sidebar() {\n   const pathname = usePathname();\n \n   const menuItems = [\n@@ -50,9 +52,9 @@\n           </Link>\n         ))}\n       </nav>\n       <div className=\"p-4 border-t border-gray-800 text-red-400 flex items-center gap-2 cursor-pointer p-3\">\n-        <LogOut  onClick={handleLogout} size={20} /> <span className=\"text-sm\">خروج</span>\n+        <LogOut  onClick={handleLogout}  size={20} /> <span className=\"text-sm\">خروج</span>\n       </div>\n     </aside>\n   );\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771581657819,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   localStorage.removeItem('user'); \n   \n   // ۳. هدایت کاربر به صفحه لاگین\n   toast.success('با موفقیت خارج شدید');\n-  window.location.href = '/login'; \n+  window.location.href = 'http://localhost:3001/auth/login'; \n };\n \n   return (\n     <aside className=\"w-64 h-screen bg-gray-900 text-white flex flex-col fixed right-0 top-0 border-l border-gray-800 z-50\" dir=\"rtl\">\n"
+                },
+                {
+                    "date": 1771581673492,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   localStorage.removeItem('user'); \n   \n   // ۳. هدایت کاربر به صفحه لاگین\n   toast.success('با موفقیت خارج شدید');\n-  window.location.href = 'http://localhost:3001/auth/login'; \n+  window.location.href = 'http://localhost:300۰/auth/login'; \n };\n \n   return (\n     <aside className=\"w-64 h-screen bg-gray-900 text-white flex flex-col fixed right-0 top-0 border-l border-gray-800 z-50\" dir=\"rtl\">\n"
+                },
+                {
+                    "date": 1771581680110,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   localStorage.removeItem('user'); \n   \n   // ۳. هدایت کاربر به صفحه لاگین\n   toast.success('با موفقیت خارج شدید');\n-  window.location.href = 'http://localhost:300۰/auth/login'; \n+  window.location.href = 'http://localhost:3000/login'; \n };\n \n   return (\n     <aside className=\"w-64 h-screen bg-gray-900 text-white flex flex-col fixed right-0 top-0 border-l border-gray-800 z-50\" dir=\"rtl\">\n"
+                },
+                {
+                    "date": 1771581697125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   localStorage.removeItem('user'); \n   \n   // ۳. هدایت کاربر به صفحه لاگین\n   toast.success('با موفقیت خارج شدید');\n-  window.location.href = 'http://localhost:3000/login'; \n+  window.location.href = 'http://localhost:3000/dashboard'; \n };\n \n   return (\n     <aside className=\"w-64 h-screen bg-gray-900 text-white flex flex-col fixed right-0 top-0 border-l border-gray-800 z-50\" dir=\"rtl\">\n"
+                },
+                {
+                    "date": 1771581709283,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   localStorage.removeItem('user'); \n   \n   // ۳. هدایت کاربر به صفحه لاگین\n   toast.success('با موفقیت خارج شدید');\n-  window.location.href = 'http://localhost:3000/dashboard'; \n+  window.location.href = 'http://localhost:3000'; \n };\n \n   return (\n     <aside className=\"w-64 h-screen bg-gray-900 text-white flex flex-col fixed right-0 top-0 border-l border-gray-800 z-50\" dir=\"rtl\">\n"
                 }
             ],
             "date": 1771331543245,

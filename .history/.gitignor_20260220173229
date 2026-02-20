@@ -1,0 +1,7 @@
+.history/
+**/.lh/
+apps/backend/.lh/
+apps/frontend/.lh/
+node_modules/
+.next/
+dist/

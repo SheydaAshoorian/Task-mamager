@@ -1,0 +1,6 @@
+.history/
+**/.lh/
+node_modules/
+.next/
+dist/
+.env

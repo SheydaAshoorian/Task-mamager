@@ -1,0 +1,206 @@
+{
+    "sourceFile": "src/users/entities/user.entity.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 47,
+            "patches": [
+                {
+                    "date": 1770708122418,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1770708130403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,11 @@\n     @Column()\n     isActive: boolean;\n \n     @Column()\n-    createdAt: ;\n+    createdAt: Date;\n \n+    \n \n \n+\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1770708135665,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n \n     @Column()\n     createdAt: Date;\n \n-    \n+    updated\n \n \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1770708141103,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n \n     @Column()\n     createdAt: Date;\n \n-    updated\n+    updatedAt: Date\n \n \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1770708146318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,10 @@\n \n     @Column()\n     createdAt: Date;\n \n-    updatedAt: Date\n+    \n+    updatedAt: Date;\n \n \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1770708152771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n \n     @Column()\n     createdAt: Date;\n \n-    \n+    @Column()\n     updatedAt: Date;\n \n \n \n"
+                },
+                {
+                    "date": 1770708164442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n \n     @Column()\n     isActive: boolean;\n \n-    @Column()\n+    @CreateDateColumn()\n     createdAt: Date;\n \n     @Column()\n     updatedAt: Date;\n"
+                },
+                {
+                    "date": 1770708180422,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { Entity , Column, PrimaryGeneratedColumn, CreateDateColumn} from 'typeorm';\n+import { Entity , Column, PrimaryGeneratedColumn, CreateDateColumn , } from 'typeorm';\n \n @Entity(users)\n export class users{\n \n"
+                },
+                {
+                    "date": 1770708190047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { Entity , Column, PrimaryGeneratedColumn, CreateDateColumn , } from 'typeorm';\n+import { Entity , Column, PrimaryGeneratedColumn, CreateDateColumn , UpdateDateColumn} from 'typeorm';\n \n @Entity(users)\n export class users{\n \n@@ -23,9 +23,9 @@\n \n     @CreateDateColumn()\n     createdAt: Date;\n \n-    @Column()\n+    @UpdateDateColumn()\n     updatedAt: Date;\n \n \n \n"
+                },
+                {
+                    "date": 1770708536051,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,36 @@\n+import { Entity , Column, PrimaryGeneratedColumn, CreateDateColumn , UpdateDateColumn} from 'typeorm';\n+\n+@Entity(users)\n+\n+\n+\n+\n+export class users{\n+\n+    @PrimaryGeneratedColumn()\n+    id: number;\n+\n+    @Column()\n+    name: string;\n+\n+    @Column()\n+    family: string;\n+\n+    @Column({uniqe : true})\n+    email: string;\n+\n+    @Column({})\n+    role: enum ;\n+\n+    @Column()\n+    isActive: boolean;\n+\n+    @CreateDateColumn()\n+    createdAt: Date;\n+\n+    @UpdateDateColumn()\n+    updatedAt: Date;\n+\n+\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1770708541294,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,10 @@\n \n @Entity(users)\n \n \n+ex\n \n-\n export class users{\n \n     @PrimaryGeneratedColumn()\n     id: number;\n@@ -32,37 +32,5 @@\n     updatedAt: Date;\n \n \n \n-}\n-import { Entity , Column, PrimaryGeneratedColumn, CreateDateColumn , UpdateDateColumn} from 'typeorm';\n-\n-@Entity(users)\n-export class users{\n-\n-    @PrimaryGeneratedColumn()\n-    id: number;\n-\n-    @Column()\n-    name: string;\n-\n-    @Column()\n-    family: string;\n-\n-    @Column({uniqe : true})\n-    email: string;\n-\n-    @Column({})\n-    role: enum ;\n-\n-    @Column()\n-    isActive: boolean;\n-\n-    @CreateDateColumn()\n-    createdAt: Date;\n-\n-    @UpdateDateColumn()\n-    updatedAt: Date;\n-\n-\n-\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1770708547831,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n @Entity(users)\n \n \n-ex\n+export enum \n \n export class users{\n \n     @PrimaryGeneratedColumn()\n"
+                },
+                {
+                    "date": 1770708583056,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,12 @@\n \n @Entity(users)\n \n \n-export enum \n+export enum  User{\n \n+}\n+\n export class users{\n \n     @PrimaryGeneratedColumn()\n     id: number;\n"
+                },
+                {
+                    "date": 1770708598520,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,10 @@\n \n @Entity(users)\n \n \n-export enum  User{\n+export enum  UserRole{\n+    AD\n \n }\n \n export class users{\n"
+                },
+                {
+                    "date": 1770708606786,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n @Entity(users)\n \n \n export enum  UserRole{\n-    AD\n+    Ad\n \n }\n \n export class users{\n"
+                },
+                {
+                    "date": 1770708617393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n @Entity(users)\n \n \n export enum  UserRole{\n-    Ad\n+    A\n \n }\n \n export class users{\n"
+                },
+                {
+                    "date": 1770708624831,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n @Entity(users)\n \n \n export enum  UserRole{\n-    A\n+    Admin = 'admin'\n \n }\n \n export class users{\n"
+                },
+                {
+                    "date": 1770708631769,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n @Entity(users)\n \n \n export enum  UserRole{\n-    Admin = 'admin'\n+    Admin = 'admin';\n \n }\n \n export class users{\n"
+                },
+                {
+                    "date": 1770708638856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n \n \n export enum  UserRole{\n     Admin = 'admin';\n+    User = ''\n \n }\n \n export class users{\n"
+                },
+                {
+                    "date": 1770708647572,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,10 @@\n \n \n export enum  UserRole{\n     Admin = 'admin';\n-    User = ''\n+    User = 'user';\n+    Manager = \n \n }\n \n export class users{\n"
+                },
+                {
+                    "date": 1770708654284,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \n export enum  UserRole{\n     Admin = 'admin';\n     User = 'user';\n-    Manager = \n+    Manager = \"manager\n \n }\n \n export class users{\n"
+                },
+                {
+                    "date": 1770708661840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \n export enum  UserRole{\n     Admin = 'admin';\n     User = 'user';\n-    Manager = \"manager\n+    Manager = \"manager'\n \n }\n \n export class users{\n"
+                },
+                {
+                    "date": 1770708671451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,11 +3,12 @@\n @Entity(users)\n \n \n export enum  UserRole{\n+    \n     Admin = 'admin';\n     User = 'user';\n-    Manager = \"manager'\n+    Manager = 'manager'\n \n }\n \n export class users{\n"
+                },
+                {
+                    "date": 1770708678243,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n @Entity(users)\n \n \n export enum  UserRole{\n-    \n+\n     Admin = 'admin';\n     User = 'user';\n     Manager = 'manager'\n \n@@ -24,9 +24,9 @@\n \n     @Column({uniqe : true})\n     email: string;\n \n-    @Column({})\n+    @Column({typ})\n     role: enum ;\n \n     @Column()\n     isActive: boolean;\n"
+                },
+                {
+                    "date": 1770708684495,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n \n     @Column({uniqe : true})\n     email: string;\n \n-    @Column({typ})\n+    @Column({type : en})\n     role: enum ;\n \n     @Column()\n     isActive: boolean;\n"
+                },
+                {
+                    "date": 1770708693920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,10 @@\n \n     @Column({uniqe : true})\n     email: string;\n \n-    @Column({type : en})\n+    @Column(\n+        {type : enum})\n     role: enum ;\n \n     @Column()\n     isActive: boolean;\n"
+                },
+                {
+                    "date": 1770708701069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,10 @@\n     @Column({uniqe : true})\n     email: string;\n \n     @Column(\n-        {type : enum})\n+        {type : enum}\n+    )\n     role: enum ;\n \n     @Column()\n     isActive: boolean;\n"
+                },
+                {
+                    "date": 1770708712508,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,11 @@\n     @Column({uniqe : true})\n     email: string;\n \n     @Column(\n-        {type : enum}\n+        {type : enum\n+          enum : Use  \n+        }\n     )\n     role: enum ;\n \n     @Column()\n"
+                },
+                {
+                    "date": 1770708718226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,10 @@\n     email: string;\n \n     @Column(\n         {type : enum\n-          enum : Use  \n+          enum : UserRole\n+          de  \n         }\n     )\n     role: enum ;\n \n"
+                },
+                {
+                    "date": 1770708725691,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n \n     @Column(\n         {type : enum\n           enum : UserRole\n-          de  \n+          default : User  \n         }\n     )\n     role: enum ;\n \n"
+                },
+                {
+                    "date": 1770708731478,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n \n     @Column(\n         {type : enum\n           enum : UserRole\n-          default : User  \n+          default : UserRole.user  \n         }\n     )\n     role: enum ;\n \n"
+                },
+                {
+                    "date": 1770708750318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n     @Column({uniqe : true})\n     email: string;\n \n     @Column(\n-        {type : enum\n+        {type : enum,\n           enum : UserRole\n           default : UserRole.user  \n         }\n     )\n"
+                },
+                {
+                    "date": 1770708761358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,10 +26,10 @@\n     email: string;\n \n     @Column(\n         {type : enum,\n-          enum : UserRole\n-          default : UserRole.user  \n+          enum : UserRole,\n+          default : UserRole.user , \n         }\n     )\n     role: enum ;\n \n"
+                },
+                {
+                    "date": 1770708804952,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n         }\n     )\n     role: enum ;\n \n-    @Column()\n+    @Column({})\n     isActive: boolean;\n \n     @CreateDateColumn()\n     createdAt: Date;\n"
+                },
+                {
+                    "date": 1770708810375,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n         }\n     )\n     role: enum ;\n \n-    @Column({})\n+    @Column({default})\n     isActive: boolean;\n \n     @CreateDateColumn()\n     createdAt: Date;\n"
+                },
+                {
+                    "date": 1770708815959,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n         }\n     )\n     role: enum ;\n \n-    @Column({default})\n+    @Column({default : true})\n     isActive: boolean;\n \n     @CreateDateColumn()\n     createdAt: Date;\n"
+                },
+                {
+                    "date": 1770727952583,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n \n export enum  UserRole{\n \n-    Admin = 'admin';\n+    Admin = 'admin',\n     User = 'user';\n     Manager = 'manager'\n \n }\n"
+                },
+                {
+                    "date": 1770727959018,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,10 @@\n \n export enum  UserRole{\n \n     Admin = 'admin',\n-    User = 'user';\n-    Manager = 'manager'\n+    User = 'user',\n+    Manager = 'manager',\n \n }\n \n export class users{\n"
+                },
+                {
+                    "date": 1770727979366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n     @Column({uniqe : true})\n     email: string;\n \n     @Column(\n-        {type : enum,\n+        {type : 'enum,\n           enum : UserRole,\n           default : UserRole.user , \n         }\n     )\n"
+                },
+                {
+                    "date": 1770728005421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n     @Column({uniqe : true})\n     email: string;\n \n     @Column(\n-        {type : 'enum,\n+        { type : 'enum',\n           enum : UserRole,\n           default : UserRole.user , \n         }\n     )\n"
+                },
+                {
+                    "date": 1770728011533,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,12 +25,13 @@\n     @Column({uniqe : true})\n     email: string;\n \n     @Column(\n-        { type : 'enum',\n+        { \n+        type : 'enum',\n           enum : UserRole,\n           default : UserRole.user , \n-        }\n+        \n     )\n     role: enum ;\n \n     @Column({default : true})\n"
+                },
+                {
+                    "date": 1770728017305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,10 +26,10 @@\n     email: string;\n \n     @Column(\n         { \n-        type : 'enum',\n-          enum : UserRole,\n+            type : 'enum',\n+           enum : UserRole,\n           default : UserRole.user , \n         \n     )\n     role: enum ;\n"
+                },
+                {
+                    "date": 1770728025318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,13 +25,12 @@\n     @Column({uniqe : true})\n     email: string;\n \n     @Column(\n-        { \n-            type : 'enum',\n-           enum : UserRole,\n+        { type : 'enum',\n+          enum : UserRole,\n           default : UserRole.user , \n-        \n+        }\n     )\n     role: enum ;\n \n     @Column({default : true})\n"
+                },
+                {
+                    "date": 1770728083279,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n           enum : UserRole,\n           default : UserRole.user , \n         }\n     )\n-    role: enum ;\n+    role: Use ;\n \n     @Column({default : true})\n     isActive: boolean;\n \n"
+                },
+                {
+                    "date": 1770728105977,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,12 +27,12 @@\n \n     @Column(\n         { type : 'enum',\n           enum : UserRole,\n-          default : UserRole.user , \n+          default : UserRole.User , \n         }\n     )\n-    role: Use ;\n+    role: UserRole ;\n \n     @Column({default : true})\n     isActive: boolean;\n \n"
+                },
+                {
+                    "date": 1770728139117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n \n     @Column()\n     family: string;\n \n-    @Column({uniqe : true})\n+    @Column({unique : true})\n     email: string;\n \n     @Column(\n         { type : 'enum',\n"
+                },
+                {
+                    "date": 1770728156078,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { Entity , Column, PrimaryGeneratedColumn, CreateDateColumn , UpdateDateColumn} from 'typeorm';\n \n-@Entity(users)\n \n \n+\n export enum  UserRole{\n \n     Admin = 'admin',\n     User = 'user',\n"
+                },
+                {
+                    "date": 1770728179375,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n     Manager = 'manager',\n \n }\n \n+@Entity('users')\n export class users{\n \n     @PrimaryGeneratedColumn()\n     id: number;\n"
+                }
+            ],
+            "date": 1770708122418,
+            "name": "Commit-0",
+            "content": "import { Entity , Column, PrimaryGeneratedColumn, CreateDateColumn} from 'typeorm';\n\n@Entity(users)\nexport class users{\n\n    @PrimaryGeneratedColumn()\n    id: number;\n\n    @Column()\n    name: string;\n\n    @Column()\n    family: string;\n\n    @Column({uniqe : true})\n    email: string;\n\n    @Column({})\n    role: enum ;\n\n    @Column()\n    isActive: boolean;\n\n    @Column()\n    createdAt: ;\n\n\n\n}"
+        }
+    ]
+}

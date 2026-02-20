@@ -1,0 +1,18 @@
+{
+    "sourceFile": "apps/frontend/lib/axios.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1771528771826,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1771528771826,
+            "name": "Commit-0",
+            "content": "import axios from 'axios';\nimport Cookies from 'js-cookie';\nconsole.log('API URL is:', process.env.NEXT_PUBLIC_API_URL); // این را اضافه کن\n// ۱. ایجاد یک نمونه سفارشی از اکسوس با آدرس پایه\nconst api = axios.create({\n  baseURL: process.env.NEXT_PUBLIC_API_URL,\n  headers: {\n    'Content-Type': 'application/json',\n  },\n});\n\n// ۲. اینترسپتور: قبل از هر درخواست، توکن را به صورت خودکار اضافه می‌کند\napi.interceptors.request.use((config) => {\n  const token = Cookies.get('token');\n  if (token) {\n    config.headers.Authorization = `Bearer ${token}`;\n  }\n  return config;\n}, (error) => {\n  return Promise.reject(error);\n});\n\n// ۳. مدیریت خطاهای عمومی (مثلاً اگر توکن منقضی شده بود)\napi.interceptors.response.use(\n  (response) => response,\n  (error) => {\n    if (error.response?.status === 401) {\n      // مثلاً هدایت کاربر به صفحه لاگین اگر توکن معتبر نبود\n      Cookies.remove('token');\n      window.location.href = '/login';\n    }\n    return Promise.reject(error);\n  }\n);\n\nexport default api;"
+        }
+    ]
+}

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 29,
+            "activePatchIndex": 40,
             "patches": [
                 {
                     "date": 1771069248529,
@@ -124,6 +124,50 @@
                 {
                     "date": 1771421703493,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n     return this.authService.register(registerDto);\n   }\n \n @Post('login')\n-@HttpCode(200) // برای لاگین بهتره کد ۲۰۰ برگرده\n-async login(@Body() dto: LoginDto) {\n-  return this.authService.login(dto);\n+async login(@Body() loginDto: any) {\n+  return this.authService.login(loginDto);\n }\n+\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771439839840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import { Controller, Post, Body, UsePipes, Logger, ValidationPipe,HttpCode } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { RegisterDto } from './dto/register.dto';\n import { LoginDto } from './dto/login.dto';\n+import { AuthGuard } from './auth.guard';\n \n @Controller('auth')\n export class AuthController {\n \n@@ -17,9 +18,8 @@\n     return this.authService.register(registerDto);\n   }\n \n @Post('login')\n-async login(@Body() loginDto: any) {\n-  return this.authService.login(loginDto);\n+async login(@Body() dto: LoginDto) {\n+  return this.authService.login(dto);\n }\n-\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771439929666,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n import { RegisterDto } from './dto/register.dto';\n import { LoginDto } from './dto/login.dto';\n import { AuthGuard } from './auth.guard';\n \n+\n @Controller('auth')\n export class AuthController {\n \n   private readonly logger = new Logger(AuthController.name);\n@@ -21,5 +22,7 @@\n @Post('login')\n async login(@Body() dto: LoginDto) {\n   return this.authService.login(dto);\n }\n+\n+\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771440411805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,6 +23,11 @@\n async login(@Body() dto: LoginDto) {\n   return this.authService.login(dto);\n }\n \n-\n+  @UseGuards(AuthGuard) // از این به بعد این مسیر قفل است!\n+  @Get('profile')\n+  getProfile(@Request() req) {\n+    // اطلاعات کاربر که در گارد ریختیم توی request، اینجا برمی‌گردانیم\n+    return req.user; \n+  }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771440417556,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,9 @@\n async login(@Body() dto: LoginDto) {\n   return this.authService.login(dto);\n }\n \n+  @ApiBearerAuth('JWT-auth')\n   @UseGuards(AuthGuard) // از این به بعد این مسیر قفل است!\n   @Get('profile')\n   getProfile(@Request() req) {\n     // اطلاعات کاربر که در گارد ریختیم توی request، اینجا برمی‌گردانیم\n"
+                },
+                {
+                    "date": 1771440469755,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { Controller, Post, Body, UsePipes, Logger, ValidationPipe,HttpCode } from '@nestjs/common';\n+import { Controller, Post,Get Body, UsePipes, Logger, ValidationPipe,HttpCode } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { RegisterDto } from './dto/register.dto';\n import { LoginDto } from './dto/login.dto';\n import { AuthGuard } from './auth.guard';\n"
+                },
+                {
+                    "date": 1771440502755,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n-import { Controller, Post,Get Body, UsePipes, Logger, ValidationPipe,HttpCode } from '@nestjs/common';\n+import { Controller, Post,Get, Body, UsePipes, Logger,\n+   ValidationPipe,HttpCode } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { RegisterDto } from './dto/register.dto';\n import { LoginDto } from './dto/login.dto';\n import { AuthGuard } from './auth.guard';\n"
+                },
+                {
+                    "date": 1771440540047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,14 @@\n import { Controller, Post,Get, Body, UsePipes, Logger,\n-   ValidationPipe,HttpCode } from '@nestjs/common';\n+   ValidationPipe,HttpCode, Request, UseGuards } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { RegisterDto } from './dto/register.dto';\n import { LoginDto } from './dto/login.dto';\n import { AuthGuard } from './auth.guard';\n+import { ApiProperty } from '@nestjs/swagger';\n \n \n+\n @Controller('auth')\n export class AuthController {\n \n   private readonly logger = new Logger(AuthController.name);\n"
+                },
+                {
+                    "date": 1771440549169,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { AuthService } from './auth.service';\n import { RegisterDto } from './dto/register.dto';\n import { LoginDto } from './dto/login.dto';\n import { AuthGuard } from './auth.guard';\n-import { ApiProperty } from '@nestjs/swagger';\n+import { ApiBearerAuth } from '@nestjs/swagger';\n \n \n \n @Controller('auth')\n"
+                },
+                {
+                    "date": 1771511015761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,37 @@\n+import { Controller, Post,Get, Body, UsePipes, Logger,\n+   ValidationPipe,HttpCode, Request, UseGuards } from '@nestjs/common';\n+import { AuthService } from './auth.service';\n+import { RegisterDto } from './dto/register.dto';\n+import { LoginDto } from './dto/login.dto';\n+//import { AuthGuard } from './auth.guard';\n+import { ApiBearerAuth } from '@nestjs/swagger';\n+\n+\n+\n+@Controller('auth')\n+export class AuthController {\n+\n+  private readonly logger = new Logger(AuthController.name);\n+  constructor(private readonly authService: AuthService) {}\n+\n+  @Post('register')\n+  async register(@Body() registerDto: RegisterDto) {\n+\n+    this.logger.log(`درخواست ثبت‌نام جدید برای: ${registerDto.email}`);\n+\n+    return this.authService.register(registerDto);\n+  }\n+\n+@Post('login')\n+async login(@Body() dto: LoginDto) {\n+  return this.authService.login(dto);\n+}\n+\n+  @ApiBearerAuth('JWT-auth')\n+  @UseGuards(AuthGuard) // از این به بعد این مسیر قفل است!\n+  @Get('profile')\n+  getProfile(@Request() req) {\n+    // اطلاعات کاربر که در گارد ریختیم توی request، اینجا برمی‌گردانیم\n+    return req.user; \n+  }\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771511024468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,48 +27,11 @@\n   return this.authService.login(dto);\n }\n \n   @ApiBearerAuth('JWT-auth')\n-  @UseGuards(AuthGuard) // از این به بعد این مسیر قفل است!\n+  //@UseGuards(AuthGuard) // از این به بعد این مسیر قفل است!\n   @Get('profile')\n   getProfile(@Request() req) {\n     // اطلاعات کاربر که در گارد ریختیم توی request، اینجا برمی‌گردانیم\n     return req.user; \n   }\n-}\n-import { Controller, Post,Get, Body, UsePipes, Logger,\n-   ValidationPipe,HttpCode, Request, UseGuards } from '@nestjs/common';\n-import { AuthService } from './auth.service';\n-import { RegisterDto } from './dto/register.dto';\n-import { LoginDto } from './dto/login.dto';\n-import { AuthGuard } from './auth.guard';\n-import { ApiBearerAuth } from '@nestjs/swagger';\n-\n-\n-\n-@Controller('auth')\n-export class AuthController {\n-\n-  private readonly logger = new Logger(AuthController.name);\n-  constructor(private readonly authService: AuthService) {}\n-\n-  @Post('register')\n-  async register(@Body() registerDto: RegisterDto) {\n-\n-    this.logger.log(`درخواست ثبت‌نام جدید برای: ${registerDto.email}`);\n-\n-    return this.authService.register(registerDto);\n-  }\n-\n-@Post('login')\n-async login(@Body() dto: LoginDto) {\n-  return this.authService.login(dto);\n-}\n-\n-  @ApiBearerAuth('JWT-auth')\n-  @UseGuards(AuthGuard) // از این به بعد این مسیر قفل است!\n-  @Get('profile')\n-  getProfile(@Request() req) {\n-    // اطلاعات کاربر که در گارد ریختیم توی request، اینجا برمی‌گردانیم\n-    return req.user; \n-  }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771527008865,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,37 @@\n+import { Controller, Post,Get, Body, UsePipes, Logger,\n+   ValidationPipe,HttpCode, Request, UseGuards } from '@nestjs/common';\n+import { AuthService } from './auth.service';\n+import { RegisterDto } from './dto/register.dto';\n+import { LoginDto } from './dto/login.dto';\n+import { AuthGuard } from './auth.guard';\n+import { ApiBearerAuth } from '@nestjs/swagger';\n+\n+\n+\n+@Controller('auth')\n+export class AuthController {\n+\n+  private readonly logger = new Logger(AuthController.name);\n+  constructor(private readonly authService: AuthService) {}\n+\n+  @Post('register')\n+  async register(@Body() registerDto: RegisterDto) {\n+\n+    this.logger.log(`درخواست ثبت‌نام جدید برای: ${registerDto.email}`);\n+\n+    return this.authService.register(registerDto);\n+  }\n+\n+@Post('login')\n+async login(@Body() dto: LoginDto) {\n+  return this.authService.login(dto);\n+}\n+\n+  @ApiBearerAuth('JWT-auth')\n+  @UseGuards(AuthGuard) // از این به بعد این مسیر قفل است!\n+  @Get('profile')\n+  getProfile(@Request() req) {\n+    // اطلاعات کاربر که در گارد ریختیم توی request، اینجا برمی‌گردانیم\n+    return req.user; \n+  }\n+}\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1771069248529,

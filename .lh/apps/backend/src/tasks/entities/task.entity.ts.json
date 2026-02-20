@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 206,
+            "activePatchIndex": 208,
             "patches": [
                 {
                     "date": 1771237024705,
@@ -832,6 +832,14 @@
                 {
                     "date": 1771329927372,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,16 +53,16 @@\n \n     @Column()\n     assignedToId: number; \n \n-    @ManyToOne(() => User)\n+    @ToOne(() => User)\n     @JoinColumn({ name: 'assignedToId' }) \n     assignedTo: User;\n \n     @Column()\n     createdById: number;\n \n-    @MaToOne(() => User)\n+    @ManyToOne(() => User)\n     @JoinColumn({ name: 'createdById' })\n     createdBy: User;\n \n     \n"
+                },
+                {
+                    "date": 1771448000600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,10 +53,9 @@\n \n     @Column()\n     assignedToId: number; \n \n-    @ToOne(() => User)\n-    @JoinColumn({ name: 'assignedToId' }) \n+@ManyToOne(() => User, (user) => user.assignedTasks)    @JoinColumn({ name: 'assignedToId' }) \n     assignedTo: User;\n \n     @Column()\n     createdById: number;\n"
+                },
+                {
+                    "date": 1771448037094,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,15 +53,16 @@\n \n     @Column()\n     assignedToId: number; \n \n-@ManyToOne(() => User, (user) => user.assignedTasks)    @JoinColumn({ name: 'assignedToId' }) \n+    @ManyToOne(() => User, (user) => user.assignedTasks)\n+    @JoinColumn({ name: 'assignedToId' }) \n     assignedTo: User;\n \n     @Column()\n     createdById: number;\n \n-    @ManyToOne(() => User)\n+@ManyToOne(() => User, (user) => user.createdTasks)\n     @JoinColumn({ name: 'createdById' })\n     createdBy: User;\n \n     \n"
                 }
             ],
             "date": 1771237024705,

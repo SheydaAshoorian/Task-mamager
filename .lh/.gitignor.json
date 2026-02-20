@@ -1,0 +1,34 @@
+{
+    "sourceFile": ".gitignor",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1771594329964,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1771595261549,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,4 @@\n # Local History (VS Code plugin)\n .history/\n-**/.lh/\n\\ No newline at end of file\n+**/.lh/\n+app.setGlobalPrefix('api/v1');\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771595291478,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,61 @@\n # Local History (VS Code plugin)\n .history/\n **/.lh/\n-app.setGlobalPrefix('api/v1');\n\\ No newline at end of file\n+\n+# compiled output\n+/dist\n+/node_modules\n+/build\n+\n+# Logs\n+logs\n+*.log\n+npm-debug.log*\n+pnpm-debug.log*\n+yarn-debug.log*\n+yarn-error.log*\n+lerna-debug.log*\n+\n+# OS\n+.DS_Store\n+\n+# Tests\n+/coverage\n+/.nyc_output\n+\n+# IDEs and editors\n+/.idea\n+.project\n+.classpath\n+.c9/\n+*.launch\n+.settings/\n+*.sublime-workspace\n+\n+# IDE - VSCode\n+.vscode/*\n+!.vscode/settings.json\n+!.vscode/tasks.json\n+!.vscode/launch.json\n+!.vscode/extensions.json\n+\n+# dotenv environment variable files\n+.env\n+.env.development.local\n+.env.test.local\n+.env.production.local\n+.env.local\n+\n+# temp directory\n+.temp\n+.tmp\n+\n+# Runtime data\n+pids\n+*.pid\n+*.seed\n+*.pid.lock\n+\n+# Diagnostic reports (https://nodejs.org/api/report.html)\n+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json\n+\n"
+                },
+                {
+                    "date": 1771596149002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,61 +1,7 @@\n-# Local History (VS Code plugin)\n .history/\n **/.lh/\n-\n-# compiled output\n-/dist\n-/node_modules\n-/build\n-\n-# Logs\n-logs\n-*.log\n-npm-debug.log*\n-pnpm-debug.log*\n-yarn-debug.log*\n-yarn-error.log*\n-lerna-debug.log*\n-\n-# OS\n-.DS_Store\n-\n-# Tests\n-/coverage\n-/.nyc_output\n-\n-# IDEs and editors\n-/.idea\n-.project\n-.classpath\n-.c9/\n-*.launch\n-.settings/\n-*.sublime-workspace\n-\n-# IDE - VSCode\n-.vscode/*\n-!.vscode/settings.json\n-!.vscode/tasks.json\n-!.vscode/launch.json\n-!.vscode/extensions.json\n-\n-# dotenv environment variable files\n-.env\n-.env.development.local\n-.env.test.local\n-.env.production.local\n-.env.local\n-\n-# temp directory\n-.temp\n-.tmp\n-\n-# Runtime data\n-pids\n-*.pid\n-*.seed\n-*.pid.lock\n-\n-# Diagnostic reports (https://nodejs.org/api/report.html)\n-report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json\n-\n+apps/backend/.lh/\n+apps/frontend/.lh/\n+node_modules/\n+.next/\n+dist/\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771605102414,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,6 @@\n .history/\n **/.lh/\n-apps/backend/.lh/\n-apps/frontend/.lh/\n node_modules/\n .next/\n-dist/\n\\ No newline at end of file\n+dist/\n+.env\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1771594329964,
+            "name": "Commit-0",
+            "content": "# Local History (VS Code plugin)\n.history/\n**/.lh/"
+        }
+    ]
+}

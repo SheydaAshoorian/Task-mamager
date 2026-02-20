@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 23,
+            "activePatchIndex": 47,
             "patches": [
                 {
                     "date": 1770970526450,
@@ -100,6 +100,102 @@
                 {
                     "date": 1771350880543,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,37 @@\n+import { Controller, Get, Post, Body, Patch, Param, Delete, ParseIntPipe  } from '@nestjs/common';\n+import { UsersService } from './users.service';\n+import { CreateUserDto } from './dto/create-user.dto';\n+import { UpdateUserDto } from './dto/update-user.dto';\n+import { ApiOperation }  from '@nestjs/swagger';\n+import { UserRole } from './entities/user.entity';\n+\n+@Controller('users')\n+export class UsersController {\n+  constructor(private readonly usersService: UsersService) {}\n+\n+\n+  @Post()\n+  @ApiOperation( { summary: 'ثبت نام کاربر'})\n+  create(@Body() createUserDto: CreateUserDto) {\n+    return this.usersService.create(createUserDto);\n+  }\n+\n+  @Get()\n+  findAll() {\n+    return this.usersService.findAll();\n+  }\n+\n+  @Get(':id')\n+  findOne(@Param('id') id: string) {\n+    return this.usersService.findOne(+id);\n+  }\n+\n+ \n+  @Patch(':id') \n+  updateRole(\n+    @Param('id', ParseIntPipe) id: number, \n+    @Body('role') role: U\n+  ) {\n+    return this.usersService.updateRole(id, role);\n+  }\n+}\n"
+                },
+                {
+                    "date": 1771449989754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,51 +24,18 @@\n   @Get(':id')\n   findOne(@Param('id') id: string) {\n     return this.usersService.findOne(+id);\n   }\n-\n- \n-  @Patch(':id') \n-  updateRole(\n-    @Param('id', ParseIntPipe) id: number, \n-    @Body('role') role: U\n-  ) {\n-    return this.usersService.updateRole(id, role);\n-  }\n+@Get('all')\n+@UseGuards(AuthGuard)\n+getAllUsers() {\n+  return this.usersService.findAllMinimal();\n }\n-import { Controller, Get, Post, Body, Patch, Param, Delete, ParseIntPipe  } from '@nestjs/common';\n-import { UsersService } from './users.service';\n-import { CreateUserDto } from './dto/create-user.dto';\n-import { UpdateUserDto } from './dto/update-user.dto';\n-import { ApiOperation }  from '@nestjs/swagger';\n-import { UserRole } from './entities/user.entity';\n-\n-@Controller('users')\n-export class UsersController {\n-  constructor(private readonly usersService: UsersService) {}\n-\n-\n-  @Post()\n-  @ApiOperation( { summary: 'ثبت نام کاربر'})\n-  create(@Body() createUserDto: CreateUserDto) {\n-    return this.usersService.create(createUserDto);\n-  }\n-\n-  @Get()\n-  findAll() {\n-    return this.usersService.findAll();\n-  }\n-\n-  @Get(':id')\n-  findOne(@Param('id') id: string) {\n-    return this.usersService.findOne(+id);\n-  }\n-\n  \n   @Patch(':id') \n   updateRole(\n     @Param('id', ParseIntPipe) id: number, \n-    @Body('role') role: string\n+    @Body('role') role: UserRole\n   ) {\n     return this.usersService.updateRole(id, role);\n   }\n }\n"
+                },
+                {
+                    "date": 1771449995363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,9 @@\n   @Get(':id')\n   findOne(@Param('id') id: string) {\n     return this.usersService.findOne(+id);\n   }\n+  \n @Get('all')\n @UseGuards(AuthGuard)\n getAllUsers() {\n   return this.usersService.findAllMinimal();\n"
+                },
+                {
+                    "date": 1771500750811,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,11 @@\n import { CreateUserDto } from './dto/create-user.dto';\n import { UpdateUserDto } from './dto/update-user.dto';\n import { ApiOperation }  from '@nestjs/swagger';\n import { UserRole } from './entities/user.entity';\n+import { AuthGuard } from './auth.guard';\n \n+\n @Controller('users')\n export class UsersController {\n   constructor(private readonly usersService: UsersService) {}\n \n@@ -24,14 +26,14 @@\n   @Get(':id')\n   findOne(@Param('id') id: string) {\n     return this.usersService.findOne(+id);\n   }\n-  \n-@Get('all')\n-@UseGuards(AuthGuard)\n-getAllUsers() {\n-  return this.usersService.findAllMinimal();\n-}\n+\n+  @Get('all')\n+  @UseGuards(AuthGuard)\n+  getAllUsers() {\n+    return this.usersService.findAllMinimal();\n+  }\n  \n   @Patch(':id') \n   updateRole(\n     @Param('id', ParseIntPipe) id: number, \n"
+                },
+                {
+                    "date": 1771500879069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { Controller, Get, Post, Body, Patch, Param, Delete, ParseIntPipe  } from '@nestjs/common';\n+import { Controller, Get, Post, Body, Patch, Param, Delete, ParseIntPipe و UseGuards } from '@nestjs/common';\n import { UsersService } from './users.service';\n import { CreateUserDto } from './dto/create-user.dto';\n import { UpdateUserDto } from './dto/update-user.dto';\n import { ApiOperation }  from '@nestjs/swagger';\n"
+                },
+                {
+                    "date": 1771500889296,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { Controller, Get, Post, Body, Patch, Param, Delete, ParseIntPipe و UseGuards } from '@nestjs/common';\n+import { Controller, Get, Post, Body, Patch, Param, Delete, ParseIntPipe, UseGuards } from '@nestjs/common';\n import { UsersService } from './users.service';\n import { CreateUserDto } from './dto/create-user.dto';\n import { UpdateUserDto } from './dto/update-user.dto';\n import { ApiOperation }  from '@nestjs/swagger';\n"
+                },
+                {
+                    "date": 1771500896928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,8 @@\n import { CreateUserDto } from './dto/create-user.dto';\n import { UpdateUserDto } from './dto/update-user.dto';\n import { ApiOperation }  from '@nestjs/swagger';\n import { UserRole } from './entities/user.entity';\n-import { AuthGuard } from './auth.guard';\n \n \n @Controller('users')\n export class UsersController {\n"
+                },
+                {
+                    "date": 1771500922790,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n import { CreateUserDto } from './dto/create-user.dto';\n import { UpdateUserDto } from './dto/update-user.dto';\n import { ApiOperation }  from '@nestjs/swagger';\n import { UserRole } from './entities/user.entity';\n+import { AuthGuard } from './auth.guard';\n \n \n @Controller('users')\n export class UsersController {\n"
+                },
+                {
+                    "date": 1771500927840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { CreateUserDto } from './dto/create-user.dto';\n import { UpdateUserDto } from './dto/update-user.dto';\n import { ApiOperation }  from '@nestjs/swagger';\n import { UserRole } from './entities/user.entity';\n-import { AuthGuard } from './auth.guard';\n+import { AuthGuard } from '../auth.guard';\n \n \n @Controller('users')\n export class UsersController {\n"
+                },
+                {
+                    "date": 1771500948007,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { CreateUserDto } from './dto/create-user.dto';\n import { UpdateUserDto } from './dto/update-user.dto';\n import { ApiOperation }  from '@nestjs/swagger';\n import { UserRole } from './entities/user.entity';\n-import { AuthGuard } from '../auth.guard';\n+import { AuthGuard } from './auth.guard';\n \n \n @Controller('users')\n export class UsersController {\n"
+                },
+                {
+                    "date": 1771500969679,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { CreateUserDto } from './dto/create-user.dto';\n import { UpdateUserDto } from './dto/update-user.dto';\n import { ApiOperation }  from '@nestjs/swagger';\n import { UserRole } from './entities/user.entity';\n-import { AuthGuard } from './auth.guard';\n+import { AuthGuard } from '../auth.guard';\n \n \n @Controller('users')\n export class UsersController {\n"
+                },
+                {
+                    "date": 1771504685359,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { CreateUserDto } from './dto/create-user.dto';\n import { UpdateUserDto } from './dto/update-user.dto';\n import { ApiOperation }  from '@nestjs/swagger';\n import { UserRole } from './entities/user.entity';\n-import { AuthGuard } from '../auth.guard';\n+import { AuthGuard } from '../auth/auth.guard';\n \n \n @Controller('users')\n export class UsersController {\n@@ -28,9 +28,9 @@\n     return this.usersService.findOne(+id);\n   }\n \n   @Get('all')\n-  @UseGuards(AuthGuard)\n+  //@UseGuards(AuthGuard)\n   getAllUsers() {\n     return this.usersService.findAllMinimal();\n   }\n  \n"
+                },
+                {
+                    "date": 1771504784390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n     return this.usersService.findOne(+id);\n   }\n \n   @Get('all')\n-  //@UseGuards(AuthGuard)\n+  @UseGuards(AuthGuard)\n   getAllUsers() {\n     return this.usersService.findAllMinimal();\n   }\n  \n"
+                },
+                {
+                    "date": 1771510989333,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,6 @@\n import { Controller, Get, Post, Body, Patch, Param, Delete, ParseIntPipe, UseGuards } from '@nestjs/common';\n-import { UsersService } from './users.service';\n-import { CreateUserDto } from './dto/create-user.dto';\n+//import { CreateUserDto } from './dto/create-user.dto';\n import { UpdateUserDto } from './dto/update-user.dto';\n import { ApiOperation }  from '@nestjs/swagger';\n import { UserRole } from './entities/user.entity';\n import { AuthGuard } from '../auth/auth.guard';\n"
+                },
+                {
+                    "date": 1771510996108,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n import { Controller, Get, Post, Body, Patch, Param, Delete, ParseIntPipe, UseGuards } from '@nestjs/common';\n-//import { CreateUserDto } from './dto/create-user.dto';\n+import { UsersService } from './users.service';\n+import { CreateUserDto } from './dto/create-user.dto';\n import { UpdateUserDto } from './dto/update-user.dto';\n import { ApiOperation }  from '@nestjs/swagger';\n import { UserRole } from './entities/user.entity';\n-import { AuthGuard } from '../auth/auth.guard';\n+//import { AuthGuard } from '../auth/auth.guard';\n \n \n @Controller('users')\n export class UsersController {\n"
+                },
+                {
+                    "date": 1771511005501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n     return this.usersService.findOne(+id);\n   }\n \n   @Get('all')\n-  @UseGuards(AuthGuard)\n+ // @UseGuards(AuthGuard)\n   getAllUsers() {\n     return this.usersService.findAllMinimal();\n   }\n  \n"
+                },
+                {
+                    "date": 1771525654534,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n     return this.usersService.findOne(+id);\n   }\n \n   @Get('all')\n- // @UseGuards(AuthGuard)\n+  @UseGuards(AuthGuard)\n   getAllUsers() {\n     return this.usersService.findAllMinimal();\n   }\n  \n"
+                },
+                {
+                    "date": 1771526795214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n \n   @Get('all')\n   @UseGuards(AuthGuard)\n   getAllUsers() {\n-    return this.usersService.findAllMinimal();\n+    return this.usersService.findAll();\n   }\n  \n   @Patch(':id') \n   updateRole(\n"
+                },
+                {
+                    "date": 1771526803693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n     return this.usersService.findOne(+id);\n   }\n \n   @Get('all')\n-  @UseGuards(AuthGuard)\n+  //@UseGuards(AuthGuard)\n   getAllUsers() {\n     return this.usersService.findAll();\n   }\n  \n"
+                },
+                {
+                    "date": 1771527029701,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,11 +28,11 @@\n     return this.usersService.findOne(+id);\n   }\n \n   @Get('all')\n-  //@UseGuards(AuthGuard)\n+  @UseGuards(AuthGuard)\n   getAllUsers() {\n-    return this.usersService.findAll();\n+    return this.usersService.findAllMinimal();\n   }\n  \n   @Patch(':id') \n   updateRole(\n"
+                },
+                {
+                    "date": 1771527082339,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n \n   @Get('all')\n   @UseGuards(AuthGuard)\n   getAllUsers() {\n-    return this.usersService.findAllMinimal();\n+    return this.usersService.findAll();\n   }\n  \n   @Patch(':id') \n   updateRole(\n"
+                },
+                {
+                    "date": 1771527096672,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n     return this.usersService.findOne(+id);\n   }\n \n   @Get('all')\n-  @UseGuards(AuthGuard)\n+  //@UseGuards(AuthGuard)\n   getAllUsers() {\n     return this.usersService.findAll();\n   }\n  \n"
+                },
+                {
+                    "date": 1771527150751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n   findOne(@Param('id') id: string) {\n     return this.usersService.findOne(+id);\n   }\n \n-  @Get('all')\n+  @Get('عسثقس/all')\n   //@UseGuards(AuthGuard)\n   getAllUsers() {\n     return this.usersService.findAll();\n   }\n"
+                },
+                {
+                    "date": 1771527156561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n   findOne(@Param('id') id: string) {\n     return this.usersService.findOne(+id);\n   }\n \n-  @Get('عسثقس/all')\n+  @Get('users/all')\n   //@UseGuards(AuthGuard)\n   getAllUsers() {\n     return this.usersService.findAll();\n   }\n"
+                },
+                {
+                    "date": 1771527186133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n   findOne(@Param('id') id: string) {\n     return this.usersService.findOne(+id);\n   }\n \n-  @Get('users/all')\n+  @Get('all')\n   //@UseGuards(AuthGuard)\n   getAllUsers() {\n     return this.usersService.findAll();\n   }\n"
                 }
             ],
             "date": 1770970526450,

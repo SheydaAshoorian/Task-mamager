@@ -1,0 +1,4 @@
+# Local History (VS Code plugin)
+.history/
+**/.lh/
+app.setGlobalPrefix('api/v1');

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 24,
+            "activePatchIndex": 55,
             "patches": [
                 {
                     "date": 1771052571256,
@@ -104,6 +104,130 @@
                 {
                     "date": 1771437539697,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n import { useState } from 'react';\n import axios from 'axios';\n import { useRouter } from 'next/navigation';\n-import api from '@/lib/axios';\n+import api from '@//axios';\n \n export default function LoginPage() {\n   const [email, setEmail] = useState('');\n   const [password, setPassword] = useState('');\n"
+                },
+                {
+                    "date": 1771450074308,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n import { useState } from 'react';\n import axios from 'axios';\n import { useRouter } from 'next/navigation';\n-import api from '@//axios';\n+import api from '@/مهذ/axios';\n \n export default function LoginPage() {\n   const [email, setEmail] = useState('');\n   const [password, setPassword] = useState('');\n"
+                },
+                {
+                    "date": 1771450085886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n import { useState } from 'react';\n import axios from 'axios';\n import { useRouter } from 'next/navigation';\n-import api from '@/مهذ/axios';\n+import api from '@/lib/axios';\n \n export default function LoginPage() {\n   const [email, setEmail] = useState('');\n   const [password, setPassword] = useState('');\n"
+                },
+                {
+                    "date": 1771576195968,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n const handleLogin = async (e: React.FormEvent) => {\n   e.preventDefault();\n   try {\n \n-    const res = await api.post('/auth/login', { email, password });\n+    const res = await api.post('http://localhost:3000/auth/login', { email, password });\n     \n     // ذخیره توکن\n     Cookies.set('token', res.data.access_token, { expires: 7 });\n     \n"
+                },
+                {
+                    "date": 1771576629380,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   e.preventDefault();\n   try {\n \n     const res = await api.post('http://localhost:3000/auth/login', { email, password });\n-    \n+    c\n     // ذخیره توکن\n     Cookies.set('token', res.data.access_token, { expires: 7 });\n     \n     router.push('/dashboard');\n"
+                },
+                {
+                    "date": 1771576637840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   e.preventDefault();\n   try {\n \n     const res = await api.post('http://localhost:3000/auth/login', { email, password });\n-    c\n+    console.log\n     // ذخیره توکن\n     Cookies.set('token', res.data.access_token, { expires: 7 });\n     \n     router.push('/dashboard');\n"
+                },
+                {
+                    "date": 1771576644141,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,8 @@\n   e.preventDefault();\n   try {\n \n     const res = await api.post('http://localhost:3000/auth/login', { email, password });\n-    console.log\n     // ذخیره توکن\n     Cookies.set('token', res.data.access_token, { expires: 7 });\n     \n     router.push('/dashboard');\n"
+                },
+                {
+                    "date": 1771576652078,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,10 @@\n   e.preventDefault();\n   try {\n \n     const res = await api.post('http://localhost:3000/auth/login', { email, password });\n-    // ذخیره توکن\n+\n+<Log>.</Log>    // ذخیره توکن\n     Cookies.set('token', res.data.access_token, { expires: 7 });\n     \n     router.push('/dashboard');\n   } catch (error: any) {\n"
+                },
+                {
+                    "date": 1771577853218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,11 +14,10 @@\n const handleLogin = async (e: React.FormEvent) => {\n   e.preventDefault();\n   try {\n \n-    const res = await api.post('http://localhost:3000/auth/login', { email, password });\n+    const res = await api.post('http://localhost:300۱/auth/login', { email, password });\n \n-<Log>.</Log>    // ذخیره توکن\n     Cookies.set('token', res.data.access_token, { expires: 7 });\n     \n     router.push('/dashboard');\n   } catch (error: any) {\n"
+                },
+                {
+                    "date": 1771577863735,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n const handleLogin = async (e: React.FormEvent) => {\n   e.preventDefault();\n   try {\n \n-    const res = await api.post('http://localhost:300۱/auth/login', { email, password });\n+    const res = await api.post('/auth/login', { email, password });\n \n     Cookies.set('token', res.data.access_token, { expires: 7 });\n     \n     router.push('/dashboard');\n"
+                },
+                {
+                    "date": 1771577911656,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n const handleLogin = async (e: React.FormEvent) => {\n   e.preventDefault();\n   try {\n \n-    const res = await api.post('/auth/login', { email, password });\n+    const res = await api.post('http://localhost:3001/auth/login', { email, password });\n \n     Cookies.set('token', res.data.access_token, { expires: 7 });\n     \n     router.push('/dashboard');\n"
+                },
+                {
+                    "date": 1771579667394,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   e.preventDefault();\n   try {\n \n     const res = await api.post('http://localhost:3001/auth/login', { email, password });\n-\n+    \n     Cookies.set('token', res.data.access_token, { expires: 7 });\n     \n     router.push('/dashboard');\n   } catch (error: any) {\n"
+                },
+                {
+                    "date": 1771579675387,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   e.preventDefault();\n   try {\n \n     const res = await api.post('http://localhost:3001/auth/login', { email, password });\n-    \n+    console.log\n     Cookies.set('token', res.data.access_token, { expires: 7 });\n     \n     router.push('/dashboard');\n   } catch (error: any) {\n"
+                },
+                {
+                    "date": 1771579681082,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   e.preventDefault();\n   try {\n \n     const res = await api.post('http://localhost:3001/auth/login', { email, password });\n-    console.log\n+    console.log('token:')\n     Cookies.set('token', res.data.access_token, { expires: 7 });\n     \n     router.push('/dashboard');\n   } catch (error: any) {\n"
+                },
+                {
+                    "date": 1771579689003,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   e.preventDefault();\n   try {\n \n     const res = await api.post('http://localhost:3001/auth/login', { email, password });\n-    console.log('token:')\n+    console.log('token:',res.data.access_token )\n     Cookies.set('token', res.data.access_token, { expires: 7 });\n     \n     router.push('/dashboard');\n   } catch (error: any) {\n"
+                },
+                {
+                    "date": 1771579878756,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,20 +9,27 @@\n   const [email, setEmail] = useState('');\n   const [password, setPassword] = useState('');\n   const [loading, setLoading] = useState(false);\n   const router = useRouter();\n-\n-const handleLogin = async (e: React.FormEvent) => {\n+const handleSubmit = async (e: React.FormEvent) => {\n   e.preventDefault();\n   try {\n-\n-    const res = await api.post('http://localhost:3001/auth/login', { email, password });\n-    console.log('token:',res.data.access_token )\n-    Cookies.set('token', res.data.access_token, { expires: 7 });\n+    const res = await api.post('/auth/login', { email, password });\n     \n-    router.push('/dashboard');\n-  } catch (error: any) {\n-    alert(\"ایمیل یا رمز عبور اشتباه است ❌\");\n+    // ۱. اینجا چک کن ببین دیتا چی میاد\n+    console.log(\"Full Login Response:\", res.data);\n+    \n+    const token = res.data.accessToken || res.data.token; // بسته به ساختار بک‌اِندت\n+    \n+    if (token) {\n+      console.log(\"Token Received ✅:\", token);\n+      Cookies.set('token', token);\n+      // هدایت به داشبورد\n+    } else {\n+      console.error(\"No token found in response! ❌\");\n+    }\n+  } catch (err) {\n+    console.error(\"Login Error Details:\", err.response?.data);\n   }\n };\n \n   return (\n"
+                },
+                {
+                    "date": 1771579895499,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n         <div className=\"w-full md:w-3/5 p-12 flex flex-col justify-center\">\n           <h2 className=\"text-2xl font-bold text-[#334155] mb-2 text-right\">ورود به حساب کاربری</h2>\n           <div className=\"w-full h-[1px] bg-gray-200 mb-8\"></div>\n \n-          <form onSubmit={handleLogin} className=\"space-y-6 text-right\">\n+          <form onSubmit={handleSubmit} className=\"space-y-6 text-right\">\n             <div>\n               <label className=\"text-xs font-semibold text-gray-500 mb-2 block mr-1\">پست الکترونیک</label>\n               <input\n                 type=\"email\"\n"
+                },
+                {
+                    "date": 1771579931026,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n         <div className=\"w-full md:w-3/5 p-12 flex flex-col justify-center\">\n           <h2 className=\"text-2xl font-bold text-[#334155] mb-2 text-right\">ورود به حساب کاربری</h2>\n           <div className=\"w-full h-[1px] bg-gray-200 mb-8\"></div>\n \n-          <form onSubmit={handleSubmit} className=\"space-y-6 text-right\">\n+          <form onSubmit={handleLogin} className=\"space-y-6 text-right\">\n             <div>\n               <label className=\"text-xs font-semibold text-gray-500 mb-2 block mr-1\">پست الکترونیک</label>\n               <input\n                 type=\"email\"\n"
+                },
+                {
+                    "date": 1771579963604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,11 +9,12 @@\n   const [email, setEmail] = useState('');\n   const [password, setPassword] = useState('');\n   const [loading, setLoading] = useState(false);\n   const router = useRouter();\n-const handleSubmit = async (e: React.FormEvent) => {\n+\n+const handleLogin = async (e: React.FormEvent) => {\n   e.preventDefault();\n-  try {\n+try {\n     const res = await api.post('/auth/login', { email, password });\n     \n     // ۱. اینجا چک کن ببین دیتا چی میاد\n     console.log(\"Full Login Response:\", res.data);\n"
+                },
+                {
+                    "date": 1771580089641,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,28 +12,29 @@\n   const router = useRouter();\n \n const handleLogin = async (e: React.FormEvent) => {\n   e.preventDefault();\n-try {\n-    const res = await api.post('/auth/login', { email, password });\n-    \n-    // ۱. اینجا چک کن ببین دیتا چی میاد\n-    console.log(\"Full Login Response:\", res.data);\n-    \n-    const token = res.data.accessToken || res.data.token; // بسته به ساختار بک‌اِندت\n-    \n-    if (token) {\n-      console.log(\"Token Received ✅:\", token);\n-      Cookies.set('token', token);\n-      // هدایت به داشبورد\n-    } else {\n-      console.error(\"No token found in response! ❌\");\n+  try {\n+      const res = await api.post('/auth/login', { email, password });\n+      \n+      // ۱. اینجا چک کن ببین دیتا چی میاد\n+      console.log(\"Full Login Response:\", res.data);\n+      \n+      const token = res.data.accessToken || res.data.token; // بسته به ساختار بک‌اِندت\n+      \n+      if (token) {\n+        console.log(\"Token Received ✅:\", token);\n+        Cookies.set('token', token);\n+        // هدایت به داشبورد\n+      } else {\n+        console.error(\"No token found in response! ❌\");\n+      }\n+    } catch (err) {\n+      console.error(\"Login Error Details:\", err.response?.data);\n     }\n-  } catch (err) {\n-    console.error(\"Login Error Details:\", err.response?.data);\n-  }\n };\n \n+\n   return (\n     <div className=\"min-h-screen bg-[#0f172a] flex items-center justify-center p-4 font-[sans-serif]\">\n       <div className=\"flex w-full max-w-[850px] bg-white rounded-[25px] shadow-2xl overflow-hidden min-h-[500px]\">\n \n"
+                },
+                {
+                    "date": 1771580098506,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,10 +31,10 @@\n     } catch (err) {\n       console.error(\"Login Error Details:\", err.response?.data);\n     }\n };\n+{}\n \n-\n   return (\n     <div className=\"min-h-screen bg-[#0f172a] flex items-center justify-center p-4 font-[sans-serif]\">\n       <div className=\"flex w-full max-w-[850px] bg-white rounded-[25px] shadow-2xl overflow-hidden min-h-[500px]\">\n \n"
+                },
+                {
+                    "date": 1771580149543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   const [email, setEmail] = useState('');\n   const [password, setPassword] = useState('');\n   const [loading, setLoading] = useState(false);\n   const router = useRouter();\n-\n+{}\n const handleLogin = async (e: React.FormEvent) => {\n   e.preventDefault();\n   try {\n       const res = await api.post('/auth/login', { email, password });\n@@ -31,10 +31,10 @@\n     } catch (err) {\n       console.error(\"Login Error Details:\", err.response?.data);\n     }\n };\n-{}\n \n+\n   return (\n     <div className=\"min-h-screen bg-[#0f172a] flex items-center justify-center p-4 font-[sans-serif]\">\n       <div className=\"flex w-full max-w-[850px] bg-white rounded-[25px] shadow-2xl overflow-hidden min-h-[500px]\">\n \n"
+                },
+                {
+                    "date": 1771580166709,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   const [email, setEmail] = useState('');\n   const [password, setPassword] = useState('');\n   const [loading, setLoading] = useState(false);\n   const router = useRouter();\n-{}\n+});\n const handleLogin = async (e: React.FormEvent) => {\n   e.preventDefault();\n   try {\n       const res = await api.post('/auth/login', { email, password });\n"
+                },
+                {
+                    "date": 1771580400910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   const [email, setEmail] = useState('');\n   const [password, setPassword] = useState('');\n   const [loading, setLoading] = useState(false);\n   const router = useRouter();\n-});\n+\n const handleLogin = async (e: React.FormEvent) => {\n   e.preventDefault();\n   try {\n       const res = await api.post('/auth/login', { email, password });\n"
+                },
+                {
+                    "date": 1771580406813,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,29 +12,28 @@\n   const router = useRouter();\n \n const handleLogin = async (e: React.FormEvent) => {\n   e.preventDefault();\n-  try {\n-      const res = await api.post('/auth/login', { email, password });\n-      \n-      // ۱. اینجا چک کن ببین دیتا چی میاد\n-      console.log(\"Full Login Response:\", res.data);\n-      \n-      const token = res.data.accessToken || res.data.token; // بسته به ساختار بک‌اِندت\n-      \n-      if (token) {\n-        console.log(\"Token Received ✅:\", token);\n-        Cookies.set('token', token);\n-        // هدایت به داشبورد\n-      } else {\n-        console.error(\"No token found in response! ❌\");\n-      }\n-    } catch (err) {\n-      console.error(\"Login Error Details:\", err.response?.data);\n+try {\n+    const res = await api.post('/auth/login', { email, password });\n+    \n+    // ۱. اینجا چک کن ببین دیتا چی میاد\n+    console.log(\"Full Login Response:\", res.data);\n+    \n+    const token = res.data.accessToken || res.data.token; // بسته به ساختار بک‌اِندت\n+    \n+    if (token) {\n+      console.log(\"Token Received ✅:\", token);\n+      Cookies.set('token', token);\n+      // هدایت به داشبورد\n+    } else {\n+      console.error(\"No token found in response! ❌\");\n     }\n+  } catch (err) {\n+    console.error(\"Login Error Details:\", err.response?.data);\n+  }\n };\n \n-\n   return (\n     <div className=\"min-h-screen bg-[#0f172a] flex items-center justify-center p-4 font-[sans-serif]\">\n       <div className=\"flex w-full max-w-[850px] bg-white rounded-[25px] shadow-2xl overflow-hidden min-h-[500px]\">\n \n"
+                },
+                {
+                    "date": 1771580425701,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,25 +12,16 @@\n   const router = useRouter();\n \n const handleLogin = async (e: React.FormEvent) => {\n   e.preventDefault();\n-try {\n-    const res = await api.post('/auth/login', { email, password });\n+  try {\n+\n+    const res = await api.post('http://localhost:3001/auth/login', { email, password });\n+console.log(\"Full Login Response:\", res.data);    Cookies.set('token', res.data.access_token, { expires: 7 });\n     \n-    // ۱. اینجا چک کن ببین دیتا چی میاد\n-    console.log(\"Full Login Response:\", res.data);\n-    \n-    const token = res.data.accessToken || res.data.token; // بسته به ساختار بک‌اِندت\n-    \n-    if (token) {\n-      console.log(\"Token Received ✅:\", token);\n-      Cookies.set('token', token);\n-      // هدایت به داشبورد\n-    } else {\n-      console.error(\"No token found in response! ❌\");\n-    }\n-  } catch (err) {\n-    console.error(\"Login Error Details:\", err.response?.data);\n+    router.push('/dashboard');\n+  } catch (error: any) {\n+    alert(\"ایمیل یا رمز عبور اشتباه است ❌\");\n   }\n };\n \n   return (\n"
+                },
+                {
+                    "date": 1771580432802,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,10 +15,12 @@\n   e.preventDefault();\n   try {\n \n     const res = await api.post('http://localhost:3001/auth/login', { email, password });\n-console.log(\"Full Login Response:\", res.data);    Cookies.set('token', res.data.access_token, { expires: 7 });\n     \n+    console.log(\"Full Login Response:\", res.data);\n+    Cookies.set('token', res.data.access_token, { expires: 7 });\n+    \n     router.push('/dashboard');\n   } catch (error: any) {\n     alert(\"ایمیل یا رمز عبور اشتباه است ❌\");\n   }\n"
+                },
+                {
+                    "date": 1771580446966,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,11 +15,13 @@\n   e.preventDefault();\n   try {\n \n     const res = await api.post('http://localhost:3001/auth/login', { email, password });\n-    \n+\n     console.log(\"Full Login Response:\", res.data);\n+\n     Cookies.set('token', res.data.access_token, { expires: 7 });\n+    const token = res.data.accessToken || res.data.token; // بسته به ساختار بک‌اِندت\n     \n     router.push('/dashboard');\n   } catch (error: any) {\n     alert(\"ایمیل یا رمز عبور اشتباه است ❌\");\n"
+                },
+                {
+                    "date": 1771580479114,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,8 @@\n \n     console.log(\"Full Login Response:\", res.data);\n \n     Cookies.set('token', res.data.access_token, { expires: 7 });\n-    const token = res.data.accessToken || res.data.token; // بسته به ساختار بک‌اِندت\n     \n     router.push('/dashboard');\n   } catch (error: any) {\n     alert(\"ایمیل یا رمز عبور اشتباه است ❌\");\n"
+                },
+                {
+                    "date": 1771580510455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n     console.log(\"Full Login Response:\", res.data);\n \n     Cookies.set('token', res.data.access_token, { expires: 7 });\n     \n+    \n     router.push('/dashboard');\n   } catch (error: any) {\n     alert(\"ایمیل یا رمز عبور اشتباه است ❌\");\n   }\n"
+                },
+                {
+                    "date": 1771580520241,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,15 @@\n     const res = await api.post('http://localhost:3001/auth/login', { email, password });\n \n     console.log(\"Full Login Response:\", res.data);\n \n-    \n+    if (token) {\n+      console.log(\"Token Received ✅:\", token);\n+      Cookies.set('token', token);\n+      // هدایت به داشبورد\n+    } else {\n+      console.error(\"No token found in response! ❌\");\n+    }\n     Cookies.set('token', res.data.access_token, { expires: 7 });\n \n     \n     router.push('/dashboard');\n"
+                },
+                {
+                    "date": 1771580682004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,93 @@\n+'use client';\n+\n+import { useState } from 'react';\n+import axios from 'axios';\n+import { useRouter } from 'next/navigation';\n+import api from '@/lib/axios';\n+\n+export default function LoginPage() {\n+  const [email, setEmail] = useState('');\n+  const [password, setPassword] = useState('');\n+  const [loading, setLoading] = useState(false);\n+  const router = useRouter();\n+\n+const handleLogin = async (e: React.FormEvent) => {\n+  e.preventDefault();\n+  try {\n+\n+    const res = await api.post('http://localhost:3001/auth/login', { email, password });\n+\n+    console.log(\"Full Login Response:\", res.data);\n+    const token = res.data.accessToken || res.data.token;\n+    if (token) {\n+      console.log(\"Token Received ✅:\", token);\n+      Cookies.set('token', token, { expires: 7 });\n+      // هدایت به داشبورد\n+    } else {\n+      console.error(\"No token found in response! ❌\");\n+    } \n+\n+    router.push('/dashboard');\n+  } catch (error: any) {\n+    alert(\"ایمیل یا رمز عبور اشتباه است ❌\");\n+  }\n+};\n+\n+  return (\n+    <div className=\"min-h-screen bg-[#0f172a] flex items-center justify-center p-4 font-[sans-serif]\">\n+      <div className=\"flex w-full max-w-[850px] bg-white rounded-[25px] shadow-2xl overflow-hidden min-h-[500px]\">\n+\n+        <div className=\"hidden md:flex md:w-2/5 bg-[#1d63ff] p-10 flex-col justify-center items-center text-center text-white\">\n+          <h1 className=\"text-4xl font-extrabold mb-4 tracking-tight\">ERP<br/>System</h1>\n+          <p className=\"text-blue-100 text-sm leading-relaxed mb-8\">به سامانه مدیریت منابع سازمانی خوش آمدید</p>\n+          <div className=\"w-12 h-1 bg-blue-300 opacity-50 rounded-full\"></div>\n+        </div>\n+\n+        {/* بخش فرم لاگین */}\n+        <div className=\"w-full md:w-3/5 p-12 flex flex-col justify-center\">\n+          <h2 className=\"text-2xl font-bold text-[#334155] mb-2 text-right\">ورود به حساب کاربری</h2>\n+          <div className=\"w-full h-[1px] bg-gray-200 mb-8\"></div>\n+\n+          <form onSubmit={handleLogin} className=\"space-y-6 text-right\">\n+            <div>\n+              <label className=\"text-xs font-semibold text-gray-500 mb-2 block mr-1\">پست الکترونیک</label>\n+              <input\n+                type=\"email\"\n+                required\n+                className=\"w-full px-4 py-3 bg-[#f1f5f9] border-none rounded-xl focus:ring-2 focus:ring-[#1d63ff] outline-none text-right text-gray-700 transition-all\"\n+                placeholder=\"email@example.com\"\n+                onChange={(e) => setEmail(e.target.value)}\n+              />\n+            </div>\n+\n+            <div>\n+              <label className=\"text-xs font-semibold text-gray-500 mb-2 block mr-1\">رمز عبور</label>\n+              <input\n+                type=\"password\"\n+                required\n+                className=\"w-full px-4 py-3 bg-[#f1f5f9] border-none rounded-xl focus:ring-2 focus:ring-[#1d63ff] outline-none text-right text-gray-700 transition-all\"\n+                placeholder=\"••••••••\"\n+                onChange={(e) => setPassword(e.target.value)}\n+              />\n+            </div>\n+\n+            <button\n+              type=\"submit\"\n+              disabled={loading}\n+              className=\"w-full py-4 mt-4 rounded-xl bg-[#1d63ff] text-white font-bold hover:bg-blue-700 shadow-lg shadow-blue-200 transition-all active:scale-[0.98]\"\n+            >\n+              {loading ? 'در حال تایید...' : 'ورود به سامانه'}\n+            </button>\n+          </form>\n+\n+          <div className=\"mt-8 text-center text-sm text-gray-400\">\n+            حساب کاربری ندارید؟{' '}\n+            <button onClick={() => router.push('/register')} className=\"text-[#1d63ff] font-bold hover:underline\">\n+              ثبت‌نام در سامانه\n+            </button>\n+          </div>\n+        </div>\n+      </div>\n+    </div>\n+  );\n+}\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1771052571256,

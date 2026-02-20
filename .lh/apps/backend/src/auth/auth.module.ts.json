@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 124,
+            "activePatchIndex": 145,
             "patches": [
                 {
                     "date": 1771053421473,
@@ -504,6 +504,90 @@
                 {
                     "date": 1771171196110,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,25 +1,24 @@\n import { Module } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { AuthController } from './auth.controller';\n import { UsersModule } from '../users/users.module';\n-import { JwtModule } from '@nestjs/jwt'; \n+import { JwtModule } from '@nestjs/jwt';\n import { ConfigModule, ConfigService } from '@nestjs/config';\n \n @Module({\n   imports: [\n     UsersModule,\n-    // 2. تنظیمات JWT را اینجا اضافه کن\n     JwtModule.registerAsync({\n       imports: [ConfigModule],\n       useFactory: async (configService: ConfigService) => ({\n-        secret: configService.get<string>('JWT_SECRET') || 'secretKey', // از فایل .env می‌خواند\n-        signOptions: { expiresIn: '1d' }, // انقضای توکن: یک روز\n+        secret: configService.get<string>('JWT_SECRET') || 'secretKey',\n+        signOptions: { expiresIn: '1d' },\n       }),\n       inject: [ConfigService],\n     }),\n   ],\n   providers: [AuthService],\n   controllers: [AuthController],\n-  exports: [AuthService], // اگر جای دیگری نیاز بود\n+  exports: [AuthService],\n })\n export class AuthModule {}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771443374867,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,6 +19,11 @@\n   ],\n   providers: [AuthService],\n   controllers: [AuthController],\n   exports: [AuthService],\n+\n+  JwtModule.register({\n+  secret: process.env.JWT_SECRET || 'fallbackSecret', // استفاده از env\n+  signOptions: { expiresIn: '1d' },\n+}),\n })\n export class AuthModule {}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771443383462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,10 @@\n   controllers: [AuthController],\n   exports: [AuthService],\n \n   JwtModule.register({\n-  secret: process.env.JWT_SECRET || 'fallbackSecret', // استفاده از env\n-  signOptions: { expiresIn: '1d' },\n+    secret: process.env.JWT_SECRET || 'fallbackSecret', // استفاده از env\n+    signOptions: { expiresIn: '1d' },\n }),\n+\n })\n export class AuthModule {}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771443495970,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,11 +20,8 @@\n   providers: [AuthService],\n   controllers: [AuthController],\n   exports: [AuthService],\n \n-  JwtModule.register({\n-    secret: process.env.JWT_SECRET || 'fallbackSecret', // استفاده از env\n-    signOptions: { expiresIn: '1d' },\n-}),\n \n+\n })\n export class AuthModule {}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771443590663,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,16 +7,14 @@\n \n @Module({\n   imports: [\n     UsersModule,\n-    JwtModule.registerAsync({\n-      imports: [ConfigModule],\n-      useFactory: async (configService: ConfigService) => ({\n-        secret: configService.get<string>('JWT_SECRET') || 'secretKey',\n+JwtModule.registerAsync({\n+      inject: [ConfigService],\n+      useFactory: (config: ConfigService) => ({\n+        secret: config.get<string>('JWT_SECRET'), // خواندن از .env\n         signOptions: { expiresIn: '1d' },\n       }),\n-      inject: [ConfigService],\n-    }),\n   ],\n   providers: [AuthService],\n   controllers: [AuthController],\n   exports: [AuthService],\n"
+                },
+                {
+                    "date": 1771443608663,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,14 +7,16 @@\n \n @Module({\n   imports: [\n     UsersModule,\n-JwtModule.registerAsync({\n-      inject: [ConfigService],\n-      useFactory: (config: ConfigService) => ({\n-        secret: config.get<string>('JWT_SECRET'), // خواندن از .env\n+    JwtModule.registerAsync({\n+      imports: [ConfigModule],\n+        useFactory: async (configService: ConfigService) => ({\n+        secret: configService.get<string>('JWT_SECRET') || 'secretKey',\n         signOptions: { expiresIn: '1d' },\n       }),\n+      inject: [ConfigService],\n+    }),\n   ],\n   providers: [AuthService],\n   controllers: [AuthController],\n   exports: [AuthService],\n"
+                },
+                {
+                    "date": 1771505041932,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     }),\n   ],\n   providers: [AuthService],\n   controllers: [AuthController],\n-  exports: [AuthService],\n+  exports: [AuthServiceوJwtModule],\n \n \n \n })\n"
+                },
+                {
+                    "date": 1771505054743,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     }),\n   ],\n   providers: [AuthService],\n   controllers: [AuthController],\n-  exports: [AuthServiceوJwtModule],\n+  exports: [AuthService],\n \n \n \n })\n"
+                },
+                {
+                    "date": 1771505060385,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,27 @@\n+import { Module } from '@nestjs/common';\n+import { AuthService } from './auth.service';\n+import { AuthController } from './auth.controller';\n+import { UsersModule } from '../users/users.module';\n+import { JwtModule } from '@nestjs/jwt';\n+import { ConfigModule, ConfigService } from '@nestjs/config';\n+\n+@Module({\n+  imports: [\n+    UsersModule,\n+    JwtModule.registerAsync({\n+      imports: [ConfigModule],\n+        useFactory: async (configService: ConfigService) => ({\n+        secret: configService.get<string>('JWT_SECRET') || 'secretKey',\n+        signOptions: { expiresIn: '1d' },\n+      }),\n+      inject: [ConfigService],\n+    }),\n+  ],\n+  providers: [AuthService],\n+  controllers: [AuthController],\n+  exports: [AuthService,AuthGuard,],\n+\n+\n+\n+})\n+export class AuthModule {}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771505065509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,37 +18,10 @@\n     }),\n   ],\n   providers: [AuthService],\n   controllers: [AuthController],\n-  exports: [AuthService,AuthGuard,],\n+  exports: [AuthService,AuthGuard,JwtModule],\n \n \n \n })\n-export class AuthModule {}\n-import { Module } from '@nestjs/common';\n-import { AuthService } from './auth.service';\n-import { AuthController } from './auth.controller';\n-import { UsersModule } from '../users/users.module';\n-import { JwtModule } from '@nestjs/jwt';\n-import { ConfigModule, ConfigService } from '@nestjs/config';\n-\n-@Module({\n-  imports: [\n-    UsersModule,\n-    JwtModule.registerAsync({\n-      imports: [ConfigModule],\n-        useFactory: async (configService: ConfigService) => ({\n-        secret: configService.get<string>('JWT_SECRET') || 'secretKey',\n-        signOptions: { expiresIn: '1d' },\n-      }),\n-      inject: [ConfigService],\n-    }),\n-  ],\n-  providers: [AuthService],\n-  controllers: [AuthController],\n-  exports: [AuthService],\n-\n-\n-\n-})\n export class AuthModule {}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771505091644,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,29 @@\n+import { Module } from '@nestjs/common';\n+import { AuthService } from './auth.service';\n+import { AuthController } from './auth.controller';\n+import { UsersModule } from '../users/users.module';\n+import { JwtModule } from '@nestjs/jwt';\n+import { ConfigModule, ConfigService } from '@nestjs/config';\n+import { AuthGuard } from './auth.guard';\n+\n+\n+@Module({\n+  imports: [\n+    UsersModule,\n+    JwtModule.registerAsync({\n+      imports: [ConfigModule],\n+        useFactory: async (configService: ConfigService) => ({\n+        secret: configService.get<string>('JWT_SECRET') || 'secretKey',\n+        signOptions: { expiresIn: '1d' },\n+      }),\n+      inject: [ConfigService],\n+    }),\n+  ],\n+  providers: [AuthService],\n+  controllers: [AuthController],\n+  exports: [AuthService,AuthGuard,JwtModule],\n+\n+\n+\n+})\n+export class AuthModule {}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771505379541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n \n @Module({\n   imports: [\n     UsersModule,\n+    forwardRef(() => UsersModule),\n     JwtModule.registerAsync({\n       imports: [ConfigModule],\n         useFactory: async (configService: ConfigService) => ({\n         secret: configService.get<string>('JWT_SECRET') || 'secretKey',\n@@ -25,32 +26,5 @@\n \n \n \n })\n-export class AuthModule {}\n-import { Module } from '@nestjs/common';\n-import { AuthService } from './auth.service';\n-import { AuthController } from './auth.controller';\n-import { UsersModule } from '../users/users.module';\n-import { JwtModule } from '@nestjs/jwt';\n-import { ConfigModule, ConfigService } from '@nestjs/config';\n-\n-@Module({\n-  imports: [\n-    UsersModule,\n-    JwtModule.registerAsync({\n-      imports: [ConfigModule],\n-        useFactory: async (configService: ConfigService) => ({\n-        secret: configService.get<string>('JWT_SECRET') || 'secretKey',\n-        signOptions: { expiresIn: '1d' },\n-      }),\n-      inject: [ConfigService],\n-    }),\n-  ],\n-  providers: [AuthService],\n-  controllers: [AuthController],\n-  exports: [AuthService,AuthGuard,JwtModule],\n-\n-\n-\n-})\n export class AuthModule {}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1771505396120,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { Module } from '@nestjs/common';\n+import { Module, forwardRef } from '@nestjs/common';\n import { AuthService } from './auth.service';\n import { AuthController } from './auth.controller';\n import { UsersModule } from '../users/users.module';\n import { JwtModule } from '@nestjs/jwt';\n"
+                },
+                {
+                    "date": 1771509981970,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n \n @Module({\n   imports: [\n-    UsersModule,\n+   \n     forwardRef(() => UsersModule),\n     JwtModule.registerAsync({\n       imports: [ConfigModule],\n         useFactory: async (configService: ConfigService) => ({\n"
+                },
+                {
+                    "date": 1771509988560,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,8 @@\n \n \n @Module({\n   imports: [\n-   \n     forwardRef(() => UsersModule),\n     JwtModule.registerAsync({\n       imports: [ConfigModule],\n         useFactory: async (configService: ConfigService) => ({\n"
+                },
+                {
+                    "date": 1771509996154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n \n @Module({\n   imports: [\n-    forwardRef(() => UsersModule),\n+    //forwardRef(() => UsersModule),\n     JwtModule.registerAsync({\n       imports: [ConfigModule],\n         useFactory: async (configService: ConfigService) => ({\n         secret: configService.get<string>('JWT_SECRET') || 'secretKey',\n"
+                },
+                {
+                    "date": 1771510002697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n \n \n @Module({\n   imports: [\n+    UsersModule\n     //forwardRef(() => UsersModule),\n     JwtModule.registerAsync({\n       imports: [ConfigModule],\n         useFactory: async (configService: ConfigService) => ({\n"
+                },
+                {
+                    "date": 1771510016127,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n \n \n @Module({\n   imports: [\n-    UsersModule\n+    UsersModule,\n     //forwardRef(() => UsersModule),\n     JwtModule.registerAsync({\n       imports: [ConfigModule],\n         useFactory: async (configService: ConfigService) => ({\n"
+                },
+                {
+                    "date": 1771510021862,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n @Module({\n   imports: [\n     UsersModule,\n-    //forwardRef(() => UsersModule),\n+    forwardRef(() => UsersModule),\n     JwtModule.registerAsync({\n       imports: [ConfigModule],\n         useFactory: async (configService: ConfigService) => ({\n         secret: configService.get<string>('JWT_SECRET') || 'secretKey',\n"
+                },
+                {
+                    "date": 1771510830792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,26 +5,20 @@\n import { JwtModule } from '@nestjs/jwt';\n import { ConfigModule, ConfigService } from '@nestjs/config';\n import { AuthGuard } from './auth.guard';\n \n-\n @Module({\n   imports: [\n-    UsersModule,\n     forwardRef(() => UsersModule),\n     JwtModule.registerAsync({\n-      imports: [ConfigModule],\n-        useFactory: async (configService: ConfigService) => ({\n+      useFactory: async (configService: ConfigService) => ({\n         secret: configService.get<string>('JWT_SECRET') || 'secretKey',\n         signOptions: { expiresIn: '1d' },\n       }),\n       inject: [ConfigService],\n     }),\n   ],\n   providers: [AuthService],\n   controllers: [AuthController],\n-  exports: [AuthService,AuthGuard,JwtModule],\n-\n-\n-\n+  exports: [AuthService, AuthGuard, JwtModule],\n\\ No newline at end of file\n })\n-export class AuthModule {}\n+export class AuthModule {}\n"
+                },
+                {
+                    "date": 1771511034265,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { AuthController } from './auth.controller';\n import { UsersModule } from '../users/users.module';\n import { JwtModule } from '@nestjs/jwt';\n import { ConfigModule, ConfigService } from '@nestjs/config';\n-import { AuthGuard } from './auth.guard';\n+//import { AuthGuard } from './auth.guard';\n \n @Module({\n   imports: [\n     forwardRef(() => UsersModule),\n@@ -20,5 +20,5 @@\n   providers: [AuthService],\n   controllers: [AuthController],\n   exports: [AuthService, AuthGuard, JwtModule],\n })\n-export class AuthModule {}\n\\ No newline at end of file\n+export class AuthModule {}\n"
+                },
+                {
+                    "date": 1771511064272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,7 +18,7 @@\n     }),\n   ],\n   providers: [AuthService],\n   controllers: [AuthController],\n-  exports: [AuthService, AuthGuard, JwtModule],\n+  exports: [AuthService, JwtModule],\n })\n export class AuthModule {}\n"
                 }
             ],
             "date": 1771053421473,

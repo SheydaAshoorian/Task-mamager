@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import api from '@/lib/axios';
+
 
 export default function CreateTaskPage() {
   const [users, setUsers] = useState([]);
@@ -15,14 +17,22 @@ export default function CreateTaskPage() {
     assignedToId: ''
   });
 
-  useEffect(() => {
-    axios.get('http://localhost:3000/users')
-      .then(res => {
+useEffect(() => {
 
-        setUsers(res.data.data || res.data);
-      })
-      .catch(() => toast.error('خطا در دریافت لیست پرسنل'));
-  }, []);
+  api.get('http://localhost:3001/users/all') 
+    .then(res => {
+      console.log("Response data:", res.data);
+      // ۲. دقت کن! ممکنه دیتا مستقیماً توی res.data باشه یا توی res.data.data
+      const finalData = Array.isArray(res.data) ? res.data : res.data.data;
+      setUsers(finalData);
+    })
+    .catch(err => {
+      // ۳. این لاگ رو چک کن ببین ارور ۴۰۱ میده یا ۴۰۴؟
+      console.error("Full Error Info:", err.response);
+      toast.error('خطا در دریافت لیست پرسنل');
+    });
+}, []);
+
 
 const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
@@ -35,6 +45,7 @@ const handleSubmit = async (e: React.FormEvent) => {
 
       status: 'todo' 
     };
+    
   console.log("🚀 دیتای نهایی آماده ارسال:", payload);
 
     await axios.post('http://localhost:3000/tasks', payload);
@@ -93,7 +104,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                 <option value="">انتخاب کنید...</option>
                 {users.map((user: any) => (
                   <option key={user.id} value={user.id}>
-                    {user.name} {user.family}
+                    {user.first_name} {user.last_name}
                   </option>
                 ))}
               </select>

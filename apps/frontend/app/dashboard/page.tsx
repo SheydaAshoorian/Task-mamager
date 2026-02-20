@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '@/lib/axios';
 import { ClipboardList, AlertCircle, Clock } from 'lucide-react';
 
 export default function DashboardPage() {
@@ -23,7 +23,7 @@ export default function DashboardPage() {
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/tasks');
+        const response = await api.get('http://localhost:3001/tasks');
 
         const allTasks = response.data.data || [];
 

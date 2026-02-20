@@ -3,6 +3,10 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { LayoutDashboard, ClipboardList, PlusCircle, Users, Settings, LogOut } from 'lucide-react';
+import Cookies from 'js-cookie';
+import { useRouter } from 'next/navigation';
+import { toast } from 'react-toastify';
+
 
 export default function Sidebar() {
   const pathname = usePathname();
@@ -14,6 +18,22 @@ export default function Sidebar() {
     { name: 'مدیریت کاربران', href: '/dashboard/users', icon: Users },
     { name: 'تنظیمات', href: '/dashboard/settings', icon: Settings },
   ];
+
+
+const handleLogout = () => {
+  console.log("--- فرآیند خروج از حساب ---");
+
+  // ۱. پاک کردن توکن از کوکی‌ها
+  Cookies.remove('token');
+  console.log("توکن از کوکی پاک شد ✅");
+
+  // ۲. پاک کردن اطلاعات احتمالی از LocalStorage
+  localStorage.removeItem('user'); 
+  
+  // ۳. هدایت کاربر به صفحه لاگین
+  toast.success('با موفقیت خارج شدید');
+  window.location.href = 'http://localhost:3000'; 
+};
 
   return (
     <aside className="w-64 h-screen bg-gray-900 text-white flex flex-col fixed right-0 top-0 border-l border-gray-800 z-50" dir="rtl">
@@ -33,7 +53,7 @@ export default function Sidebar() {
         ))}
       </nav>
       <div className="p-4 border-t border-gray-800 text-red-400 flex items-center gap-2 cursor-pointer p-3">
-        <LogOut size={20} /> <span className="text-sm">خروج</span>
+        <LogOut  onClick={handleLogout}  size={20} /> <span className="text-sm">خروج</span>
       </div>
     </aside>
   );

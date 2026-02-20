@@ -16,7 +16,7 @@ export default function RegisterPage() {
 const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
   try {
-    await api.post('/auth/register', {
+    await api.post('http://localhost:3001/auth/register', {
       first_name,
       last_name,
       email,
@@ -24,8 +24,10 @@ const handleSubmit = async (e: React.FormEvent) => {
     });
     
     alert("ثبت‌نام موفقیت‌آمیز بود ✅");
-    router.push("/login");
+    router.push("/");
+
   } catch (error: any) {
+
     alert(error.response?.data?.message || "خطا در ثبت‌نام");
   }
 };
@@ -51,7 +53,7 @@ const handleSubmit = async (e: React.FormEvent) => {
           </h2>
           <div className="w-full h-[1px] bg-gray-200 mb-6"></div>
 
-          <form onSubmit={handleRegister} className="space-y-4 text-right">
+          <form onSubmit={handleSubmit} className="space-y-4 text-right">
             <div>
               <label className="text-xs font-semibold text-gray-500 mb-1 block mr-1">
                 نام

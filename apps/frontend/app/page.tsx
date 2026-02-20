@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
-import api from '@/common/axios';
+import api from '@/lib/axios';
+import Cookies from 'js-cookie';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -15,13 +16,27 @@ const handleLogin = async (e: React.FormEvent) => {
   e.preventDefault();
   try {
 
-    const res = await api.post('/auth/login', { email, password });
-    
-    // ذخیره توکن
-    Cookies.set('token', res.data.access_token, { expires: 7 });
-    
-    router.push('/dashboard');
+    const res = await api.post('http://localhost:3001/auth/login', { email, password });
+
+
+    console.log("Full Login Response:", res.data);
+
+// این حالت منعطف‌ترین روش است
+    const token = res.data.data?.access_token; 
+    console.log("Token Received ✅:", token);
+
+    if (token) {
+      console.log("Token Received ✅:", token);
+      Cookies.set('token', token, { expires: 7 });
+      router.push('/dashboard');
+
+   } else {
+      console.error("خطای واقعی لاگین:", error.response?.data || error.message);
+      router.replace('/login');
+    } 
+
   } catch (error: any) {
+    console.error("خطای واقعی لاگین:", error.response?.data || error.message);
     alert("ایمیل یا رمز عبور اشتباه است ❌");
   }
 };

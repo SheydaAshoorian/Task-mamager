@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
-
+console.log('API URL is:', process.env.NEXT_PUBLIC_API_URL); // این را اضافه کن
 // ۱. ایجاد یک نمونه سفارشی از اکسوس با آدرس پایه
 const api = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL,
